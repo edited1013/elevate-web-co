@@ -421,6 +421,10 @@ a:focus-visible,button:focus-visible,.portfolio-card:focus-visible{outline:3px s
 .mobile-menu.open{display:flex}
 .mobile-menu a{padding:14px 16px;border-radius:12px;font-weight:700;color:var(--text-main)}
 .mobile-menu a:active{background:rgba(139,92,246,.08)}
+.menu-btn{touch-action:manipulation;-webkit-appearance:none;appearance:none;padding:0;line-height:1;display:flex;align-items:center;justify-content:center}
+.mobile-menu{max-height:calc(100dvh - 76px);overflow-y:auto;-webkit-overflow-scrolling:touch}
+.mobile-menu .menu-note{margin:6px 6px 4px;padding:12px 14px;border-radius:14px;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);font-size:.8rem;line-height:1.4;color:var(--text-main)}
+.mobile-menu .menu-note b{display:block;color:var(--purple);margin-bottom:3px;font-size:.84rem}
 .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;max-width:980px;margin:0 auto}
 .about-card{background:var(--surface);border:1px solid var(--border-light);border-radius:28px;padding:clamp(24px,4vw,40px);box-shadow:var(--shadow-md)}
 .about-card p{color:var(--text-muted);font-size:1.05rem;line-height:1.7;margin-bottom:16px}
@@ -855,7 +859,7 @@ p, span, li, td, th {
   <div class="side-scroll-thumb" id="sideProgress"></div>
 </div>
 
-<div class="mobile-menu" id="mobileMenu"><a href="#services">Why Us</a><a href="#compare">Compare</a><a href="#portfolio">Packages</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
+<div class="mobile-menu" id="mobileMenu"><a href="#services">Why Us</a><a href="#compare">Compare</a><a href="#portfolio">Packages</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><p class="menu-note"><b>Custom UI Controls</b>Yes! We can even build interactive kebab menus, custom portals, &amp; smooth web tools for your business website.</p></div>
 
 <main id="main">
 <header class="hero" id="top">
@@ -1426,7 +1430,7 @@ p, span, li, td, th {
       <p>Tell me a little about your business and I will reply within one business day with next steps and a quote.</p>
     </div>
     <div class="contact-wrap">
-      <form id="quoteForm">
+      <form id="quoteForm" action="https://formspree.io/f/xkjjeejp" method="POST">
         <div class="field">
           <label for="name">Your Name</label>
           <input id="name" name="name" type="text" autocomplete="name" placeholder="John Doe" required>
@@ -1558,15 +1562,14 @@ document.addEventListener('touchend', function(e) {
 
 initKebabMenus();
 
-// Re-trigger for modal clones
-var origModalClick = modalBody.appendChild;
-var observer = new MutationObserver(function() { initKebabMenus(); });
-if (modalBody) observer.observe(modalBody, { childList: true, subtree: true });
-
 // Interactive Portfolio Modal Sandbox
 var modal = document.getElementById('modal');
 var modalBody = document.getElementById('modalBody');
 var modalX = document.getElementById('modalX');
+
+// Re-trigger for modal clones
+var observer = new MutationObserver(function() { initKebabMenus(); });
+if (modalBody) observer.observe(modalBody, { childList: true, subtree: true });
 
 document.querySelectorAll('.portfolio-card').forEach(function(card) {
   card.addEventListener('click', function() {
@@ -1600,20 +1603,27 @@ document.getElementById('quoteForm').addEventListener('submit', function(e) {
   var form = e.currentTarget;
   var btn = document.getElementById('submitBtn');
   var thanks = document.getElementById('thanks');
-  
+
   var formspreeEndpoint = 'https://formspree.io/f/xkjjeejp';
-  
+  var fallbackError = 'Oops! There was a problem submitting your form. Please email contact.elevatewebny@gmail.com directly.';
+
+  function showError(msg) {
+    thanks.style.display = 'block';
+    thanks.style.color = '#ef4444';
+    thanks.textContent = msg;
+    btn.disabled = false;
+    btn.textContent = 'Send My Quote Request';
+  }
+
+  // Hide any previous message while sending
+  thanks.style.display = 'none';
   btn.disabled = true;
   btn.textContent = 'Sending...';
 
-  var data = new FormData(form);
-
   fetch(formspreeEndpoint, {
     method: 'POST',
-    body: data,
-    headers: {
-      'Accept': 'json'
-    }
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
   }).then(function(response) {
     if (response.ok) {
       thanks.style.display = 'block';
@@ -1623,23 +1633,17 @@ document.getElementById('quoteForm').addEventListener('submit', function(e) {
       btn.style.display = 'none';
     } else {
       response.json().then(function(data) {
-        thanks.style.display = 'block';
-        thanks.style.color = '#ef4444';
-        if (data && data.errors) {
-          thanks.textContent = data.errors.map(function(error) { return error.message; }).join(', ');
+        if (data && data.errors && data.errors.length) {
+          showError(data.errors.map(function(err) { return err.message; }).join(', '));
         } else {
-          thanks.textContent = 'Oops! There was a problem submitting your form. Please email contact.elevatewebny@gmail.com directly.';
+          showError(fallbackError);
         }
-        btn.disabled = false;
-        btn.textContent = 'Send My Quote Request';
+      }).catch(function() {
+        showError(fallbackError);
       });
     }
-  }).catch(function(error) {
-    thanks.style.display = 'block';
-    thanks.style.color = '#ef4444';
-    thanks.textContent = 'Network error. Please email contact.elevatewebny@gmail.com directly.';
-    btn.disabled = false;
-    btn.textContent = 'Send My Quote Request';
+  }).catch(function() {
+    showError('Network error. Please email contact.elevatewebny@gmail.com directly.');
   });
 });
 
