@@ -1456,9 +1456,9 @@ p, span, li, td, th {
           <label for="details">Project Details</label>
           <textarea id="details" name="details" placeholder="Tell us a little about your business and goals..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Send My Quote Request</button>
-        <p class="form-note">This opens your email app with your details filled in. Your information is only used to reply to your request.</p>
-        <p class="thanks" id="thanks" role="status">Opening your email app with your details filled in. If nothing opens, email contact.elevatewebny@gmail.com directly.</p>
+        <button type="submit" id="submitBtn" class="btn btn-primary">Send My Quote Request</button>
+        <p class="form-note">Your information is sent securely and used only to reply to your request.</p>
+        <p class="thanks" id="thanks" role="status" style="color: var(--mint); margin-top: 16px; font-weight: 750; display: none;">Thank you! Your quote request has been sent successfully. We will be in touch within one business day.</p>
       </form>
     </div>
   </div>
@@ -1594,15 +1594,53 @@ function closeModal() {
 modalX.addEventListener('click', closeModal);
 modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
 
-// Quote Form Intake
+// Formspree AJAX Quote Form Submission
 document.getElementById('quoteForm').addEventListener('submit', function(e) {
   e.preventDefault();
   var form = e.currentTarget;
-  var formData = new FormData(form);
-  var subject = 'Elevate Web Co. Quote Request - ' + (formData.get('business') || formData.get('name'));
-  var body = 'Name: ' + formData.get('name') + '\nBusiness: ' + formData.get('business') + '\nEmail: ' + formData.get('email') + '\nPhone: ' + (formData.get('phone') || 'n/a') + '\nPackage: ' + formData.get('package') + '\nDetails: ' + formData.get('details');
-  document.getElementById('thanks').style.display = 'block';
-  window.location.href = 'mailto:contact.elevatewebny@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  var btn = document.getElementById('submitBtn');
+  var thanks = document.getElementById('thanks');
+  
+  var formspreeEndpoint = 'https://formspree.io/f/xkjjeejp';
+  
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  var data = new FormData(form);
+
+  fetch(formspreeEndpoint, {
+    method: 'POST',
+    body: data,
+    headers: {
+      'Accept': 'json'
+    }
+  }).then(function(response) {
+    if (response.ok) {
+      thanks.style.display = 'block';
+      thanks.style.color = 'var(--mint)';
+      thanks.textContent = 'Thank you! Your quote request has been sent successfully. We will reply within one business day.';
+      form.reset();
+      btn.style.display = 'none';
+    } else {
+      response.json().then(function(data) {
+        thanks.style.display = 'block';
+        thanks.style.color = '#ef4444';
+        if (data && data.errors) {
+          thanks.textContent = data.errors.map(function(error) { return error.message; }).join(', ');
+        } else {
+          thanks.textContent = 'Oops! There was a problem submitting your form. Please email contact.elevatewebny@gmail.com directly.';
+        }
+        btn.disabled = false;
+        btn.textContent = 'Send My Quote Request';
+      });
+    }
+  }).catch(function(error) {
+    thanks.style.display = 'block';
+    thanks.style.color = '#ef4444';
+    thanks.textContent = 'Network error. Please email contact.elevatewebny@gmail.com directly.';
+    btn.disabled = false;
+    btn.textContent = 'Send My Quote Request';
+  });
 });
 
 // Keyboard access for portfolio cards + modal focus handling
