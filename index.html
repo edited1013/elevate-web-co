@@ -719,6 +719,10 @@ p, span, li, td, th {
   transform: scale(0.5);
 }
 
+/* Let the "Opening Launch Discount" badge sit on the card's top edge without being clipped */
+.price-card { overflow: visible; }
+.price-card::before { top: 0; left: 0; width: 100%; height: 100%; border-radius: inherit; }
+
 .feature-card:hover::before, .price-card:hover::before, .portfolio-card:hover::before {
   opacity: 1;
   transform: scale(1);
@@ -1514,49 +1518,41 @@ document.querySelectorAll('.faq-item').forEach(function(item) {
 
 
 // Interactive Kebab Dots Menu on Mock Windows (iOS & Android Touch Support)
+// Builds the popover + tappable wrapper once per window; one delegated listener handles
+// every window (including clones inside the preview modal, which don't copy listeners).
 function initKebabMenus() {
   document.querySelectorAll('.mock-bar, .preview-top').forEach(function(bar) {
-    if (bar.querySelector('.kebab-popover')) return; // already initialized
-    
-    var popover = document.createElement('div');
-    popover.className = 'kebab-popover';
-    popover.innerHTML = '<p><b>Custom UI Controls</b>Yes! We can even build interactive kebab menus, custom portals, & smooth web tools for your business website.</p>';
-    bar.appendChild(popover);
-
-    var dots = bar.querySelectorAll('i');
+    if (!bar.querySelector('.kebab-popover')) {
+      var popover = document.createElement('div');
+      popover.className = 'kebab-popover';
+      popover.innerHTML = '<p><b>Custom UI Controls</b>Yes! We can even build interactive kebab menus, custom portals, & smooth web tools for your business website.</p>';
+      bar.appendChild(popover);
+    }
+    var dots = bar.querySelectorAll(':scope > i');
     if (dots.length > 0 && !bar.querySelector('.dots-wrapper')) {
       var wrapper = document.createElement('div');
       wrapper.className = 'dots-wrapper';
       wrapper.setAttribute('role', 'button');
       wrapper.setAttribute('aria-label', 'Toggle interactive menu demo');
       wrapper.setAttribute('tabindex', '0');
-      
       dots[0].parentNode.insertBefore(wrapper, dots[0]);
       dots.forEach(function(dot) { wrapper.appendChild(dot); });
-
-      function togglePopover(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var isOpen = popover.classList.contains('open');
-        document.querySelectorAll('.kebab-popover').forEach(function(p) { p.classList.remove('open'); });
-        if (!isOpen) {
-          popover.classList.add('open');
-        }
-      }
-
-      wrapper.addEventListener('click', togglePopover);
-      wrapper.addEventListener('touchstart', function(e) { e.stopPropagation(); }, {passive: true});
-      wrapper.addEventListener('touchend', togglePopover);
     }
   });
 }
 
-document.addEventListener('click', function() {
-  document.querySelectorAll('.kebab-popover').forEach(function(p) { p.classList.remove('open'); });
+document.addEventListener('click', function(e) {
+  var wrapper = e.target.closest('.dots-wrapper');
+  var inPopover = e.target.closest('.kebab-popover');
+  if (inPopover) return;
+  var target = wrapper ? wrapper.parentNode.querySelector('.kebab-popover') : null;
+  var wasOpen = target && target.classList.contains('open');
+  document.querySelectorAll('.kebab-popover.open').forEach(function(p) { p.classList.remove('open'); });
+  if (target && !wasOpen) target.classList.add('open');
 });
-document.addEventListener('touchend', function(e) {
-  if (!e.target.closest('.dots-wrapper') && !e.target.closest('.kebab-popover')) {
-    document.querySelectorAll('.kebab-popover').forEach(function(p) { p.classList.remove('open'); });
+document.addEventListener('keydown', function(e) {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList && e.target.classList.contains('dots-wrapper')) {
+    e.preventDefault(); e.target.click();
   }
 });
 
