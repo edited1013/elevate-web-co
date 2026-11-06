@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<title>Elevate Web Co. | Website Design for Western NY Businesses</title>
+<meta name="description" content="Fast, mobile-first websites for small businesses in Dunkirk, Fredonia, and across Western New York. Clear pricing and direct one-on-one service. Get a free quote.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Elevate Web Co. | Website Design for Western NY Businesses">
+<meta property="og:description" content="Fast, mobile-first websites for local businesses. Clear pricing, direct one-on-one service.">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<!-- AFTER YOU PICK YOUR DOMAIN, add: <link rel="canonical" href="https://YOURDOMAIN/"> and <meta property="og:url" content="https://YOURDOMAIN/"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230071e3'/%3E%3Cstop offset='.5' stop-color='%238b5cf6'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='url(%23g)'/%3E%3Cpath d='M 8 31 C 13 37, 21 37, 26 31 C 30 26, 26 20, 18 20 C 12 20, 10 14, 17 9 C 24 4, 37 7, 39 15 C 41 23, 34 26, 26 26 C 19 26, 17 31, 24 36 C 31 41, 40 37, 42 29' stroke='%23ffffff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='39' cy='15' r='2.2' fill='%23ffffff'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Elevate Web Co.","description":"Website design for small businesses in Western New York.","email":"contact.elevatewebny@gmail.com","areaServed":["Dunkirk, NY","Fredonia, NY","Western New York"],"serviceType":"Web design"}</script>
+<style>
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --border-light: rgba(148, 163, 184, 0.2);
+  --border-active: rgba(139, 92, 246, 0.4);
+  
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-subtle: #94a3b8;
+  
+  --grad-main: linear-gradient(135deg, #0071e3 0%, #8b5cf6 50%, #ec4899 100%);
+  --grad-text: linear-gradient(120deg, #0071e3 0%, #7c3aed 45%, #db2777 90%);
+  --grad-glow: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(236, 72, 153, 0.05) 45%, rgba(248, 250, 252, 0) 70%);
+  
+  --blue: #0071e3;
+  --purple: #8b5cf6;
+  --pink: #ec4899;
+  --mint: #10b981;
+  
+  --shadow-sm: 0 2px 12px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 30px rgba(139, 92, 246, 0.08);
+  --shadow-lg: 0 20px 50px rgba(0, 113, 227, 0.12);
+  
+  --ease-ios: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-bouncy: cubic-bezier(0.34, 1.5, 0.64, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; overflow-x: clip; scroll-padding-top: 76px; }
+
+body, button, input, select, textarea, .logo, .hero h1, h2, h3, h4, .btn {
+  font-family: "Apple SD Gothic Neo", -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", sans-serif !important;
+}
+
+body, button, input, select, textarea, .logo, .hero h1, h2, h3, h4, .btn, p, span, a, li, td, th, label {
+  font-family: "Apple SD Gothic Neo", -apple-system, BlinkMacSystemFont, "Plus Jakarta Sans", sans-serif !important;
+  font-weight: 800 !important;
+}
+h1, h2, h3, h4, .logo, .btn, strong, b, .price, .eyebrow {
+  font-weight: 900 !important;
+}
+.hero p, .section-head p, .feature-card p, .price-card li, .faq-a, .about-card p {
+  font-weight: 700 !important;
+}
+
+h1, h2, h3, h4, .logo, .btn, strong, b { font-weight: 900; }
+
+body {
+  font-family: -apple-system, "Apple SD Gothic Neo", "Plus Jakarta Sans", BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.5;
+  overflow-x: clip;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, video { max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button, input, select, textarea { font: inherit; }
+ul { list-style: none; }
+
+.container { width: min(1100px, 100%); margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+section { position: relative; padding: 90px 0; overflow: clip; }
+
+/* Radiant Text Gradient */
+.grad-text {
+  background: var(--grad-text);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  display: inline-block;
+}
+
+/* Scroll Progress Bar */
+
+
+/* iOS-Specific Dynamic Header Glass Bar */
+nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 100; display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.logo {
+  font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em; display: flex; align-items: center; gap: 8px;
+}
+.logo-icon {
+  width: 26px; height: 26px; border-radius: 7px; background: var(--grad-main); display: flex; align-items: center; justify-content: center;
+  color: #ffffff; font-size: 0.8rem; font-weight: 900; box-shadow: 0 3px 10px rgba(139, 92, 246, 0.35);
+}
+
+.nav-links { display: flex; gap: 16px; font-size: 0.9rem; align-items: center; }
+.nav-links a { color: var(--text-muted); font-weight: 600; transition: color 0.2s ease; padding: 6px 10px; border-radius: 8px; }
+.nav-links a:hover { color: var(--purple); background: rgba(139, 92, 246, 0.06); }
+
+.nav-cta {
+  padding: 8px 18px !important; border-radius: 999px; background: var(--grad-main); color: #fff !important; font-weight: 700 !important;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+}
+
+/* Universal Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 15px 30px; border-radius: 999px; font-size: 1rem; font-weight: 700; cursor: pointer; border: 2px solid transparent;
+  transition: all 0.3s var(--ease-ios); user-select: none; text-align: center;
+}
+.btn:active { transform: scale(0.96); }
+
+.btn-primary { background: var(--grad-main); color: #fff; box-shadow: 0 6px 24px rgba(139, 92, 246, 0.3); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4); }
+
+.btn-secondary { background: #ffffff; color: var(--text-main); border-color: rgba(148, 163, 184, 0.3); box-shadow: var(--shadow-sm); }
+.btn-secondary:hover { transform: translateY(-2px); border-color: var(--purple); color: var(--purple); background: rgba(139, 92, 246, 0.04); }
+
+/* Hero Section */
+.hero { min-height: 88svh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 130px 20px 60px; position: relative; }
+.hero-bg-glow {
+  position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 90vw; height: 60vh;
+  background: var(--grad-glow); pointer-events: none; z-index: 0; filter: blur(40px);
+}
+.hero-content { position: relative; z-index: 1; width: min(840px, 100%); }
+
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 999px; font-size: 0.85rem; font-weight: 700; color: var(--purple); margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.9); box-shadow: 0 4px 16px rgba(139, 92, 246, 0.1);
+}
+.hero-pill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2); }
+
+.hero h1 { font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 850; letter-spacing: -0.045em; line-height: 1.06; margin-bottom: 20px; color: var(--text-main); }
+.hero p { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-muted); max-width: 620px; margin: 0 auto 34px; font-weight: 450; }
+.btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* Lighthouse Score Bar */
+.lighthouse-bar {
+  display: flex; justify-content: center; gap: 14px; margin-top: 52px; flex-wrap: wrap;
+}
+.lh-badge {
+  background: #ffffff; border: 1px solid rgba(148, 163, 184, 0.2); padding: 14px 20px; border-radius: 18px;
+  box-shadow: var(--shadow-sm); display: flex; align-items: center; gap: 14px;
+  transition: transform 0.3s var(--ease-ios), box-shadow 0.3s ease;
+}
+.lh-badge:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(16, 185, 129, 0.4); }
+.lh-circle {
+  width: 50px; height: 50px; border-radius: 50%; border: 3px solid var(--mint); background: rgba(16, 185, 129, 0.1);
+  display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 900; color: var(--mint);
+}
+.lh-text { text-align: left; }
+.lh-text b { display: block; font-size: 0.95rem; font-weight: 800; color: var(--text-main); line-height: 1.2; }
+.lh-text span { color: var(--text-muted); font-size: 0.78rem; font-weight: 600; }
+
+.section-head { text-align: center; margin: 0 auto 48px; max-width: 760px; }
+.eyebrow {
+  color: var(--purple); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 12px; display: inline-block; background: rgba(139, 92, 246, 0.08); padding: 4px 14px; border-radius: 999px;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+}
+.section-head h2 { font-size: clamp(2.1rem, 4.2vw, 3.2rem); font-weight: 850; letter-spacing: -0.04em; line-height: 1.1; color: var(--text-main); }
+.section-head p { color: var(--text-muted); margin-top: 12px; font-size: 1.1rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; }
+
+/* Core 4 Feature Cards */
+.feature-card {
+  background: var(--surface); border: 1px solid var(--border-light); border-radius: 24px; padding: 32px; box-shadow: var(--shadow-sm);
+  transition: transform 0.4s var(--ease-ios), box-shadow 0.4s var(--ease-ios), border-color 0.3s ease;
+  position: relative;
+}
+.feature-card:hover { transform: translateY(-6px); border-color: var(--border-active); box-shadow: var(--shadow-md); }
+
+.brand-art {
+  width: 100%; height: 75px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.04), rgba(0, 113, 227, 0.04));
+  border-radius: 16px; border: 1px solid rgba(139, 92, 246, 0.1);
+}
+.feature-card h3 { font-size: 1.25rem; margin-bottom: 8px; font-weight: 750; color: var(--text-main); }
+.feature-card p { color: var(--text-muted); font-size: 0.96rem; line-height: 1.6; }
+
+/* iOS-Native Card Layout / PC Table Switcher */
+.comparison-container {
+  max-width: 960px; margin: 0 auto;
+}
+
+/* PC Table Default */
+.pc-table-wrap {
+  background: var(--surface); border: 1px solid var(--border-light); border-radius: 28px; padding: 32px; box-shadow: var(--shadow-md);
+  overflow-x: auto;
+}
+.comp-table { width: 100%; border-collapse: collapse; text-align: center; min-width: 600px; }
+.comp-table th, .comp-table td { padding: 18px; border-bottom: 1px solid rgba(148, 163, 184, 0.15); font-size: 1rem; text-align: center; font-weight: 700; }
+.comp-table th { font-weight: 800; font-size: 1.05rem; color: var(--text-main); }
+.comp-table th.highlight { color: var(--purple); background: rgba(139, 92, 246, 0.06); border-radius: 16px 16px 0 0; text-align: center; }
+.comp-table td.highlight { background: rgba(139, 92, 246, 0.03); text-align: center; font-weight: 750; color: var(--purple); }
+.badge-check { display: inline-flex; width: 24px; height: 24px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); color: var(--mint); align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; }
+.badge-cross { display: inline-flex; width: 24px; height: 24px; border-radius: 50%; background: #fee2e2; color: #ef4444; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; }
+
+/* iOS Stacked Card View */
+.ios-cards-view { display: none; }
+
+@media(max-width: 768px) {
+  .pc-table-wrap { display: none; }
+  .ios-cards-view { display: flex; flex-direction: column; gap: 16px; }
+  
+  .ios-comp-card {
+    background: var(--surface); border: 1.5px solid rgba(139, 92, 246, 0.25); border-radius: 22px; padding: 22px;
+    box-shadow: var(--shadow-sm); position: relative;
+  }
+  .ios-comp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px solid rgba(148, 163, 184, 0.15); padding-bottom: 10px; }
+  .ios-comp-title { font-size: 1.05rem; font-weight: 800; color: var(--text-main); }
+  .ios-comp-badge { background: var(--grad-main); color: white; padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 800; }
+  
+  .ios-comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.9rem; }
+  .ios-col { background: var(--bg); padding: 12px; border-radius: 14px; border: 1px solid rgba(148, 163, 184, 0.15); text-align: center; }
+  .ios-col.elevate { background: rgba(139, 92, 246, 0.05); border-color: rgba(139, 92, 246, 0.3); }
+  .ios-col-label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .ios-col-val { font-weight: 800; color: var(--text-main); display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .ios-col.elevate .ios-col-val { color: var(--purple); }
+}
+
+/* Portfolio Showcase */
+#portfolio .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.portfolio-card { padding: 20px; display: flex; flex-direction: column; background: var(--surface); border-radius: 24px; border: 1px solid var(--border-light); }
+.portfolio-card h3, .portfolio-card > p, .portfolio-card .tag { margin-left: 6px; margin-right: 6px; }
+.portfolio-card h3 { margin-top: 16px; font-size: 1.2rem; }
+.portfolio-card > p { flex: 1; margin-bottom: 14px; font-size: 0.95rem; color: var(--text-muted); }
+
+.demo { height: 230px; border-radius: 18px; position: relative; overflow: hidden; background: rgba(139, 92, 246, 0.04); border: 1px solid rgba(139, 92, 246, 0.12); }
+.preview-window { position: absolute; inset: 8px 8px 0; background: #fff; border-radius: 12px 12px 0 0; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.06); display: flex; flex-direction: column; }
+.preview-top { height: 24px; background: #f8fafc; display: flex; align-items: center; gap: 5px; padding: 0 10px; border-bottom: 1px solid #e2e8f0; }
+.preview-top i { width: 7px; height: 7px; border-radius: 50%; background: #cbd5e1; }
+.preview-nav { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; font: 700 8.5px system-ui; border-bottom: 1px solid #f1f5f9; background: #fafafa; }
+.preview-nav span:last-child { background: var(--grad-main); color: white; padding: 3px 8px; border-radius: 99px; font-size: 7.5px; }
+
+.interactive-demo-btn {
+  display: inline-block; padding: 6px 14px; background: var(--grad-main); color: #fff; border-radius: 999px; font-size: 8.5px; font-weight: 800;
+  cursor: pointer; text-align: center; margin-top: 6px; box-shadow: 0 3px 10px rgba(139, 92, 246, 0.25);
+}
+
+.tag { display: inline-block; padding: 5px 12px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; background: rgba(139, 92, 246, 0.08); color: var(--purple); width: fit-content; }
+.portfolio-hint { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 24px; font-weight: 600; }
+
+/* Pricing Section */
+.price-card { text-align: center; display: flex; flex-direction: column; position: relative; background: var(--surface); border-radius: 26px; border: 1px solid var(--border-light); padding: 36px; }
+.price-card.featured {
+  border: 2.5px solid transparent;
+  background-image: linear-gradient(var(--surface), var(--surface)), var(--grad-main);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 16px 40px rgba(139, 92, 246, 0.22);
+  transform: scale(1.02);
+}
+
+.opening-badge {
+  position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--grad-main); color: #fff;
+  font-size: 0.8rem; font-weight: 800; padding: 5px 20px; border-radius: 999px; white-space: nowrap; box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+}
+
+.price-box { margin: 18px 0 6px; }
+
+.old-price {
+  display: inline-block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-subtle);
+  opacity: 0.55;
+  position: relative;
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+.old-price::after {
+  content: '';
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 50%;
+  height: 2px;
+  background: #ef4444;
+  opacity: 0.7;
+  transform: translateY(-50%) rotate(-4deg);
+  border-radius: 99px;
+}
+
+.price { font-size: 3.2rem; font-weight: 850; letter-spacing: -0.04em; color: var(--text-main); line-height: 1; }
+.price-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 22px; font-weight: 600; }
+
+.price-card ul { text-align: left; margin-bottom: 28px; flex: 1; }
+.price-card li { padding: 11px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.15); color: var(--text-muted); font-size: 0.95rem; font-weight: 550; display: flex; align-items: center; gap: 10px; }
+.price-card li span { display: inline-flex; width: 20px; height: 20px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); color: var(--mint); align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; flex-shrink: 0; }
+
+/* Care Plans Sub-Section */
+.care-plans-wrap {
+  margin-top: 48px;
+  background: var(--surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: var(--shadow-md);
+}
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+.care-card {
+  background: var(--bg);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: left;
+}
+.care-card h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+.care-price {
+  font-size: 1.8rem;
+  font-weight: 850;
+  color: var(--purple);
+  margin: 6px 0 12px;
+}
+.care-card ul li {
+  font-size: 0.88rem;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(148, 163, 184, 0.2);
+  color: var(--text-muted);
+}
+
+/* FAQ Accordion */
+.faq-wrap { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.faq-item {
+  background: var(--surface); border: 1px solid var(--border-light); border-radius: 20px; overflow: hidden;
+  box-shadow: var(--shadow-sm); transition: border-color 0.3s ease;
+}
+.faq-item.open { border-color: var(--purple); box-shadow: var(--shadow-md); }
+.faq-q {
+  width: 100%; background: none; border: 0; color: var(--text-main); font-size: 1.1rem; font-weight: 750; text-align: left;
+  padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 14px;
+}
+.faq-icon {
+  width: 34px; height: 34px; border-radius: 50%; background: rgba(139, 92, 246, 0.08); color: var(--purple);
+  display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800;
+  transition: transform 0.5s cubic-bezier(0.34, 1.5, 0.64, 1), background 0.4s ease, color 0.4s ease; flex-shrink: 0;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--purple); color: #ffffff; }
+.faq-a {
+  max-height: 0; overflow: hidden; color: var(--text-muted); font-size: 1rem; line-height: 1.65;
+  padding: 0 24px; transition: max-height 0.85s cubic-bezier(0.16, 1, 0.3, 1), padding 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-item.open .faq-a { max-height: 250px; padding-bottom: 20px; }
+
+/* Contact Form */
+.contact-wrap {
+  max-width: 700px; margin: 0 auto; background: var(--surface); border: 1.5px solid var(--border-light);
+  border-radius: 28px; padding: clamp(24px, 4vw, 42px); box-shadow: var(--shadow-md);
+}
+.field { margin-bottom: 20px; }
+.field label { display: block; font-size: 0.9rem; color: var(--text-main); font-weight: 750; margin-bottom: 6px; }
+.contact-wrap input, .contact-wrap textarea, .contact-wrap select {
+  width: 100%; padding: 14px 18px; background: var(--bg); border: 1.5px solid rgba(148, 163, 184, 0.25); border-radius: 14px;
+  color: var(--text-main); font-size: 1rem; font-weight: 550; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-wrap input:focus, .contact-wrap textarea:focus, .contact-wrap select:focus {
+  border-color: var(--purple); background: #ffffff; box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+.contact-wrap textarea { min-height: 130px; resize: vertical; }
+.contact-wrap .btn { width: 100%; margin-top: 6px; }
+.thanks { display: none; text-align: center; color: var(--mint); margin-top: 16px; font-weight: 750; font-size: 1.05rem; }
+
+/* Modal Window */
+.modal { position: fixed; inset: 0; z-index: 300; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); }
+.modal.open { display: flex; }
+.modal-box {
+  position: relative; width: min(740px, 100%); max-height: 90svh; overflow: auto; background: var(--surface);
+  border: 1.5px solid rgba(139, 92, 246, 0.3); border-radius: 28px; padding: 28px; box-shadow: var(--shadow-lg);
+}
+.modal-x {
+  position: absolute; top: 18px; right: 18px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(139, 92, 246, 0.08); color: var(--purple); font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: 800; z-index: 10;
+}
+.modal-box .demo { height: 380px; margin-top: 20px; }
+.modal-caption { color: var(--text-muted); font-size: 0.9rem; padding: 14px 4px 2px; text-align: center; font-weight: 600; }
+
+@media(max-width: 850px) { .nav-links .hide-m { display: none; } #portfolio .grid { grid-template-columns: 1fr; } }
+@media(max-width: 760px) {
+  nav { padding: 12px 16px; } .hero { min-height: 82svh; padding: 120px 18px 50px; } section { padding: 75px 0; }
+  .modal-box .demo { height: 300px; }
+}
+
+/* ===== Publish-ready additions ===== */
+.skip-link{position:absolute;left:12px;top:-60px;z-index:400;background:#fff;color:var(--purple);padding:10px 16px;border-radius:10px;font-weight:700;box-shadow:var(--shadow-md)}
+.skip-link:focus{top:12px}
+a:focus-visible,button:focus-visible,.portfolio-card:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+.menu-li{display:none}
+.menu-btn{width:42px;height:38px;border-radius:12px;border:1px solid rgba(148,163,184,.3);background:#fff;color:var(--text-main);font-size:1.2rem;cursor:pointer}
+.mobile-menu{position:fixed;top:60px;left:12px;right:12px;z-index:99;display:none;flex-direction:column;padding:10px;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--border-light);border-radius:20px;box-shadow:var(--shadow-lg)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:14px 16px;border-radius:12px;font-weight:700;color:var(--text-main)}
+.mobile-menu a:active{background:rgba(139,92,246,.08)}
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;max-width:980px;margin:0 auto}
+.about-card{background:var(--surface);border:1px solid var(--border-light);border-radius:28px;padding:clamp(24px,4vw,40px);box-shadow:var(--shadow-md)}
+.about-card p{color:var(--text-muted);font-size:1.05rem;line-height:1.7;margin-bottom:16px}
+.about-card p:last-child{margin-bottom:0;color:var(--text-main);font-weight:700}
+.about-facts{display:flex;flex-direction:column;gap:14px}
+.about-fact{background:var(--surface);border:1px solid var(--border-light);border-radius:20px;padding:20px 22px;box-shadow:var(--shadow-sm)}
+.about-fact b{display:block;font-size:1.05rem;font-weight:800}
+.about-fact span{color:var(--text-muted);font-size:.92rem}
+.note-line{text-align:center;color:var(--text-muted);font-size:.92rem;margin-top:22px;font-weight:600}
+.form-note{text-align:center;color:var(--text-muted);font-size:.85rem;margin-top:14px}
+.site-footer{text-align:center;padding:48px 20px 36px;color:var(--text-muted);font-size:.92rem;border-top:1px solid var(--border-light)}
+.foot-brand{font-size:1.2rem;font-weight:800;color:var(--text-main);margin-bottom:8px}
+.site-footer p{margin:6px auto;max-width:560px}
+.site-footer a{color:var(--purple);font-weight:700}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin:16px 0}
+.foot-links a{color:var(--text-muted);font-weight:650}
+.site-footer .fine{font-size:.82rem;color:var(--text-subtle);margin-top:14px}
+.faq-item.open .faq-a{max-height:420px}
+@media(max-width:850px){.menu-li{display:block}.about-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.logo{font-size:1.02rem;white-space:nowrap;gap:6px}.nav-cta{padding:8px 14px!important;white-space:nowrap;font-size:.85rem}.nav-links{gap:8px}nav{padding:12px 14px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ===== Polish: icons, hero, hover, scroll motion ===== */
+:root{--chk:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7'/%3E%3C/svg%3E")}
+.logo-icon{width:30px;height:30px;border-radius:9px;transition:transform .45s var(--ease-bouncy)}
+.logo:hover .logo-icon{transform:rotate(-8deg) scale(1.1)}
+.price-card li span,.badge-check,.lh-circle{font-size:0!important;color:transparent!important;border:0!important;background:var(--chk) center/62% no-repeat,var(--grad-main)!important}
+.lh-circle{width:46px;height:46px;border-radius:14px!important;box-shadow:0 6px 16px rgba(139,92,246,.28)}
+.badge-cross{background:#ef4444!important;color:#fff!important}
+.brand-art{background:var(--grad-main)!important;border:0!important;box-shadow:0 10px 24px rgba(139,92,246,.25);transition:transform .5s var(--ease-bouncy)}
+.brand-art svg{transition:transform .5s var(--ease-bouncy)}
+/* overridden stroke */
+/* overridden fill */
+.brand-art svg text[fill]:not([fill="none"]){fill:#fff!important;stroke:none!important}
+.brand-art svg circle[r="3"][fill]:not([fill="none"]),.brand-art svg circle[r="4"][fill]:not([fill="none"]){fill:#fff!important}
+.feature-card:hover .brand-art{transform:translateY(-3px)}
+.feature-card:hover .brand-art svg{transform:scale(1.12) rotate(-3deg)}
+.faq-icon,.faq-item.open .faq-icon{background:var(--grad-main);color:#fff}
+.modal-x{background:var(--grad-main);color:#fff;border:0;transition:transform .3s var(--ease-bouncy)}
+.modal-x:hover{transform:rotate(90deg) scale(1.08)}
+
+/* Hero */
+.hero{min-height:0;padding-bottom:70px;overflow-x:clip}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(15,23,42,.08) 1px,transparent 1px);background-size:28px 28px;-webkit-mask-image:radial-gradient(ellipse at 50% 35%,#000 15%,transparent 70%);mask-image:radial-gradient(ellipse at 50% 35%,#000 15%,transparent 70%)}
+.hero-bg-glow{transition:transform .8s ease-out}
+.hero-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:0;width:min(520px,80vw);height:min(520px,80vw)}
+.hero-orb.o1{top:-80px;left:-120px;background:radial-gradient(circle,rgba(0,113,227,.15),transparent 68%);animation:drift 14s ease-in-out infinite}
+.hero-orb.o2{bottom:-100px;right:-140px;background:radial-gradient(circle,rgba(236,72,153,.14),transparent 68%);animation:drift 17s ease-in-out infinite reverse}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(34px,26px)}}
+.hero h1{font-weight:800;letter-spacing:-.05em}
+.hero h1 .grad-text{background:linear-gradient(110deg,#0071e3,#7c3aed,#db2777,#7c3aed,#0071e3);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;animation:shimmer 8s linear infinite}
+@keyframes shimmer{to{background-position:200% 0}}
+.hero-content>*{animation:heroIn 1s var(--ease-ios) both}
+.hero-content>:nth-child(2){animation-delay:.08s}.hero-content>:nth-child(3){animation-delay:.16s}.hero-content>:nth-child(4){animation-delay:.24s}.hero-content>:nth-child(5){animation-delay:.36s}.hero-content>:nth-child(6){animation-delay:.5s}
+@keyframes heroIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.lighthouse-bar{margin-top:40px}
+.hero-mock{width:min(780px,100%);margin:52px auto 0}
+.mock-float{background:#fff;border:1px solid var(--border-light);border-radius:20px;box-shadow:0 40px 80px rgba(15,23,42,.14),0 8px 24px rgba(139,92,246,.12);overflow:hidden;text-align:left;animation:mockFloat 7s ease-in-out infinite}
+@keyframes mockFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.mock-bar{display:flex;align-items:center;gap:6px;padding:12px 16px;background:#f8fafc;border-bottom:1px solid #e2e8f0}
+.mock-bar i{width:10px;height:10px;border-radius:50%;background:#cbd5e1}
+.mock-bar span{margin:0 auto;font-size:.72rem;font-weight:600;color:var(--text-subtle);background:#fff;border:1px solid #e2e8f0;border-radius:99px;padding:4px 18px;transform:translateX(-18px)}
+.mock-body{padding:20px 24px 26px}
+.mock-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.mock-nav b{width:92px;height:14px;border-radius:6px;background:var(--grad-main)}
+.mock-nav em{width:74px;height:26px;border-radius:99px;background:var(--grad-main)}
+.mock-links{display:flex;gap:14px}
+.mock-links u{width:38px;height:8px;border-radius:99px;background:#e2e8f0}
+.mock-hero{text-align:center;padding:10px 0 24px}
+.mb{height:12px;border-radius:99px;background:#e2e8f0;margin:0 auto 10px}
+.mock-hero .mb{height:18px}.mb.s{height:8px}.mb.g{background:var(--grad-main)}
+.w45{width:45%}.w55{width:55%}.w60{width:60%}.w65{width:65%}.w70{width:70%}
+.mock-btn{width:130px;height:34px;border-radius:99px;background:var(--grad-main);margin:16px auto 0;box-shadow:0 8px 20px rgba(139,92,246,.3)}
+.mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mock-cards>div{border:1px solid #e2e8f0;border-radius:14px;padding:14px;background:#fff}
+.mock-cards .mb{margin:0}
+.ic{display:block;width:30px;height:30px;border-radius:9px;margin-bottom:12px;background:var(--chk) center/16px no-repeat,var(--grad-main)}
+@media(max-width:600px){.mock-links{display:none}.mock-bar span{transform:none}.mock-body{padding:16px}}
+
+/* Hover motion */
+nav{transition:box-shadow .3s ease,background .3s ease}
+nav.scrolled{box-shadow:0 8px 30px rgba(15,23,42,.08);background:rgba(255,255,255,.94)}
+.nav-links a:not(.btn){position:relative}
+.nav-links a:not(.btn)::after{content:'';position:absolute;left:10px;right:10px;bottom:2px;height:2px;border-radius:2px;background:var(--grad-main);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease-ios)}
+.nav-links a:not(.btn):hover::after{transform:scaleX(1)}
+.btn{position:relative;overflow:hidden}
+.btn-primary::after,.nav-cta::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .8s var(--ease-ios);pointer-events:none}
+.btn-primary:hover::after,.nav-cta:hover::after{left:140%}
+.price-card,.care-card,.about-card,.about-fact,.portfolio-card{transition:transform .45s var(--ease-ios),box-shadow .45s var(--ease-ios),border-color .3s ease}
+.price-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--border-active)}
+.price-card.featured:hover{transform:translateY(-8px) scale(1.04)}
+.care-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--border-active)}
+.about-fact:hover{transform:translateX(8px);border-color:var(--border-active);box-shadow:var(--shadow-md)}
+.about-card:hover{box-shadow:var(--shadow-lg)}
+.portfolio-card{cursor:pointer}
+.portfolio-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--border-active)}
+.preview-window{transition:transform .5s var(--ease-ios)}
+.portfolio-card:hover .preview-window{transform:translateY(-6px) scale(1.02)}
+.faq-item{transition:transform .3s var(--ease-ios),border-color .3s ease,box-shadow .3s ease}
+.faq-item:hover{transform:translateY(-2px);border-color:rgba(139,92,246,.35)}
+.comp-table tbody tr{transition:background .25s ease}
+.comp-table tbody tr:hover{background:rgba(139,92,246,.05)}
+.contact-wrap input:hover,.contact-wrap textarea:hover,.contact-wrap select:hover{border-color:rgba(139,92,246,.4)}
+.foot-links a{transition:color .25s ease}
+.foot-links a:hover{color:var(--purple)}
+
+/* Scroll reveal (classes are added by JS, so the page works without it) */
+.reveal{opacity:0;transform:translateY(34px) scale(.98);transition:opacity .8s var(--ease-ios) var(--d,0ms),transform .9s var(--ease-ios) var(--d,0ms)}
+.reveal.in{opacity:1;transform:none}
+.price-card.featured.reveal{transform:translateY(34px) scale(1)}
+.price-card.featured.reveal.in{transform:scale(1.02)}
+.btn-primary,.nav-cta{background-origin:border-box}
+@media(max-width:700px){.hero-mock{display:none}.lighthouse-bar{margin-top:36px;flex-direction:column;align-items:center}.lh-badge{width:min(100%,340px)}}
+#services .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1000px){#services .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#services .grid{grid-template-columns:1fr}}
+
+/* ===== Background shapes + text splashes ===== */
+body{position:relative}
+.bg-shapes{position:absolute;inset:0;overflow:clip;pointer-events:none;z-index:-1}
+/* Subtle Brand Color Edge Aura Glow (Cherry on top) */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 90;
+  box-shadow: inset 0 0 90px rgba(139, 92, 246, 0.06),
+              inset 0 0 180px rgba(0, 113, 227, 0.035),
+              inset 0 0 140px rgba(236, 72, 153, 0.035);
+}
+.sh{position:absolute;display:block;will-change:transform}
+.sh b{display:block;animation:bob 11s ease-in-out infinite}
+.sh-c{border-radius:50%;background:rgba(var(--c),.12)}
+.sh-r{border-radius:50%;border:2px solid rgba(var(--c),.2)}
+.sh-s{border-radius:4px;background:rgba(var(--c),.11);rotate:18deg}
+.sh-t{background:rgba(var(--c),.14);clip-path:polygon(50% 0,100% 100%,0 100%)}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-14px) rotate(12deg)}}
+@media(max-width:600px){.sh:nth-child(even){display:none}}
+.section-head{position:relative}
+.section-head::before{content:'';position:absolute;left:50%;top:50%;width:min(620px,92vw);height:280px;transform:translate(-50%,-50%);background:radial-gradient(ellipse,rgba(139,92,246,.11),transparent 68%);z-index:-1;pointer-events:none}
+section:nth-of-type(3n+2) .section-head::before{background:radial-gradient(ellipse,rgba(0,113,227,.11),transparent 68%)}
+section:nth-of-type(3n) .section-head::before{background:radial-gradient(ellipse,rgba(236,72,153,.09),transparent 68%)}
+.hero-content::before{content:'';position:absolute;left:50%;top:14%;width:min(780px,100vw);height:400px;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(139,92,246,.14),rgba(236,72,153,.06) 45%,transparent 70%);z-index:-1;pointer-events:none}
+
+/* Feature card SVG container & entrance animations */
+.brand-art {
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.symbol-appear {
+  animation: symbolRiseIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes symbolRiseIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Speed Arrows Animation */
+.arrow-center {
+  animation: arrowUpCenter 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.arrow-left {
+  animation: arrowUpLeft 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.arrow-right {
+  animation: arrowUpRight 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes arrowUpCenter {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes arrowUpLeft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes arrowUpRight {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+
+/* Comparison Centering Rules */
+.comp-table th, .comp-table td {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+.comp-table td {
+  display: table-cell !important;
+}
+.ios-col {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+.ios-col-val {
+  text-align: center !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+
+/* Desktop PC Side Scroll Bar */
+.side-scroll-track {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 100vh;
+  background: rgba(148, 163, 184, 0.12);
+  z-index: 250;
+  pointer-events: none;
+}
+.side-scroll-thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--grad-main);
+  border-radius: 99px;
+  box-shadow: -1px 0 8px rgba(139, 92, 246, 0.4);
+  transition: height 0.08s linear;
+}
+
+/* Polished Sleek Dynamic Header */
+nav {
+  padding: 14px 28px !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+}
+nav.scrolled {
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
+  border-bottom: 1px solid rgba(139, 92, 246, 0.2) !important;
+}
+.nav-links a:not(.btn) {
+  font-weight: 750 !important;
+  letter-spacing: -0.01em;
+}
+.nav-cta {
+  box-shadow: 0 4px 18px rgba(139, 92, 246, 0.35) !important;
+  transition: transform 0.3s var(--ease-ios), box-shadow 0.3s ease !important;
+}
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.45) !important;
+}
+
+
+/* Ultra $10,000 Polish & Smooth Motion Details */
+body {
+  font-weight: 600 !important;
+}
+
+p, span, li, td, th {
+  letter-spacing: -0.01em;
+}
+
+/* Glasscard subtle magnetic shine effect */
+.feature-card, .price-card, .care-card, .portfolio-card, .ios-comp-card, .contact-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before, .price-card::before, .portfolio-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s var(--ease-ios), transform 0.6s var(--ease-ios);
+  transform: scale(0.5);
+}
+
+.feature-card:hover::before, .price-card:hover::before, .portfolio-card:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Enhanced smooth scroll progress thumb with pulse */
+.side-scroll-thumb {
+  box-shadow: -2px 0 14px rgba(236, 72, 153, 0.6), 0 0 10px rgba(139, 92, 246, 0.5) !important;
+}
+
+/* Ultra smooth magnetic button feel */
+.btn {
+  font-weight: 850 !important;
+  letter-spacing: -0.015em;
+  transition: transform 0.4s var(--ease-bouncy), box-shadow 0.4s var(--ease-ios), background 0.3s ease !important;
+}
+
+.btn-primary:active, .nav-cta:active {
+  transform: scale(0.95) !important;
+}
+
+/* FAQ Icon Smooth Magnetic Glide */
+.faq-icon {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+.faq-item:hover .faq-icon {
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.4);
+}
+
+
+/* Interactive Mock Window Kebab Menu (iOS & Android Touch Optimized) */
+.mock-bar, .preview-top {
+  position: relative !important;
+  overflow: visible !important;
+}
+.preview-window {
+  overflow: visible !important;
+}
+.mock-float {
+  overflow: visible !important;
+}
+
+/* Touch-friendly wrapper for dots */
+.dots-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 10px;
+  margin: -6px -8px;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(139, 92, 246, 0.2);
+  border-radius: 10px;
+  position: relative;
+  z-index: 10;
+}
+.dots-wrapper i {
+  pointer-events: none;
+}
+.dots-wrapper:hover i, .dots-wrapper:active i {
+  transform: scale(1.3) !important;
+  background: var(--purple) !important;
+}
+
+.kebab-popover {
+  position: absolute;
+  top: 34px;
+  left: 8px;
+  background: #ffffff;
+  border: 1.5px solid rgba(139, 92, 246, 0.35);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.2), 0 4px 12px rgba(139, 92, 246, 0.15);
+  border-radius: 14px;
+  padding: 12px 14px;
+  width: 250px;
+  max-width: calc(100vw - 40px);
+  z-index: 150;
+  display: none;
+  animation: popoverIn 0.3s cubic-bezier(0.34, 1.5, 0.64, 1) forwards;
+  pointer-events: auto;
+}
+.kebab-popover.open {
+  display: block;
+}
+.kebab-popover p {
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  color: var(--text-main) !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+.kebab-popover p b {
+  color: var(--purple) !important;
+  font-weight: 850 !important;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.82rem !important;
+}
+@keyframes popoverIn {
+  from { opacity: 0; transform: translateY(-8px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="bg-shapes" id="bgShapes" aria-hidden="true"></div>
+
+
+
+<nav aria-label="Main navigation">
+  <a href="#top" class="logo">
+    <div class="logo-icon" style="width: 36px; height: 36px; border-radius: 10px; background: var(--grad-main); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(139, 92, 246, 0.35);">
+      <svg viewBox="0 0 40 40" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Smooth single continuous flow without bumps -->
+        <path d="M 7 27 C 11 32, 18 32, 22 27 C 25 22, 21 17, 15 17 C 10 17, 9 11, 16 7 C 23 3, 33 6, 33 13 C 33 19, 28 22, 22 22 C 16 22, 15 26, 21 30 C 27 34, 34 31, 35 25" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="33" cy="13" r="1.8" fill="#ffffff"/>
+      </svg>
+    </div>
+    <span>Elevate <span class="grad-text">Web Co.</span></span>
+  </a>
+  <ul class="nav-links">
+    <li class="hide-m"><a href="#services">Why Us</a></li>
+    <li class="hide-m"><a href="#compare">Compare</a></li>
+    <li class="hide-m"><a href="#portfolio">Packages</a></li>
+    <li class="hide-m"><a href="#about">About</a></li>
+    <li class="hide-m"><a href="#pricing">Pricing</a></li>
+    <li class="hide-m"><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="btn nav-cta">Get a Quote</a></li>
+    <li class="menu-li"><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button></li>
+  </ul>
+</nav>
+
+<!-- Desktop PC Vertical Scroll Track & Indicator -->
+<div class="side-scroll-track" aria-hidden="true">
+  <div class="side-scroll-thumb" id="sideProgress"></div>
+</div>
+
+<div class="mobile-menu" id="mobileMenu"><a href="#services">Why Us</a><a href="#compare">Compare</a><a href="#portfolio">Packages</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
+
+<main id="main">
+<header class="hero" id="top">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-orb o1"></div><div class="hero-orb o2"></div>
+  <div class="hero-content">
+    <div class="hero-pill"><span class="hero-pill-dot"></span> Now booking Western NY businesses</div>
+    <h1>Websites that convert visitors into <span class="grad-text">paying clients.</span></h1>
+    <p>Fast, mobile-first websites with solid local search foundations, built for Western New York businesses and delivered in days, not months.</p>
+    <div class="btns">
+      <a href="#contact" class="btn btn-primary">Get Your Free Quote</a>
+      <a href="#portfolio" class="btn btn-secondary">See Example Designs</a>
+    </div>
+    
+    <div class="hero-mock" aria-hidden="true"><div class="mock-float">
+      <div class="mock-bar"><i></i><i></i><i></i><span>yourbusiness.com</span></div>
+      <div class="mock-body">
+        <div class="mock-nav"><b></b><div class="mock-links"><u></u><u></u><u></u></div><em></em></div>
+        <div class="mock-hero"><div class="mb w70"></div><div class="mb g w45"></div><div class="mb s w60"></div><div class="mock-btn"></div></div>
+        <div class="mock-cards"><div><span class="ic"></span><div class="mb s w70"></div></div><div><span class="ic"></span><div class="mb s w55"></div></div><div><span class="ic"></span><div class="mb s w65"></div></div></div>
+      </div>
+    </div></div>
+
+    <!-- Lighthouse Performance Metrics Bar -->
+    <div class="lighthouse-bar">
+      <div class="lh-badge">
+        <div class="lh-circle">✓</div>
+        <div class="lh-text"><b>Built for Speed</b><span>Lightweight, fast-loading code</span></div>
+      </div>
+      <div class="lh-badge">
+        <div class="lh-circle">✓</div>
+        <div class="lh-text"><b>Mobile-First</b><span>Designed for phones first</span></div>
+      </div>
+      <div class="lh-badge">
+        <div class="lh-circle">✓</div>
+        <div class="lh-text"><b>You Own It</b><span>Your domain, your files</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Core Standards</div>
+      <h2>Engineered for maximum local impact.</h2>
+      <p>Four foundational pillars behind every high-performance website we build.</p>
+    </div>
+    <div class="grid">
+      
+      <!-- 1. Clear Upfront Pricing -->
+      <div class="feature-card">
+        <div class="brand-art">
+          <svg width="100" height="40" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="symbol-appear">
+            <!-- 5 Dollar Signs: Outer left -> Inner left -> Main Center -> Inner right -> Outer right -->
+            <text x="14" y="27" fill="#ffffff" opacity="0.25" font-size="16" font-weight="900" text-anchor="middle">$</text>
+            <text x="31" y="27" fill="#ffffff" opacity="0.55" font-size="20" font-weight="900" text-anchor="middle">$</text>
+            <!-- Main center slightly wider bold dollar sign -->
+            <text x="50" y="28" fill="#ffffff" opacity="1.0" font-size="26" font-weight="900" text-anchor="middle" letter-spacing="1">$</text>
+            <text x="69" y="27" fill="#ffffff" opacity="0.55" font-size="20" font-weight="900" text-anchor="middle">$</text>
+            <text x="86" y="27" fill="#ffffff" opacity="0.25" font-size="16" font-weight="900" text-anchor="middle">$</text>
+          </svg>
+        </div>
+        <h3>Clear, Upfront Pricing</h3>
+        <p>Transparent flat-rate pricing with zero hidden fees or surprise monthly software bills.</p>
+      </div>
+
+      <!-- 2. Built for Speed -->
+      <div class="feature-card">
+        <div class="brand-art">
+          <svg width="100" height="40" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="symbol-appear">
+            <!-- Left Arrow: smaller, lower opacity (0.45), lower position, moves up slightly quicker -->
+            <g class="arrow-left">
+              <path d="M 28 27 L 28 17 M 24 21 L 28 17 L 32 21" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+            </g>
+            <!-- Center Arrow: white, middle, main height, moves up in square -->
+            <g class="arrow-center">
+              <path d="M 50 30 L 50 12 M 43 19 L 50 12 L 57 19" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="1.0"/>
+            </g>
+            <!-- Right Arrow: smaller, opacity (0.45), lower than both by a small amount, moves a little slower -->
+            <g class="arrow-right">
+              <path d="M 72 30 L 72 20 M 68 24 L 72 20 L 76 24" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.45"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Built for Speed</h3>
+        <p>Lightweight, hand-built code with no bloated page builders, so your pages load quickly on phones.</p>
+      </div>
+
+      <!-- 3. Direct 1-on-1 Support -->
+      <div class="feature-card">
+        <div class="brand-art">
+          <svg width="100" height="40" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="symbol-appear">
+            <!-- Left Person (Head + Body) -->
+            <circle cx="32" cy="14" r="5" stroke="#ffffff" stroke-width="2.2" fill="rgba(255,255,255,0.2)"/>
+            <path d="M 22 30 C 22 23, 42 23, 42 30" stroke="#ffffff" stroke-width="2.2" fill="rgba(255,255,255,0.2)" stroke-linecap="round"/>
+            
+            <!-- Connecting Smooth Line -->
+            <path d="M 40 22 C 50 16, 50 26, 60 22" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+            
+            <!-- Right Person (Head + Body) -->
+            <circle cx="68" cy="14" r="5" stroke="#ffffff" stroke-width="2.2" fill="rgba(255,255,255,0.2)"/>
+            <path d="M 58 30 C 58 23, 78 23, 78 30" stroke="#ffffff" stroke-width="2.2" fill="rgba(255,255,255,0.2)" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Direct 1-on-1 Support</h3>
+        <p>Work directly with your local WNY designer from kickoff to launch with zero support bots.</p>
+      </div>
+
+      <!-- 4. 100% Code Ownership -->
+      <div class="feature-card">
+        <div class="brand-art">
+          <svg width="100" height="40" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="symbol-appear">
+            <rect x="35" y="14" width="30" height="20" rx="4" stroke="#ffffff" stroke-width="2.8" fill="rgba(255,255,255,0.2)"/>
+            <path d="M 42 14 V 10 C 42 6.5, 46 4, 50 4 C 54 4, 58 6.5, 58 10 V 14" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/>
+            <circle cx="50" cy="24" r="2.8" fill="#ffffff"/>
+          </svg>
+        </div>
+        <h3>100% Code Ownership</h3>
+        <p>You own your domain, files, and accounts completely outright with zero lock-in contracts.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="compare" style="background: rgba(139, 92, 246, 0.02);">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Industry Comparison</div>
+      <h2>How we stack up against the alternatives.</h2>
+      <p>A side-by-side look at typical agency builds versus Elevate Web Co. Agency figures are general market ranges, not quotes.</p>
+    </div>
+
+    <div class="comparison-container">
+      
+      <!-- PC Table View -->
+      <div class="pc-table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Feature / Metric</th>
+              <th>Typical Agency</th>
+              <th class="highlight">Elevate Web Co.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Project Cost</strong></td>
+              <td>$2,000 – $5,000+</td>
+              <td class="highlight">$350 – $650 Launch Special</td>
+            </tr>
+            <tr>
+              <td><strong>Build Speed & Performance</strong></td>
+              <td><span class="badge-cross">✕</span> Often heavy templates</td>
+              <td class="highlight"><span class="badge-check">✓</span> Lightweight, fast-loading code</td>
+            </tr>
+            <tr>
+              <td><strong>Turnaround Time</strong></td>
+              <td>Weeks to Months</td>
+              <td class="highlight">3 to 5 Business Days</td>
+            </tr>
+            <tr>
+              <td><strong>Communication</strong></td>
+              <td><span class="badge-cross">✕</span> Support bots or account managers</td>
+              <td class="highlight"><span class="badge-check">✓</span> Direct 1-on-1 Contact</td>
+            </tr>
+            <tr>
+              <td><strong>Code Ownership</strong></td>
+              <td><span class="badge-cross">✕</span> Often platform-dependent</td>
+              <td class="highlight"><span class="badge-check">✓</span> You Own 100% Outright</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- iOS-Native Stacked Card View -->
+      <div class="ios-cards-view">
+        
+        <div class="ios-comp-card">
+          <div class="ios-comp-header">
+            <span class="ios-comp-title">Project Cost</span>
+            <span class="ios-comp-badge">Best Value</span>
+          </div>
+          <div class="ios-comp-grid">
+            <div class="ios-col">
+              <div class="ios-col-label">Standard</div>
+              <div class="ios-col-val">$2,000 - $5,000+</div>
+            </div>
+            <div class="ios-col elevate">
+              <div class="ios-col-label">Elevate Web Co.</div>
+              <div class="ios-col-val">$350 - $650</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ios-comp-card">
+          <div class="ios-comp-header">
+            <span class="ios-comp-title">Speed & Performance</span>
+            <span class="ios-comp-badge">Built for Speed</span>
+          </div>
+          <div class="ios-comp-grid">
+            <div class="ios-col">
+              <div class="ios-col-label">Standard</div>
+              <div class="ios-col-val">Often heavy templates</div>
+            </div>
+            <div class="ios-col elevate">
+              <div class="ios-col-label">Elevate Web Co.</div>
+              <div class="ios-col-val">Lightweight code</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ios-comp-card">
+          <div class="ios-comp-header">
+            <span class="ios-comp-title">Turnaround Speed</span>
+            <span class="ios-comp-badge">Fast Delivery</span>
+          </div>
+          <div class="ios-comp-grid">
+            <div class="ios-col">
+              <div class="ios-col-label">Standard</div>
+              <div class="ios-col-val">Weeks to Months</div>
+            </div>
+            <div class="ios-col elevate">
+              <div class="ios-col-label">Elevate Web Co.</div>
+              <div class="ios-col-val">3 to 5 Days</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ios-comp-card">
+          <div class="ios-comp-header">
+            <span class="ios-comp-title">Client Support</span>
+            <span class="ios-comp-badge">Direct Access</span>
+          </div>
+          <div class="ios-comp-grid">
+            <div class="ios-col">
+              <div class="ios-col-label">Standard</div>
+              <div class="ios-col-val">Support Bots / Account Managers</div>
+            </div>
+            <div class="ios-col elevate">
+              <div class="ios-col-label">Elevate Web Co.</div>
+              <div class="ios-col-val">Direct 1-on-1</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ios-comp-card">
+          <div class="ios-comp-header">
+            <span class="ios-comp-title">Platform Ownership</span>
+            <span class="ios-comp-badge">No Lock-in</span>
+          </div>
+          <div class="ios-comp-grid">
+            <div class="ios-col">
+              <div class="ios-col-label">Standard</div>
+              <div class="ios-col-val">Often Platform-Dependent</div>
+            </div>
+            <div class="ios-col elevate">
+              <div class="ios-col-label">Elevate Web Co.</div>
+              <div class="ios-col-val">100% Yours Outright</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Package Previews</div>
+      <h2>See what each package looks like.</h2>
+      <p>Tap a card to open a preview of the design style, layout, and features included.</p>
+    </div>
+    <div class="grid">
+      
+      <article class="portfolio-card">
+        <div class="demo" aria-hidden="true">
+          <div class="preview-window">
+            <div class="preview-top"><i></i><i></i><i></i></div>
+            <div class="preview-nav"><span>STARTER HUB</span><span>CALL NOW</span></div>
+            <div style="padding: 16px 10px; text-align: center; background: linear-gradient(180deg, #fff, rgba(139, 92, 246, 0.06));">
+              <strong style="font-size: 12px; color: #0f172a; display: block; margin-bottom: 2px;">Single-Page Direct Hub</strong>
+              <p style="font-size: 8px; color: #475569; margin-bottom: 8px;">High-speed conversion engine for mobile visitors.</p>
+              <div class="interactive-demo-btn">REQUEST QUOTE</div>
+            </div>
+          </div>
+        </div>
+        <h3>Starter Hub</h3>
+        <p>Single-page high-speed business site designed to capture immediate quotes and phone calls.</p>
+        <span class="tag">Tap to Preview</span>
+      </article>
+
+      <article class="portfolio-card">
+        <div class="demo" aria-hidden="true">
+          <div class="preview-window">
+            <div class="preview-top"><i></i><i></i><i></i></div>
+            <div class="preview-nav"><span>PROFESSIONAL</span><span>BOOK NOW</span></div>
+            <div style="display:flex; gap:4px; padding:6px 10px; background:#f1f5f9; font:700 8px system-ui;">
+              <span style="color:#8b5cf6; border-bottom:2px solid #8b5cf6; padding-bottom:2px;">Home</span>
+              <span style="color:#64748b;">Services</span>
+              <span style="color:#64748b;">Gallery</span>
+            </div>
+            <div style="padding: 12px; background: #fff;">
+              <strong style="font-size: 11px; color: #0f172a; display: block;">Multi-Page Authority</strong>
+              <p style="font-size: 8px; color: #475569; margin-top:2px;">Up to 5 custom pages with local SEO profile integration.</p>
+            </div>
+          </div>
+        </div>
+        <h3>Professional Suite</h3>
+        <p>Up to 5 multi-page layouts featuring service galleries, review highlights, and Google sync.</p>
+        <span class="tag">Tap to Preview</span>
+      </article>
+
+      <article class="portfolio-card">
+        <div class="demo" aria-hidden="true">
+          <div class="preview-window">
+            <div class="preview-top"><i></i><i></i><i></i></div>
+            <div class="preview-nav" style="background: #0f172a; color: #fff;"><span>CUSTOM APP</span><span style="background: #10b981;">LIVE</span></div>
+            <div style="padding: 14px; background: #f8fafc; text-align: center;">
+              <strong style="font-size: 11px; color: #0f172a; display: block;">Custom Application Portal</strong>
+              <span style="font-size: 13px; font-weight: 850; color: #8b5cf6; display: block; margin-top: 4px;">Integrated Workflows</span>
+            </div>
+          </div>
+        </div>
+        <h3>Enterprise Portal</h3>
+        <p>Tailored web software featuring custom calculators, booking tools, or workflow integrations.</p>
+        <span class="tag">Tap to Preview</span>
+      </article>
+
+    </div>
+    <p class="portfolio-hint">Concept designs shown for illustration. Real client examples will appear here as projects launch.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">About Me</div>
+      <h2>Built locally. Designed with purpose.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <p>I&rsquo;m the person behind Elevate Web Co., based in Western New York. My background includes manufacturing, quality assurance, CAD, and working with technology.</p>
+        <p>I&rsquo;ve always enjoyed building things, solving problems, and learning how technology can make everyday work easier. Now I&rsquo;m bringing that same attention to detail to website design.</p>
+        <p>My goal is simple: help local businesses build a stronger online presence with websites that look professional, work smoothly, and make it easier for customers to reach them.</p>
+        <p>When you work with Elevate, you&rsquo;re working directly with the person designing and building your website.</p>
+      </div>
+      <div class="about-facts">
+        <div class="about-fact"><b>Local</b><span>Based in Western New York</span></div>
+        <div class="about-fact"><b>Detail-driven</b><span>Manufacturing and quality assurance background</span></div>
+        <div class="about-fact"><b>Direct</b><span>One person, start to finish</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Clear Pricing</div>
+      <h2>Simple, upfront project pricing.</h2>
+      <p>Opening launch rates for local businesses while I build my portfolio. Regular prices apply after my first few clients.</p>
+    </div>
+
+    <div class="grid">
+      
+      <div class="price-card">
+        <div class="opening-badge">Opening Launch Discount</div>
+        <h3 style="margin-top: 10px;">Starter Hub</h3>
+        <div class="price-box">
+          <span class="old-price">$599</span>
+          <div class="price">$350</div>
+        </div>
+        <div class="price-sub">Temporary Launch Special</div>
+        <ul>
+          <li><span>✓</span> 1-Page High-Speed Web Hub</li>
+          <li><span>✓</span> Mobile-Optimized Design</li>
+          <li><span>✓</span> Click-to-Call & Quote Intake</li>
+          <li><span>✓</span> Basic Local Search Setup</li>
+          <li><span>✓</span> 3 to 5 Day Delivery</li>
+          <li><span>✓</span> Optional Monthly Care Plan</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary">Choose Starter</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="opening-badge">Opening Launch Discount</div>
+        <h3 style="margin-top: 10px;">Professional</h3>
+        <div class="price-box">
+          <span class="old-price">$1,299</span>
+          <div class="price">$650</div>
+        </div>
+        <div class="price-sub">Temporary Launch Special</div>
+        <ul>
+          <li><span>✓</span> Up to 5 Custom Multi-Pages</li>
+          <li><span>✓</span> Google Business Profile Integration</li>
+          <li><span>✓</span> Work Gallery & Service Showcases</li>
+          <li><span>✓</span> Lead Quote Intake Email Setup</li>
+          <li><span>✓</span> Optional Monthly Care Plan</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Choose Professional</a>
+      </div>
+
+      <div class="price-card">
+        <div class="opening-badge">Opening Launch Discount</div>
+        <h3 style="margin-top: 10px;">Enterprise</h3>
+        <div class="price-box">
+          <span class="old-price" style="visibility:hidden;">Custom</span>
+          <div class="price" style="font-size:2.4rem; margin-top:4px;">Custom</div>
+        </div>
+        <div class="price-sub">Tailored Proposal</div>
+        <ul>
+          <li><span>✓</span> Custom Web Applications</li>
+          <li><span>✓</span> Interactive Estimators & Portals</li>
+          <li><span>✓</span> Customer Booking Systems</li>
+          <li><span>✓</span> Advanced API & Workflow Sync</li>
+          <li><span>✓</span> Priority Dedicated Support</li>
+          <li><span>✓</span> Optional Monthly Care Plan</li>
+        </ul>
+        <a href="#contact" class="btn btn-secondary">Get Custom Proposal</a>
+      </div>
+
+    </div>
+
+    <p class="note-line">50% deposit to begin, 50% before launch. Domain registration is paid directly to your registrar. Final scope is confirmed in a written agreement before work starts.</p>
+
+    <!-- Dedicated Care Plans Sub-Section -->
+    <div class="care-plans-wrap">
+      <div style="text-align: center;">
+        <span class="eyebrow" style="margin-bottom: 8px;">Ongoing Care & Support</span>
+        <h3 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main);">Optional Monthly Website Care Plans</h3>
+        <p style="color: var(--text-muted); font-size: 0.98rem; max-width: 600px; margin: 6px auto 0;">Keep your website up to date and running smoothly without the technical headache. Cancel anytime.</p>
+      </div>
+
+      <div class="care-grid">
+        <div class="care-card">
+          <h4>Essential Care Plan</h4>
+          <div class="care-price">$49<span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);"> / month</span></div>
+          <ul>
+            <li>• Uptime Checks & Technical Support</li>
+            <li>• Domain, SSL & Fast Hosting Management</li>
+            <li>• Monthly Site Health Check</li>
+            <li>• 1 Included Content Edit / Month (up to 30 mins)</li>
+            <li>• Direct 1-on-1 Support</li>
+          </ul>
+        </div>
+
+        <div class="care-card" style="border-color: rgba(139, 92, 246, 0.4); background: rgba(139, 92, 246, 0.03);">
+          <h4>Growth Support Suite</h4>
+          <div class="care-price">$89<span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);"> / month</span></div>
+          <ul>
+            <li>• Everything in Essential Care</li>
+            <li>• Priority Edit Turnaround (1 Business Day)</li>
+            <li>• Up to 2 Hours Monthly Content & Gallery Updates</li>
+            <li>• Google Business Profile Updates</li>
+            <li>• Quarterly Speed & Local SEO Review</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Straight answers to what local business owners ask most.</p>
+    </div>
+
+    <div class="faq-wrap">
+      
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>How fast will my website be live?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          Starter and Professional websites launch within 3 to 5 business days after receiving your images, service details, and approval. Custom enterprise portals follow an agreed project scope timeline.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Do I own my domain and website files 100%?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          Yes, completely! You hold full ownership of your website domain, code, and hosting accounts outright. We never hold your website hostage or lock you into mandatory contracts.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>What is the optional monthly Care Plan?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          Care Plans are 100% optional starting at $49/mo (Essential Care) or $89/mo (Growth Support Suite). They cover ongoing text and photo updates, Google Business Profile upkeep, and technical support so your site stays current without any hassle.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Why are opening rates so affordable compared to agencies?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          I run a lean, one-person studio in Western New York, so there is no agency overhead to pass on to you. Launch pricing is temporary while I build out my portfolio of local projects.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>How does payment work?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          A 50% deposit starts the project and the remaining 50% is due before launch. Everything is outlined in a simple written agreement first, so there are no surprises.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>What do I need to provide?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          Your business details, services, service area, logo (if you have one), and any photos you would like to use. If something is missing, I will help you figure out the best way forward.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Can you guarantee a first-place Google ranking?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          No one honestly can. What I do is build the foundation: fast pages, a mobile-friendly layout, clear service and location info, and a Google Business Profile setup, so nearby customers can find you.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Do you only work with businesses near Dunkirk and Fredonia?</span>
+          <div class="faq-icon">+</div>
+        </button>
+        <div class="faq-a">
+          I am based in Western New York and focus on local businesses here, but I am happy to talk with businesses anywhere in the region by phone, video, or in person when it makes sense.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Get Started</div>
+      <h2>Let's build your new website.</h2>
+      <p>Tell me a little about your business and I will reply within one business day with next steps and a quote.</p>
+    </div>
+    <div class="contact-wrap">
+      <form id="quoteForm">
+        <div class="field">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="John Doe" required>
+        </div>
+        <div class="field">
+          <label for="business">Business Name</label>
+          <input id="business" name="business" type="text" placeholder="WNY Contracting LLC">
+        </div>
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="john@example.com" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(716) 555-0123">
+        </div>
+        <div class="field">
+          <label for="package">Interested Package</label>
+          <select id="package" name="package">
+            <option>Starter Hub ($350 Launch Special)</option>
+            <option>Professional Suite ($650 Launch Special)</option>
+            <option>Enterprise / Custom Application</option>
+            <option>Not sure yet - Need advice</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="details">Project Details</label>
+          <textarea id="details" name="details" placeholder="Tell us a little about your business and goals..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send My Quote Request</button>
+        <p class="form-note">This opens your email app with your details filled in. Your information is only used to reply to your request.</p>
+        <p class="thanks" id="thanks" role="status">Opening your email app with your details filled in. If nothing opens, email contact.elevatewebny@gmail.com directly.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="foot-brand">Elevate <span class="grad-text">Web Co.</span></div>
+  <p>Websites for all businesses across Western New York and more</p>
+  <p><a href="mailto:contact.elevatewebny@gmail.com">contact.elevatewebny@gmail.com</a></p>
+  <div class="foot-links"><a href="#services">Why Us</a><a href="#portfolio">Packages</a><a href="#about">About</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <p class="fine">&copy; 2026 Elevate Web Co. All rights reserved.</p>
+</footer>
+
+<!-- Interactive Sandbox Modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Design preview">
+  <div class="modal-box">
+    <button class="modal-x" id="modalX" aria-label="Close preview">✕</button>
+    <div id="modalBody"></div>
+    <p class="modal-caption">Concept preview · Elevate Web Co.</p>
+  </div>
+</div>
+
+<script>
+// Desktop Side Scroll Progress Indicator
+var sideProgress = document.getElementById('sideProgress');
+window.addEventListener('scroll', function() {
+  var totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+  var progress = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
+  if (sideProgress) {
+    sideProgress.style.height = progress + '%';
+  }
+}, { passive: true });
+
+// FAQ Accordion
+document.querySelectorAll('.faq-item').forEach(function(item) {
+  var questionBtn = item.querySelector('.faq-q');
+  questionBtn.setAttribute('aria-expanded', 'false');
+  questionBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(el) { el.classList.remove('open'); el.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); });
+    if (!isOpen) {
+      item.classList.add('open');
+      questionBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+
+// Interactive Kebab Dots Menu on Mock Windows (iOS & Android Touch Support)
+function initKebabMenus() {
+  document.querySelectorAll('.mock-bar, .preview-top').forEach(function(bar) {
+    if (bar.querySelector('.kebab-popover')) return; // already initialized
+    
+    var popover = document.createElement('div');
+    popover.className = 'kebab-popover';
+    popover.innerHTML = '<p><b>Custom UI Controls</b>Yes! We can even build interactive kebab menus, custom portals, & smooth web tools for your business website.</p>';
+    bar.appendChild(popover);
+
+    var dots = bar.querySelectorAll('i');
+    if (dots.length > 0 && !bar.querySelector('.dots-wrapper')) {
+      var wrapper = document.createElement('div');
+      wrapper.className = 'dots-wrapper';
+      wrapper.setAttribute('role', 'button');
+      wrapper.setAttribute('aria-label', 'Toggle interactive menu demo');
+      wrapper.setAttribute('tabindex', '0');
+      
+      dots[0].parentNode.insertBefore(wrapper, dots[0]);
+      dots.forEach(function(dot) { wrapper.appendChild(dot); });
+
+      function togglePopover(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = popover.classList.contains('open');
+        document.querySelectorAll('.kebab-popover').forEach(function(p) { p.classList.remove('open'); });
+        if (!isOpen) {
+          popover.classList.add('open');
+        }
+      }
+
+      wrapper.addEventListener('click', togglePopover);
+      wrapper.addEventListener('touchstart', function(e) { e.stopPropagation(); }, {passive: true});
+      wrapper.addEventListener('touchend', togglePopover);
+    }
+  });
+}
+
+document.addEventListener('click', function() {
+  document.querySelectorAll('.kebab-popover').forEach(function(p) { p.classList.remove('open'); });
+});
+document.addEventListener('touchend', function(e) {
+  if (!e.target.closest('.dots-wrapper') && !e.target.closest('.kebab-popover')) {
+    document.querySelectorAll('.kebab-popover').forEach(function(p) { p.classList.remove('open'); });
+  }
+});
+
+initKebabMenus();
+
+// Re-trigger for modal clones
+var origModalClick = modalBody.appendChild;
+var observer = new MutationObserver(function() { initKebabMenus(); });
+if (modalBody) observer.observe(modalBody, { childList: true, subtree: true });
+
+// Interactive Portfolio Modal Sandbox
+var modal = document.getElementById('modal');
+var modalBody = document.getElementById('modalBody');
+var modalX = document.getElementById('modalX');
+
+document.querySelectorAll('.portfolio-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    modalBody.innerHTML = '';
+    var demoClone = card.querySelector('.demo').cloneNode(true);
+    demoClone.style.height = '360px';
+    modalBody.appendChild(demoClone);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    var demoBtn = modalBody.querySelector('.interactive-demo-btn');
+    if (demoBtn) {
+      demoBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        document.querySelector('.modal-caption').textContent = 'On a real site, this button opens your quote form or dials your phone.';
+      });
+    }
+  });
+});
+
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+modalX.addEventListener('click', closeModal);
+modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+
+// Quote Form Intake
+document.getElementById('quoteForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = e.currentTarget;
+  var formData = new FormData(form);
+  var subject = 'Elevate Web Co. Quote Request - ' + (formData.get('business') || formData.get('name'));
+  var body = 'Name: ' + formData.get('name') + '\nBusiness: ' + formData.get('business') + '\nEmail: ' + formData.get('email') + '\nPhone: ' + (formData.get('phone') || 'n/a') + '\nPackage: ' + formData.get('package') + '\nDetails: ' + formData.get('details');
+  document.getElementById('thanks').style.display = 'block';
+  window.location.href = 'mailto:contact.elevatewebny@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+
+// Keyboard access for portfolio cards + modal focus handling
+var lastFocus = null;
+document.querySelectorAll('.portfolio-card').forEach(function(card) {
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('role', 'button');
+  card.setAttribute('aria-label', 'Preview the ' + card.querySelector('h3').textContent + ' design');
+  card.addEventListener('click', function() { lastFocus = card; modalX.focus(); });
+  card.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); } });
+});
+modalX.addEventListener('click', function() { if (lastFocus) lastFocus.focus(); });
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && modal.classList.contains('open')) { closeModal(); if (lastFocus) lastFocus.focus(); }
+});
+
+// Mobile menu
+var menuBtn = document.getElementById('menuBtn');
+var mobileMenu = document.getElementById('mobileMenu');
+function setMenu(open) {
+  mobileMenu.classList.toggle('open', open);
+  menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  menuBtn.innerHTML = open ? '&#10005;' : '&#9776;';
+}
+menuBtn.addEventListener('click', function() { setMenu(!mobileMenu.classList.contains('open')); });
+mobileMenu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { setMenu(false); }); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') setMenu(false); });
+
+// Header shadow on scroll
+var navEl = document.querySelector('nav');
+window.addEventListener('scroll', function() { navEl.classList.toggle('scrolled', window.scrollY > 10); }, { passive: true });
+
+// Hero glow follows the pointer
+var heroEl = document.querySelector('.hero'), glowEl = document.querySelector('.hero-bg-glow');
+heroEl.addEventListener('pointermove', function(e) {
+  var r = heroEl.getBoundingClientRect();
+  var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+  glowEl.style.transform = 'translate(' + (-50 + x * 10) + '%, ' + (y * 50) + 'px)';
+});
+
+// Elements glide in as you scroll
+(function() {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = [].slice.call(document.querySelectorAll('.section-head,.feature-card,.price-card,.portfolio-card,.about-card,.about-fact,.care-plans-wrap,.care-card,.faq-item,.contact-wrap,.ios-comp-card,.pc-table-wrap,.note-line,.portfolio-hint'));
+  var counts = new Map();
+  els.forEach(function(el) {
+    var i = counts.get(el.parentElement) || 0; counts.set(el.parentElement, i + 1);
+    el.style.setProperty('--d', (i % 4) * 90 + 'ms');
+    el.classList.add('reveal');
+  });
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(en) {
+      if (!en.isIntersecting) return;
+      var el = en.target; el.classList.add('in'); io.unobserve(el);
+      setTimeout(function() { el.classList.remove('reveal', 'in'); el.style.removeProperty('--d'); }, 1200);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function(el) { io.observe(el); });
+})();
+
+// Floating background shapes (drift upward slower than the scroll)
+(function() {
+  var layer = document.getElementById('bgShapes');
+  if (!layer) return;
+  var COL = ['0,113,227', '139,92,246', '236,72,153'];
+  var cfg = [
+    [4,1.5,24,'c',1,.25],[88,3,18,'r',0,.3],[18,5,16,'s',2,.18],[72,7,22,'t',1,.22],
+    [32,9,28,'r',2,.15],[92,12,14,'s',0,.28],[8,14,20,'t',1,.2],[54,16,26,'c',0,.24],
+    [82,18,18,'r',2,.22],[28,21,15,'s',1,.17],[64,23,24,'t',0,.26],[12,26,22,'c',2,.19],
+    [42,28,18,'r',1,.23],[90,30,26,'s',0,.21],[22,33,16,'t',2,.25],[76,35,28,'c',1,.18],
+    [5,38,20,'r',0,.27],[58,40,22,'s',2,.16],[84,42,16,'t',1,.22],[30,45,26,'c',0,.24],
+    [68,47,18,'r',2,.2],[14,50,24,'s',1,.28],[92,52,14,'t',0,.19],[46,55,28,'c',2,.21],
+    [10,58,20,'r',1,.23],[78,60,18,'s',0,.26],[34,63,22,'t',2,.17],[86,65,26,'c',1,.25],
+    [50,68,16,'r',0,.21],[18,70,24,'s',2,.28],[62,73,20,'t',1,.18],[94,75,28,'c',0,.22],
+    [6,78,18,'r',2,.25],[38,80,22,'s',1,.19],[80,83,26,'t',0,.27],[24,85,16,'c',2,.21],
+    [70,88,24,'r',1,.23],[12,91,20,'s',0,.26],[56,93,28,'t',2,.18],[88,96,22,'c',1,.24]
+  ];
+  var shapes = cfg.map(function(c, i) {
+    var w = document.createElement('i'), b = document.createElement('b');
+    w.className = 'sh'; w.style.left = c[0] + '%'; w.style.top = c[1] + '%';
+    b.className = 'sh-' + c[3];
+    b.style.cssText = 'width:' + c[2] + 'px;height:' + c[2] + 'px;--c:' + COL[c[4]] + ';animation-duration:' + (9 + (i % 5) * 2) + 's;animation-delay:-' + (i * 1.7) + 's';
+    w.appendChild(b); layer.appendChild(w);
+    return { el: w, top: c[1], sp: c[5], base: 0 };
+  });
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches, ticking = false;
+  function measure() { var H = layer.offsetHeight; shapes.forEach(function(sh) { sh.base = sh.top / 100 * H; }); update(); }
+  function update() {
+    ticking = false;
+    if (reduce) return;
+    var y = window.scrollY + window.innerHeight / 2;
+    shapes.forEach(function(sh) { sh.el.style.transform = 'translate3d(0,' + ((y - sh.base) * sh.sp).toFixed(1) + 'px,0)'; });
+  }
+  window.addEventListener('scroll', function() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', measure);
+  window.addEventListener('load', measure);
+  measure();
+})();
+</script>
+</body>
+</html>
