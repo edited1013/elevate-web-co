@@ -721,6 +721,7 @@ p, span, li, td, th {
 
 /* Let the "Opening Launch Discount" badge sit on the card's top edge without being clipped */
 .price-card { overflow: visible; }
+.care-card { overflow: visible; }
 .price-card::before { top: 0; left: 0; width: 100%; height: 100%; border-radius: inherit; }
 
 .feature-card:hover::before, .price-card:hover::before, .portfolio-card:hover::before {
@@ -1013,8 +1014,8 @@ p, span, li, td, th {
           <tbody>
             <tr>
               <td><strong>Project Cost</strong></td>
-              <td>$2,000 – $5,000+</td>
-              <td class="highlight">$350 – $650 Launch Special</td>
+              <td><span class="badge-cross">✕</span> $2,000 – $5,000+</td>
+              <td class="highlight"><span class="badge-check">✓</span> $350 – $650 Launch Special</td>
             </tr>
             <tr>
               <td><strong>Build Speed & Performance</strong></td>
@@ -1023,8 +1024,8 @@ p, span, li, td, th {
             </tr>
             <tr>
               <td><strong>Turnaround Time</strong></td>
-              <td>Weeks to Months</td>
-              <td class="highlight">3 to 5 Business Days</td>
+              <td><span class="badge-cross">✕</span> Weeks to Months</td>
+              <td class="highlight"><span class="badge-check">✓</span> 3 to 5 Business Days</td>
             </tr>
             <tr>
               <td><strong>Communication</strong></td>
@@ -1239,7 +1240,7 @@ p, span, li, td, th {
         <h3 style="margin-top: 10px;">Starter Hub</h3>
         <div class="price-box">
           <span class="old-price">$599</span>
-          <div class="price">$350</div>
+          <div class="price">$350<span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);"> one-time</span></div>
         </div>
         <div class="price-sub">Temporary Launch Special</div>
         <ul>
@@ -1258,7 +1259,7 @@ p, span, li, td, th {
         <h3 style="margin-top: 10px;">Professional</h3>
         <div class="price-box">
           <span class="old-price">$1,299</span>
-          <div class="price">$650</div>
+          <div class="price">$650<span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);"> one-time</span></div>
         </div>
         <div class="price-sub">Temporary Launch Special</div>
         <ul>
@@ -1304,26 +1305,38 @@ p, span, li, td, th {
 
       <div class="care-grid">
         <div class="care-card">
-          <h4>Essential Care Plan</h4>
-          <div class="care-price">$49<span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);"> / month</span></div>
+          <h4>Basic Care</h4>
+          <div class="care-price">$19<span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);"> / month</span></div>
           <ul>
-            <li>• Uptime Checks & Technical Support</li>
-            <li>• Domain, SSL & Fast Hosting Management</li>
-            <li>• Monthly Site Health Check</li>
-            <li>• 1 Included Content Edit / Month (up to 30 mins)</li>
-            <li>• Direct 1-on-1 Support</li>
+            <li>• Hosting and deployment oversight</li>
+            <li>• Monthly website availability check</li>
+            <li>• Contact form testing</li>
+            <li>• Basic technical troubleshooting</li>
+            <li>• Security and SSL status checks</li>
           </ul>
         </div>
 
-        <div class="care-card" style="border-color: rgba(139, 92, 246, 0.4); background: rgba(139, 92, 246, 0.03);">
-          <h4>Growth Support Suite</h4>
-          <div class="care-price">$89<span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);"> / month</span></div>
+        <div class="care-card" style="position: relative; border-color: rgba(139, 92, 246, 0.4); background: rgba(139, 92, 246, 0.03);">
+          <div class="opening-badge">Recommended</div>
+          <h4>Growth Care</h4>
+          <div class="care-price">$39<span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);"> / month</span></div>
           <ul>
-            <li>• Everything in Essential Care</li>
-            <li>• Priority Edit Turnaround (1 Business Day)</li>
-            <li>• Up to 2 Hours Monthly Content & Gallery Updates</li>
-            <li>• Google Business Profile Updates</li>
-            <li>• Quarterly Speed & Local SEO Review</li>
+            <li>• Everything in Basic Care, plus:</li>
+            <li>• Up to 30 minutes of small content edits per month</li>
+            <li>• Menu, pricing, business hours, and image updates</li>
+            <li>• Monthly website review</li>
+            <li>• Priority email support</li>
+          </ul>
+        </div>
+
+        <div class="care-card">
+          <h4>Custom Management</h4>
+          <div class="care-price"><span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);">Starting at </span>$79<span style="font-size: 0.9rem; font-weight: 600; color: var(--text-muted);"> / month</span></div>
+          <ul>
+            <li>• Larger content updates</li>
+            <li>• Additional website improvements</li>
+            <li>• More dedicated support time</li>
+            <li>• Custom scope and agreed monthly hours</li>
           </ul>
         </div>
       </div>
@@ -1368,7 +1381,7 @@ p, span, li, td, th {
           <div class="faq-icon">+</div>
         </button>
         <div class="faq-a">
-          Care Plans are 100% optional starting at $49/mo (Essential Care) or $89/mo (Growth Support Suite). They cover ongoing text and photo updates, Google Business Profile upkeep, and technical support so your site stays current without any hassle.
+          Care Plans are 100% optional starting at $19/mo (Basic Care), $39/mo (Growth Care), or from $79/mo (Custom Management). They cover ongoing hosting oversight, content updates, and technical support so your site stays current without any hassle.
         </div>
       </div>
 
