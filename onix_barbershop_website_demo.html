@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Onix Barbershop | 404 Central Ave, Dunkirk, NY — Est. 2019</title>
+    <meta name="description" content="Onix Barbershop at 404 Central Avenue, Dunkirk, NY. Precision fades, classic cuts, beard sculpting, and hot towel grooming. Est. 2019.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        onyx: {
+                            950: '#060608',
+                            900: '#09090B',
+                            850: '#0F0F13',
+                            800: '#141419',
+                            700: '#1D1D24',
+                            600: '#2A2A35',
+                        },
+                        chrome: {
+                            50: '#FAFAFA',
+                            100: '#F4F4F5',
+                            200: '#E4E4E7',
+                            300: '#D4D4D8',
+                            400: '#A1A1AA',
+                            500: '#71717A',
+                        },
+                        pole: {
+                            red: '#D92B2B',
+                            blue: '#1D4ED8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #09090B;
+            color: #F4F4F5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Subtle grain texture overlay for luxury editorial feel */
+        .noise-overlay {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Metallic Chrome Text & Borders */
+        .chrome-text {
+            background: linear-gradient(135deg, #FFFFFF 0%, #D4D4D8 45%, #71717A 75%, #F4F4F5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-bezel {
+            position: relative;
+            border-radius: 9999px;
+            padding: 2px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #A1A1AA 35%, #27272A 65%, #E4E4E7 100%);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.12), inset 0 0 8px rgba(0, 0, 0, 0.8);
+            transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo);
+        }
+
+        .logo-bezel:hover {
+            transform: scale(1.04) rotate(2deg);
+            box-shadow: 0 0 32px rgba(255, 255, 255, 0.22), 0 0 12px rgba(217, 43, 43, 0.25);
+        }
+
+        /* Animated Barber Pole Pinstripe */
+        @keyframes barberStripe {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .barber-pinstripe {
+            height: 2px;
+            background: linear-gradient(90deg, 
+                #09090B 0%, 
+                #D92B2B 15%, 
+                #FFFFFF 30%, 
+                #1D4ED8 45%, 
+                #09090B 60%, 
+                #D92B2B 75%, 
+                #FFFFFF 90%, 
+                #1D4ED8 100%
+            );
+            background-size: 200% 100%;
+            animation: barberStripe 12s linear infinite;
+            opacity: 0.85;
+        }
+
+        /* Glassmorphic Header */
+        .glass-header {
+            background: rgba(9, 9, 11, 0.78);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(228, 228, 231, 0.08);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        .glass-header.scrolled {
+            background: rgba(6, 6, 8, 0.94);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.85);
+            border-bottom-color: rgba(228, 228, 231, 0.14);
+        }
+
+        /* Premium Glass Card */
+        .onyx-card {
+            background: linear-gradient(165deg, rgba(29, 29, 36, 0.72) 0%, rgba(15, 15, 19, 0.92) 100%);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(228, 228, 231, 0.08);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.5s var(--ease-out-expo), border-color 0.4s ease, box-shadow 0.5s var(--ease-out-expo);
+        }
+
+        .onyx-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(228, 228, 231, 0.26);
+            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.85), 0 0 25px rgba(255, 255, 255, 0.04);
+        }
+
+        /* Ken Burns Slow Hero Zoom */
+        @keyframes kenBurns {
+            0% { transform: scale(1) translate3d(0, 0, 0); }
+            50% { transform: scale(1.07) translate3d(-1%, -1%, 0); }
+            100% { transform: scale(1) translate3d(0, 0, 0); }
+        }
+
+        .hero-ken-burns {
+            animation: kenBurns 28s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.85s var(--ease-out-expo), transform 0.85s var(--ease-out-expo);
+            will-change: opacity, transform;
+        }
+
+        .reveal.reveal-left {
+            transform: translateX(-28px);
+        }
+
+        .reveal.reveal-right {
+            transform: translateX(28px);
+        }
+
+        .reveal.reveal-scale {
+            transform: scale(0.95);
+        }
+
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+
+        /* Stagger Delays */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+
+        /* Shimmer Button Effect */
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -120%;
+            width: 80%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+            transform: skewX(-25deg);
+            transition: left 0.7s var(--ease-out-expo);
+        }
+        .btn-shimmer:hover::after {
+            left: 140%;
+        }
+
+        /* Mobile Drawer Animation */
+        .mobile-drawer {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.45s var(--ease-out-expo), opacity 0.35s ease;
+        }
+        .mobile-drawer.open {
+            max-height: 440px;
+            opacity: 1;
+        }
+
+        /* Accessibility: Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .hero-ken-burns, .barber-pinstripe, .onyx-card, .logo-bezel {
+                animation: none !important;
+                transition: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-onyx-900 text-chrome-100 selection:bg-chrome-200 selection:text-onyx-950">
+
+    <!-- Subtle Editorial Grain -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Top Heritage Info Strip -->
+    <div class="bg-onyx-950 border-b border-white/5 text-[11px] sm:text-xs py-2 px-4 text-chrome-400">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-pole-red animate-pulse"></span>
+                <span class="font-medium tracking-wide text-chrome-200" data-i18n="top_notice">Onix Barbershop • Dunkirk, NY</span>
+                <span class="hidden sm:inline text-white/20">|</span>
+                <span class="hidden sm:inline text-chrome-400" data-i18n="top_sub">Appointments & Walk-Ins Welcome</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="https://maps.google.com/?q=404+Central+Avenue,+Dunkirk,+NY" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center space-x-1.5">
+                    <i class="fa-solid fa-location-dot text-chrome-400"></i>
+                    <span>404 Central Ave</span>
+                </a>
+                <span class="text-white/20">|</span>
+                <a href="tel:7162037366" class="hover:text-white transition-colors font-medium text-chrome-200 flex items-center space-x-1.5">
+                    <i class="fa-solid fa-phone text-[10px] text-chrome-400"></i>
+                    <span>716-203-7366</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upgraded Bespoke Header with Official Logo -->
+    <header id="mainHeader" class="sticky top-0 z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24 transition-all duration-300" id="headerInner">
+                
+                <!-- Brand Emblem & Wordmark -->
+                <a href="#" class="flex items-center space-x-3.5 sm:space-x-4 group focus:outline-none" aria-label="Onix Barbershop Home">
+                    <div class="logo-bezel w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 bg-onyx-950">
+                        <img src="image_2a44e3.jpg" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/200x200/09090B/E4E4E7?text=ONIX';" 
+                             alt="Onix Barbershop Official Logo" 
+                             class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center space-x-2">
+                            <span class="font-display font-black text-xl sm:text-2xl tracking-[0.14em] chrome-text leading-none">ONIX</span>
+                            <span class="hidden lg:inline-block text-[10px] font-display font-bold tracking-[0.2em] uppercase px-2 py-0.5 rounded bg-white/5 border border-white/10 text-chrome-300">EST. 2019</span>
+                        </div>
+                        <span class="text-[10px] sm:text-[11px] font-display font-semibold uppercase tracking-[0.28em] text-chrome-400 mt-1 group-hover:text-chrome-200 transition-colors">BARBERSHOP</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8" aria-label="Primary Navigation">
+                    <a href="#about" class="relative py-2 text-sm font-medium text-chrome-300 hover:text-white transition-colors group">
+                        <span data-i18n="nav_about">About</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#services" class="relative py-2 text-sm font-medium text-chrome-300 hover:text-white transition-colors group">
+                        <span data-i18n="nav_services">Services</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#gallery" class="relative py-2 text-sm font-medium text-chrome-300 hover:text-white transition-colors group">
+                        <span data-i18n="nav_gallery">Lookbook</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#booking" class="relative py-2 text-sm font-medium text-chrome-300 hover:text-white transition-colors group">
+                        <span data-i18n="nav_booking">Book Chair</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#location" class="relative py-2 text-sm font-medium text-chrome-300 hover:text-white transition-colors group">
+                        <span data-i18n="nav_location">Location</span>
+                        <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Desktop Controls: Language Switcher + Book CTA -->
+                <div class="hidden md:flex items-center space-x-3.5">
+                    <button id="langToggle" onclick="toggleLanguage()" class="flex items-center space-x-2 bg-onyx-800/90 hover:bg-onyx-700 border border-white/15 hover:border-white/30 px-3.5 py-2 rounded-full text-xs font-display font-semibold tracking-wider text-chrome-200 transition-all cursor-pointer" aria-label="Switch Language">
+                        <i class="fa-solid fa-globe text-chrome-400"></i>
+                        <span id="langText">ESPAÑOL</span>
+                    </button>
+
+                    <a href="#booking" class="btn-shimmer bg-white hover:bg-chrome-200 text-onyx-950 px-5 py-2.5 rounded-xl font-display font-bold text-sm tracking-wide transition-all shadow-lg shadow-white/10 flex items-center space-x-2">
+                        <i class="fa-solid fa-calendar-check text-xs"></i>
+                        <span data-i18n="book_now">Book Your Appointment</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Controls -->
+                <div class="flex items-center space-x-2.5 md:hidden">
+                    <button onclick="toggleLanguage()" class="bg-onyx-800 border border-white/15 px-3 py-2 rounded-xl text-xs font-display font-bold text-chrome-200 active:scale-95 transition-transform" aria-label="Switch Language Mobile">
+                        <span id="langTextMobile">ES</span>
+                    </button>
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="w-11 h-11 rounded-xl bg-onyx-800 border border-white/15 flex items-center justify-center text-chrome-100 hover:text-white active:scale-95 transition-all" aria-label="Toggle Menu" aria-expanded="false">
+                        <i id="mobileMenuIcon" class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subtle Heritage Barber Pole Accent Line -->
+        <div class="barber-pinstripe"></div>
+
+        <!-- Smooth Mobile Drawer -->
+        <div id="mobileMenu" class="mobile-drawer md:hidden bg-onyx-900/98 border-b border-white/10 px-6">
+            <div class="py-6 space-y-4">
+                <a href="#about" onclick="closeMobileMenu()" class="flex items-center justify-between py-2 text-base font-display font-medium text-chrome-200 hover:text-white border-b border-white/5">
+                    <span data-i18n="nav_about">About</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-chrome-500"></i>
+                </a>
+                <a href="#services" onclick="closeMobileMenu()" class="flex items-center justify-between py-2 text-base font-display font-medium text-chrome-200 hover:text-white border-b border-white/5">
+                    <span data-i18n="nav_services">Services</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-chrome-500"></i>
+                </a>
+                <a href="#gallery" onclick="closeMobileMenu()" class="flex items-center justify-between py-2 text-base font-display font-medium text-chrome-200 hover:text-white border-b border-white/5">
+                    <span data-i18n="nav_gallery">Lookbook</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-chrome-500"></i>
+                </a>
+                <a href="#booking" onclick="closeMobileMenu()" class="flex items-center justify-between py-2 text-base font-display font-medium text-chrome-200 hover:text-white border-b border-white/5">
+                    <span data-i18n="nav_booking">Book Chair</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-chrome-500"></i>
+                </a>
+                <a href="#location" onclick="closeMobileMenu()" class="flex items-center justify-between py-2 text-base font-display font-medium text-chrome-200 hover:text-white">
+                    <span data-i18n="nav_location">Location</span>
+                    <i class="fa-solid fa-chevron-right text-xs text-chrome-500"></i>
+                </a>
+                <div class="pt-3 flex flex-col gap-3">
+                    <a href="#booking" onclick="closeMobileMenu()" class="w-full text-center bg-white text-onyx-950 py-3.5 rounded-xl font-display font-bold text-sm shadow-lg">
+                        <i class="fa-solid fa-calendar-check mr-2"></i>
+                        <span data-i18n="book_now">Book Your Appointment</span>
+                    </a>
+                    <a href="tel:7162037366" class="w-full text-center bg-onyx-800 border border-white/15 text-chrome-200 py-3 rounded-xl font-display font-semibold text-sm">
+                        <i class="fa-solid fa-phone mr-2 text-xs"></i>
+                        <span>716-203-7366</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Editorial Full-Bleed Hero Section -->
+    <section class="relative min-h-[92vh] min-h-[92dvh] flex items-center justify-center overflow-hidden">
+        <!-- Animated Ken Burns Background Image -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=85&w=2000" 
+                 alt="Onix Barbershop Dunkirk Interior" 
+                 class="w-full h-full object-cover object-center hero-ken-burns opacity-45">
+            <!-- Deep Vignette & Gradient Overlays -->
+            <div class="absolute inset-0 bg-gradient-to-b from-onyx-950/85 via-onyx-900/65 to-onyx-900"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#09090B_92%)]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
+            <!-- Floating Shop Emblem -->
+            <div class="reveal inline-block mb-7">
+                <div class="logo-bezel w-24 h-24 sm:w-28 sm:h-28 mx-auto bg-onyx-950 shadow-2xl">
+                    <img src="image_2a44e3.jpg" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/240x240/09090B/E4E4E7?text=ONIX';" 
+                         alt="Onix Barbershop Emblem" 
+                         class="w-full h-full object-cover rounded-full">
+                </div>
+            </div>
+
+            <!-- Location Pill -->
+            <div class="reveal delay-100 flex justify-center mb-6">
+                <div class="inline-flex items-center space-x-2.5 bg-onyx-800/85 backdrop-blur-md border border-white/15 px-4 py-1.5 rounded-full shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-pole-red"></span>
+                    <span class="text-[11px] sm:text-xs font-display font-semibold tracking-[0.18em] uppercase text-chrome-200" data-i18n="hero_badge">Est. 2019 • 404 Central Ave, Dunkirk, NY</span>
+                    <span class="w-2 h-2 rounded-full bg-pole-blue"></span>
+                </div>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="reveal delay-200 font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-[1.04] mb-6">
+                <span class="block text-white" data-i18n="hero_title_1">Sharp Craftsmanship.</span>
+                <span class="block chrome-text mt-1" data-i18n="hero_title_2">Dunkirk's Standard.</span>
+            </h1>
+
+            <!-- Supporting Copy -->
+            <p class="reveal delay-300 max-w-2xl mx-auto text-base sm:text-lg text-chrome-300/90 font-normal leading-relaxed mb-10" data-i18n="hero_desc">
+                Precision skin fades, classic scissor cuts, and crisp razor linework delivered in an authentic, welcoming atmosphere on Central Avenue.
+            </p>
+
+            <!-- Dual CTAs -->
+            <div class="reveal delay-400 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#booking" class="btn-shimmer w-full sm:w-auto bg-white hover:bg-chrome-200 text-onyx-950 px-8 py-4 rounded-xl font-display font-bold text-base tracking-wide transition-all shadow-2xl shadow-white/15 flex items-center justify-center space-x-3">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span data-i18n="book_appointment">Book Your Appointment</span>
+                </a>
+                <a href="#services" class="w-full sm:w-auto bg-onyx-800/80 hover:bg-onyx-700/90 backdrop-blur-md border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-xl font-display font-semibold text-base transition-all flex items-center justify-center space-x-2.5">
+                    <span data-i18n="explore_services">Explore Services</span>
+                    <i class="fa-solid fa-arrow-down text-xs text-chrome-400"></i>
+                </a>
+            </div>
+
+            <!-- Quick Contact & Location Strip -->
+            <div class="reveal delay-500 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mt-16 pt-8 border-t border-white/10 text-left">
+                <a href="https://maps.google.com/?q=404+Central+Avenue,+Dunkirk,+NY" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3.5 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                    <div class="w-10 h-10 rounded-xl bg-onyx-800 border border-white/10 flex items-center justify-center text-chrome-200 flex-shrink-0">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <div class="text-[10px] font-display uppercase tracking-widest text-chrome-400" data-i18n="loc_label">Shop Location</div>
+                        <div class="text-sm font-semibold text-white">404 Central Ave, Dunkirk</div>
+                    </div>
+                </a>
+
+                <a href="tel:7162037366" class="flex items-center space-x-3.5 p-3 rounded-xl hover:bg-white/5 transition-colors">
+                    <div class="w-10 h-10 rounded-xl bg-onyx-800 border border-white/10 flex items-center justify-center text-chrome-200 flex-shrink-0">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <div class="text-[10px] font-display uppercase tracking-widest text-chrome-400" data-i18n="phone_label">Call the Shop</div>
+                        <div class="text-sm font-semibold text-white">716-203-7366</div>
+                    </div>
+                </a>
+
+                <div class="flex items-center space-x-3.5 p-3 rounded-xl">
+                    <div class="w-10 h-10 rounded-xl bg-onyx-800 border border-white/10 flex items-center justify-center text-chrome-200 flex-shrink-0">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+                    <div>
+                        <div class="text-[10px] font-display uppercase tracking-widest text-chrome-400" data-i18n="lang_label">Bilingual Service</div>
+                        <div class="text-sm font-semibold text-white" data-i18n="lang_val">English & Español</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Onix Section -->
+    <section id="about" class="py-24 sm:py-32 bg-onyx-850 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Editorial Photo Collage -->
+                <div class="lg:col-span-6 reveal reveal-left">
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                        <div class="space-y-4 sm:space-y-6">
+                            <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl group">
+                                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=800" 
+                                     alt="Precision fade craftsmanship" 
+                                     class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-700">
+                            </div>
+                            <div class="onyx-card p-6 rounded-2xl text-center">
+                                <span class="block font-display text-3xl sm:text-4xl font-black chrome-text">EST. 2019</span>
+                                <span class="block text-xs font-display uppercase tracking-[0.2em] text-chrome-400 mt-1.5" data-i18n="stats_years">Proudly Serving Dunkirk</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 sm:space-y-6 pt-8 sm:pt-12">
+                            <div class="onyx-card p-6 rounded-2xl">
+                                <div class="flex items-center space-x-2 text-pole-red mb-2">
+                                    <i class="fa-solid fa-scissors text-sm"></i>
+                                    <span class="text-[11px] font-display font-bold uppercase tracking-widest text-chrome-300" data-i18n="craft_badge">Authentic Craft</span>
+                                </div>
+                                <h3 class="font-display font-bold text-lg text-white mb-1" data-i18n="stats_top_rated">Detail-Driven Cuts</h3>
+                                <p class="text-xs text-chrome-400 leading-relaxed" data-i18n="stats_top_desc">Every fade, taper, and razor lineup is tailored to your head shape and personal style.</p>
+                            </div>
+                            <div class="overflow-hidden rounded-2xl border border-white/10 shadow-2xl group">
+                                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=800" 
+                                     alt="Straight razor barber tools" 
+                                     class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-700">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story & Identity -->
+                <div class="lg:col-span-6 space-y-6 reveal reveal-right">
+                    <div class="inline-flex items-center space-x-2.5 bg-onyx-800 px-3.5 py-1.5 rounded-lg border border-white/10">
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                        <span class="text-xs font-display font-bold uppercase tracking-[0.2em] text-chrome-300" data-i18n="about_tag">About Onix Barbershop</span>
+                    </div>
+
+                    <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white leading-[1.12]" data-i18n="about_title">
+                        More Than a Haircut. It's Your Signature Look.
+                    </h2>
+
+                    <p class="text-chrome-300 leading-relaxed text-base sm:text-lg font-light" data-i18n="about_desc_1">
+                        Since opening our doors in 2019 at 404 Central Avenue, Onix Barbershop has stood as a cornerstone of modern barbering and community pride in Dunkirk, New York.
+                    </p>
+
+                    <p class="text-chrome-400 leading-relaxed text-base" data-i18n="about_desc_2">
+                        We blend traditional straight-razor discipline with contemporary fade techniques. Whether you speak English or Español, you'll step into a clean, relaxed, and respectful shop where every client leaves looking sharp and feeling confident.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-4">
+                        <div class="flex items-start space-x-3.5">
+                            <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-compass-drafting text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-white text-sm" data-i18n="feat_1_title">Precision Fades & Linework</h4>
+                                <p class="text-xs text-chrome-400 mt-1 leading-relaxed" data-i18n="feat_1_desc">Seamless blends, crisp edges, and clean neck finishes.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3.5">
+                            <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white flex-shrink-0 mt-0.5">
+                                <i class="fa-solid fa-handshake text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-white text-sm" data-i18n="feat_2_title">Local Dunkirk Hospitality</h4>
+                                <p class="text-xs text-chrome-400 mt-1 leading-relaxed" data-i18n="feat_2_desc">Welcoming families, professionals, and walk-ins daily.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap gap-4">
+                        <a href="#booking" class="btn-shimmer inline-flex items-center space-x-2.5 bg-white hover:bg-chrome-200 text-onyx-950 px-6 py-3.5 rounded-xl font-display font-bold text-sm transition-all shadow-lg">
+                            <span data-i18n="schedule_chair">Book Your Appointment</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2.5 bg-onyx-800 hover:bg-onyx-700 border border-white/15 text-chrome-200 px-6 py-3.5 rounded-xl font-display font-semibold text-sm transition-all">
+                            <i class="fa-brands fa-facebook"></i>
+                            <span data-i18n="follow_fb">Follow on Facebook</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (NO DIRECT PRICING — Focused on Craft & Booking CTA) -->
+    <section id="services" class="py-24 sm:py-32 bg-onyx-900 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="inline-block text-xs font-display font-bold uppercase tracking-[0.22em] text-chrome-300 bg-onyx-800 px-3.5 py-1.5 rounded-lg border border-white/10" data-i18n="services_tag">Craft & Grooming</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-4" data-i18n="services_heading">Signature Barber Services</h2>
+                <p class="text-chrome-400 text-base sm:text-lg font-light" data-i18n="services_sub">Select your preferred grooming experience and book your chair directly online or by phone.</p>
+            </div>
+
+            <!-- 6-Card Services Grid without prices -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                
+                <!-- Card 1 -->
+                <div class="onyx-card p-8 rounded-2xl flex flex-col justify-between reveal delay-100 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-onyx-800 border border-white/10 group-hover:border-white/30 flex items-center justify-center text-white text-lg transition-colors">
+                                <i class="fa-solid fa-scissors"></i>
+                            </div>
+                            <span class="text-[11px] font-display font-semibold uppercase tracking-widest text-chrome-400 bg-white/5 px-3 py-1 rounded-full" data-i18n="srv_badge_1">Signature</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:chrome-text transition-all" data-i18n="srv_haircut_title">Classic & Modern Haircut</h3>
+                        <p class="text-sm text-chrome-400 leading-relaxed mb-8" data-i18n="srv_haircut_desc">Tailored scissor and clipper cut customized to your style, complete with a clean neck shave and premium styling finish.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceForBooking('Classic & Modern Haircut')" class="btn-shimmer w-full text-center bg-onyx-800 hover:bg-white text-chrome-100 hover:text-onyx-950 py-3.5 rounded-xl font-display font-bold text-sm transition-all border border-white/15 hover:border-white flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-calendar-check text-xs"></i>
+                        <span data-i18n="book_service">Book Your Appointment</span>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="onyx-card p-8 rounded-2xl flex flex-col justify-between reveal delay-200 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-onyx-800 border border-white/10 group-hover:border-white/30 flex items-center justify-center text-white text-lg transition-colors">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <span class="text-[11px] font-display font-semibold uppercase tracking-widest text-chrome-200 bg-white/10 px-3 py-1 rounded-full" data-i18n="srv_badge_2">Most Requested</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:chrome-text transition-all" data-i18n="srv_fade_title">Skin Fade & Taper</h3>
+                        <p class="text-sm text-chrome-400 leading-relaxed mb-8" data-i18n="srv_fade_desc">Seamless low, mid, or high bald fade blended to perfection with razor-sharp edge work around the hairline and temples.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceForBooking('Skin Fade & Taper')" class="btn-shimmer w-full text-center bg-onyx-800 hover:bg-white text-chrome-100 hover:text-onyx-950 py-3.5 rounded-xl font-display font-bold text-sm transition-all border border-white/15 hover:border-white flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-calendar-check text-xs"></i>
+                        <span data-i18n="book_service">Book Your Appointment</span>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="onyx-card p-8 rounded-2xl flex flex-col justify-between reveal delay-300 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-onyx-800 border border-white/10 group-hover:border-white/30 flex items-center justify-center text-white text-lg transition-colors">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <span class="text-[11px] font-display font-semibold uppercase tracking-widest text-chrome-400 bg-white/5 px-3 py-1 rounded-full" data-i18n="srv_badge_3">Razor Work</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:chrome-text transition-all" data-i18n="srv_beard_title">Beard Sculpting & Lineup</h3>
+                        <p class="text-sm text-chrome-400 leading-relaxed mb-8" data-i18n="srv_beard_desc">Precision beard shaping, length balancing, and straight-razor cheek and neckline detailing finished with nourishing beard oil.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceForBooking('Beard Sculpting & Lineup')" class="btn-shimmer w-full text-center bg-onyx-800 hover:bg-white text-chrome-100 hover:text-onyx-950 py-3.5 rounded-xl font-display font-bold text-sm transition-all border border-white/15 hover:border-white flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-calendar-check text-xs"></i>
+                        <span data-i18n="book_service">Book Your Appointment</span>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="onyx-card p-8 rounded-2xl flex flex-col justify-between reveal delay-100 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-onyx-800 border border-white/10 group-hover:border-white/30 flex items-center justify-center text-white text-lg transition-colors">
+                                <i class="fa-solid fa-crown"></i>
+                            </div>
+                            <span class="text-[11px] font-display font-semibold uppercase tracking-widest text-chrome-200 bg-white/10 px-3 py-1 rounded-full" data-i18n="srv_badge_4">Full Experience</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:chrome-text transition-all" data-i18n="srv_combo_title">The Full Onix Cut & Beard</h3>
+                        <p class="text-sm text-chrome-400 leading-relaxed mb-8" data-i18n="srv_combo_desc">Our complete grooming session pairing any precision haircut or skin fade with a full beard sculpt and razor lineup.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceForBooking('The Full Onix Cut & Beard')" class="btn-shimmer w-full text-center bg-white hover:bg-chrome-200 text-onyx-950 py-3.5 rounded-xl font-display font-bold text-sm transition-all shadow-lg flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-calendar-check text-xs"></i>
+                        <span data-i18n="book_service">Book Your Appointment</span>
+                    </a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="onyx-card p-8 rounded-2xl flex flex-col justify-between reveal delay-200 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-onyx-800 border border-white/10 group-hover:border-white/30 flex items-center justify-center text-white text-lg transition-colors">
+                                <i class="fa-solid fa-fire-flame-curved"></i>
+                            </div>
+                            <span class="text-[11px] font-display font-semibold uppercase tracking-widest text-chrome-400 bg-white/5 px-3 py-1 rounded-full" data-i18n="srv_badge_5">Traditional</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:chrome-text transition-all" data-i18n="srv_hot_towel_title">Hot Towel Straight Razor Shave</h3>
+                        <p class="text-sm text-chrome-400 leading-relaxed mb-8" data-i18n="srv_hot_towel_desc">Relaxing steaming towels, rich lather, and an ultra-close straight razor shave followed by a cooling post-shave balm.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceForBooking('Hot Towel Straight Razor Shave')" class="btn-shimmer w-full text-center bg-onyx-800 hover:bg-white text-chrome-100 hover:text-onyx-950 py-3.5 rounded-xl font-display font-bold text-sm transition-all border border-white/15 hover:border-white flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-calendar-check text-xs"></i>
+                        <span data-i18n="book_service">Book Your Appointment</span>
+                    </a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="onyx-card p-8 rounded-2xl flex flex-col justify-between reveal delay-300 group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-12 h-12 rounded-xl bg-onyx-800 border border-white/10 group-hover:border-white/30 flex items-center justify-center text-white text-lg transition-colors">
+                                <i class="fa-solid fa-child-reaching"></i>
+                            </div>
+                            <span class="text-[11px] font-display font-semibold uppercase tracking-widest text-chrome-400 bg-white/5 px-3 py-1 rounded-full" data-i18n="srv_badge_6">Youth</span>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:chrome-text transition-all" data-i18n="srv_kids_title">Kids & Youth Cuts</h3>
+                        <p class="text-sm text-chrome-400 leading-relaxed mb-8" data-i18n="srv_kids_desc">Clean, stylish, and patient haircuts for young gentlemen in a friendly, family-welcoming environment.</p>
+                    </div>
+                    <a href="#booking" onclick="selectServiceForBooking('Kids & Youth Cuts')" class="btn-shimmer w-full text-center bg-onyx-800 hover:bg-white text-chrome-100 hover:text-onyx-950 py-3.5 rounded-xl font-display font-bold text-sm transition-all border border-white/15 hover:border-white flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-calendar-check text-xs"></i>
+                        <span data-i18n="book_service">Book Your Appointment</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Lookbook Gallery with Interactive Filter & Lightbox -->
+    <section id="gallery" class="py-24 sm:py-32 bg-onyx-850 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal">
+                <div>
+                    <span class="inline-block text-xs font-display font-bold uppercase tracking-[0.22em] text-chrome-300 bg-onyx-800 px-3.5 py-1.5 rounded-lg border border-white/10" data-i18n="gallery_tag">Style Lookbook</span>
+                    <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white mt-4" data-i18n="gallery_heading">The Onix Standard</h2>
+                </div>
+
+                <!-- Interactive Filter Pills -->
+                <div class="flex flex-wrap gap-2" role="tablist" aria-label="Gallery Categories">
+                    <button onclick="filterGallery('all', this)" class="gallery-filter active bg-white text-onyx-950 px-4 py-2 rounded-xl font-display font-bold text-xs uppercase tracking-wider transition-all cursor-pointer" data-i18n="filter_all">All Cuts</button>
+                    <button onclick="filterGallery('fades', this)" class="gallery-filter bg-onyx-800 hover:bg-onyx-700 text-chrome-300 border border-white/10 px-4 py-2 rounded-xl font-display font-semibold text-xs uppercase tracking-wider transition-all cursor-pointer" data-i18n="filter_fades">Fades</button>
+                    <button onclick="filterGallery('beard', this)" class="gallery-filter bg-onyx-800 hover:bg-onyx-700 text-chrome-300 border border-white/10 px-4 py-2 rounded-xl font-display font-semibold text-xs uppercase tracking-wider transition-all cursor-pointer" data-i18n="filter_beard">Beard & Razor</button>
+                    <button onclick="filterGallery('classic', this)" class="gallery-filter bg-onyx-800 hover:bg-onyx-700 text-chrome-300 border border-white/10 px-4 py-2 rounded-xl font-display font-semibold text-xs uppercase tracking-wider transition-all cursor-pointer" data-i18n="filter_classic">Classic Styles</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+                
+                <!-- Item 1 -->
+                <div data-category="fades" onclick="openLightbox(this)" class="gallery-item reveal group relative overflow-hidden rounded-2xl h-80 sm:h-96 border border-white/10 cursor-pointer bg-onyx-900">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=900" alt="High Skin Fade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-onyx-950/70 backdrop-blur-md border border-white/15 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                        <span class="text-[11px] font-display uppercase tracking-[0.2em] text-chrome-300 font-semibold" data-i18n="gal_1_tag">Precision Fade</span>
+                        <h3 class="font-display font-bold text-xl text-white mt-0.5" data-i18n="gal_1_title">Seamless Skin Fade</h3>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div data-category="beard" onclick="openLightbox(this)" class="gallery-item reveal delay-100 group relative overflow-hidden rounded-2xl h-80 sm:h-96 border border-white/10 cursor-pointer bg-onyx-900">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=900" alt="Beard Sculpting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-onyx-950/70 backdrop-blur-md border border-white/15 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                        <span class="text-[11px] font-display uppercase tracking-[0.2em] text-chrome-300 font-semibold" data-i18n="gal_2_tag">Beard Detailing</span>
+                        <h3 class="font-display font-bold text-xl text-white mt-0.5" data-i18n="gal_2_title">Sculpted Beard & Lineup</h3>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div data-category="classic" onclick="openLightbox(this)" class="gallery-item reveal delay-200 group relative overflow-hidden rounded-2xl h-80 sm:h-96 border border-white/10 cursor-pointer bg-onyx-900">
+                    <img src="https://images.unsplash.com/photo-1517832606293-7ae2b73c042f?auto=format&fit=crop&q=80&w=900" alt="Classic Taper Cut" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-onyx-950/70 backdrop-blur-md border border-white/15 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                        <span class="text-[11px] font-display uppercase tracking-[0.2em] text-chrome-300 font-semibold" data-i18n="gal_4_tag">Classic Scissor Work</span>
+                        <h3 class="font-display font-bold text-xl text-white mt-0.5" data-i18n="gal_4_title">Executive Taper Cut</h3>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div data-category="beard" onclick="openLightbox(this)" class="gallery-item reveal group relative overflow-hidden rounded-2xl h-80 sm:h-96 border border-white/10 cursor-pointer bg-onyx-900">
+                    <img src="https://images.unsplash.com/photo-1534723484461-267963d76e33?auto=format&fit=crop&q=80&w=900" alt="Hot Towel Straight Razor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-onyx-950/70 backdrop-blur-md border border-white/15 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                        <span class="text-[11px] font-display uppercase tracking-[0.2em] text-chrome-300 font-semibold" data-i18n="gal_5_tag">Traditional Shave</span>
+                        <h3 class="font-display font-bold text-xl text-white mt-0.5" data-i18n="gal_5_title">Straight Razor Finish</h3>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div data-category="fades" onclick="openLightbox(this)" class="gallery-item reveal delay-100 group relative overflow-hidden rounded-2xl h-80 sm:h-96 border border-white/10 cursor-pointer bg-onyx-900">
+                    <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&q=80&w=900" alt="Textured Crop Fade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-onyx-950/70 backdrop-blur-md border border-white/15 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                        <span class="text-[11px] font-display uppercase tracking-[0.2em] text-chrome-300 font-semibold" data-i18n="gal_6_tag">Modern Texture</span>
+                        <h3 class="font-display font-bold text-xl text-white mt-0.5" data-i18n="gal_6_title">Textured Crop & Drop Fade</h3>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div data-category="classic" onclick="openLightbox(this)" class="gallery-item reveal delay-200 group relative overflow-hidden rounded-2xl h-80 sm:h-96 border border-white/10 cursor-pointer bg-onyx-900">
+                    <img src="https://images.unsplash.com/photo-1593702288056-7927b442d0fa?auto=format&fit=crop&q=80&w=900" alt="Barbershop Craftsmanship" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-onyx-950/70 backdrop-blur-md border border-white/15 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-expand text-xs"></i>
+                    </div>
+                    <div class="absolute bottom-6 left-6 right-6 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                        <span class="text-[11px] font-display uppercase tracking-[0.2em] text-chrome-300 font-semibold" data-i18n="gal_3_tag">Shop Atmosphere</span>
+                        <h3 class="font-display font-bold text-xl text-white mt-0.5" data-i18n="gal_3_title">404 Central Ave Chair</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Representative Demo Note & Facebook Link -->
+            <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/5 text-xs text-chrome-500">
+                <p data-i18n="demo_photo_note">* Representative barbershop photography shown for concept preview. Connect Onix's official Facebook photos upon launch.</p>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-chrome-300 hover:text-white font-display font-semibold transition-colors">
+                    <i class="fa-brands fa-facebook text-sm"></i>
+                    <span data-i18n="view_more_fb">See Recent Cuts on Facebook</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dedicated Appointment Conversion Section -->
+    <section id="booking" class="py-24 sm:py-32 bg-onyx-900 relative overflow-hidden border-t border-white/5">
+        <!-- Ambient Radial Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="onyx-card rounded-3xl p-8 sm:p-14 border border-white/15 shadow-2xl reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-5">
+                        <div class="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span class="text-xs font-display font-bold uppercase tracking-widest text-chrome-200" data-i18n="ready_tag">Reserve Your Chair</span>
+                        </div>
+
+                        <h2 class="font-display text-3xl sm:text-5xl font-black text-white leading-tight" data-i18n="ready_heading">
+                            Book Your Appointment
+                        </h2>
+
+                        <p class="text-chrome-300 text-base leading-relaxed" data-i18n="ready_desc">
+                            Lock in your spot with Onix Barbershop in Dunkirk. Choose your service below and continue directly to our official booking channel or call the shop.
+                        </p>
+
+                        <!-- Interactive Service Selector (No Fake Backend — Prepares User & Directs to Real Channels) -->
+                        <div class="pt-2">
+                            <label for="serviceSelect" class="block text-xs font-display font-semibold uppercase tracking-widest text-chrome-400 mb-2" data-i18n="select_srv_label">1. Choose Service (Optional)</label>
+                            <select id="serviceSelect" class="w-full bg-onyx-950 border border-white/15 focus:border-white rounded-xl px-4 py-3.5 text-sm text-white font-medium outline-none transition-colors">
+                                <option value="Classic & Modern Haircut" data-i18n="opt_1">Classic & Modern Haircut</option>
+                                <option value="Skin Fade & Taper" data-i18n="opt_2">Skin Fade & Taper</option>
+                                <option value="Beard Sculpting & Lineup" data-i18n="opt_3">Beard Sculpting & Lineup</option>
+                                <option value="The Full Onix Cut & Beard" data-i18n="opt_4">The Full Onix Cut & Beard</option>
+                                <option value="Hot Towel Straight Razor Shave" data-i18n="opt_5">Hot Towel Straight Razor Shave</option>
+                                <option value="Kids & Youth Cuts" data-i18n="opt_6">Kids & Youth Cuts</option>
+                            </select>
+                        </div>
+
+                        <!-- Direct Action Buttons -->
+                        <div class="pt-3 space-y-3">
+                            <a href="https://booksy.com/en-us/s/barbershop/dunkirk_ny" target="_blank" rel="noopener noreferrer" class="btn-shimmer w-full bg-white hover:bg-chrome-200 text-onyx-950 py-4 px-6 rounded-xl font-display font-extrabold text-base tracking-wide transition-all shadow-xl flex items-center justify-center space-x-3">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <span data-i18n="book_now_btn">Book Online via Booksy</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <a href="tel:7162037366" class="w-full bg-onyx-800 hover:bg-onyx-700 border border-white/15 text-white py-3.5 px-4 rounded-xl font-display font-bold text-sm transition-all flex items-center justify-center space-x-2">
+                                    <i class="fa-solid fa-phone text-xs text-chrome-300"></i>
+                                    <span>716-203-7366</span>
+                                </a>
+                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="w-full bg-onyx-800 hover:bg-onyx-700 border border-white/15 text-white py-3.5 px-4 rounded-xl font-display font-bold text-sm transition-all flex items-center justify-center space-x-2">
+                                    <i class="fa-brands fa-facebook text-chrome-300"></i>
+                                    <span data-i18n="msg_fb">Message on Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Emblem & Shop Assurance -->
+                    <div class="lg:col-span-5 flex flex-col items-center text-center bg-onyx-950/70 p-8 rounded-2xl border border-white/10">
+                        <div class="logo-bezel w-28 h-28 bg-onyx-950 mb-5">
+                            <img src="image_2a44e3.jpg" 
+                                 onerror="this.onerror=null; this.src='https://placehold.co/240x240/09090B/E4E4E7?text=ONIX';" 
+                                 alt="Onix Barbershop Crest" 
+                                 class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <h3 class="font-display font-extrabold text-xl text-white tracking-wide">ONIX BARBERSHOP</h3>
+                        <p class="text-xs font-display uppercase tracking-[0.22em] text-chrome-400 mt-1">404 Central Ave • Dunkirk, NY</p>
+                        
+                        <div class="w-full h-[1px] bg-white/10 my-5"></div>
+                        
+                        <ul class="space-y-2.5 text-xs text-chrome-300 text-left w-full">
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fa-solid fa-check text-white"></i>
+                                <span data-i18n="assure_1">Appointments & Walk-Ins Welcome</span>
+                            </li>
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fa-solid fa-check text-white"></i>
+                                <span data-i18n="assure_2">Sanitized Tools & Fresh Capes Every Cut</span>
+                            </li>
+                            <li class="flex items-center space-x-2.5">
+                                <i class="fa-solid fa-check text-white"></i>
+                                <span data-i18n="assure_3">Se Habla Español • Bilingual Shop</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="location" class="py-24 bg-onyx-850 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="inline-block text-xs font-display font-bold uppercase tracking-[0.22em] text-chrome-300 bg-onyx-800 px-3.5 py-1.5 rounded-lg border border-white/10" data-i18n="loc_tag">Visit the Shop</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-white mt-4 mb-3" data-i18n="loc_heading">Location & Contact</h2>
+                <p class="text-chrome-400 text-base" data-i18n="loc_sub">Right on Central Avenue in the heart of Dunkirk, New York.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Address Card -->
+                <div class="onyx-card p-8 rounded-2xl reveal delay-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-onyx-800 border border-white/10 flex items-center justify-center text-white text-xl mb-6">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-2" data-i18n="address_title">Shop Address</h3>
+                        <p class="text-chrome-300 text-sm leading-relaxed">
+                            404 Central Avenue<br>
+                            Dunkirk, NY 14048
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10">
+                        <a href="https://maps.google.com/?q=404+Central+Avenue,+Dunkirk,+NY+14048" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-sm font-display font-bold text-white hover:text-chrome-300 transition-colors">
+                            <span data-i18n="get_directions">Open in Google Maps</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Phone & Social Card -->
+                <div class="onyx-card p-8 rounded-2xl reveal delay-200 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-onyx-800 border border-white/10 flex items-center justify-center text-white text-xl mb-6">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-2" data-i18n="phone_title">Direct Contact</h3>
+                        <p class="text-chrome-300 text-sm mb-2">
+                            <a href="tel:7162037366" class="text-lg font-display font-bold text-white hover:underline">716-203-7366</a>
+                        </p>
+                        <p class="text-xs text-chrome-400" data-i18n="phone_note">Call during shop hours for availability or walk-in wait times.</p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10 flex items-center justify-between">
+                        <a href="tel:7162037366" class="inline-flex items-center space-x-2 text-sm font-display font-bold text-white hover:text-chrome-300 transition-colors">
+                            <span data-i18n="call_now">Call Now</span>
+                            <i class="fa-solid fa-phone text-xs"></i>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 text-xs font-display font-semibold text-chrome-300 hover:text-white transition-colors">
+                            <i class="fa-brands fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hours Card (Transparent / Confirmable) -->
+                <div class="onyx-card p-8 rounded-2xl reveal delay-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-onyx-800 border border-white/10 flex items-center justify-center text-white text-xl mb-6">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <h3 class="font-display font-bold text-xl text-white mb-3" data-i18n="hours_title">Shop Hours</h3>
+                        <p class="text-sm text-chrome-300 leading-relaxed mb-4" data-i18n="hours_desc">
+                            Check live chair availability on Booksy or call ahead to confirm daily walk-in hours.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-6 border-t border-white/10">
+                        <a href="https://booksy.com/en-us/s/barbershop/dunkirk_ny" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-sm font-display font-bold text-white hover:text-chrome-300 transition-colors">
+                            <span data-i18n="check_schedule">View Live Schedule</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Branded Footer -->
+    <footer class="bg-onyx-950 border-t border-white/10 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10">
+                
+                <!-- Footer Brand Emblem -->
+                <div class="flex items-center space-x-4">
+                    <div class="logo-bezel w-14 h-14 bg-onyx-950 flex-shrink-0">
+                        <img src="image_2a44e3.jpg" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/200x200/09090B/E4E4E7?text=ONIX';" 
+                             alt="Onix Barbershop Logo" 
+                             class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div>
+                        <span class="font-display font-black text-xl tracking-[0.14em] chrome-text block">ONIX BARBERSHOP</span>
+                        <span class="text-xs text-chrome-400 block mt-0.5">404 Central Avenue, Dunkirk, NY 14048 • 716-203-7366</span>
+                    </div>
+                </div>
+
+                <!-- Footer Nav Links -->
+                <nav class="flex flex-wrap items-center justify-center gap-6 text-sm font-display font-medium text-chrome-300">
+                    <a href="#about" class="hover:text-white transition-colors" data-i18n="nav_about">About</a>
+                    <a href="#services" class="hover:text-white transition-colors" data-i18n="nav_services">Services</a>
+                    <a href="#gallery" class="hover:text-white transition-colors" data-i18n="nav_gallery">Lookbook</a>
+                    <a href="#booking" class="hover:text-white transition-colors" data-i18n="nav_booking">Book Chair</a>
+                    <a href="#location" class="hover:text-white transition-colors" data-i18n="nav_location">Location</a>
+                </nav>
+
+                <!-- Social & Direct Links -->
+                <div class="flex items-center space-x-3">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Onix Barbershop Facebook" class="w-10 h-10 rounded-xl bg-onyx-800 hover:bg-white text-chrome-200 hover:text-onyx-950 border border-white/10 flex items-center justify-center transition-all">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="tel:7162037366" aria-label="Call Onix Barbershop" class="w-10 h-10 rounded-xl bg-onyx-800 hover:bg-white text-chrome-200 hover:text-onyx-950 border border-white/10 flex items-center justify-center transition-all">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                    <a href="https://maps.google.com/?q=404+Central+Avenue,+Dunkirk,+NY+14048" target="_blank" rel="noopener noreferrer" aria-label="Directions to Onix Barbershop" class="w-10 h-10 rounded-xl bg-onyx-800 hover:bg-white text-chrome-200 hover:text-onyx-950 border border-white/10 flex items-center justify-center transition-all">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright & Subtle Elevate Web Co. Demo Credit -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-chrome-500">
+                <p>© <span id="yearSpan">2026</span> Onix Barbershop • Est. 2019. <span data-i18n="rights">All rights reserved.</span></p>
+                <p class="text-chrome-500/80">
+                    Website concept by <span class="text-chrome-300 font-medium">Elevate Web Co.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightboxModal" onclick="closeLightbox()" class="fixed inset-0 z-[100] bg-onyx-950/95 backdrop-blur-xl hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer" aria-label="Close Lightbox">
+            <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+        <div onclick="event.stopPropagation()" class="max-w-3xl w-full bg-onyx-900 rounded-2xl overflow-hidden border border-white/15 shadow-2xl transform scale-95 transition-transform duration-300" id="lightboxContent">
+            <img id="lightboxImg" src="" alt="Gallery Preview" class="w-full max-h-[75vh] object-cover">
+            <div class="p-6 flex items-center justify-between bg-onyx-900">
+                <div>
+                    <span id="lightboxTag" class="text-[11px] font-display uppercase tracking-widest text-chrome-400"></span>
+                    <h4 id="lightboxTitle" class="font-display font-bold text-lg text-white"></h4>
+                </div>
+                <a href="#booking" onclick="closeLightbox()" class="bg-white hover:bg-chrome-200 text-onyx-950 px-5 py-2.5 rounded-xl font-display font-bold text-xs uppercase tracking-wider transition-colors" data-i18n="book_now">
+                    Book Your Appointment
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vanilla JS Engine: Smooth Animations, Bilingual EN/ES, Gallery Filter, Lightbox -->
+    <script>
+        // Set dynamic year
+        document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+        // 1. Header Scroll Elevation
+        const mainHeader = document.getElementById('mainHeader');
+        const headerInner = document.getElementById('headerInner');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                mainHeader.classList.add('scrolled');
+                headerInner.classList.remove('sm:h-24');
+                headerInner.classList.add('sm:h-20');
+            } else {
+                mainHeader.classList.remove('scrolled');
+                headerInner.classList.add('sm:h-24');
+                headerInner.classList.remove('sm:h-20');
+            }
+        }, { passive: true });
+
+        // 2. Smooth IntersectionObserver Scroll Reveals
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // 3. Mobile Menu Drawer
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+        function toggleMobileMenu() {
+            const isOpen = mobileMenu.classList.toggle('open');
+            mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+            mobileMenuIcon.className = isOpen ? 'fa-solid fa-xmark text-lg' : 'fa-solid fa-bars text-lg';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuIcon.className = 'fa-solid fa-bars text-lg';
+        }
+
+        // 4. Service Pre-selection Helper (Links Service Card to Booking Section smoothly)
+        function selectServiceForBooking(serviceName) {
+            const select = document.getElementById('serviceSelect');
+            if (select) {
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value === serviceName) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // 5. Gallery Category Filter
+        function filterGallery(category, btnEl) {
+            // Update active button style
+            document.querySelectorAll('.gallery-filter').forEach(btn => {
+                btn.classList.remove('active', 'bg-white', 'text-onyx-950', 'font-bold');
+                btn.classList.add('bg-onyx-800', 'text-chrome-300', 'border', 'border-white/10', 'font-semibold');
+            });
+            btnEl.classList.add('active', 'bg-white', 'text-onyx-950', 'font-bold');
+            btnEl.classList.remove('bg-onyx-800', 'text-chrome-300', 'border', 'border-white/10', 'font-semibold');
+
+            // Filter items with smooth transition
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                const itemCat = item.getAttribute('data-category');
+                if (category === 'all' || itemCat === category) {
+                    item.style.display = 'block';
+                    requestAnimationFrame(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    });
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.96)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 250);
+                }
+            });
+        }
+
+        // 6. Gallery Lightbox
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxContent = document.getElementById('lightboxContent');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxTag = document.getElementById('lightboxTag');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+
+        function openLightbox(cardEl) {
+            const img = cardEl.querySelector('img');
+            const tag = cardEl.querySelector('span').innerText;
+            const title = cardEl.querySelector('h3').innerText;
+
+            lightboxImg.src = img.src;
+            lightboxTag.innerText = tag;
+            lightboxTitle.innerText = title;
+
+            lightboxModal.classList.remove('hidden');
+            lightboxModal.classList.add('flex');
+            requestAnimationFrame(() => {
+                lightboxModal.classList.remove('opacity-0');
+                lightboxContent.classList.remove('scale-95');
+                lightboxContent.classList.add('scale-100');
+            });
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightboxModal.classList.add('opacity-0');
+            lightboxContent.classList.remove('scale-100');
+            lightboxContent.classList.add('scale-95');
+            setTimeout(() => {
+                lightboxModal.classList.add('hidden');
+                lightboxModal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightboxModal.classList.contains('hidden')) {
+                closeLightbox();
+            }
+        });
+
+        // 7. Full English / Español Bilingual Translation Dictionary
+        const translations = {
+            en: {
+                top_notice: "Onix Barbershop • Dunkirk, NY",
+                top_sub: "Appointments & Walk-Ins Welcome",
+                nav_about: "About",
+                nav_services: "Services",
+                nav_gallery: "Lookbook",
+                nav_booking: "Book Chair",
+                nav_location: "Location",
+                book_now: "Book Your Appointment",
+                hero_badge: "Est. 2019 • 404 Central Ave, Dunkirk, NY",
+                hero_title_1: "Sharp Craftsmanship.",
+                hero_title_2: "Dunkirk's Standard.",
+                hero_desc: "Precision skin fades, classic scissor cuts, and crisp razor linework delivered in an authentic, welcoming atmosphere on Central Avenue.",
+                book_appointment: "Book Your Appointment",
+                explore_services: "Explore Services",
+                loc_label: "Shop Location",
+                phone_label: "Call the Shop",
+                lang_label: "Bilingual Service",
+                lang_val: "English & Español",
+                about_tag: "About Onix Barbershop",
+                about_title: "More Than a Haircut. It's Your Signature Look.",
+                about_desc_1: "Since opening our doors in 2019 at 404 Central Avenue, Onix Barbershop has stood as a cornerstone of modern barbering and community pride in Dunkirk, New York.",
+                about_desc_2: "We blend traditional straight-razor discipline with contemporary fade techniques. Whether you speak English or Español, you'll step into a clean, relaxed, and respectful shop where every client leaves looking sharp and feeling confident.",
+                stats_years: "Proudly Serving Dunkirk",
+                craft_badge: "Authentic Craft",
+                stats_top_rated: "Detail-Driven Cuts",
+                stats_top_desc: "Every fade, taper, and razor lineup is tailored to your head shape and personal style.",
+                feat_1_title: "Precision Fades & Linework",
+                feat_1_desc: "Seamless blends, crisp edges, and clean neck finishes.",
+                feat_2_title: "Local Dunkirk Hospitality",
+                feat_2_desc: "Welcoming families, professionals, and walk-ins daily.",
+                schedule_chair: "Book Your Appointment",
+                follow_fb: "Follow on Facebook",
+                services_tag: "Craft & Grooming",
+                services_heading: "Signature Barber Services",
+                services_sub: "Select your preferred grooming experience and book your chair directly online or by phone.",
+                srv_badge_1: "Signature",
+                srv_badge_2: "Most Requested",
+                srv_badge_3: "Razor Work",
+                srv_badge_4: "Full Experience",
+                srv_badge_5: "Traditional",
+                srv_badge_6: "Youth",
+                srv_haircut_title: "Classic & Modern Haircut",
+                srv_haircut_desc: "Tailored scissor and clipper cut customized to your style, complete with a clean neck shave and premium styling finish.",
+                srv_fade_title: "Skin Fade & Taper",
+                srv_fade_desc: "Seamless low, mid, or high bald fade blended to perfection with razor-sharp edge work around the hairline and temples.",
+                srv_beard_title: "Beard Sculpting & Lineup",
+                srv_beard_desc: "Precision beard shaping, length balancing, and straight-razor cheek and neckline detailing finished with nourishing beard oil.",
+                srv_combo_title: "The Full Onix Cut & Beard",
+                srv_combo_desc: "Our complete grooming session pairing any precision haircut or skin fade with a full beard sculpt and razor lineup.",
+                srv_hot_towel_title: "Hot Towel Straight Razor Shave",
+                srv_hot_towel_desc: "Relaxing steaming towels, rich lather, and an ultra-close straight razor shave followed by a cooling post-shave balm.",
+                srv_kids_title: "Kids & Youth Cuts",
+                srv_kids_desc: "Clean, stylish, and patient haircuts for young gentlemen in a friendly, family-welcoming environment.",
+                book_service: "Book Your Appointment",
+                gallery_tag: "Style Lookbook",
+                gallery_heading: "The Onix Standard",
+                filter_all: "All Cuts",
+                filter_fades: "Fades",
+                filter_beard: "Beard & Razor",
+                filter_classic: "Classic Styles",
+                gal_1_tag: "Precision Fade",
+                gal_1_title: "Seamless Skin Fade",
+                gal_2_tag: "Beard Detailing",
+                gal_2_title: "Sculpted Beard & Lineup",
+                gal_3_tag: "Shop Atmosphere",
+                gal_3_title: "404 Central Ave Chair",
+                gal_4_tag: "Classic Scissor Work",
+                gal_4_title: "Executive Taper Cut",
+                gal_5_tag: "Traditional Shave",
+                gal_5_title: "Straight Razor Finish",
+                gal_6_tag: "Modern Texture",
+                gal_6_title: "Textured Crop & Drop Fade",
+                demo_photo_note: "* Representative barbershop photography shown for concept preview. Connect Onix's official Facebook photos upon launch.",
+                view_more_fb: "See Recent Cuts on Facebook",
+                ready_tag: "Reserve Your Chair",
+                ready_heading: "Book Your Appointment",
+                ready_desc: "Lock in your spot with Onix Barbershop in Dunkirk. Choose your service below and continue directly to our official booking channel or call the shop.",
+                select_srv_label: "1. Choose Service (Optional)",
+                opt_1: "Classic & Modern Haircut",
+                opt_2: "Skin Fade & Taper",
+                opt_3: "Beard Sculpting & Lineup",
+                opt_4: "The Full Onix Cut & Beard",
+                opt_5: "Hot Towel Straight Razor Shave",
+                opt_6: "Kids & Youth Cuts",
+                book_now_btn: "Book Online via Booksy",
+                msg_fb: "Message on Facebook",
+                assure_1: "Appointments & Walk-Ins Welcome",
+                assure_2: "Sanitized Tools & Fresh Capes Every Cut",
+                assure_3: "Se Habla Español • Bilingual Shop",
+                loc_tag: "Visit the Shop",
+                loc_heading: "Location & Contact",
+                loc_sub: "Right on Central Avenue in the heart of Dunkirk, New York.",
+                address_title: "Shop Address",
+                get_directions: "Open in Google Maps",
+                phone_title: "Direct Contact",
+                phone_note: "Call during shop hours for availability or walk-in wait times.",
+                call_now: "Call Now",
+                hours_title: "Shop Hours",
+                hours_desc: "Check live chair availability on Booksy or call ahead to confirm daily walk-in hours.",
+                check_schedule: "View Live Schedule",
+                rights: "All rights reserved."
+            },
+            es: {
+                top_notice: "Onix Barbershop • Dunkirk, NY",
+                top_sub: "Citas y Clientes Sin Cita Bienvenidos",
+                nav_about: "Nosotros",
+                nav_services: "Servicios",
+                nav_gallery: "Galería",
+                nav_booking: "Reservar Silla",
+                nav_location: "Ubicación",
+                book_now: "Reservar Tu Cita",
+                hero_badge: "Est. 2019 • 404 Central Ave, Dunkirk, NY",
+                hero_title_1: "Precisión y Estilo.",
+                hero_title_2: "El Estándar de Dunkirk.",
+                hero_desc: "Degradados (skin fades) impecables, cortes clásicos a tijera y delineados a navaja en un ambiente auténtico y acogedor en Central Avenue.",
+                book_appointment: "Reservar Tu Cita",
+                explore_services: "Ver Servicios",
+                loc_label: "Ubicación",
+                phone_label: "Llamar al Local",
+                lang_label: "Atención Bilingüe",
+                lang_val: "Español e Inglés",
+                about_tag: "Sobre Onix Barbershop",
+                about_title: "Más Que un Corte. Es Tu Sello Personal.",
+                about_desc_1: "Desde que abrimos nuestras puertas en 2019 en 404 Central Avenue, Onix Barbershop se ha convertido en un referente de la barbería moderna y el orgullo comunitario en Dunkirk, Nueva York.",
+                about_desc_2: "Combinamos la disciplina tradicional de la navaja con técnicas contemporáneas de fade. Ya sea que hables español o inglés, entrarás a una barbería limpia, relajada y respetuosa donde cada cliente sale con total confianza.",
+                stats_years: "Sirviendo a Dunkirk",
+                craft_badge: "Oficio Auténtico",
+                stats_top_rated: "Cortes al Detalle",
+                stats_top_desc: "Cada fade, taper y delineado a navaja se adapta a la forma de tu cabeza y estilo personal.",
+                feat_1_title: "Fades y Líneas de Precisión",
+                feat_1_desc: "Difuminados limpios, contornos definidos y acabado a navaja.",
+                feat_2_title: "Hospitalidad Local en Dunkirk",
+                feat_2_desc: "Bienvenidos familias, profesionales y clientes sin cita.",
+                schedule_chair: "Reservar Tu Cita",
+                follow_fb: "Seguir en Facebook",
+                services_tag: "Arte y Cuidado",
+                services_heading: "Servicios de Barbería",
+                services_sub: "Selecciona tu servicio preferido y reserva tu silla directamente en línea o por teléfono.",
+                srv_badge_1: "Clásico",
+                srv_badge_2: "Más Solicitado",
+                srv_badge_3: "Navaja",
+                srv_badge_4: "Experiencia Total",
+                srv_badge_5: "Tradicional",
+                srv_badge_6: "Juvenil",
+                srv_haircut_title: "Corte Clásico y Moderno",
+                srv_haircut_desc: "Corte personalizado a tijera y máquina adaptado a tu estilo, terminado con afeitado limpio en el cuello y peinado profesional.",
+                srv_fade_title: "Skin Fade y Taper",
+                srv_fade_desc: "Degradado bajo, medio o alto difuminado a la perfección con líneas nítidas alrededor de la frente y patillas.",
+                srv_beard_title: "Esculpido y Delineado de Barba",
+                srv_beard_desc: "Perfilado de barba, balance de volumen y delineado a navaja recta finalizado con aceite nutritivo para barba.",
+                srv_combo_title: "Combo Completo Onix (Corte y Barba)",
+                srv_combo_desc: "Nuestra sesión completa que combina cualquier corte o skin fade con arreglo integral de barba y delineado a navaja.",
+                srv_hot_towel_title: "Afeitado con Toalla Caliente y Navaja",
+                srv_hot_towel_desc: "Toallas calientes relajantes, espuma rica y afeitado al ras con navaja recta seguido de bálsamo refrescante.",
+                srv_kids_title: "Cortes para Niños y Jóvenes",
+                srv_kids_desc: "Cortes limpios, modernos y pacientes para jóvenes caballeros en un ambiente familiar y amigable.",
+                book_service: "Reservar Tu Cita",
+                gallery_tag: "Portafolio de Estilos",
+                gallery_heading: "El Estándar Onix",
+                filter_all: "Todos",
+                filter_fades: "Fades",
+                filter_beard: "Barba y Navaja",
+                filter_classic: "Estilos Clásicos",
+                gal_1_tag: "Fade de Precisión",
+                gal_1_title: "Skin Fade Impecable",
+                gal_2_tag: "Detalle de Barba",
+                gal_2_title: "Barba Esculpida y Delineada",
+                gal_3_tag: "Ambiente del Local",
+                gal_3_title: "Silla en 404 Central Ave",
+                gal_4_tag: "Corte a Tijera",
+                gal_4_title: "Corte Ejecutivo Taper",
+                gal_5_tag: "Afeitado Tradicional",
+                gal_5_title: "Acabado a Navaja Recta",
+                gal_6_tag: "Textura Moderna",
+                gal_6_title: "Crop Texturizado y Drop Fade",
+                demo_photo_note: "* Fotografía representativa de barbería mostrada para esta vista previa. Conectar fotos oficiales de Facebook al publicar.",
+                view_more_fb: "Ver Cortes Recientes en Facebook",
+                ready_tag: "Asegura Tu Silla",
+                ready_heading: "Reserva Tu Cita",
+                ready_desc: "Aparta tu lugar en Onix Barbershop en Dunkirk. Elige tu servicio abajo y continúa directamente a nuestro canal oficial de reservas o llámanos.",
+                select_srv_label: "1. Elige un Servicio (Opcional)",
+                opt_1: "Corte Clásico y Moderno",
+                opt_2: "Skin Fade y Taper",
+                opt_3: "Esculpido y Delineado de Barba",
+                opt_4: "Combo Completo Onix (Corte y Barba)",
+                opt_5: "Afeitado con Toalla Caliente y Navaja",
+                opt_6: "Cortes para Niños y Jóvenes",
+                book_now_btn: "Reservar en Línea por Booksy",
+                msg_fb: "Mensaje por Facebook",
+                assure_1: "Citas y Clientes Sin Cita Bienvenidos",
+                assure_2: "Herramientas Esterilizadas en Cada Corte",
+                assure_3: "Se Habla Español • Atención Bilingüe",
+                loc_tag: "Visítanos",
+                loc_heading: "Ubicación y Contacto",
+                loc_sub: "Ubicados sobre Central Avenue en el corazón de Dunkirk, Nueva York.",
+                address_title: "Dirección del Local",
+                get_directions: "Abrir en Google Maps",
+                phone_title: "Contacto Directo",
+                phone_note: "Llama durante el horario de atención para consultar disponibilidad.",
+                call_now: "Llamar Ahora",
+                hours_title: "Horario de Atención",
+                hours_desc: "Consulta horarios disponibles en vivo en Booksy o llama para confirmar atención sin cita.",
+                check_schedule: "Ver Horarios en Vivo",
+                rights: "Todos los derechos reservados."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            document.documentElement.lang = currentLang;
+
+            document.getElementById('langText').innerText = currentLang === 'en' ? 'ESPAÑOL' : 'ENGLISH';
+            document.getElementById('langTextMobile').innerText = currentLang === 'en' ? 'ES' : 'EN';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
