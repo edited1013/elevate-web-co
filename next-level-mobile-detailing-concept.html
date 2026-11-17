@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Next Level Mobile Detailing — professional mobile vehicle detailing in Dunkirk, Fredonia and surrounding areas.">
+<title>Next Level Mobile Detailing | We Bring the Detail to You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b10;--panel:#111720;--muted:#9ba8b8;--text:#f4f7fb;--blue:#42a5ff;--blue2:#1476d4;--line:rgba(255,255,255,.11)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 44px));margin:auto}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:absolute;z-index:5;left:0;right:0;top:0}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.07em}.brand-mark{width:42px;height:42px;border:2px solid var(--blue);display:grid;place-items:center;transform:skew(-9deg);font-family:"Barlow Condensed";font-size:25px;color:var(--blue)}.brand small{display:block;color:#9caabd;font-size:9px;letter-spacing:.27em;margin-top:2px}.navlinks{display:flex;gap:30px;color:#d6dfeb;font-size:13px}.navlinks a:hover{color:var(--blue)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 21px;background:var(--blue);color:#06111d;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);transition:.2s}.nav-cta:hover,.btn:hover{background:#8acaff;transform:translateY(-2px)}
+.hero{min-height:760px;display:flex;align-items:center;position:relative;overflow:hidden;padding:145px 0 90px;background:linear-gradient(90deg,rgba(5,8,13,.98) 0%,rgba(5,8,13,.84) 43%,rgba(5,8,13,.25) 100%),linear-gradient(0deg,#080b10 0%,transparent 28%),url("https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=2000&q=85") center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 58%,rgba(39,145,245,.12));pointer-events:none}.hero-content{position:relative;z-index:1;max-width:670px}.eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--blue);font-weight:800;display:flex;align-items:center;gap:12px}.eyebrow:before{content:"";width:34px;height:2px;background:var(--blue)}h1,h2,h3,p{margin-top:0}h1{font-family:"Barlow Condensed",sans-serif;font-size:clamp(62px,9vw,112px);line-height:.88;letter-spacing:-.025em;text-transform:uppercase;margin:24px 0}.hero h1 span{color:var(--blue)}.hero p{color:#c3cedb;line-height:1.8;max-width:500px;font-size:16px;margin-bottom:32px}.hero-actions{display:flex;gap:14px;flex-wrap:wrap}.btn.outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45);clip-path:none}.hero-note{margin-top:58px;display:flex;gap:28px;color:#b4c0ce;font-size:11px;letter-spacing:.12em;text-transform:uppercase}.hero-note strong{color:#fff;display:block;font-size:14px;letter-spacing:0;margin-bottom:5px}
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0c121a}.strip-inner{display:grid;grid-template-columns:repeat(3,1fr);padding:24px 0}.strip-item{padding:4px 28px;border-right:1px solid var(--line);display:flex;align-items:center;gap:14px}.strip-item:first-child{padding-left:0}.strip-item:last-child{border:0}.strip-icon{color:var(--blue);font-size:22px}.strip-item strong{font-size:12px;letter-spacing:.08em;text-transform:uppercase}.strip-item small{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+section{padding:100px 0}.section-head{max-width:640px;margin-bottom:42px}.section-head h2{font:800 clamp(42px,6vw,65px)/.95 "Barlow Condensed";text-transform:uppercase;margin:15px 0}.section-head p{color:var(--muted);line-height:1.8}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.service{background:var(--panel);border:1px solid var(--line);padding:30px;min-height:260px;position:relative;overflow:hidden}.service:after{content:"";position:absolute;width:150px;height:150px;border:1px solid rgba(66,165,255,.18);border-radius:50%;right:-65px;bottom:-70px}.service-num{font:700 14px "Barlow Condensed";color:var(--blue);letter-spacing:.1em}.service h3{font:700 29px "Barlow Condensed";text-transform:uppercase;margin:25px 0 10px}.service p{color:var(--muted);font-size:13px;line-height:1.7;margin:0;max-width:280px}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center;background:#0d141d}.feature-img{min-height:450px;background:url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=85") center/cover;position:relative}.feature-img:after{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.45)}.feature-copy h2{font:800 clamp(44px,6vw,66px)/.93 "Barlow Condensed";text-transform:uppercase;margin:17px 0}.feature-copy p{color:var(--muted);line-height:1.85;font-size:14px}.checklist{list-style:none;padding:0;margin:25px 0 30px;display:grid;gap:13px}.checklist li{font-size:13px;color:#dce5ef}.checklist li:before{content:"✓";color:var(--blue);font-weight:900;margin-right:12px}
+.gallery-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:14px}.gallery-grid img{width:100%;height:260px;object-fit:cover;display:block;filter:saturate(.75)}.gallery-grid img:first-child{height:100%;min-height:260px}.gallery-grid img:last-child{grid-column:3;grid-row:1}
+.cta{padding:78px 0;background:linear-gradient(105deg,#0e3152,#0c1725 75%);border-top:1px solid rgba(66,165,255,.3);border-bottom:1px solid rgba(66,165,255,.3)}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.cta h2{font:800 clamp(42px,6vw,64px)/.9 "Barlow Condensed";text-transform:uppercase;margin:14px 0 8px}.cta p{color:#c0d0df;margin:0;font-size:14px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.contact-grid h2{font:800 58px/.9 "Barlow Condensed";text-transform:uppercase;margin:15px 0 20px}.contact-grid p{color:var(--muted);line-height:1.8}.contact-card{background:var(--panel);border:1px solid var(--line);padding:30px}.contact-row{padding:17px 0;border-bottom:1px solid var(--line)}.contact-row:last-child{border:0}.contact-row small{display:block;color:var(--blue);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:7px}.contact-row strong{font-size:16px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:#8290a1;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:800px){.navlinks{display:none}.hero{min-height:690px;background-position:58% center}.strip-inner{grid-template-columns:1fr;gap:14px}.strip-item{border-right:0;border-bottom:1px solid var(--line);padding:12px 0}.strip-item:last-child{border:0}.services{grid-template-columns:1fr}.feature,.contact-grid{grid-template-columns:1fr;gap:30px}.feature-img{min-height:300px}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img:first-child{grid-column:span 2;height:240px}.gallery-grid img{height:190px}.gallery-grid img:last-child{grid-column:auto;grid-row:auto}.cta-inner{align-items:flex-start;flex-direction:column}.hero-note{gap:16px;flex-wrap:wrap}}
+@media(max-width:480px){.wrap{width:min(100% - 30px,1160px)}nav{height:70px}.brand{font-size:12px}.brand-mark{width:36px;height:36px}.nav-cta{padding:12px;font-size:10px}.hero{min-height:680px}h1{font-size:66px}.hero p{font-size:14px}.hero-note{margin-top:40px}.hero-note strong{font-size:12px}section{padding:72px 0}}
+</style>
+</head>
+<body>
+<nav class="wrap">
+  <a class="brand" href="#top"><span class="brand-mark">NL</span><span>NEXT LEVEL<small>MOBILE DETAILING</small></span></a>
+  <div class="navlinks"><a href="#services">Services</a><a href="#about">Why Next Level</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div>
+  <a class="nav-cta" href="tel:+17162681311">Call for a Quote</a>
+</nav>
+<header class="hero" id="top">
+ <div class="wrap"><div class="hero-content">
+  <div class="eyebrow">Mobile detailing · Dunkirk, NY</div>
+  <h1>Clean car.<br><span>Next level.</span></h1>
+  <p>Bring back that just-detailed feeling. Professional mobile detailing that puts your vehicle's finish, comfort, and care first — at a location that works for you.</p>
+  <div class="hero-actions"><a class="btn" href="tel:+17162681311">Request a Quote&nbsp; ↗</a><a class="btn outline" href="#services">Explore Services</a></div>
+  <div class="hero-note"><div><strong>Mobile Convenience</strong>We come to you</div><div><strong>Detail-Focused</strong>Care in every corner</div><div><strong>Local Service</strong>Dunkirk & nearby</div></div>
+ </div></div>
+</header>
+<div class="strip"><div class="wrap strip-inner">
+ <div class="strip-item"><span class="strip-icon">✦</span><div><strong>Convenient mobile service</strong><small>Detailing at your location</small></div></div>
+ <div class="strip-item"><span class="strip-icon">◈</span><div><strong>Attention to detail</strong><small>A cleaner feel, inside and out</small></div></div>
+ <div class="strip-item"><span class="strip-icon">⌖</span><div><strong>Locally focused</strong><small>Dunkirk, Fredonia & surrounding areas</small></div></div>
+</div></div>
+<section id="services"><div class="wrap">
+ <div class="section-head"><div class="eyebrow">The detail makes the difference</div><h2>Make every drive<br>feel brand new.</h2><p>Whether your vehicle needs a refresh or a deeper clean, choose the level of care that fits. Ask about the right package for your vehicle.</p></div>
+ <div class="services">
+  <article class="service"><div class="service-num">01 / INTERIOR</div><h3>Interior Refresh</h3><p>Give your cabin a cleaner, more comfortable feel with focused attention on the surfaces and spaces you use every day.</p></article>
+  <article class="service"><div class="service-num">02 / EXTERIOR</div><h3>Exterior Detail</h3><p>Bring attention back to your vehicle's exterior with a thorough clean and a refreshed finish.</p></article>
+  <article class="service"><div class="service-num">03 / COMPLETE CARE</div><h3>Full Detail</h3><p>A complete inside-and-out refresh for drivers who want their vehicle looking its best from every angle.</p></article>
+ </div>
+</div></section>
+<section class="feature" id="about"><div class="wrap" style="display:contents"></div><div class="feature-img"></div><div class="feature-copy wrap" style="width:auto;margin-right:max(22px,calc((100vw - 1160px)/2))">
+ <div class="eyebrow">A higher standard of clean</div><h2>Your vehicle<br>deserves better.</h2>
+ <p>Next Level Mobile Detailing is built around one simple idea: quality care should be convenient. Skip the extra trip and get your vehicle detailed where it works for you.</p>
+ <ul class="checklist"><li>Mobile convenience</li><li>Interior and exterior care options</li><li>Personalized quote for your vehicle</li><li>Serving the local community</li></ul>
+ <a class="btn" href="tel:+17162681311">Let's Talk Details&nbsp; ↗</a>
+</div></section>
+<section id="gallery"><div class="wrap"><div class="section-head"><div class="eyebrow">The finish speaks for itself</div><h2>See the difference.</h2><p>A dedicated gallery can showcase real customer vehicles, transformations, and before-and-after results.</p></div>
+ <div class="gallery-grid">
+  <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=85" alt="Vehicle being professionally cleaned">
+  <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=700&q=85" alt="Clean detailed vehicle">
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=85" alt="Polished sports car exterior">
+ </div></div></section>
+<div class="cta"><div class="wrap cta-inner"><div><div class="eyebrow">Ready for a refresh?</div><h2>Take your ride<br>to the next level.</h2><p>Tell us what you drive and what it needs. We'll help you get started.</p></div><a class="btn" href="tel:+17162681311">Call 716.268.1311&nbsp; ↗</a></div></div>
+<section id="contact"><div class="wrap contact-grid">
+ <div><div class="eyebrow">Get in touch</div><h2>Let's get<br>your car right.</h2><p>Have a question or want to request a quote? Get in touch and share a little about your vehicle, the service you're looking for, and where you're located.</p><a class="btn" href="tel:+17162681311">Call Now&nbsp; ↗</a></div>
+ <div class="contact-card"><div class="contact-row"><small>Call / Request a quote</small><strong><a href="tel:+17162681311">(716) 268-1311</a></strong></div><div class="contact-row"><small>Service area</small><strong>Dunkirk · Fredonia · Surrounding areas</strong></div><div class="contact-row"><small>Service type</small><strong>Mobile vehicle detailing</strong></div></div>
+</div></section>
+<footer><div class="wrap footer-inner"><span>© <span id="year"></span> Next Level Mobile Detailing. All rights reserved.</span><span>Designed as a website concept by Elevate Web Co.</span></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
