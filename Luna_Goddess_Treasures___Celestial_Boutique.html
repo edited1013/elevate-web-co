@@ -34,12 +34,14 @@
   </script>
 
   <style>
-    /* Custom scrollbar & base celestial styling */
-    body {
+    html, body {
+      min-height: 100vh;
       background-color: #09080E;
       color: #F5F3EE;
       font-family: 'Plus Jakarta Sans', sans-serif;
       overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      -webkit-tap-highlight-color: transparent;
     }
 
     ::-webkit-scrollbar {
@@ -56,7 +58,6 @@
       background: #D4AF37;
     }
 
-    /* Ambient floating & celestial animations */
     @keyframes floatSlow {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-14px) rotate(1.5deg); }
@@ -95,36 +96,18 @@
     }
 
     @keyframes cardFadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(22px) scale(0.985);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+      0% { opacity: 0; transform: translateY(22px) scale(0.985); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     @keyframes modalFadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(16px) scale(0.97);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+      0% { opacity: 0; transform: translateY(16px) scale(0.97); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     @keyframes drawerSlideIn {
-      0% {
-        opacity: 0;
-        transform: translateX(28px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      0% { opacity: 0; transform: translateX(28px); }
+      100% { opacity: 1; transform: translateX(0); }
     }
 
     .animate-float {
@@ -159,7 +142,6 @@
       animation: nebulaDriftThree 28s ease-in-out infinite;
     }
 
-    /* Gold shimmer button hover */
     .btn-gold-shimmer {
       position: relative;
       overflow: hidden;
@@ -183,35 +165,33 @@
       transform: translateY(-1px);
     }
 
-    /* Scroll reveal classes */
+    /* Safe iOS visibility: elements are always visible by default and smoothly animate in */
     .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 1;
+      transform: translateY(0);
+      animation: cardFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Staggered card & content entrance */
     .stagger-card {
-      opacity: 0;
-      animation: cardFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 1;
+      animation: cardFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
     .modal-panel-animate {
-      animation: modalFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: modalFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
     .drawer-panel-animate {
-      animation: drawerSlideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: drawerSlideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
-    /* Smooth image fade-in on load */
     .celestial-img {
-      opacity: 0;
-      transform: scale(1.03);
+      opacity: 1;
+      transform: scale(1);
       transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .celestial-img.is-loaded {
@@ -219,7 +199,6 @@
       transform: scale(1);
     }
 
-    /* Card hover glow & border accent */
     .treasure-card {
       transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.45s ease;
     }
@@ -229,7 +208,6 @@
       box-shadow: 0 20px 44px -12px rgba(0, 0, 0, 0.8), 0 0 26px rgba(212, 175, 55, 0.16);
     }
 
-    /* Glassmorphism utility */
     .glass-panel {
       background: rgba(19, 17, 30, 0.72);
       backdrop-filter: blur(16px);
@@ -239,14 +217,12 @@
 </head>
 <body class="selection:bg-gold/30 selection:text-antiqueGold antialiased">
 
-  <!-- Slow-Moving Ambient Celestial Background Layer -->
+  <!-- Ambient Celestial Background Layer -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-    <!-- Drifting Nebula / Aurora Orbs -->
     <div class="nebula-orb-1 absolute -top-24 -left-24 w-[32rem] h-[32rem] rounded-full bg-[#2C1E4A]/35 blur-[95px]"></div>
     <div class="nebula-orb-2 absolute top-1/3 -right-28 w-[34rem] h-[34rem] rounded-full bg-gold/[0.08] blur-[100px]"></div>
     <div class="nebula-orb-3 absolute -bottom-28 left-1/4 w-[30rem] h-[30rem] rounded-full bg-roseQuartz/[0.08] blur-[95px]"></div>
 
-    <!-- Ultra-Slow Rotating Sacred Geometry Watermark Rings -->
     <svg class="animate-spin-ultra-slow absolute -top-40 -right-40 w-[560px] h-[560px] opacity-[0.07] text-antiqueGold" viewBox="0 0 400 400" fill="none">
       <circle cx="200" cy="200" r="190" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 7"/>
       <circle cx="200" cy="200" r="150" stroke="currentColor" stroke-width="0.6"/>
@@ -260,24 +236,22 @@
       <path d="M235 275C175 275 126 226 126 166C126 123 151 86 188 68C178 66 169 65 159 65C97 65 47 115 47 177C47 239 97 289 159 289C189 289 216 278 235 275Z" stroke="currentColor" stroke-width="0.8"/>
     </svg>
 
-    <!-- Twinkling Starfield & Rising Golden Stardust Motes Canvas -->
     <canvas id="starfieldCanvas" class="w-full h-full"></canvas>
   </div>
 
-  <!-- Toast Notification Container (Replaces alert) -->
+  <!-- Toast Notification Container -->
   <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
 
-  <!-- Top Celestial Announcement Bar -->
+  <!-- Top Announcement Bar -->
   <div class="relative z-30 bg-gradient-to-r from-indigoNight via-[#201A36] to-indigoNight border-b border-gold/20 text-center py-2 px-4 text-xs tracking-widest uppercase text-antiqueGold/90">
     ✦ Reiki-Cleansed Under Full Moonlight &bull; Complimentary Sacred Shipping on Orders $75+ ✦
   </div>
 
-  <!-- Sticky Glassmorphic Navigation Header -->
+  <!-- Sticky Header -->
   <header id="mainHeader" class="sticky top-0 z-40 glass-panel border-b border-gold/15 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Brand Logo with Custom Crescent Moon & Star SVG -->
         <a href="#" class="flex items-center gap-3 group focus:outline-none">
           <div class="relative w-10 h-10 flex items-center justify-center rounded-full bg-indigoNight border border-gold/40 group-hover:border-gold transition-colors shadow-[0_0_15px_rgba(212,175,55,0.2)]">
             <svg class="w-6 h-6 text-gold transition-transform duration-500 group-hover:rotate-12" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -302,16 +276,14 @@
           </div>
         </a>
 
-        <!-- Desktop Navigation Links -->
         <nav class="hidden md:flex items-center space-x-8 text-sm tracking-wide text-alabaster/85">
           <a href="#collections" class="hover:text-gold transition-colors py-2">Collections</a>
-          <a href="#collections" onclick="setCategoryFilter('Crystal Jewelry')" class="hover:text-gold transition-colors py-2">Intention Jewelry</a>
-          <a href="#collections" onclick="setCategoryFilter('Raw & Tumbled Stones')" class="hover:text-gold transition-colors py-2">Sacred Crystals</a>
+          <a href="#collections" onclick="setCategoryFilter('Crystal Jewelry')" class="hover:text-gold transition-colors py-2 cursor-pointer">Intention Jewelry</a>
+          <a href="#collections" onclick="setCategoryFilter('Raw & Tumbled Stones')" class="hover:text-gold transition-colors py-2 cursor-pointer">Sacred Crystals</a>
           <a href="#lunar-rituals" class="hover:text-gold transition-colors py-2">Moon Rituals</a>
           <a href="#our-story" class="hover:text-gold transition-colors py-2">Our Story</a>
         </nav>
 
-        <!-- Actions: Instagram & Shopping Bag -->
         <div class="flex items-center gap-3 sm:gap-4">
           <a href="https://www.instagram.com/lunagoddesstreasures" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
              class="hidden sm:inline-flex items-center gap-1.5 text-xs tracking-wider uppercase text-mutedStar hover:text-antiqueGold border border-white/10 hover:border-gold/40 rounded-full px-3.5 py-2 transition-all">
@@ -321,7 +293,6 @@
             <span>@lunagoddesstreasures</span>
           </a>
 
-          <!-- Shopping Bag Trigger -->
           <button onclick="toggleCartDrawer(true)" aria-label="Open Sacred Bag"
                   class="relative flex items-center gap-2 bg-indigoNight/90 hover:bg-indigoCard border border-gold/35 hover:border-gold text-alabaster px-4 py-2.5 rounded-full transition-all shadow-lg">
             <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
@@ -333,7 +304,6 @@
             </span>
           </button>
 
-          <!-- Mobile Menu Button -->
           <button onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="md:hidden p-2 rounded-xl border border-white/10 text-alabaster hover:border-gold/40">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -343,7 +313,6 @@
       </div>
     </div>
 
-    <!-- Mobile Dropdown Navigation -->
     <div id="mobileMenu" class="hidden md:hidden border-t border-gold/15 bg-obsidian/95 px-6 py-5 space-y-3">
       <a href="#collections" onclick="toggleMobileMenu()" class="block py-2 text-sm text-alabaster hover:text-gold">Collections</a>
       <a href="#collections" onclick="setCategoryFilter('Crystal Jewelry'); toggleMobileMenu()" class="block py-2 text-sm text-alabaster hover:text-gold">Intention Jewelry</a>
@@ -357,18 +326,16 @@
   </header>
 
   <!-- Main Content -->
-  <main class="relative z-10">
+  <main class="relative z-10 block w-full">
 
-    <!-- 1. Editorial Hero Section -->
+    <!-- Hero Section -->
     <section class="relative pt-14 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
-      <!-- Ambient Radial Nebula Glows -->
       <div class="absolute top-10 left-1/4 w-96 h-96 bg-gold/10 rounded-full blur-[130px] pointer-events-none animate-pulse-glow"></div>
       <div class="absolute bottom-0 right-1/4 w-[28rem] h-[28rem] bg-roseQuartz/10 rounded-full blur-[140px] pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          <!-- Hero Left Copy -->
           <div class="lg:col-span-7 text-center lg:text-left space-y-7">
             <div class="stagger-card inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-indigoNight/90 border border-gold/30 text-antiqueGold text-xs tracking-[0.22em] uppercase" style="animation-delay: 0.05s;">
               <span class="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span>
@@ -395,7 +362,6 @@
               </a>
             </div>
 
-            <!-- Trust Pillars -->
             <div class="stagger-card grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-lg mx-auto lg:mx-0 text-left" style="animation-delay: 0.52s;">
               <div>
                 <p class="font-serif text-gold text-lg">100% Ethical</p>
@@ -412,11 +378,9 @@
             </div>
           </div>
 
-          <!-- Hero Right Celestial Astrolabe & Floating Crystal Visual -->
           <div class="lg:col-span-5 relative flex items-center justify-center stagger-card" style="animation-delay: 0.25s;">
             <div class="relative w-full max-w-[430px] aspect-square flex items-center justify-center">
               
-              <!-- Rotating Celestial Astrolabe SVG Ring -->
               <svg class="absolute inset-0 w-full h-full animate-spin-slow opacity-45 pointer-events-none" viewBox="0 0 400 400" fill="none">
                 <circle cx="200" cy="200" r="188" stroke="#D4AF37" stroke-width="0.75" stroke-dasharray="4 6"/>
                 <circle cx="200" cy="200" r="164" stroke="#F3E5AB" stroke-width="0.5"/>
@@ -427,7 +391,6 @@
                 <path d="M200 24L204 34L214 38L204 42L200 52L196 42L186 38L196 34L200 24Z" fill="#D4AF37"/>
               </svg>
 
-              <!-- Floating Arched Portal Frame -->
               <div class="relative w-[78%] h-[88%] rounded-t-full rounded-b-3xl overflow-hidden border border-gold/40 bg-indigoNight shadow-[0_25px_70px_rgba(0,0,0,0.85)] animate-float">
                 <img
                   src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85"
@@ -438,7 +401,6 @@
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/20 to-transparent"></div>
                 
-                <!-- Floating Bottom Caption Card -->
                 <div class="absolute bottom-4 inset-x-4 p-4 rounded-2xl glass-panel border border-gold/25">
                   <div class="flex items-center justify-between">
                     <div>
@@ -452,7 +414,6 @@
                 </div>
               </div>
 
-              <!-- Floating Moon Phase Badge -->
               <div class="hidden sm:flex items-center gap-2.5 absolute -left-4 top-1/4 px-4 py-2.5 rounded-2xl glass-panel border border-gold/30 shadow-xl">
                 <span class="text-gold text-lg">☽</span>
                 <div>
@@ -467,11 +428,10 @@
       </div>
     </section>
 
-    <!-- 2. Curated Treasures & Category Filter Section -->
+    <!-- Curated Treasures Section -->
     <section id="collections" class="py-20 border-t border-white/5 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Section Header -->
         <div class="text-center max-w-2xl mx-auto mb-12 reveal">
           <span class="text-xs uppercase tracking-[0.28em] text-gold font-medium">Sacred Curations</span>
           <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-alabaster mt-2 mb-4">
@@ -482,19 +442,13 @@
           </p>
         </div>
 
-        <!-- Interactive Category & Intention Filter Bar -->
-        <div id="filterBar" class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-12 reveal">
-          <!-- Filter pills injected via JS -->
-        </div>
+        <div id="filterBar" class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-12 reveal"></div>
 
-        <!-- Product Showcase Grid -->
-        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
-          <!-- Product cards injected via JS -->
-        </div>
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7"></div>
       </div>
     </section>
 
-    <!-- 3. Interactive "Shop by Lunar Phase / Intention" Section -->
+    <!-- Lunar Rituals Section -->
     <section id="lunar-rituals" class="py-24 bg-gradient-to-b from-obsidian via-indigoNight/80 to-obsidian border-y border-gold/15 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-14 reveal">
@@ -507,24 +461,17 @@
           </p>
         </div>
 
-        <!-- 4 Moon Phase Interactive Selector Cards -->
-        <div id="moonPhaseTabs" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10 reveal">
-          <!-- Moon phase buttons populated by JS -->
-        </div>
+        <div id="moonPhaseTabs" class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10 reveal"></div>
 
-        <!-- Active Moon Phase Ritual Spotlight Box -->
-        <div id="moonPhaseSpotlight" class="rounded-3xl bg-indigoCard/90 border border-gold/30 p-6 sm:p-10 shadow-2xl transition-all duration-500 reveal">
-          <!-- Spotlight content populated by JS -->
-        </div>
+        <div id="moonPhaseSpotlight" class="rounded-3xl bg-indigoCard/90 border border-gold/30 p-6 sm:p-10 shadow-2xl transition-all duration-500 reveal"></div>
       </div>
     </section>
 
-    <!-- 4. Brand Story & Ethically Sourced Promise -->
+    <!-- Brand Story Section -->
     <section id="our-story" class="py-24 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <!-- Editorial Image Collage -->
           <div class="lg:col-span-6 relative reveal">
             <div class="grid grid-cols-2 gap-4">
               <div class="space-y-4">
@@ -552,7 +499,6 @@
             </div>
           </div>
 
-          <!-- Story Copy -->
           <div class="lg:col-span-6 space-y-6 reveal">
             <span class="text-xs uppercase tracking-[0.28em] text-gold font-medium">The Sanctuary Behind the Magic</span>
             <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-alabaster leading-tight">
@@ -591,12 +537,11 @@
 
   </main>
 
-  <!-- 5. Luxury Footer & Lunar Circle Newsletter -->
+  <!-- Footer -->
   <footer class="relative z-10 bg-[#06050A] border-t border-gold/20 pt-16 pb-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-white/10">
         
-        <!-- Brand Column -->
         <div class="lg:col-span-4 space-y-4">
           <div class="flex items-center gap-3">
             <span class="text-2xl text-gold">☽✦</span>
@@ -611,7 +556,6 @@
           </a>
         </div>
 
-        <!-- Quick Links -->
         <div class="lg:col-span-2 space-y-3">
           <h4 class="font-serif text-sm uppercase tracking-widest text-antiqueGold">Treasures</h4>
           <ul class="space-y-2 text-sm text-mutedStar">
@@ -622,7 +566,6 @@
           </ul>
         </div>
 
-        <!-- Guidance Links -->
         <div class="lg:col-span-2 space-y-3">
           <h4 class="font-serif text-sm uppercase tracking-widest text-antiqueGold">Sanctuary</h4>
           <ul class="space-y-2 text-sm text-mutedStar">
@@ -633,7 +576,6 @@
           </ul>
         </div>
 
-        <!-- Newsletter Signup -->
         <div class="lg:col-span-4 space-y-4">
           <h4 class="font-serif text-sm uppercase tracking-widest text-antiqueGold">Join the Lunar Circle</h4>
           <p class="text-sm text-mutedStar">
@@ -665,33 +607,26 @@
     </div>
   </footer>
 
-  <!-- Interactive Quick-View Product Modal -->
+  <!-- Quick-View Modal -->
   <div id="quickViewModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6">
-    <!-- Backdrop -->
     <div onclick="closeQuickView()" class="absolute inset-0 bg-obsidian/85 backdrop-blur-md transition-opacity"></div>
 
-    <!-- Modal Card -->
     <div class="modal-panel-animate relative w-full max-w-3xl rounded-3xl bg-indigoNight border border-gold/40 shadow-[0_25px_80px_rgba(0,0,0,0.9)] overflow-hidden z-10 max-h-[90vh] overflow-y-auto">
       <button onclick="closeQuickView()" aria-label="Close Modal"
               class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-obsidian/80 border border-white/15 hover:border-gold text-alabaster flex items-center justify-center transition-colors">
         &times;
       </button>
 
-      <div id="quickViewContent" class="grid grid-cols-1 md:grid-cols-2">
-        <!-- Populated dynamically via JS -->
-      </div>
+      <div id="quickViewContent" class="grid grid-cols-1 md:grid-cols-2"></div>
     </div>
   </div>
 
   <!-- Slide-Over Shopping Bag Drawer -->
   <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
-    <!-- Backdrop -->
     <div onclick="toggleCartDrawer(false)" class="absolute inset-0 bg-obsidian/80 backdrop-blur-sm transition-opacity"></div>
 
-    <!-- Drawer Panel -->
     <aside class="drawer-panel-animate absolute top-0 right-0 h-full w-full max-w-md bg-indigoNight border-l border-gold/30 shadow-2xl flex flex-col justify-between z-10">
       
-      <!-- Drawer Header & Free Shipping Progress -->
       <div class="p-6 border-b border-white/10 space-y-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2.5">
@@ -704,7 +639,6 @@
           </button>
         </div>
 
-        <!-- Free Shipping Progress Bar ($75 Threshold) -->
         <div class="p-3.5 rounded-2xl bg-obsidian/70 border border-gold/20 space-y-2">
           <p id="shippingProgressText" class="text-xs text-antiqueGold text-center">
             Add $15.00 more to unlock complimentary insured shipping
@@ -715,12 +649,8 @@
         </div>
       </div>
 
-      <!-- Cart Items Scrollable Area -->
-      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
-        <!-- Cart items rendered by JS -->
-      </div>
+      <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
 
-      <!-- Drawer Footer & Checkout -->
       <div id="cartFooter" class="p-6 border-t border-white/10 bg-obsidian/80 space-y-4">
         <div class="space-y-1.5 text-sm">
           <div class="flex justify-between text-mutedStar">
@@ -743,8 +673,16 @@
 
   <script>
     // =========================================================================
-    // 1. CURATED PRODUCT DATA FOR LUNA GODDESS TREASURES
+    // STATE & PRODUCT DATABASE
     // =========================================================================
+    let activeCategory = "All Treasures";
+    let activeMoonPhaseId = "full";
+    let modalQuantity = 1;
+    let cart = [
+      { productId: 1, quantity: 1 },
+      { productId: 3, quantity: 1 }
+    ];
+
     const products = [
       {
         id: 1,
@@ -852,8 +790,47 @@
       "Lunar Talismans"
     ];
 
+    const moonPhases = [
+      {
+        id: "full",
+        name: "Full Moon",
+        symbol: "🌕",
+        theme: "Illumination & Gratitude",
+        subtitle: "Harvesting the fruits of your intentions and charging crystals under lunar light.",
+        ritualTip: "Place your crystal jewelry and selenite plates near a windowsill under the moonlight overnight. Write down what you are ready to release.",
+        recommendedIds: [1, 5]
+      },
+      {
+        id: "new",
+        name: "New Moon",
+        symbol: "🌑",
+        theme: "Intention & Seed Planting",
+        subtitle: "A dark, fertile sky inviting quiet reflection and new beginning rituals.",
+        ritualTip: "Light white sage or palo santo, cleanse your sacred space, and write down 3 clear desires to manifest this cycle.",
+        recommendedIds: [2, 7]
+      },
+      {
+        id: "waxing",
+        name: "Waxing Moon",
+        symbol: "🌓",
+        theme: "Growth & Momentum",
+        subtitle: "Building energy, taking inspired action, and nurturing your goals.",
+        ritualTip: "Wear citrine or labradorite talismans to maintain high focus and courageous forward momentum.",
+        recommendedIds: [4, 8]
+      },
+      {
+        id: "waning",
+        name: "Waning Moon",
+        symbol: "🌗",
+        theme: "Release & Clearing",
+        subtitle: "Shedding stagnant energy, clearing clutter, and deep energetic rest.",
+        ritualTip: "Use black obsidian and the rose quartz gua sha during your evening bath to soothe physical and energetic tension.",
+        recommendedIds: [3, 6]
+      }
+    ];
+
     // =========================================================================
-    // 4. INITIALIZATION, IMAGE FALLBACK & STARFIELD/STARDUST CANVAS ANIMATION
+    // INITIALIZATION & FALLBACKS
     // =========================================================================
     function handleImageFallback(imgElement, labelText) {
       imgElement.onerror = null;
@@ -886,17 +863,27 @@
       imgElement.classList.add("is-loaded");
     }
 
-    window.addEventListener("DOMContentLoaded", () => {
-      initStarfield();
-      renderCategoryFilters();
-      renderProducts();
-      renderMoonPhaseSection();
-      updateCartUI();
-      initScrollReveal();
-    });
+    function initApp() {
+      try { initStarfield(); } catch (e) { console.error("Starfield init error:", e); }
+      try { renderCategoryFilters(); } catch (e) { console.error("Filter render error:", e); }
+      try { renderProducts(); } catch (e) { console.error("Products render error:", e); }
+      try { renderMoonPhaseSection(); } catch (e) { console.error("Moon phase render error:", e); }
+      try { updateCartUI(); } catch (e) { console.error("Cart UI error:", e); }
+      try { initScrollReveal(); } catch (e) { console.error("Scroll reveal error:", e); }
+    }
 
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initApp);
+    } else {
+      initApp();
+    }
+
+    // =========================================================================
+    // STARFIELD & STARDUST CANVAS ANIMATION
+    // =========================================================================
     function initStarfield() {
       const canvas = document.getElementById("starfieldCanvas");
+      if (!canvas) return;
       const ctx = canvas.getContext("2d");
       let stars = [];
       let driftingMotes = [];
@@ -934,7 +921,6 @@
       function animateStars() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // 1. Twinkling fixed stars
         for (const s of stars) {
           s.alpha += s.delta;
           if (s.alpha <= 0.1 || s.alpha >= 0.88) s.delta *= -1;
@@ -946,7 +932,6 @@
           ctx.fill();
         }
 
-        // 2. Slow-drifting ambient stardust motes
         for (const m of driftingMotes) {
           m.phase += 0.012;
           m.y += m.vy;
@@ -983,25 +968,31 @@
     }
 
     function initScrollReveal() {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
+      const revealEls = document.querySelectorAll(".reveal");
+      revealEls.forEach((el) => el.classList.add("visible"));
 
-      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.05 }
+        );
+
+        revealEls.forEach((el) => observer.observe(el));
+      }
     }
 
     // =========================================================================
-    // 5. FILTERING & PRODUCT GRID RENDERING
+    // CATEGORY FILTER & PRODUCTS
     // =========================================================================
     function renderCategoryFilters() {
       const bar = document.getElementById("filterBar");
+      if (!bar) return;
       bar.innerHTML = categories
         .map((cat) => {
           const isActive = cat === activeCategory;
@@ -1028,6 +1019,7 @@
 
     function renderProducts() {
       const grid = document.getElementById("productGrid");
+      if (!grid) return;
       const filtered =
         activeCategory === "All Treasures"
           ? products
@@ -1038,7 +1030,6 @@
           (product, index) => `
           <article class="stagger-card treasure-card group rounded-3xl bg-indigoCard/90 border border-white/10 overflow-hidden flex flex-col justify-between" style="animation-delay: ${index * 0.075}s;">
             <div>
-              <!-- Image & Hover Quick View Overlay -->
               <div class="relative aspect-[4/5] overflow-hidden bg-indigoNight">
                 <img
                   src="${product.image}"
@@ -1049,12 +1040,10 @@
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-obsidian/20 opacity-80"></div>
 
-                <!-- Top Badge -->
                 <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md border border-gold/30 text-[10px] uppercase tracking-widest text-antiqueGold">
                   ${product.badge}
                 </span>
 
-                <!-- Quick View Button -->
                 <button
                   onclick="openQuickView(${product.id})"
                   class="absolute bottom-3.5 inset-x-3.5 py-2.5 rounded-full glass-panel border border-gold/40 text-alabaster hover:bg-gold hover:text-obsidian text-xs uppercase tracking-widest font-medium opacity-95 sm:opacity-0 sm:translate-y-2 sm:group-hover:opacity-100 sm:group-hover:translate-y-0 transition-all duration-300">
@@ -1062,7 +1051,6 @@
                 </button>
               </div>
 
-              <!-- Card Details -->
               <div class="p-5 space-y-2">
                 <div class="flex items-center justify-between text-[11px] uppercase tracking-wider text-roseQuartz">
                   <span>${product.intention}</span>
@@ -1076,7 +1064,6 @@
               </div>
             </div>
 
-            <!-- Card Footer: Price & Add to Bag -->
             <div class="px-5 pb-5 pt-2 flex items-center justify-between border-t border-white/5 mt-2">
               <span class="font-serif text-xl text-gold">$${product.price.toFixed(2)}</span>
               <button
@@ -1092,11 +1079,12 @@
     }
 
     // =========================================================================
-    // 6. LUNAR PHASE INTERACTIVE SHOWCASE
+    // LUNAR PHASE RITUAL GUIDE
     // =========================================================================
     function renderMoonPhaseSection() {
       const tabsContainer = document.getElementById("moonPhaseTabs");
       const spotlightContainer = document.getElementById("moonPhaseSpotlight");
+      if (!tabsContainer || !spotlightContainer) return;
 
       tabsContainer.innerHTML = moonPhases
         .map((phase, idx) => {
@@ -1120,7 +1108,7 @@
         })
         .join("");
 
-      const currentPhase = moonPhases.find((p) => p.id === activeMoonPhaseId);
+      const currentPhase = moonPhases.find((p) => p.id === activeMoonPhaseId) || moonPhases[0];
       const recommendedProducts = currentPhase.recommendedIds
         .map((id) => products.find((p) => p.id === id))
         .filter(Boolean);
@@ -1182,7 +1170,7 @@
     }
 
     // =========================================================================
-    // 7. QUICK-VIEW MODAL LOGIC
+    // QUICK VIEW MODAL
     // =========================================================================
     function openQuickView(productId) {
       const product = products.find((p) => p.id === productId);
@@ -1253,15 +1241,18 @@
 
     function closeQuickView() {
       const modal = document.getElementById("quickViewModal");
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
     }
 
     // =========================================================================
-    // 8. SHOPPING BAG DRAWER & CHECKOUT LOGIC
+    // SHOPPING BAG DRAWER
     // =========================================================================
     function toggleCartDrawer(open) {
       const drawer = document.getElementById("cartDrawer");
+      if (!drawer) return;
       if (open) {
         drawer.classList.remove("hidden");
       } else {
@@ -1306,6 +1297,8 @@
       const subtotalEl = document.getElementById("cartSubtotal");
       const progressText = document.getElementById("shippingProgressText");
       const progressBar = document.getElementById("shippingProgressBar");
+
+      if (!badge || !container || !subtotalEl) return;
 
       const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
       badge.textContent = totalCount;
@@ -1370,16 +1363,17 @@
 
       subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
 
-      // Free Shipping Progress Bar ($75 threshold)
       const threshold = 75;
       const pct = Math.min(100, (subtotal / threshold) * 100);
-      progressBar.style.width = `${pct}%`;
+      if (progressBar) progressBar.style.width = `${pct}%`;
 
-      if (subtotal >= threshold) {
-        progressText.innerHTML = `✦ You have unlocked <strong class="text-gold">Complimentary Insured Shipping!</strong>`;
-      } else {
-        const remaining = (threshold - subtotal).toFixed(2);
-        progressText.innerHTML = `Add <strong class="text-gold">$${remaining}</strong> more for complimentary lunar shipping`;
+      if (progressText) {
+        if (subtotal >= threshold) {
+          progressText.innerHTML = `✦ You have unlocked <strong class="text-gold">Complimentary Insured Shipping!</strong>`;
+        } else {
+          const remaining = (threshold - subtotal).toFixed(2);
+          progressText.innerHTML = `Add <strong class="text-gold">$${remaining}</strong> more for complimentary lunar shipping`;
+        }
       }
     }
 
@@ -1390,23 +1384,27 @@
       }
 
       const container = document.getElementById("cartItemsContainer");
-      container.innerHTML = `
-        <div class="h-full flex flex-col items-center justify-center text-center py-10 px-4 space-y-4">
-          <div class="w-16 h-16 rounded-full bg-gold/20 border border-gold flex items-center justify-center text-2xl text-gold">
-            ✦
+      if (container) {
+        container.innerHTML = `
+          <div class="h-full flex flex-col items-center justify-center text-center py-10 px-4 space-y-4">
+            <div class="w-16 h-16 rounded-full bg-gold/20 border border-gold flex items-center justify-center text-2xl text-gold">
+              ✦
+            </div>
+            <h4 class="font-serif text-2xl text-antiqueGold">Blessings on Your Order</h4>
+            <p class="text-sm text-alabaster/85 leading-relaxed">
+              Thank you for supporting <span class="text-gold">@lunagoddesstreasures</span>. Your crystals are being Reiki-cleansed and prepared in sacred packaging.
+            </p>
+            <button onclick="resetDemoAfterOrder()" class="mt-2 px-6 py-3 rounded-full bg-gold text-obsidian font-semibold text-xs uppercase tracking-widest">
+              Continue Exploring
+            </button>
           </div>
-          <h4 class="font-serif text-2xl text-antiqueGold">Blessings on Your Order</h4>
-          <p class="text-sm text-alabaster/85 leading-relaxed">
-            Thank you for supporting <span class="text-gold">@lunagoddesstreasures</span>. Your crystals are being Reiki-cleansed and prepared in sacred packaging.
-          </p>
-          <button onclick="resetDemoAfterOrder()" class="mt-2 px-6 py-3 rounded-full bg-gold text-obsidian font-semibold text-xs uppercase tracking-widest">
-            Continue Exploring
-          </button>
-        </div>
-      `;
+        `;
+      }
       cart = [];
-      document.getElementById("cartCountBadge").textContent = "0";
-      document.getElementById("cartSubtotal").textContent = "$0.00";
+      const badge = document.getElementById("cartCountBadge");
+      const subtotalEl = document.getElementById("cartSubtotal");
+      if (badge) badge.textContent = "0";
+      if (subtotalEl) subtotalEl.textContent = "$0.00";
     }
 
     function resetDemoAfterOrder() {
@@ -1415,26 +1413,27 @@
     }
 
     // =========================================================================
-    // 9. MOBILE MENU, NEWSLETTER & TOAST NOTIFICATIONS
+    // MOBILE MENU & TOAST NOTIFICATIONS
     // =========================================================================
     function toggleMobileMenu() {
       const menu = document.getElementById("mobileMenu");
-      menu.classList.toggle("hidden");
+      if (menu) menu.classList.toggle("hidden");
     }
 
     function handleNewsletterSubmit(event) {
       event.preventDefault();
       const input = document.getElementById("newsletterEmail");
       const success = document.getElementById("newsletterSuccess");
-      if (input.value.trim()) {
+      if (input && input.value.trim()) {
         input.value = "";
-        success.classList.remove("hidden");
+        if (success) success.classList.remove("hidden");
         showToast("✦ Welcome to the Lunar Circle!");
       }
     }
 
     function showToast(message) {
       const container = document.getElementById("toastContainer");
+      if (!container) return;
       const toast = document.createElement("div");
       toast.className =
         "pointer-events-auto px-5 py-3.5 rounded-2xl glass-panel border border-gold/45 text-xs sm:text-sm text-antiqueGold shadow-2xl transform transition-all duration-300 translate-y-2 opacity-0";
