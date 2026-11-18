@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northland Contracting, Inc. | Commercial Concrete, Dunkirk NY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deepNavy: '#0B0F19',
+            surfaceDark: '#121824',
+            surfaceCard: '#182030',
+            borderSlate: '#232D42',
+            neonGreen: '#00FF66',
+            neonGreenHover: '#00CC52',
+            techRed: '#FF334B',
+            textMuted: '#94A3B8',
+          },
+          fontFamily: {
+            display: ['"Syne"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden;
+      background-color: #0B0F19;
+      color: #F8FAFC;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* Fluid Responsive Typography & Clamping */
+    .hero-heading {
+      font-size: clamp(2.25rem, 5.5vw, 5.2rem);
+      line-height: 1.05;
+    }
+    .section-heading {
+      font-size: clamp(2rem, 4vw, 3.8rem);
+      line-height: 1.1;
+    }
+
+    /* Elevate Web Co. Signature Atmospheric Gradients */
+    .glow-radial-green {
+      background: radial-gradient(circle, rgba(0, 255, 102, 0.12) 0%, rgba(11, 15, 25, 0) 70%);
+    }
+    .glow-radial-blue {
+      background: radial-gradient(circle, rgba(35, 45, 66, 0.4) 0%, rgba(11, 15, 25, 0) 75%);
+    }
+    .text-gradient-neon {
+      background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 50%, #00FF66 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Hairlines */
+    .hairline-b { border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .hairline-t { border-top: 1px solid rgba(255, 255, 255, 0.08); }
+    .hairline-r { border-right: 1px solid rgba(255, 255, 255, 0.08); }
+    .hairline-l { border-left: 1px solid rgba(255, 255, 255, 0.08); }
+
+    /* Silky Scroll-Driven Animations */
+    .reveal-fade {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-fade.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.96) translateY(25px);
+      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-scale.is-visible {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid #00FF66;
+      outline-offset: 3px;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0B0F19; }
+    ::-webkit-scrollbar-thumb { background: #232D42; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #00FF66; }
+  </style>
+
+<style>
+/* ===== MOTION & POLISH LAYER ===== */
+html{scroll-behavior:smooth}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+ background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+ background-size:64px 64px;animation:gridDrift 24s linear infinite;
+ -webkit-mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%)}
+@keyframes gridDrift{to{background-position:64px 64px}}
+main,header,footer{position:relative;z-index:1}
+#scroll-progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:100;transform-origin:0 50%;transform:scaleX(0);
+ background:linear-gradient(90deg,#00FF66,#7dffb3);box-shadow:0 0 12px #00FF66}
+header.is-scrolled{box-shadow:0 10px 40px -10px rgba(0,0,0,.7)}
+header.is-scrolled>div:first-child{height:64px}
+header>div:first-child{transition:height .35s cubic-bezier(.16,1,.3,1)}
+/* hero word reveal */
+.w-mask{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+.w-in{display:inline-block;transform:translateY(110%) rotate(4deg);opacity:0;
+ animation:wordUp .95s cubic-bezier(.16,1,.3,1) forwards;animation-delay:calc(.15s + var(--i)*.09s)}
+@keyframes wordUp{to{transform:none;opacity:1}}
+.text-gradient-neon{background-size:200% 100%;animation:sheen 6s ease-in-out infinite alternate}
+@keyframes sheen{from{background-position:0 0}to{background-position:100% 0}}
+.hero-heading .underline{text-decoration-color:#00FF66;animation:ulPulse 3s ease-in-out infinite}
+@keyframes ulPulse{50%{text-decoration-color:rgba(0,255,102,.35)}}
+/* ambient glow orbs */
+.glow-radial-green{animation:floatA 12s ease-in-out infinite}
+.glow-radial-blue{animation:floatB 16s ease-in-out infinite}
+@keyframes floatA{50%{transform:translate(70px,50px) scale(1.2)}}
+@keyframes floatB{50%{transform:translate(-60px,-40px) scale(1.1)}}
+/* stagger reveals */
+.reveal-fade,.reveal-scale{transition-delay:var(--d,0s)!important}
+.reveal-fade{transform:translateY(44px);filter:blur(6px)}
+.reveal-fade.is-visible,.reveal-scale.is-visible{filter:blur(0)}
+.reveal-scale{filter:blur(6px)}
+.reveal-fade,.reveal-scale{transition-property:opacity,transform,filter}
+/* spotlight cards */
+.spot{position:relative;overflow:hidden;isolation:isolate}
+.spot::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .4s;
+ background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(0,255,102,.13),transparent 60%)}
+.spot:hover::after{opacity:1}
+.spot:hover{transform:translateY(-4px);box-shadow:0 24px 60px -20px rgba(0,255,102,.25)}
+.spot.is-visible{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s,border-color .5s,opacity .9s,filter .9s}
+/* chips */
+.spot span.font-mono.uppercase.rounded-sm{transition:all .3s}
+.spot span.font-mono.uppercase.rounded-sm:hover{background:#00FF66;color:#0B0F19;border-color:#00FF66;transform:translateY(-2px)}
+/* buttons */
+button.bg-neonGreen,a.bg-neonGreen{position:relative;overflow:hidden}
+button.bg-neonGreen::before{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+ background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);transition:left .7s}
+button.bg-neonGreen:hover::before{left:140%}
+button.bg-neonGreen:hover{box-shadow:0 0 34px rgba(0,255,102,.55);transform:translateY(-2px)}
+button.bg-neonGreen svg{transition:transform .3s}
+button.bg-neonGreen:hover svg{transform:translateX(6px)}
+.nav-link,.proj-filter-btn{transition:all .3s}
+/* images */
+img{transition:transform 1.2s cubic-bezier(.16,1,.3,1),filter .6s}
+.hero-img-wrap{position:relative}
+.hero-img-wrap::after{content:"";position:absolute;inset:0;pointer-events:none;
+ background:linear-gradient(180deg,transparent 60%,rgba(11,15,25,.55)),linear-gradient(transparent 49.5%,rgba(0,255,102,.5) 50%,transparent 50.5%);
+ background-size:100% 100%,100% 200%;animation:scan 5s linear infinite}
+@keyframes scan{from{background-position:0 0,0 -100%}to{background-position:0 0,0 100%}}
+.float-card{animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px)}}
+/* ticker */
+.ticker{overflow:hidden;background:#00FF66;color:#0B0F19;position:relative;z-index:1}
+.ticker-track{display:flex;width:max-content;animation:tick 32s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker span{font-family:'Syne',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:13px;padding:11px 28px;white-space:nowrap}
+.ticker span::after{content:"\25A0";margin-left:56px;font-size:8px;vertical-align:middle}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* view + modal transitions */
+.app-view{animation:viewIn .7s cubic-bezier(.16,1,.3,1)}
+@keyframes viewIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+#project-modal:not(.hidden){animation:fadeIn .35s}
+#project-modal:not(.hidden)>*{animation:popIn .55s cubic-bezier(.16,1,.3,1)}
+@keyframes fadeIn{from{opacity:0}}
+@keyframes popIn{from{opacity:0;transform:translateY(30px) scale(.95)}}
+.proj-card:not(.hidden){animation:viewIn .6s cubic-bezier(.16,1,.3,1)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .reveal-fade,.reveal-scale{opacity:1!important;transform:none!important;filter:none!important}.w-in{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body class="selection:bg-neonGreen selection:text-deepNavy">
+
+  <div id="scroll-progress"></div>
+  <!-- ENTERPRISE STATUS BAR -->
+  <div class="bg-surfaceDark hairline-b px-4 sm:px-8 py-2.5 text-xs relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+      <div class="flex items-center gap-3 font-mono tracking-wider uppercase text-[11px] text-textMuted overflow-hidden text-ellipsis whitespace-nowrap">
+        <span class="inline-block w-2 h-2 rounded-full bg-neonGreen animate-pulse shrink-0"></span>
+        <span class="truncate">Western New York Enterprise Commercial Concrete &bull; Est. 1998</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 font-mono text-[11px] text-textMuted">
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-neonGreen"></span> Dunkirk, NY HQ</span>
+        <span class="text-white/20">|</span>
+        <a href="mailto:ala@northlandcontracting.net" class="hover:text-neonGreen transition-colors truncate">ala@northlandcontracting.net</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY ELEVATE-STYLE HEADER -->
+  <header class="sticky top-0 z-40 bg-deepNavy/90 backdrop-blur-xl hairline-b transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Wordmark -->
+      <a href="#home" class="group flex items-center gap-3 shrink-0" aria-label="Northland Contracting Home">
+        <div class="flex flex-col justify-center">
+          <div class="flex items-center gap-2">
+            <span class="font-display font-extrabold text-xl sm:text-2xl md:text-3xl tracking-tight uppercase text-white leading-none">
+              NORTHLAND
+            </span>
+            <span class="inline-block w-2.5 h-2.5 bg-neonGreen transition-transform duration-300 group-hover:scale-125 shrink-0"></span>
+          </div>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="h-[1px] w-6 bg-neonGreen"></span>
+            <span class="font-mono text-[9px] sm:text-[11px] uppercase tracking-[0.15em] sm:tracking-[0.2em] text-textMuted font-medium truncate">
+              Contracting, Inc. // Est. 1998
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-white/90" aria-label="Primary Navigation">
+        <button type="button" data-target="home-section" class="nav-link hover:text-neonGreen transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-neonGreen hover:after:w-full after:transition-all cursor-pointer">Home</button>
+        <button type="button" data-target="capabilities-section" class="nav-link hover:text-neonGreen transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-neonGreen hover:after:w-full after:transition-all cursor-pointer">Capabilities</button>
+        <button type="button" data-target="projects-section" class="nav-link hover:text-neonGreen transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-neonGreen hover:after:w-full after:transition-all cursor-pointer">Projects</button>
+        <button type="button" data-target="about-section" class="nav-link hover:text-neonGreen transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-neonGreen hover:after:w-full after:transition-all cursor-pointer">About</button>
+        <button type="button" data-target="equipment-section" class="nav-link hover:text-neonGreen transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-neonGreen hover:after:w-full after:transition-all cursor-pointer">Equipment</button>
+      </nav>
+
+      <!-- Phone & CTA -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="tel:+17166728572" class="font-mono text-xs md:text-sm font-medium text-white hover:text-neonGreen transition-colors px-2 py-2 flex items-center gap-2 group">
+          <svg class="w-4 h-4 text-neonGreen transition-transform group-hover:scale-110 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+          </svg>
+          <span>(716) 672-8572</span>
+        </a>
+        <button type="button" data-target="contact-section" class="nav-link bg-neonGreen hover:bg-neonGreenHover text-deepNavy transition-all duration-300 font-display uppercase tracking-wider font-extrabold text-sm px-5 py-3 rounded-sm shadow-lg cursor-pointer">
+          Project Inquiry
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" type="button" class="lg:hidden p-2.5 text-white border border-white/20 rounded-sm hover:border-neonGreen transition-colors cursor-pointer" aria-expanded="false" aria-controls="mobile-nav" aria-label="Toggle Navigation">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 7.5h16.5M3.75 12h16.5M3.75 16.5h16.5" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-surfaceDark hairline-b px-4 sm:px-8 py-6 shadow-2xl">
+      <div class="flex flex-col gap-4">
+        <button type="button" data-target="home-section" class="mobile-nav-link text-left font-display uppercase text-xl sm:text-2xl font-bold tracking-wide text-white hover:text-neonGreen py-1 cursor-pointer">01 // Home</button>
+        <button type="button" data-target="capabilities-section" class="mobile-nav-link text-left font-display uppercase text-xl sm:text-2xl font-bold tracking-wide text-white hover:text-neonGreen py-1 cursor-pointer">02 // Capabilities</button>
+        <button type="button" data-target="projects-section" class="mobile-nav-link text-left font-display uppercase text-xl sm:text-2xl font-bold tracking-wide text-white hover:text-neonGreen py-1 cursor-pointer">03 // Projects</button>
+        <button type="button" data-target="about-section" class="mobile-nav-link text-left font-display uppercase text-xl sm:text-2xl font-bold tracking-wide text-white hover:text-neonGreen py-1 cursor-pointer">04 // About Us</button>
+        <button type="button" data-target="equipment-section" class="mobile-nav-link text-left font-display uppercase text-xl sm:text-2xl font-bold tracking-wide text-white hover:text-neonGreen py-1 cursor-pointer">05 // Equipment</button>
+        <div class="hairline-t pt-4 mt-2 flex flex-col sm:flex-row gap-3">
+          <a href="tel:+17166728572" class="flex-1 text-center border border-white/30 text-white font-mono text-sm py-3 px-4 rounded-sm">
+            Call (716) 672-8572
+          </a>
+          <button type="button" data-target="contact-section" class="mobile-nav-link flex-1 text-center bg-neonGreen text-deepNavy font-display uppercase tracking-wider font-extrabold text-base py-3 px-4 rounded-sm cursor-pointer">
+            Project Inquiry
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Commercial Foundations</span><span>Laser-Screeded Flatwork</span><span>Structural Slabs</span><span>Concrete Pumping</span><span>Power Trowel Finishing</span><span>Est. 1998 &bull; Dunkirk, NY</span><span>Commercial Foundations</span><span>Laser-Screeded Flatwork</span><span>Structural Slabs</span><span>Concrete Pumping</span><span>Power Trowel Finishing</span><span>Est. 1998 &bull; Dunkirk, NY</span></div></div>
+
+  <!-- MAIN APP CONTAINER -->
+  <main id="app-main">
+
+    <!-- VIEW 01: HOME -->
+    <section id="home-section" class="app-view relative pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pt-24 lg:pb-36 hairline-b overflow-hidden bg-gradient-to-b from-deepNavy via-surfaceDark/50 to-deepNavy">
+      <div class="absolute -top-32 -left-32 w-96 h-96 glow-radial-green rounded-full pointer-events-none blur-3xl"></div>
+      <div class="absolute top-1/2 -right-32 w-[600px] h-[600px] glow-radial-blue rounded-full pointer-events-none blur-3xl"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 w-full">
+        
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-4 sm:pb-6 mb-8 sm:mb-10 hairline-b reveal-fade">
+          <div class="flex items-center gap-3 overflow-hidden">
+            <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-[10px] sm:text-[11px] uppercase tracking-widest rounded-sm border border-white/15 shrink-0">
+              Dunkirk, New York
+            </span>
+            <span class="font-mono text-[11px] sm:text-xs uppercase tracking-wider text-textMuted hidden sm:inline truncate">
+              Commercial Foundations // Structural Flatwork // Est. 1998
+            </span>
+          </div>
+          <div class="flex items-center gap-2 font-mono text-[11px] sm:text-xs text-neonGreen shrink-0">
+            <span class="inline-block w-2 h-2 rounded-full bg-neonGreen animate-ping"></span>
+            <span>SYSTEM ONLINE // ELEVATE ENTERPRISE</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
+          
+          <div class="w-full lg:w-[54%] flex flex-col items-start reveal-fade">
+            <p class="font-mono text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-neonGreen font-semibold mb-3 sm:mb-4">
+              Western New York Commercial Concrete Specialists
+            </p>
+            
+            <h1 class="font-display font-extrabold uppercase hero-heading text-white tracking-tight w-full">
+              Precision Concrete. <br class="hidden sm:inline" />
+              <span class="text-gradient-neon">Enterprise</span> <span class="underline decoration-neonGreen decoration-4 underline-offset-8">Foundations.</span>
+            </h1>
+            
+            <p class="mt-6 text-sm sm:text-base md:text-lg text-textMuted leading-relaxed max-w-xl font-normal">
+              Operating since 1998 from Dunkirk, NY, Northland Contracting delivers heavy-duty commercial concrete foundations, precision flatwork, structural slab placement, and professional concrete finishing for demanding industrial and commercial projects.
+            </p>
+
+            <div class="mt-8 sm:mt-9 flex flex-col sm:flex-row sm:items-center gap-4 w-full sm:w-auto">
+              <button type="button" data-target="contact-section" class="nav-link inline-flex items-center justify-center gap-3 bg-neonGreen hover:bg-neonGreenHover text-deepNavy font-display uppercase font-extrabold tracking-wider text-sm sm:text-base px-6 sm:px-8 py-4 rounded-sm transition-all duration-300 shadow-xl cursor-pointer w-full sm:w-auto">
+                <span>Request Project Discussion</span>
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
+              <button type="button" data-target="capabilities-section" class="nav-link inline-flex items-center justify-center gap-2.5 border border-white/25 bg-deepNavy hover:bg-surfaceDark text-white font-mono text-xs sm:text-sm font-medium px-6 py-4 rounded-sm transition-colors cursor-pointer w-full sm:w-auto">
+                <span>Explore Capabilities</span>
+              </button>
+            </div>
+
+            <div class="mt-10 sm:mt-12 pt-6 sm:pt-7 hairline-t w-full flex flex-col sm:flex-row gap-6 sm:gap-10">
+              <div class="flex-1">
+                <span class="font-mono text-[11px] uppercase tracking-widest text-neonGreen block mb-1">01 // Subsurface</span>
+                <p class="font-display uppercase font-bold text-lg sm:text-xl text-white">Commercial Foundations</p>
+                <p class="text-xs text-textMuted mt-1 leading-relaxed">Structural footings, reinforced foundation walls, and heavy equipment pads.</p>
+              </div>
+              <div class="hidden sm:block w-[1px] bg-white/15"></div>
+              <div class="flex-1">
+                <span class="font-mono text-[11px] uppercase tracking-widest text-neonGreen block mb-1">02 // Surface Finish</span>
+                <p class="font-display uppercase font-bold text-lg sm:text-xl text-white">Flatwork &amp; Pumping</p>
+                <p class="text-xs text-textMuted mt-1 leading-relaxed">Laser-screeded industrial flatwork, high-tolerance placement, and concrete pumping.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-[46%] relative flex flex-col items-center mt-6 lg:mt-0">
+            <div class="relative w-full rounded-sm overflow-hidden border border-white/15 bg-surfaceDark shadow-2xl reveal-scale">
+              <img
+                src="https://images.unsplash.com/photo-1541888946425-d0fbb18f024e?auto=format&fit=crop&w=1200&q=82"
+                alt="Large commercial concrete foundation and industrial building construction"
+                class="w-full h-[300px] sm:h-[420px] lg:h-[500px] object-cover object-center transition-transform duration-1000 hover:scale-105"
+                loading="eager"
+                onerror="this.onerror=null;this.src='https://placehold.co/1200x800/182030/F8FAFC?text=Commercial+Foundation+Construction';"
+              />
+              <div class="absolute top-4 left-4 bg-deepNavy/90 backdrop-blur-md text-white px-3 py-1.5 rounded-sm border border-white/15 max-w-[90%] truncate">
+                <span class="font-mono text-[9px] sm:text-[10px] uppercase tracking-widest block truncate">
+                  Commercial Concrete Site // Dunkirk, NY
+                </span>
+              </div>
+            </div>
+
+            <div class="-mt-8 sm:-mt-14 ml-0 sm:ml-8 self-start sm:self-auto relative z-20 bg-surfaceCard text-white p-5 sm:p-7 rounded-sm border-l-4 border-neonGreen shadow-2xl max-w-md w-full">
+              <div class="flex items-center justify-between gap-4 mb-2">
+                <span class="font-mono text-[10px] sm:text-[11px] uppercase tracking-widest text-neonGreen">Operational Standards</span>
+                <span class="font-mono text-[10px] sm:text-[11px] text-textMuted">WNY REGION</span>
+              </div>
+              <p class="font-display uppercase font-bold text-lg sm:text-2xl tracking-wide text-white">
+                <span data-count="28">28</span>+ Years of Structural Reliability
+              </p>
+              <p class="text-xs sm:text-sm text-textMuted mt-2 leading-relaxed">
+                Delivering exact tolerances, rigorous steel reinforcement placement, and seamless concrete finishing for general contractors and developers across Western New York.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 02: CAPABILITIES -->
+    <section id="capabilities-section" class="app-view hidden py-16 sm:py-20 lg:py-28 bg-deepNavy hairline-b relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 w-full">
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 sm:pb-12 hairline-b reveal-fade">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.2em] text-neonGreen font-semibold block mb-2">
+              Core Technical Capabilities
+            </span>
+            <h2 class="font-display font-extrabold uppercase section-heading text-white tracking-tight">
+              Industrial &amp; Commercial Concrete Services
+            </h2>
+          </div>
+          <p class="font-mono text-xs text-textMuted max-w-sm leading-relaxed">
+            Engineered for general contractors, industrial plant managers, and commercial developers throughout Western New York.
+          </p>
+        </div>
+
+        <div class="mt-10 sm:mt-14 flex flex-col gap-6 sm:gap-8">
+          
+          <div class="bg-surfaceCard border border-white/15 p-6 sm:p-10 rounded-sm flex flex-col lg:flex-row gap-6 sm:gap-8 items-start group hover:border-neonGreen transition-all duration-500 reveal-fade shadow-xl">
+            <div class="w-full lg:w-1/3">
+              <span class="font-mono text-xs uppercase tracking-widest text-neonGreen block mb-2">Division 01 // Subsurface</span>
+              <h3 class="font-display font-bold uppercase text-2xl sm:text-3xl text-white group-hover:text-neonGreen transition-colors">
+                Commercial Concrete Foundations
+              </h3>
+              <p class="font-mono text-xs text-textMuted mt-1 sm:mt-2">Reinforced Footings, Foundation Walls &amp; Piers</p>
+            </div>
+            <div class="w-full lg:w-2/3 flex flex-col gap-4">
+              <p class="text-sm sm:text-base text-textMuted leading-relaxed">
+                We construct heavy-duty cast-in-place concrete foundations designed to withstand immense structural loads and subterranean soil pressure. Our teams manage precision excavation support, formwork engineering, rebar reinforcement tying, and rigorous pour monitoring.
+              </p>
+              <div class="flex flex-wrap gap-2.5 pt-2">
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Structural Footings</span>
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Foundation Walls</span>
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Equipment Bases</span>
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Anchor Bolt Setting</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surfaceCard border border-white/15 p-6 sm:p-10 rounded-sm flex flex-col lg:flex-row gap-6 sm:gap-8 items-start group hover:border-neonGreen transition-all duration-500 reveal-fade shadow-xl">
+            <div class="w-full lg:w-1/3">
+              <span class="font-mono text-xs uppercase tracking-widest text-neonGreen block mb-2">Division 02 // Surface</span>
+              <h3 class="font-display font-bold uppercase text-2xl sm:text-3xl text-white group-hover:text-neonGreen transition-colors">
+                Concrete Flatwork &amp; Slabs
+              </h3>
+              <p class="font-mono text-xs text-textMuted mt-1 sm:mt-2">Warehouse Floors, Parking Decks &amp; Heavy Slabs</p>
+            </div>
+            <div class="w-full lg:w-2/3 flex flex-col gap-4">
+              <p class="text-sm sm:text-base text-textMuted leading-relaxed">
+                Industrial and commercial facilities demand exceptionally flat, durable slab floors. Northland Contracting utilizes advanced laser screeding and surface finishing techniques to deliver high Ff/Fl floor flatness numbers for distribution centers, manufacturing plants, and commercial buildings.
+              </p>
+              <div class="flex flex-wrap gap-2.5 pt-2">
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Warehouse Floor Slabs</span>
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Exterior Concrete Aprons</span>
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Loading Dock Slabs</span>
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Joint Sawing &amp; Sealing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surfaceCard border border-white/15 p-6 sm:p-10 rounded-sm flex flex-col lg:flex-row gap-6 sm:gap-8 items-start group hover:border-neonGreen transition-all duration-500 reveal-fade shadow-xl">
+            <div class="w-full lg:w-1/3">
+              <span class="font-mono text-xs uppercase tracking-widest text-neonGreen block mb-2">Division 03 // Execution</span>
+              <h3 class="font-display font-bold uppercase text-2xl sm:text-3xl text-white group-hover:text-neonGreen transition-colors">
+                Placement &amp; Professional Finishing
+              </h3>
+              <p class="font-mono text-xs text-textMuted mt-1 sm:mt-2">High-Tolerance Surface Treatments &amp; Hardener Applications</p>
+            </div>
+            <div class="w-full lg:w-2/3 flex flex-col gap-4">
+              <p class="text-sm sm:text-base text-textMuted leading-relaxed">
+                Our skilled finishing crews oversee slump testing, strategic placement, screeding, bull floating, troweling, and liquid hardener application. We maintain stringent quality control from truck discharge to final curing compound application.
+              </p>
+              <div class="flex flex-wrap gap-2.5 pt-2">
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Power Trowel Finishing</span>
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Liquid Surface Hardeners</span>
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Curing &amp; Sealing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surfaceCard border border-white/15 p-6 sm:p-10 rounded-sm flex flex-col lg:flex-row gap-6 sm:gap-8 items-start group hover:border-neonGreen transition-all duration-500 reveal-fade shadow-xl">
+            <div class="w-full lg:w-1/3">
+              <span class="font-mono text-xs uppercase tracking-widest text-neonGreen block mb-2">Division 04 // Logistics</span>
+              <h3 class="font-display font-bold uppercase text-2xl sm:text-3xl text-white group-hover:text-neonGreen transition-colors">
+                Structural Concrete Pumping
+              </h3>
+              <p class="font-mono text-xs text-textMuted mt-1 sm:mt-2">Efficient High-Volume Placement &amp; Hard-to-Reach Pours</p>
+            </div>
+            <div class="w-full lg:w-2/3 flex flex-col gap-4">
+              <p class="text-sm sm:text-base text-textMuted leading-relaxed">
+                To maintain continuous pour rates and precise placement across complex job sites, we integrate specialized concrete pumping operations, ensuring rapid placement for elevated slabs, deep foundations, and restricted commercial access points.
+              </p>
+              <div class="flex flex-wrap gap-2.5 pt-2">
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Boom &amp; Line Pumping</span>
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">High-Volume Placement</span>
+                <span class="px-3 py-1 bg-surfaceDark text-white font-mono text-xs uppercase rounded-sm border border-white/10">Site Logistics Coordination</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW 03: PROJECTS -->
+    <section id="projects-section" class="app-view hidden py-16 sm:py-20 lg:py-28 bg-deepNavy hairline-b relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 w-full">
+
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-8 hairline-b reveal-fade">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.2em] text-neonGreen font-semibold block mb-2">
+              Portfolio &amp; Project Archive
+            </span>
+            <h2 class="font-display font-extrabold uppercase section-heading text-white tracking-tight">
+              Commercial Project Showcase
+            </h2>
+          </div>
+
+          <div class="bg-surfaceCard border border-white/15 p-4 rounded-sm max-w-md shadow-sm">
+            <p class="font-mono text-[11px] uppercase tracking-wider text-white font-semibold">
+              Transparency Notice — Concept Gallery
+            </p>
+            <p class="text-xs text-textMuted mt-1 leading-relaxed">
+              Verified company capabilities span structural foundations and flatwork since 1998. The commercial project plates below are curated Unsplash commercial-use demonstration imagery styled as a future-ready portfolio structure for Northland Contracting.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center gap-2.5" role="tablist" aria-label="Filter Projects">
+          <button type="button" data-filter="all" class="proj-filter-btn active px-4 py-2.5 rounded-sm font-mono text-xs uppercase tracking-wider bg-neonGreen text-deepNavy font-bold transition-colors shadow-sm cursor-pointer">
+            All Projects (04)
+          </button>
+          <button type="button" data-filter="foundations" class="proj-filter-btn px-4 py-2.5 rounded-sm font-mono text-xs uppercase tracking-wider bg-surfaceCard text-white border border-white/20 hover:border-neonGreen transition-colors cursor-pointer">
+            Foundations &amp; Walls
+          </button>
+          <button type="button" data-filter="flatwork" class="proj-filter-btn px-4 py-2.5 rounded-sm font-mono text-xs uppercase tracking-wider bg-surfaceCard text-white border border-white/20 hover:border-neonGreen transition-colors cursor-pointer">
+            Industrial Flatwork
+          </button>
+          <button type="button" data-filter="pumping" class="proj-filter-btn px-4 py-2.5 rounded-sm font-mono text-xs uppercase tracking-wider bg-surfaceCard text-white border border-white/20 hover:border-neonGreen transition-colors cursor-pointer">
+            Pumping &amp; Heavy Slabs
+          </button>
+        </div>
+
+        <div id="projects-container" class="mt-10 flex flex-col gap-10">
+          
+          <div class="proj-card flex flex-col lg:flex-row gap-8 bg-surfaceCard border border-white/15 rounded-sm overflow-hidden group shadow-xl reveal-fade" data-category="foundations">
+            <div class="w-full lg:w-[55%] relative overflow-hidden bg-surfaceDark">
+              <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f024e?auto=format&fit=crop&w=1200&q=82" alt="Industrial foundation construction" class="w-full h-[260px] sm:h-[360px] lg:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/182030/F8FAFC?text=Industrial+Foundation';" />
+              <span class="absolute top-3 left-3 bg-deepNavy/90 text-white font-mono text-[10px] uppercase tracking-widest px-3 py-1 rounded-sm border border-white/15">Illustrative Concept Project</span>
+            </div>
+            <div class="w-full lg:w-[45%] p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 font-mono text-xs text-neonGreen uppercase">
+                  <span>Project ID: NC-104</span>
+                  <span>Western New York</span>
+                </div>
+                <h3 class="font-display font-bold uppercase text-2xl sm:text-3xl text-white mt-2 group-hover:text-neonGreen transition-colors">
+                  Regional Industrial Manufacturing Foundation
+                </h3>
+                <p class="text-xs sm:text-sm text-textMuted mt-3 leading-relaxed">
+                  Deep reinforced footings and heavy equipment anchor foundations engineered for vibration damping and massive structural load support in WNY.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 font-mono text-[11px] text-textMuted">
+                  <span class="px-2.5 py-1 bg-surfaceDark rounded-sm border border-white/10">Scope: Cast-in-place walls &amp; footings</span>
+                  <span class="px-2.5 py-1 bg-surfaceDark rounded-sm border border-white/10">Type: Heavy Industrial</span>
+                </div>
+              </div>
+              <div class="mt-8 pt-6 hairline-t flex items-center justify-between">
+                <button type="button" class="open-proj-modal font-display uppercase font-bold text-xs tracking-wider text-white hover:text-neonGreen flex items-center gap-2 transition-colors cursor-pointer" data-id="0">
+                  <span>View Project Specifications</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </button>
+                <span class="font-mono text-xs text-textMuted/60">Dunkirk Area</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card flex flex-col lg:flex-row-reverse gap-8 bg-surfaceCard border border-white/15 rounded-sm overflow-hidden group shadow-xl reveal-fade" data-category="flatwork">
+            <div class="w-full lg:w-[55%] relative overflow-hidden bg-surfaceDark">
+              <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1200&q=82" alt="Commercial warehouse concrete flatwork" class="w-full h-[260px] sm:h-[360px] lg:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/182030/F8FAFC?text=Warehouse+Flatwork';" />
+              <span class="absolute top-3 left-3 bg-deepNavy/90 text-white font-mono text-[10px] uppercase tracking-widest px-3 py-1 rounded-sm border border-white/15">Illustrative Concept Project</span>
+            </div>
+            <div class="w-full lg:w-[45%] p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 font-mono text-xs text-neonGreen uppercase">
+                  <span>Project ID: NC-208</span>
+                  <span>Chautauqua County</span>
+                </div>
+                <h3 class="font-display font-bold uppercase text-2xl sm:text-3xl text-white mt-2 group-hover:text-neonGreen transition-colors">
+                  Commercial Distribution Center Flatwork
+                </h3>
+                <p class="text-xs sm:text-sm text-textMuted mt-3 leading-relaxed">
+                  High-tolerance laser screeded warehouse slab flooring engineered for heavy forklift traffic and high-rack storage distribution systems.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 font-mono text-[11px] text-textMuted">
+                  <span class="px-2.5 py-1 bg-surfaceDark rounded-sm border border-white/10">Scope: 120,000 sq. ft. industrial slab</span>
+                  <span class="px-2.5 py-1 bg-surfaceDark rounded-sm border border-white/10">Type: Logistics Facility</span>
+                </div>
+              </div>
+              <div class="mt-8 pt-6 hairline-t flex items-center justify-between">
+                <button type="button" class="open-proj-modal font-display uppercase font-bold text-xs tracking-wider text-white hover:text-neonGreen flex items-center gap-2 transition-colors cursor-pointer" data-id="1">
+                  <span>View Project Specifications</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </button>
+                <span class="font-mono text-xs text-textMuted/60">Western NY</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card flex flex-col lg:flex-row gap-8 bg-surfaceCard border border-white/15 rounded-sm overflow-hidden group shadow-xl reveal-fade" data-category="pumping">
+            <div class="w-full lg:w-[55%] relative overflow-hidden bg-surfaceDark">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=82" alt="Concrete pumping and placement" class="w-full h-[260px] sm:h-[360px] lg:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/182030/F8FAFC?text=Concrete+Pumping';" />
+              <span class="absolute top-3 left-3 bg-deepNavy/90 text-white font-mono text-[10px] uppercase tracking-widest px-3 py-1 rounded-sm border border-white/15">Illustrative Concept Project</span>
+            </div>
+            <div class="w-full lg:w-[45%] p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 font-mono text-xs text-neonGreen uppercase">
+                  <span>Project ID: NC-312</span>
+                  <span>Western NY Region</span>
+                </div>
+                <h3 class="font-display font-bold uppercase text-2xl sm:text-3xl text-white mt-2 group-hover:text-neonGreen transition-colors">
+                  Multi-Level Structural Concrete Pumping
+                </h3>
+                <p class="text-xs sm:text-sm text-textMuted mt-3 leading-relaxed">
+                  Continuous high-volume concrete pumping and placement for structural commercial framing and elevated slab construction.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 font-mono text-[11px] text-textMuted">
+                  <span class="px-2.5 py-1 bg-surfaceDark rounded-sm border border-white/10">Scope: Boom pumping &amp; placement</span>
+                  <span class="px-2.5 py-1 bg-surfaceDark rounded-sm border border-white/10">Type: Commercial Structure</span>
+                </div>
+              </div>
+              <div class="mt-8 pt-6 hairline-t flex items-center justify-between">
+                <button type="button" class="open-proj-modal font-display uppercase font-bold text-xs tracking-wider text-white hover:text-neonGreen flex items-center gap-2 transition-colors cursor-pointer" data-id="2">
+                  <span>View Project Specifications</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </button>
+                <span class="font-mono text-xs text-textMuted/60">WNY Region</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="proj-card flex flex-col lg:flex-row-reverse gap-8 bg-surfaceCard border border-white/15 rounded-sm overflow-hidden group shadow-xl reveal-fade" data-category="foundations">
+            <div class="w-full lg:w-[55%] relative overflow-hidden bg-surfaceDark">
+              <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=82" alt="Commercial building concrete pad" class="w-full h-[260px] sm:h-[360px] lg:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/182030/F8FAFC?text=Commercial+Pad';" />
+              <span class="absolute top-3 left-3 bg-deepNavy/90 text-white font-mono text-[10px] uppercase tracking-widest px-3 py-1 rounded-sm border border-white/15">Illustrative Concept Project</span>
+            </div>
+            <div class="w-full lg:w-[45%] p-6 sm:p-8 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-2 font-mono text-xs text-neonGreen uppercase">
+                  <span>Project ID: NC-419</span>
+                  <span>Dunkirk Area</span>
+                </div>
+                <h3 class="font-display font-bold uppercase text-2xl sm:text-3xl text-white mt-2 group-hover:text-neonGreen transition-colors">
+                  Commercial Facility Perimeter &amp; Pier Foundation
+                </h3>
+                <p class="text-xs sm:text-sm text-textMuted mt-3 leading-relaxed">
+                  Reinforced perimeter grade beams, isolated column footings, and interior utility trenching for commercial retail expansion.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2 font-mono text-[11px] text-textMuted">
+                  <span class="px-2.5 py-1 bg-surfaceDark rounded-sm border border-white/10">Scope: Perimeter walls &amp; grade beams</span>
+                  <span class="px-2.5 py-1 bg-surfaceDark rounded-sm border border-white/10">Type: Commercial Retail</span>
+                </div>
+              </div>
+              <div class="mt-8 pt-6 hairline-t flex items-center justify-between">
+                <button type="button" class="open-proj-modal font-display uppercase font-bold text-xs tracking-wider text-white hover:text-neonGreen flex items-center gap-2 transition-colors cursor-pointer" data-id="3">
+                  <span>View Project Specifications</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </button>
+                <span class="font-mono text-xs text-textMuted/60">Dunkirk, NY</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW 04: ABOUT -->
+    <section id="about-section" class="app-view hidden py-16 sm:py-20 lg:py-28 bg-deepNavy hairline-b relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 w-full">
+
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+          
+          <div class="w-full lg:w-[55%] reveal-fade">
+            <span class="font-mono text-xs uppercase tracking-[0.2em] text-neonGreen font-semibold block mb-3">
+              Corporate Background // Founded 1998
+            </span>
+            <h2 class="font-display font-extrabold uppercase section-heading leading-[1.05] text-white tracking-tight">
+              Built on Decades of Concrete Mastery in Dunkirk, NY
+            </h2>
+            
+            <p class="mt-6 text-base sm:text-lg text-textMuted leading-relaxed">
+              Established in 1998 and headquartered in Dunkirk, New York, Northland Contracting, Inc. has built an enduring reputation as a premier regional concrete foundation and flatwork specialist. We partner directly with general contractors, industrial developers, and commercial project managers across Western New York.
+            </p>
+
+            <div class="mt-8 border-t border-white/15">
+              <div class="py-5 border-b border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span class="font-display uppercase font-bold text-lg sm:text-xl text-white">01. Rigorous Engineering Standards</span>
+                <span class="font-mono text-xs text-textMuted">Precise steel reinforcement &amp; mix specification</span>
+              </div>
+              <div class="py-5 border-b border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span class="font-display uppercase font-bold text-lg sm:text-xl text-white">02. Experienced Field Crews</span>
+                <span class="font-mono text-xs text-textMuted">Skilled union-grade finishers &amp; operators</span>
+              </div>
+              <div class="py-5 border-b border-white/15 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span class="font-display uppercase font-bold text-lg sm:text-xl text-white">03. On-Schedule Execution</span>
+                <span class="font-mono text-xs text-textMuted">Strict adherence to commercial construction timelines</span>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-col gap-4">
+              <div class="p-5 bg-surfaceCard border border-dashed border-white/30 rounded-sm">
+                <div class="flex items-center justify-between gap-2 mb-1.5">
+                  <span class="font-mono text-[11px] uppercase tracking-widest text-neonGreen font-semibold">
+                    [Placeholder // Executive Leadership &amp; Key Personnel]
+                  </span>
+                  <span class="font-mono text-[10px] text-textMuted/60">AWAITING CLIENT VERIFICATION</span>
+                </div>
+                <p class="text-xs sm:text-sm text-textMuted leading-relaxed">
+                  Reserved for official company executive bios, founder statements, and certified project manager credentials.
+                </p>
+              </div>
+
+              <div class="p-5 bg-surfaceCard border border-dashed border-white/30 rounded-sm">
+                <div class="flex items-center justify-between gap-2 mb-1.5">
+                  <span class="font-mono text-[11px] uppercase tracking-widest text-neonGreen font-semibold">
+                    [Placeholder // Safety Records &amp; OSHA Compliance Data]
+                  </span>
+                  <span class="font-mono text-[10px] text-textMuted/60">AWAITING CLIENT VERIFICATION</span>
+                </div>
+                <p class="text-xs sm:text-sm text-textMuted leading-relaxed">
+                  Reserved for EMR ratings, verified safety statistics, and formal industrial health certifications.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-[45%] reveal-scale flex flex-col gap-6">
+            <div class="bg-surfaceCard border border-white/15 rounded-sm p-6 sm:p-8 shadow-2xl">
+              <span class="font-mono text-xs uppercase tracking-widest text-neonGreen block">Corporate Headquarters</span>
+              <h3 class="font-display uppercase font-bold text-2xl sm:text-3xl text-white mt-1">
+                Northland Contracting, Inc.
+              </h3>
+              
+              <div class="mt-6 flex flex-col gap-4 font-mono text-sm text-textMuted">
+                <div class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-neonGreen shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                  <div>
+                    <span class="text-white block font-semibold">Dunkirk, New York</span>
+                    <span>Chautauqua County &bull; Western NY Serving Area</span>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <svg class="w-5 h-5 text-neonGreen shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                  </svg>
+                  <a href="tel:+17166728572" class="text-white hover:text-neonGreen transition-colors font-semibold">
+                    (716) 672-8572
+                  </a>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <svg class="w-5 h-5 text-neonGreen shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                  <a href="mailto:ala@northlandcontracting.net" class="text-white hover:text-neonGreen transition-colors break-all">
+                    ala@northlandcontracting.net
+                  </a>
+                </div>
+              </div>
+
+              <div class="mt-8 pt-6 hairline-t">
+                <button type="button" data-target="contact-section" class="nav-link w-full text-center bg-neonGreen hover:bg-neonGreenHover text-deepNavy font-display uppercase font-extrabold tracking-wider py-3.5 rounded-sm transition-colors shadow-md cursor-pointer">
+                  Initiate Project Discussion
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW 05: EQUIPMENT -->
+    <section id="equipment-section" class="app-view hidden py-16 sm:py-20 lg:py-28 bg-deepNavy hairline-b relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 w-full">
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 sm:pb-12 hairline-b reveal-fade">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-[0.2em] text-neonGreen font-semibold block mb-2">
+              B2B Resource // Fleet &amp; Capabilities
+            </span>
+            <h2 class="font-display font-extrabold uppercase section-heading text-white tracking-tight">
+              Equipment &amp; Technical Assets
+            </h2>
+          </div>
+          <p class="font-mono text-xs text-textMuted max-w-sm leading-relaxed">
+            Verified categories of concrete construction equipment and specialized placement machinery maintained for heavy commercial projects.
+          </p>
+        </div>
+
+        <div class="mt-10 sm:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          
+          <div class="bg-surfaceCard border border-white/15 p-6 sm:p-8 rounded-sm reveal-fade flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-neonGreen uppercase">Asset Class 01</span>
+              <h3 class="font-display font-bold uppercase text-xl sm:text-2xl text-white mt-1">Concrete Pumping Units</h3>
+              <p class="text-xs sm:text-sm text-textMuted mt-3 leading-relaxed">
+                Specialized boom and line concrete pumps capable of high-volume vertical and horizontal material placement across tight industrial sites.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 hairline-t font-mono text-[11px] text-textMuted/80 flex items-center justify-between">
+              <span>Status: Active Fleet</span>
+              <span class="text-neonGreen">Verified</span>
+            </div>
+          </div>
+
+          <div class="bg-surfaceCard border border-white/15 p-6 sm:p-8 rounded-sm reveal-fade flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-neonGreen uppercase">Asset Class 02</span>
+              <h3 class="font-display font-bold uppercase text-xl sm:text-2xl text-white mt-1">Laser Screed &amp; Finishing</h3>
+              <p class="text-xs sm:text-sm text-textMuted mt-3 leading-relaxed">
+                Advanced laser-guided screeding equipment and multi-head power trowels designed to achieve superior floor flatness tolerances for warehouses.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 hairline-t font-mono text-[11px] text-textMuted/80 flex items-center justify-between">
+              <span>Status: Active Fleet</span>
+              <span class="text-neonGreen">Verified</span>
+            </div>
+          </div>
+
+          <div class="bg-surfaceCard border border-white/15 p-6 sm:p-8 rounded-sm reveal-fade flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-neonGreen uppercase">Asset Class 03</span>
+              <h3 class="font-display font-bold uppercase text-xl sm:text-2xl text-white mt-1">Excavation &amp; Site Prep</h3>
+              <p class="text-xs sm:text-sm text-textMuted mt-3 leading-relaxed">
+                Heavy excavators, skid steers, and compaction machinery for structural subgrade preparation, footing excavation, and trenching.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 hairline-t font-mono text-[11px] text-textMuted/80 flex items-center justify-between">
+              <span>Status: Active Fleet</span>
+              <span class="text-neonGreen">Verified</span>
+            </div>
+          </div>
+
+          <div class="bg-surfaceCard border border-white/15 p-6 sm:p-8 rounded-sm reveal-fade flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-neonGreen uppercase">Asset Class 04</span>
+              <h3 class="font-display font-bold uppercase text-xl sm:text-2xl text-white mt-1">Formwork &amp; Shoring Systems</h3>
+              <p class="text-xs sm:text-sm text-textMuted mt-3 leading-relaxed">
+                Modular steel-ply and heavy-duty panel formwork systems for precise foundation wall and grade beam construction.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 hairline-t font-mono text-[11px] text-textMuted/80 flex items-center justify-between">
+              <span>Status: Active Fleet</span>
+              <span class="text-neonGreen">Verified</span>
+            </div>
+          </div>
+
+          <div class="bg-surfaceCard border border-white/15 p-6 sm:p-8 rounded-sm reveal-fade flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-neonGreen uppercase">Asset Class 05</span>
+              <h3 class="font-display font-bold uppercase text-xl sm:text-2xl text-white mt-1">Material Handling &amp; Transport</h3>
+              <p class="text-xs sm:text-sm text-textMuted mt-3 leading-relaxed">
+                Commercial dump trucks, flatbeds, and utility support vehicles for efficient job-site logistics across Western New York.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 hairline-t font-mono text-[11px] text-textMuted/80 flex items-center justify-between">
+              <span>Status: Active Fleet</span>
+              <span class="text-neonGreen">Verified</span>
+            </div>
+          </div>
+
+          <div class="bg-surfaceCard border border-dashed border-white/30 p-6 sm:p-8 rounded-sm reveal-fade flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-neonGreen uppercase">[Placeholder]</span>
+              <h3 class="font-display font-bold uppercase text-xl sm:text-2xl text-white mt-1">Specialized Plant Equipment</h3>
+              <p class="text-xs sm:text-sm text-textMuted mt-3 leading-relaxed">
+                Reserved for additional proprietary machinery, batching specs, or specialized crane lift capacities upon verification.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 hairline-t font-mono text-[11px] text-textMuted/60 flex items-center justify-between">
+              <span>Status: Pending Approval</span>
+              <span>Awaiting Input</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VIEW 06: CONTACT / INQUIRY -->
+    <section id="contact-section" class="app-view hidden py-16 sm:py-20 lg:py-28 bg-deepNavy hairline-b relative">
+      <div class="absolute top-0 right-0 w-96 h-96 glow-radial-green rounded-full pointer-events-none blur-3xl"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 w-full">
+
+        <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+
+          <div class="w-full lg:w-[42%] reveal-fade">
+            <span class="font-mono text-xs uppercase tracking-[0.2em] text-neonGreen block mb-3">
+              Project Inquiry // Direct Channel
+            </span>
+            <h2 class="font-display font-extrabold uppercase section-heading leading-[1.05] text-white tracking-tight">
+              Initiate a Project Discussion
+            </h2>
+            <p class="mt-5 text-sm sm:text-base text-textMuted leading-relaxed">
+              Evaluating Northland Contracting for an upcoming commercial foundation, flatwork, or concrete placement project in Western New York? Reach out directly via phone, email, or submit project requirements below.
+            </p>
+
+            <div class="mt-8 p-6 bg-surfaceCard border-l-4 border-neonGreen rounded-sm shadow-xl">
+              <span class="font-mono text-[11px] uppercase tracking-widest text-textMuted block">
+                Direct Business Telephone
+              </span>
+              <a href="tel:+17166728572" class="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-white hover:text-neonGreen transition-colors mt-1 inline-block tracking-wide break-all">
+                (716) 672-8572
+              </a>
+              <p class="font-mono text-xs text-textMuted mt-2">
+                Email: <a href="mailto:ala@northlandcontracting.net" class="text-white underline hover:text-neonGreen break-all">ala@northlandcontracting.net</a>
+              </p>
+            </div>
+
+            <div class="mt-6 p-5 bg-white/[0.03] border border-white/15 rounded-sm">
+              <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-neonGreen font-semibold">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                </svg>
+                <span>Inquiry Form Notice</span>
+              </div>
+              <p class="text-xs text-textMuted mt-2 leading-relaxed">
+                This interactive form demonstrates the professional B2B intake workflow. Submissions are formatted in a local success notification and do not automatically transmit over live external email APIs without authorized backend connection.
+              </p>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-[58%] bg-surfaceCard text-white p-6 sm:p-10 rounded-sm border border-white/15 shadow-2xl reveal-scale">
+            <div class="pb-5 mb-6 border-b border-white/15 flex flex-wrap items-center justify-between gap-2">
+              <h3 class="font-display font-bold uppercase text-2xl sm:text-3xl text-white">
+                Project Specification Form
+              </h3>
+              <span class="font-mono text-[11px] uppercase tracking-wider text-neonGreen font-semibold">
+                B2B Estimate Intake
+              </span>
+            </div>
+
+            <div id="form-success-box" class="hidden mb-6 p-5 bg-surfaceDark text-white rounded-sm border-l-4 border-neonGreen shadow-md" role="status" aria-live="polite">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="font-display uppercase font-bold text-xl tracking-wide">
+                    Project Inquiry Successfully Logged
+                  </p>
+                  <p id="form-success-text" class="text-xs sm:text-sm text-textMuted mt-1.5 leading-relaxed"></p>
+                </div>
+                <button type="button" id="reset-inquiry-btn" class="font-mono text-xs uppercase underline shrink-0 hover:text-neonGreen cursor-pointer">
+                  Reset
+                </button>
+              </div>
+            </div>
+
+            <div id="form-error-box" class="hidden mb-6 p-4 bg-techRed/15 border border-techRed text-white rounded-sm text-xs sm:text-sm" role="alert"></div>
+
+            <form id="b2b-inquiry-form" novalidate class="flex flex-col gap-5">
+              <div class="flex flex-col sm:flex-row gap-5">
+                <div class="flex-1 flex flex-col gap-1.5">
+                  <label for="b2b-name" class="font-mono text-xs uppercase tracking-wider text-textMuted font-semibold">
+                    Full Name <span class="text-neonGreen">*</span>
+                  </label>
+                  <input type="text" id="b2b-name" name="name" required placeholder="e.g., Robert Vance" class="w-full bg-deepNavy border border-white/20 focus:border-neonGreen rounded-sm px-4 py-3 text-sm text-white placeholder:text-white/30 transition-colors" />
+                </div>
+
+                <div class="flex-1 flex flex-col gap-1.5">
+                  <label for="b2b-org" class="font-mono text-xs uppercase tracking-wider text-textMuted font-semibold">
+                    Organization / GC Name <span class="text-neonGreen">*</span>
+                  </label>
+                  <input type="text" id="b2b-org" name="organization" required placeholder="e.g., Vance Construction Group" class="w-full bg-deepNavy border border-white/20 focus:border-neonGreen rounded-sm px-4 py-3 text-sm text-white placeholder:text-white/30 transition-colors" />
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-5">
+                <div class="flex-1 flex flex-col gap-1.5">
+                  <label for="b2b-email" class="font-mono text-xs uppercase tracking-wider text-textMuted font-semibold">
+                    Professional Email <span class="text-neonGreen">*</span>
+                  </label>
+                  <input type="email" id="b2b-email" name="email" required placeholder="name@company.com" class="w-full bg-deepNavy border border-white/20 focus:border-neonGreen rounded-sm px-4 py-3 text-sm text-white placeholder:text-white/30 transition-colors" />
+                </div>
+
+                <div class="flex-1 flex flex-col gap-1.5">
+                  <label for="b2b-phone" class="font-mono text-xs uppercase tracking-wider text-textMuted font-semibold">
+                    Phone Number <span class="text-neonGreen">*</span>
+                  </label>
+                  <input type="tel" id="b2b-phone" name="phone" required placeholder="(716) 555-0199" class="w-full bg-deepNavy border border-white/20 focus:border-neonGreen rounded-sm px-4 py-3 text-sm text-white placeholder:text-white/30 transition-colors" />
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row gap-5">
+                <div class="flex-1 flex flex-col gap-1.5">
+                  <label for="b2b-type" class="font-mono text-xs uppercase tracking-wider text-textMuted font-semibold">
+                    Project Type <span class="text-neonGreen">*</span>
+                  </label>
+                  <select id="b2b-type" name="projectType" required class="w-full bg-deepNavy border border-white/20 focus:border-neonGreen rounded-sm px-4 py-3 text-sm text-white transition-colors">
+                    <option value="">Select concrete scope...</option>
+                    <option value="Commercial Foundations">Commercial Foundations &amp; Walls</option>
+                    <option value="Concrete Flatwork">Concrete Flatwork &amp; Slabs</option>
+                    <option value="Placement &amp; Finishing">Placement &amp; Professional Finishing</option>
+                    <option value="Concrete Pumping">Concrete Pumping Services</option>
+                    <option value="Multi-Phase Commercial Build">Multi-Phase Commercial Build</option>
+                  </select>
+                </div>
+
+                <div class="flex-1 flex flex-col gap-1.5">
+                  <label for="b2b-location" class="font-mono text-xs uppercase tracking-wider text-textMuted font-semibold">
+                    Project Location <span class="text-neonGreen">*</span>
+                  </label>
+                  <input type="text" id="b2b-location" name="location" required placeholder="City or County in Western NY" class="w-full bg-deepNavy border border-white/20 focus:border-neonGreen rounded-sm px-4 py-3 text-sm text-white placeholder:text-white/30 transition-colors" />
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-1.5">
+                <label for="b2b-desc" class="font-mono text-xs uppercase tracking-wider text-textMuted font-semibold">
+                  Project Description &amp; Scope Details <span class="text-neonGreen">*</span>
+                </label>
+                <textarea id="b2b-desc" name="description" rows="4" required placeholder="Describe approximate square footage, timeline, structural requirements, or foundation scope..." class="w-full bg-deepNavy border border-white/20 focus:border-neonGreen rounded-sm px-4 py-3 text-sm text-white placeholder:text-white/30 transition-colors"></textarea>
+              </div>
+
+              <div class="flex flex-col gap-1.5">
+                <label class="font-mono text-xs uppercase tracking-wider text-textMuted font-semibold">
+                  Project Blueprints / Specs (Optional Placeholder)
+                </label>
+                <div class="border border-dashed border-white/30 bg-deepNavy p-4 rounded-sm flex items-center justify-between text-xs text-textMuted">
+                  <span class="truncate pr-2">Attach PDF / CAD drawings (Demo upload slot)</span>
+                  <span class="font-mono px-3 py-1 bg-surfaceDark text-white rounded-sm border border-white/15 shrink-0">Browse</span>
+                </div>
+              </div>
+
+              <div class="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <button type="submit" class="bg-neonGreen hover:bg-neonGreenHover text-deepNavy font-display uppercase font-extrabold tracking-wider text-base px-8 py-4 rounded-sm transition-all duration-300 shadow-md cursor-pointer w-full sm:w-auto text-center">
+                  Submit Project Inquiry
+                </button>
+                <span class="font-mono text-[11px] text-textMuted/60 text-center sm:text-right">
+                  Secure B2B Channel // Confidential
+                </span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER & MANIFEST -->
+  <footer class="bg-deepNavy text-textMuted py-14 px-4 sm:px-8 hairline-t">
+    <div class="max-w-7xl mx-auto w-full">
+      
+      <div class="flex flex-col md:flex-row md:items-start justify-between gap-8 pb-10 hairline-b">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-display font-extrabold text-2xl sm:text-3xl tracking-tight uppercase text-white">
+              NORTHLAND
+            </span>
+            <span class="inline-block w-2.5 h-2.5 bg-neonGreen"></span>
+          </div>
+          <p class="font-mono text-xs uppercase tracking-widest text-textMuted mt-1">
+            Contracting, Inc. // Dunkirk, NY &bull; Est. 1998
+          </p>
+          <p class="mt-4 text-sm text-textMuted/90 max-w-md leading-relaxed">
+            Western New York commercial concrete foundation and flatwork specialists. Direct telephone: <a href="tel:+17166728572" class="text-white underline decoration-neonGreen underline-offset-4 hover:text-neonGreen">(716) 672-8572</a>.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-8 sm:gap-12 text-sm">
+          <div class="flex flex-col gap-2.5">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-neonGreen">Navigation</span>
+            <button type="button" data-target="home-section" class="nav-link text-left hover:text-white transition-colors cursor-pointer">Home</button>
+            <button type="button" data-target="capabilities-section" class="nav-link text-left hover:text-white transition-colors cursor-pointer">Capabilities</button>
+            <button type="button" data-target="projects-section" class="nav-link text-left hover:text-white transition-colors cursor-pointer">Projects</button>
+            <button type="button" data-target="about-section" class="nav-link text-left hover:text-white transition-colors cursor-pointer">About</button>
+            <button type="button" data-target="equipment-section" class="nav-link text-left hover:text-white transition-colors cursor-pointer">Equipment</button>
+            <button type="button" data-target="contact-section" class="nav-link text-left hover:text-white transition-colors cursor-pointer">Contact</button>
+          </div>
+          <div class="flex flex-col gap-2.5">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-neonGreen">Verified Data</span>
+            <span>Founded: 1998</span>
+            <span>Dunkirk, New York</span>
+            <a href="tel:+17166728572" class="hover:text-white transition-colors">(716) 672-8572</a>
+            <a href="mailto:ala@northlandcontracting.net" class="hover:text-white transition-colors break-all">ala@northlandcontracting.net</a>
+          </div>
+        </div>
+      </div>
+
+      <div id="manifest-wrapper" class="py-6 hairline-b">
+        <button type="button" id="toggle-manifest-btn" aria-expanded="false" aria-controls="manifest-panel" class="w-full flex items-center justify-between gap-4 text-left py-2 group cursor-pointer">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-widest text-white group-hover:text-neonGreen transition-colors font-semibold">
+              + Commercial Image Asset Manifest &amp; License Verification
+            </span>
+            <span class="block font-mono text-[11px] text-textMuted/70 mt-0.5">
+              Click to inspect Unsplash commercial-use licenses and attribution URLs
+            </span>
+          </div>
+          <span id="manifest-toggle-label" class="font-mono text-xs uppercase px-3 py-1.5 border border-white/20 rounded-sm text-white shrink-0">
+            Expand
+          </span>
+        </button>
+
+        <div id="manifest-panel" class="hidden mt-6 p-6 bg-surfaceCard rounded-sm border border-white/15 text-xs font-mono">
+          <p class="text-textMuted leading-relaxed mb-4 font-sans">
+            <strong class="text-white">License Verification:</strong> All photography used throughout this B2B concept is sourced from Unsplash under the Unsplash Commercial License. Every photograph is explicitly designated as illustrative concept imagery and is not represented as completed work by Northland Contracting, Inc.
+          </p>
+
+          <div class="flex flex-col divide-y divide-white/10 text-[11px]">
+            <div class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span class="text-white font-semibold">Hero Asset — Commercial Foundation Construction</span>
+              <a href="https://images.unsplash.com/photo-1541888946425-d0fbb18f024e" target="_blank" rel="noopener noreferrer" class="text-neonGreen hover:underline break-all">
+                https://images.unsplash.com/photo-1541888946425-d0fbb18f024e (Unsplash License)
+              </a>
+            </div>
+            <div class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span class="text-white font-semibold">Project 01 — Industrial Manufacturing Foundation</span>
+              <a href="https://images.unsplash.com/photo-1541888946425-d0fbb18f024e" target="_blank" rel="noopener noreferrer" class="text-neonGreen hover:underline break-all">
+                https://images.unsplash.com/photo-1541888946425-d0fbb18f024e (Unsplash License)
+              </a>
+            </div>
+            <div class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span class="text-white font-semibold">Project 02 — Warehouse Flatwork</span>
+              <a href="https://images.unsplash.com/photo-1581094288338-2314dddb7ece" target="_blank" rel="noopener noreferrer" class="text-neonGreen hover:underline break-all">
+                https://images.unsplash.com/photo-1581094288338-2314dddb7ece (Unsplash License)
+              </a>
+            </div>
+            <div class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span class="text-white font-semibold">Project 03 — Concrete Pumping &amp; Placement</span>
+              <a href="https://images.unsplash.com/photo-1504307651254-35680f356dfd" target="_blank" rel="noopener noreferrer" class="text-neonGreen hover:underline break-all">
+                https://images.unsplash.com/photo-1504307651254-35680f356dfd (Unsplash License)
+              </a>
+            </div>
+            <div class="py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span class="text-white font-semibold">Project 04 — Perimeter &amp; Pier Foundations</span>
+              <a href="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f" target="_blank" rel="noopener noreferrer" class="text-neonGreen hover:underline break-all">
+                https://images.unsplash.com/photo-1590381105924-c72589b9ef3f (Unsplash License)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-textMuted/70">
+        <p>
+          <strong class="text-white">Disclaimer:</strong> Independent B2B website redesign concept for Northland Contracting, Inc. (Dunkirk, NY). Not an authorized or official corporate website.
+        </p>
+        <p class="font-mono text-[11px]">
+          Verified Corporate Data &bull; Est. 1998
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- PROJECT SPECIFICATIONS MODAL -->
+  <div id="project-modal" class="fixed inset-0 z-50 hidden bg-deepNavy/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8" role="dialog" aria-modal="true" aria-labelledby="modal-proj-title">
+    <div class="max-w-4xl w-full bg-surfaceCard border border-white/20 rounded-sm overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+      <div class="px-6 py-4 bg-deepNavy border-b border-white/15 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3 overflow-hidden">
+          <span id="modal-proj-id" class="font-mono text-xs text-neonGreen font-semibold shrink-0">NC-104</span>
+          <span class="font-mono text-[11px] uppercase tracking-wider text-textMuted truncate">
+            Project Specification Sheet // Concept Study
+          </span>
+        </div>
+        <button type="button" id="modal-close-btn" class="font-mono text-xs uppercase tracking-wider text-white hover:text-neonGreen px-3 py-1.5 border border-white/20 rounded-sm cursor-pointer shrink-0">
+          Close [ESC]
+        </button>
+      </div>
+
+      <div class="p-6 sm:p-8 flex flex-col gap-6 overflow-y-auto max-h-[75vh]">
+        <div class="relative rounded-sm overflow-hidden border border-white/15 bg-surfaceDark">
+          <img id="modal-proj-img" src="" alt="" class="w-full h-[240px] sm:h-[360px] object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1200x800/182030/F8FAFC?text=Project+Detail';" />
+          <span class="absolute top-3 left-3 bg-deepNavy/90 text-white font-mono text-[10px] uppercase tracking-widest px-3 py-1 rounded-sm border border-white/15">Verified Capability Scope</span>
+        </div>
+
+        <div>
+          <span id="modal-proj-category" class="font-mono text-xs text-neonGreen uppercase"></span>
+          <h3 id="modal-proj-title" class="font-display font-bold uppercase text-2xl sm:text-3xl text-white mt-1"></h3>
+          <p id="modal-proj-desc" class="text-sm sm:text-base text-textMuted mt-3 leading-relaxed"></p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 hairline-t font-mono text-xs">
+          <div class="p-4 bg-surfaceDark rounded-sm border border-white/10">
+            <span class="text-neonGreen block mb-1">REGION SERVED</span>
+            <span class="text-white font-semibold">Dunkirk &amp; Western New York</span>
+          </div>
+          <div class="p-4 bg-surfaceDark rounded-sm border border-white/10">
+            <span class="text-neonGreen block mb-1">CONTRACTOR STANDARD</span>
+            <span class="text-white font-semibold">Commercial Concrete Specialists (Est. 1998)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-6 py-4 bg-deepNavy border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span class="font-mono text-[11px] text-textMuted text-center sm:text-left">To discuss a similar project scope, call (716) 672-8572</span>
+        <button type="button" id="modal-inquire-btn" class="bg-neonGreen hover:bg-neonGreenHover text-deepNavy font-display uppercase font-extrabold text-xs tracking-wider px-5 py-2.5 rounded-sm transition-colors cursor-pointer w-full sm:w-auto text-center">
+          Inquire About This Scope
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function toggleMobileMenu(forceClose = false) {
+        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+        const nextState = forceClose ? false : !isExpanded;
+        mobileMenuBtn.setAttribute('aria-expanded', String(nextState));
+        mobileNav.classList.toggle('hidden', !nextState);
+        iconOpen.classList.toggle('hidden', nextState);
+        iconClose.classList.toggle('hidden', !nextState);
+      }
+
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => toggleMobileMenu());
+      }
+
+      const appViews = document.querySelectorAll('.app-view');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      function switchView(targetId) {
+        let mapId = targetId;
+        if (targetId === 'home') mapId = 'home-section';
+        if (targetId === 'capabilities') mapId = 'capabilities-section';
+        if (targetId === 'projects') mapId = 'projects-section';
+        if (targetId === 'about') mapId = 'about-section';
+        if (targetId === 'equipment') mapId = 'equipment-section';
+        if (targetId === 'contact') mapId = 'contact-section';
+
+        appViews.forEach(view => {
+          if (view.id === mapId) {
+            view.classList.remove('hidden');
+          } else {
+            view.classList.add('hidden');
+          }
+        });
+
+        const activeView = document.getElementById(mapId);
+        if (activeView) {
+          activeView.querySelectorAll('.reveal-fade, .reveal-scale').forEach(el => {
+            el.classList.add('is-visible');
+          });
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        toggleMobileMenu(true);
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const target = link.getAttribute('data-target');
+          if (target) {
+            switchView(target);
+          }
+        });
+      });
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const target = link.getAttribute('data-target');
+          if (target) {
+            switchView(target);
+          }
+        });
+      });
+
+      const revealEls = document.querySelectorAll('.reveal-fade, .reveal-scale');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        revealEls.forEach(el => observer.observe(el));
+      } else {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+      }
+
+      const projFilterBtns = document.querySelectorAll('.proj-filter-btn');
+      const projCards = document.querySelectorAll('.proj-card');
+
+      projFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+
+          projFilterBtns.forEach(b => {
+            b.classList.remove('bg-neonGreen', 'text-deepNavy', 'font-bold', 'active');
+            b.classList.add('bg-surfaceCard', 'text-white', 'border', 'border-white/20');
+          });
+          btn.classList.add('bg-neonGreen', 'text-deepNavy', 'font-bold', 'active');
+          btn.classList.remove('bg-surfaceCard', 'text-white', 'border', 'border-white/20');
+
+          projCards.forEach(card => {
+            const cat = card.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      const projectModalData = [
+        {
+          id: 'NC-104',
+          category: 'Division 01 // Commercial Foundations',
+          title: 'Regional Industrial Manufacturing Foundation',
+          desc: 'Comprehensive subgrade preparation, heavy steel rebar cages, and deep reinforced foundation pours designed to anchor massive industrial manufacturing machinery and withstand rigorous subsurface loads across Western New York.',
+          src: 'https://images.unsplash.com/photo-1541888946425-d0fbb18f024e?auto=format&fit=crop&w=1200&q=82'
+        },
+        {
+          id: 'NC-208',
+          category: 'Division 02 // Industrial Flatwork',
+          title: 'Commercial Distribution Center Flatwork',
+          desc: '120,000 sq. ft. laser-screeded industrial concrete floor slab with high Ff/Fl flatness tolerances, heavy-duty liquid surface hardener, and precision saw-cut joint sealing for high-bay logistics operations.',
+          src: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=1200&q=82'
+        },
+        {
+          id: 'NC-312',
+          category: 'Division 04 // Concrete Pumping',
+          title: 'Multi-Level Structural Concrete Pumping',
+          desc: 'High-volume boom pump deployment ensuring continuous, flawless concrete placement for elevated commercial slabs and complex multi-story structural elements under strict schedule parameters.',
+          src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=82'
+        },
+        {
+          id: 'NC-419',
+          category: 'Division 01 // Commercial Foundations',
+          title: 'Commercial Facility Perimeter & Pier Foundation',
+          desc: 'Reinforced perimeter grade beams, isolated column footings, and integrated utility trenching executed for a major commercial retail expansion in the Dunkirk area.',
+          src: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=82'
+        }
+      ];
+
+      const projectModal = document.getElementById('project-modal');
+      const modalCloseBtn = document.getElementById('modal-close-btn');
+      const modalInquireBtn = document.getElementById('modal-inquire-btn');
+      const modalProjId = document.getElementById('modal-proj-id');
+      const modalProjImg = document.getElementById('modal-proj-img');
+      const modalProjCategory = document.getElementById('modal-proj-category');
+      const modalProjTitle = document.getElementById('modal-proj-title');
+      const modalProjDesc = document.getElementById('modal-proj-desc');
+
+      function openProjectModal(index) {
+        const data = projectModalData[index];
+        if (!data) return;
+        modalProjId.textContent = data.id;
+        modalProjImg.src = data.src;
+        modalProjImg.alt = data.title;
+        modalProjCategory.textContent = data.category;
+        modalProjTitle.textContent = data.title;
+        modalProjDesc.textContent = data.desc;
+
+        projectModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeProjectModal() {
+        projectModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.open-proj-modal').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-id'), 10);
+          openProjectModal(idx);
+        });
+      });
+
+      if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeProjectModal);
+      if (modalInquireBtn) {
+        modalInquireBtn.addEventListener('click', () => {
+          closeProjectModal();
+          switchView('contact-section');
+        });
+      }
+
+      projectModal.addEventListener('click', (e) => {
+        if (e.target === projectModal) closeProjectModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!projectModal.classList.contains('hidden') && e.key === 'Escape') {
+          closeProjectModal();
+        }
+      });
+
+      const inquiryForm = document.getElementById('b2b-inquiry-form');
+      const formSuccessBox = document.getElementById('form-success-box');
+      const formSuccessText = document.getElementById('form-success-text');
+      const formErrorBox = document.getElementById('form-error-box');
+      const resetInquiryBtn = document.getElementById('reset-inquiry-btn');
+
+      if (inquiryForm) {
+        inquiryForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          formErrorBox.classList.add('hidden');
+
+          const name = document.getElementById('b2b-name').value.trim();
+          const org = document.getElementById('b2b-org').value.trim();
+          const email = document.getElementById('b2b-email').value.trim();
+          const phone = document.getElementById('b2b-phone').value.trim();
+          const type = document.getElementById('b2b-type').value.trim();
+          const location = document.getElementById('b2b-location').value.trim();
+          const desc = document.getElementById('b2b-desc').value.trim();
+
+          if (!name || !org || !email || !phone || !type || !location || !desc) {
+            formErrorBox.textContent = 'Please complete all required B2B specification fields before submitting.';
+            formErrorBox.classList.remove('hidden');
+            return;
+          }
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            formErrorBox.textContent = 'Please enter a valid professional email address.';
+            formErrorBox.classList.remove('hidden');
+            return;
+          }
+
+          formSuccessText.textContent = `Thank you, ${name} (${org}). Your project inquiry for "${type}" in "${location}" has been logged successfully. To connect immediately with Northland Contracting, Inc., please call ala@northlandcontracting.net or dial (716) 672-8572.`;
+          formSuccessBox.classList.remove('hidden');
+          formSuccessBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        resetInquiryBtn.addEventListener('click', () => {
+          inquiryForm.reset();
+          formSuccessBox.classList.add('hidden');
+          formErrorBox.classList.add('hidden');
+        });
+      }
+
+      const toggleManifestBtn = document.getElementById('toggle-manifest-btn');
+      const manifestPanel = document.getElementById('manifest-panel');
+      const manifestToggleLabel = document.getElementById('manifest-toggle-label');
+
+      if (toggleManifestBtn && manifestPanel) {
+        toggleManifestBtn.addEventListener('click', () => {
+          const isExpanded = toggleManifestBtn.getAttribute('aria-expanded') === 'true';
+          toggleManifestBtn.setAttribute('aria-expanded', String(!isExpanded));
+          manifestPanel.classList.toggle('hidden', isExpanded);
+          manifestToggleLabel.textContent = isExpanded ? 'Expand' : 'Collapse';
+        });
+      }
+
+    });
+  </script>
+
+<script>
+(function(){
+ const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ // hero headline word reveal
+ const h1=document.querySelector('.hero-heading');
+ if(h1&&!rm){let i=0;
+  const wrap=(node)=>{const m=document.createElement('span');m.className='w-mask';const w=document.createElement('span');w.className='w-in';w.style.setProperty('--i',i++);node.parentNode.replaceChild(m,node);m.appendChild(w);w.appendChild(node);};
+  Array.from(h1.childNodes).forEach(n=>{
+   if(n.nodeType===3){const parts=n.textContent.split(/(\s+)/);const f=document.createDocumentFragment();
+    parts.forEach(p=>{if(!p.trim()){f.appendChild(document.createTextNode(p));return}const t=document.createTextNode(p);const m=document.createElement('span');m.className='w-mask';const w=document.createElement('span');w.className='w-in';w.style.setProperty('--i',i++);w.appendChild(t);m.appendChild(w);f.appendChild(m);});
+    n.parentNode.replaceChild(f,n);}
+   else if(n.nodeType===1&&n.tagName==='SPAN'){wrap(n);}
+  });}
+ // stagger reveals + spotlight
+ document.querySelectorAll('#capabilities-section .reveal-fade,#projects-container .reveal-fade').forEach((el,i)=>el.style.setProperty('--d',(i%4)*0.08+'s'));
+ document.querySelectorAll('#capabilities-section .group,.proj-card,#about-section .bg-surfaceCard,#equipment-section .bg-surfaceCard').forEach(el=>{
+  el.classList.add('spot');
+  el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');});
+ });
+ // hero image extras
+ const heroImg=document.querySelector('#home-section img');
+ if(heroImg){heroImg.parentElement.classList.add('hero-img-wrap');
+  const card=heroImg.parentElement.nextElementSibling;if(card)card.classList.add('float-card');}
+ // scroll: progress bar, header, parallax
+ const bar=document.getElementById('scroll-progress'),hdr=document.querySelector('header');
+ let tick=false;
+ const onScroll=()=>{if(tick)return;tick=true;requestAnimationFrame(()=>{
+  const max=document.documentElement.scrollHeight-innerHeight;
+  bar.style.transform='scaleX('+(max>0?scrollY/max:0)+')';
+  hdr.classList.toggle('is-scrolled',scrollY>20);
+  if(heroImg&&!rm&&scrollY<1200)heroImg.style.transform='translateY('+(scrollY*0.06)+'px) scale(1.08)';
+  tick=false;});};
+ addEventListener('scroll',onScroll,{passive:true});onScroll();
+ // counter
+ const c=document.querySelector('[data-count]');
+ if(c&&!rm){const end=+c.dataset.count;c.textContent='0';
+  new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();const t0=performance.now();
+   (function s(t){const p=Math.min((t-t0)/1800,1);c.textContent=Math.round(end*(1-Math.pow(1-p,4)));if(p<1)requestAnimationFrame(s)})(t0);}},{threshold:.6}).observe(c);}
+ // magnetic primary buttons (desktop)
+ if(matchMedia('(hover:hover)').matches&&!rm)document.querySelectorAll('button.bg-neonGreen').forEach(b=>{
+  b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.12)+'px,'+((e.clientY-r.top-r.height/2)*.25-2)+'px)';});
+  b.addEventListener('pointerleave',()=>b.style.transform='');});
+ // re-run reveals when switching views
+ document.addEventListener('click',e=>{if(e.target.closest('[data-target]'))setTimeout(()=>{
+  document.querySelectorAll('.app-view:not(.hidden) .reveal-fade,.app-view:not(.hidden) .reveal-scale').forEach(el=>el.classList.add('is-visible'));},60);});
+})();
+</script>
+</body>
+</html>

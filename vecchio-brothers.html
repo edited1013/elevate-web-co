@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vecchio Brothers Heating &amp; Cooling | Dunkirk, NY Residential HVAC</title>
+<meta name="description" content="Dependable residential heating and air conditioning in the Dunkirk, New York area. More than 30 years of experience. Open Mon–Fri 9:00 AM – 6:00 PM. Call (716) 673-9488.">
+<meta name="theme-color" content="#0E1B2B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HVACBusiness",
+  "name": "Vecchio Brothers Heating & Cooling",
+  "telephone": "+1-716-673-9488",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3475 E Main Rd",
+    "addressLocality": "Dunkirk",
+    "addressRegion": "NY",
+    "postalCode": "14048",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "areaServed": {
+    "@type": "City",
+    "name": "Dunkirk",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "New York"
+    }
+  },
+  "knowsAbout": ["Residential Heating", "Residential Air Conditioning"],
+  "description": "Residential heating and air conditioning contractor serving the Dunkirk, New York area with more than 30 years of experience."
+}
+</script>
+<style>
+:root {
+  --navy: #0E1B2B;
+  --navy2: #17283C;
+  --paper: #F6F3EC;
+  --sand: #E9E3D6;
+  --copper: #B4693A;
+  --copper-l: #DDA37A;
+  --steel: #5B7186;
+  --ink: #0E1B2B;
+  --pad: clamp(1.25rem, 5vw, 4rem);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+* { box-sizing: border-box; margin: 0; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font: 400 1.0625rem/1.65 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
+}
+h1, h2, h3, .serif { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; letter-spacing: -0.01em; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 3px solid var(--copper); outline-offset: 3px; }
+.wrap { padding-inline: var(--pad); max-width: 1440px; margin-inline: auto; }
+.sr { position: absolute; left: -999px; }
+.sr:focus { left: 1rem; top: 1rem; z-index: 99; background: var(--paper); padding: .6rem 1rem; }
+.hidden { display: none !important; }
+
+/* Header & Navigation */
+header.top {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(14, 27, 43, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--paper);
+  padding-top: env(safe-area-inset-top);
+  border-bottom: 1px solid rgba(246, 243, 236, 0.08);
+  transition: background 0.3s var(--ease);
+}
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 4.35rem; }
+.brand { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+.brand b { font: 400 1.55rem 'Instrument Serif', serif; }
+.brand span { font-size: .72rem; letter-spacing: .14em; color: var(--copper-l); margin-top: .2rem; text-transform: uppercase; }
+nav.d { display: none; gap: 1.8rem; align-items: center; }
+nav.d a {
+  text-decoration: none; font-size: .95rem; padding: .35rem 0;
+  border-bottom: 1.5px solid transparent; color: #d9dde2;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+nav.d a:hover, nav.d a[aria-current] { color: #fff; border-color: var(--copper); }
+
+/* Live Status Pill */
+.status-pill {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.03em;
+  padding: 0.3rem 0.7rem; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08); color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; }
+.status-pill.closed .status-dot { background: var(--copper-l); }
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.45); opacity: 0.55; }
+}
+.status-pill.open .status-dot { animation: pulseDot 2.2s infinite ease-in-out; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  min-height: 3.25rem; padding: .8rem 1.6rem;
+  font: 600 1rem 'Hanken Grotesk', sans-serif; text-decoration: none;
+  border: 1.5px solid transparent; border-radius: 2px; cursor: pointer;
+  transition: transform 0.22s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.btn:active { transform: scale(0.97); }
+.btn.cu { background: var(--copper); color: #fff; box-shadow: 0 4px 14px rgba(180, 105, 58, 0.28); }
+.btn.cu:hover { background: #c97b48; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(180, 105, 58, 0.36); }
+.btn.ln { border-color: rgba(246, 243, 236, 0.65); color: var(--paper); }
+.btn.ln:hover { background: rgba(255, 255, 255, 0.12); border-color: #fff; transform: translateY(-2px); }
+.btn.nv { background: var(--navy); color: var(--paper); }
+.btn.nv:hover { background: var(--navy2); transform: translateY(-2px); }
+.btn.lnd { border-color: var(--navy); color: var(--navy); }
+.btn.lnd:hover { background: var(--navy); color: var(--paper); transform: translateY(-2px); }
+
+.menu {
+  background: none; border: 1.5px solid rgba(246, 243, 236, .4); color: inherit;
+  width: 3rem; height: 3rem; border-radius: 2px; font-size: 1.3rem; cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.menu:active { transform: scale(0.94); }
+
+#drawer {
+  position: fixed; inset: 0; top: calc(4.35rem + env(safe-area-inset-top));
+  background: var(--navy); z-index: 39; padding: 2rem var(--pad);
+  display: flex; flex-direction: column; gap: .2rem; overflow: auto;
+  animation: drawerIn 0.32s var(--ease) both;
+}
+@keyframes drawerIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+#drawer a {
+  font: 400 2.4rem/1.25 'Instrument Serif', serif; color: var(--paper);
+  text-decoration: none; padding: .4rem 0; border-bottom: 1px solid rgba(246, 243, 236, .12);
+  transition: color 0.2s, padding-left 0.25s var(--ease);
+}
+#drawer a[aria-current], #drawer a:hover { color: var(--copper-l); padding-left: 0.6rem; }
+
+.callbar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 38;
+  padding: .65rem var(--pad) calc(.65rem + env(safe-area-inset-bottom));
+  background: rgba(246, 243, 236, 0.94);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(14, 27, 43, .15); display: flex; gap: .6rem;
+}
+.callbar .btn { flex: 1; min-height: 3.1rem; padding: .5rem 1rem; }
+@media (min-width: 960px) {
+  nav.d { display: flex; }
+  .menu { display: none; }
+  .callbar { display: none; }
+  body { padding-bottom: 0; }
+}
+
+/* Photos & Image Frames */
+.ph { background: var(--sand); overflow: hidden; position: relative; border-radius: 2px; }
+.ph img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.85s var(--ease), filter 0.6s var(--ease);
+}
+.ph:hover img { transform: scale(1.035); }
+.cap { font-size: .78rem; color: var(--steel); margin-top: .6rem; }
+.note {
+  display: inline-block; font-size: .84rem; padding: .35rem .75rem;
+  border-left: 3px solid var(--copper); background: rgba(180, 105, 58, .1); color: #7a4220;
+}
+.dark .note { background: rgba(221, 163, 122, .14); color: var(--copper-l); }
+
+/* Hero */
+.hero { background: var(--navy); color: var(--paper); position: relative; overflow: hidden; }
+.hero .ph { height: 54vh; min-height: 320px; background: var(--navy2); border-radius: 0; }
+.hero .ph::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, var(--navy) 4%, rgba(14, 27, 43, 0.25) 55%, rgba(14, 27, 43, 0.1));
+}
+.hero .txt { position: relative; margin-top: -4.5rem; background: var(--navy); padding: 2rem var(--pad) 3.2rem; margin-right: 1rem; }
+.hero h1 { font-size: clamp(3.1rem, 12vw, 4.6rem); line-height: .95; }
+.hero h1 em { color: var(--copper-l); font-style: italic; }
+.hero p.lead { max-width: 34rem; margin: 1.4rem 0 2rem; color: #c9d0d8; }
+.acts { display: flex; flex-wrap: wrap; gap: .8rem; }
+.hero .facts {
+  margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(246, 243, 236, 0.14);
+  display: flex; flex-wrap: wrap; gap: 1.2rem 2.4rem; font-size: .92rem; color: #aab4bf;
+}
+.hero .facts b { display: block; color: var(--paper); font-weight: 600; }
+@media (min-width: 960px) {
+  .hero { display: grid; grid-template-columns: repeat(12, 1fr); min-height: calc(100vh - 4.35rem); padding-block: 0; }
+  .hero .ph { grid-column: 7/13; grid-row: 1; height: auto; min-height: 0; }
+  .hero .ph::after { background: linear-gradient(to right, var(--navy) 0%, rgba(14, 27, 43, 0.2) 30%, transparent 100%); }
+  .hero .txt { grid-column: 1/9; grid-row: 1; align-self: center; margin: 0; padding: 4rem 0 4rem var(--pad); background: none; z-index: 2; }
+  .hero h1 { font-size: clamp(4.8rem, 8.8vw, 9rem); }
+}
+
+/* Section Helpers */
+.sec { padding-block: clamp(4rem, 10vw, 7.5rem); }
+.dark { background: var(--navy); color: var(--paper); }
+.sand { background: var(--sand); }
+.k { font-size: .88rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--copper); font-weight: 600; margin-bottom: .9rem; }
+.dark .k { color: var(--copper-l); }
+h2 { font-size: clamp(2.4rem, 7vw, 4.8rem); line-height: 1.02; }
+.lead2 { max-width: 36rem; margin-top: 1.3rem; color: #3c4a5a; }
+.dark .lead2 { color: #c0c8d1; }
+
+/* Home: Heating / Cooling Diptych with Integrated Photography */
+.dip { display: grid; }
+.dip > div { padding: clamp(3rem, 7vw, 5.5rem) var(--pad); display: flex; flex-direction: column; justify-content: space-between; }
+.dip-img { height: 240px; margin-bottom: 2rem; border-radius: 2px; }
+@media (min-width: 640px) { .dip-img { height: 290px; } }
+.heat { background: var(--navy2); color: var(--paper); }
+.heat h3, .cool h3 { font-size: clamp(2.6rem, 7vw, 4.3rem); line-height: 1; margin-bottom: 1.1rem; }
+.heat ul { list-style: none; padding: 0; margin: 1.5rem 0 2rem; max-width: 32rem; }
+.heat li { padding: .8rem 0; border-top: 1px solid rgba(246, 243, 236, .18); font-size: .98rem; color: #cdd4db; }
+.cool { background: #FBFAF6; }
+.cool p { max-width: 32rem; }
+.cool .big { margin: 1.2rem 0; font: italic 400 1.65rem/1.3 'Instrument Serif', serif; color: var(--steel); max-width: 24rem; }
+@media (min-width: 960px) {
+  .dip { grid-template-columns: 1fr 1fr; }
+  .heat { padding-left: var(--pad); padding-right: 4rem; }
+  .cool { padding-left: 4rem; padding-right: var(--pad); }
+}
+.lnk {
+  font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--copper);
+  padding-bottom: .15rem; margin-right: 1.4rem; display: inline-block; margin-top: .5rem;
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.lnk:hover { color: var(--copper); transform: translateX(3px); }
+.dark .lnk:hover, .heat .lnk:hover { color: var(--copper-l); }
+
+/* Home: Full Bleed Band */
+.band { position: relative; min-height: 68vh; display: flex; align-items: flex-end; color: #fff; overflow: hidden; }
+.band .ph { position: absolute; inset: 0; background: var(--navy); border-radius: 0; }
+.band .ph:after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(14, 27, 43, 0.88) 10%, rgba(14, 27, 43, 0.45) 100%); }
+.band .wrap { position: relative; z-index: 2; padding-block: 3.5rem; width: 100%; }
+.huge { font: 400 clamp(7.5rem, 32vw, 20rem)/.8 'Instrument Serif', serif; color: var(--copper-l); letter-spacing: -.04em; }
+
+/* Photo Strip / Visual Showcase */
+.gallery-grid {
+  display: grid; gap: 1.25rem; margin-top: 2.5rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; } }
+.gallery-card { position: relative; overflow: hidden; border-radius: 2px; background: var(--navy2); }
+.gallery-card .ph { height: 270px; }
+@media (min-width: 960px) { .gallery-card .ph { height: 340px; } }
+.gallery-card figcaption {
+  padding: 1rem 1.1rem; background: #fff; border: 1px solid rgba(14, 27, 43, 0.1); border-top: 0;
+  font-size: 0.92rem; color: var(--ink);
+}
+.gallery-card figcaption b { display: block; font-family: 'Instrument Serif', serif; font-size: 1.35rem; font-weight: 400; margin-bottom: 0.2rem; }
+
+/* History / Story */
+.story { display: grid; gap: 2.5rem; }
+.story .col p + p { margin-top: 1.2rem; }
+.pull { font: 400 clamp(1.8rem, 5vw, 3rem)/1.15 'Instrument Serif', serif; }
+@media (min-width: 960px) {
+  .story { grid-template-columns: 5fr 6fr; gap: 6rem; align-items: start; }
+  .story .col { padding-top: 2rem; }
+}
+
+/* Hours Card */
+.hours-box {
+  background: var(--navy2); border: 1px solid rgba(246, 243, 236, 0.14);
+  padding: 1.6rem; border-radius: 2px; margin-top: 1.8rem;
+}
+.hours-row {
+  display: flex; justify-content: space-between; padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(246, 243, 236, 0.1); font-size: 0.95rem;
+}
+.hours-row:last-child { border-bottom: 0; }
+.hours-row.today { color: var(--copper-l); font-weight: 600; }
+
+/* Phone CTA */
+.phone {
+  font: 400 clamp(3.2rem, 14vw, 10.5rem)/.95 'Instrument Serif', serif;
+  text-decoration: none; display: inline-block; color: var(--paper); letter-spacing: -.02em;
+  transition: color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.phone:hover { color: var(--copper-l); transform: translateX(6px); }
+
+/* Page Heads */
+.ph-head { padding-block: clamp(3rem, 8vw, 5.5rem); }
+.crumb { font-size: .88rem; margin-bottom: 1.8rem; opacity: .8; }
+.crumb a { text-decoration: none; border-bottom: 1px solid currentColor; }
+.ph-head h1 { font-size: clamp(3rem, 10vw, 7.2rem); line-height: .96; max-width: 15ch; }
+.split { display: grid; gap: 2rem; }
+@media (min-width: 960px) {
+  .split { grid-template-columns: 7fr 5fr; gap: 4rem; align-items: end; }
+  .split.r { grid-template-columns: 5fr 7fr; }
+}
+.tall { height: 340px; }
+@media (min-width: 960px) { .tall { height: 500px; } }
+
+/* Heating Console */
+.cons { display: grid; gap: 2rem; margin-top: 3rem; }
+.rail { display: flex; flex-direction: column; border-top: 1px solid rgba(246, 243, 236, .25); }
+.rail button {
+  background: none; border: 0; border-bottom: 1px solid rgba(246, 243, 236, .25);
+  color: #9fabb9; text-align: left; padding: 1.1rem 0;
+  font: 400 1.7rem/1.1 'Instrument Serif', serif; cursor: pointer; min-height: 3.5rem;
+  transition: color 0.25s var(--ease), padding-left 0.28s var(--ease);
+}
+.rail button:hover { color: #fff; padding-left: 0.5rem; }
+.rail button[aria-selected=true] { color: var(--paper); padding-left: 1rem; border-left: 3px solid var(--copper); }
+#hp { animation: panelFade 0.35s var(--ease) both; }
+@keyframes panelFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+#hp h3 { font-size: 2.4rem; line-height: 1.05; margin-bottom: 1rem; }
+#hp ul { list-style: none; padding: 0; margin: 1.5rem 0; }
+#hp li { padding: .7rem 0 .7rem 1.6rem; border-top: 1px solid rgba(246, 243, 236, .15); position: relative; color: #d3d9df; }
+#hp li:before { content: ""; position: absolute; left: 0; top: 1.35rem; width: .7rem; height: 2px; background: var(--copper); }
+@media (min-width: 960px) { .cons { grid-template-columns: 4fr 7fr; gap: 6rem; } }
+
+/* Accordion Details */
+details { border-top: 1px solid rgba(14, 27, 43, .2); }
+details:last-child { border-bottom: 1px solid rgba(14, 27, 43, .2); }
+summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem; padding: 1.3rem 0; font: 400 1.55rem/1.2 'Instrument Serif', serif; min-height: 3.5rem;
+  transition: color 0.2s;
+}
+summary:hover { color: var(--copper); }
+summary::-webkit-details-marker { display: none; }
+summary:after {
+  content: "+"; color: var(--copper); font: 300 2rem/1 'Hanken Grotesk', sans-serif;
+  transition: transform 0.28s var(--ease);
+}
+details[open] summary:after { transform: rotate(45deg); }
+details > div { padding: 0 0 1.5rem; max-width: 40rem; animation: panelFade 0.3s var(--ease) both; }
+details p + p { margin-top: .7rem; }
+.safe { margin-top: 2rem; padding: 1rem 1.2rem; border-left: 3px solid var(--copper); background: #fff; font-size: .95rem; }
+
+/* Cooling */
+.cl { background: #FBFAF6; }
+.scope { margin-top: 3rem; display: grid; gap: 2.5rem; }
+.scope div { max-width: 34rem; }
+.scope h3 { font-size: 2.2rem; line-height: 1.05; margin-bottom: .6rem; }
+@media (min-width: 960px) {
+  .scope { gap: 4rem; }
+  .scope div:nth-child(2) { margin-left: 20%; }
+  .scope div:nth-child(3) { margin-left: 40%; }
+}
+.sym { display: flex; flex-wrap: wrap; gap: .6rem; margin: 2rem 0; }
+.sym button {
+  background: transparent; border: 1.5px solid var(--navy); border-radius: 999px;
+  padding: .7rem 1.25rem; font: 500 .98rem 'Hanken Grotesk', sans-serif; cursor: pointer;
+  min-height: 3rem; color: var(--ink);
+  transition: background 0.22s var(--ease), color 0.22s var(--ease), transform 0.2s var(--ease);
+}
+.sym button:hover { transform: translateY(-2px); }
+.sym button[aria-selected=true] { background: var(--navy); color: var(--paper); }
+#cp { background: #FBFAF6; padding: clamp(1.5rem, 5vw, 3.5rem); border-radius: 2px; animation: panelFade 0.35s var(--ease) both; }
+#cp h3 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.05; margin: .4rem 0 1.5rem; max-width: 22ch; }
+#cp .two { display: grid; gap: 1.5rem; }
+#cp b.s { display: block; color: var(--copper); margin-bottom: .3rem; }
+@media (min-width: 960px) { #cp .two { grid-template-columns: 1fr 1fr; gap: 3rem; } }
+
+/* About Timeline */
+.tl { list-style: none; padding: 0; margin-top: 2rem; border-left: 2px solid var(--copper); margin-left: .5rem; }
+.tl li { padding: 0 0 2.5rem 1.8rem; position: relative; }
+.tl li:before {
+  content: ""; position: absolute; left: -.55rem; top: .55rem; width: .85rem; height: .85rem;
+  background: var(--paper); border: 2px solid var(--copper); border-radius: 50%;
+}
+.tl h3 { font-size: 2rem; line-height: 1.1; margin: .2rem 0 .5rem; }
+.tl small { color: var(--steel); font-size: .88rem; }
+.prin { margin-top: 3rem; }
+.prin div { padding: 1.6rem 0; border-top: 1px solid rgba(246, 243, 236, .2); display: grid; gap: .4rem; }
+.prin h3 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); line-height: 1.05; }
+.prin p { color: #c0c8d1; max-width: 34rem; }
+@media (min-width: 960px) {
+  .prin div { grid-template-columns: 6fr 5fr; gap: 3rem; align-items: baseline; }
+  .prin div:nth-child(even) { padding-left: 12%; }
+}
+
+/* Contact */
+.cgrid { display: grid; gap: 3rem; }
+@media (min-width: 960px) { .cgrid { grid-template-columns: 5fr 7fr; gap: 5rem; } }
+.sheet { background: var(--paper); color: var(--ink); padding: clamp(1.5rem, 5vw, 3.5rem); border-radius: 2px; }
+.sheet h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: .5rem; }
+label { display: block; font-weight: 600; font-size: .95rem; margin: 1.2rem 0 .35rem; }
+input, select, textarea {
+  width: 100%; font: 400 1rem 'Hanken Grotesk', sans-serif; padding: .85rem .9rem;
+  min-height: 3.25rem; background: #fff; border: 1.5px solid rgba(14, 27, 43, .3);
+  border-radius: 2px; color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus, textarea:focus { border-color: var(--copper); box-shadow: 0 0 0 3px rgba(180, 105, 58, 0.16); outline: none; }
+input[aria-invalid], textarea[aria-invalid] { border-color: #b3261e; }
+.err { color: #b3261e; font-size: .88rem; margin-top: .3rem; }
+.two2 { display: grid; gap: 0 1.2rem; }
+@media (min-width: 640px) { .two2 { grid-template-columns: 1fr 1fr; } }
+dl.info div { padding: 1rem 0; border-top: 1px solid rgba(246, 243, 236, .18); }
+dl.info dt { font-size: .88rem; color: var(--copper-l); }
+.rec { background: #fff; border: 1px solid rgba(14, 27, 43, .2); padding: 1.2rem; margin: 1.5rem 0; }
+.rec p { margin: .3rem 0; }
+
+/* Footer */
+footer {
+  background: var(--navy); color: #b7c0ca; padding: 4rem 0 2.5rem;
+  font-size: .95rem; border-top: 1px solid rgba(246, 243, 236, .12);
+}
+footer .g { display: grid; gap: 2rem; }
+@media (min-width: 960px) { footer .g { grid-template-columns: 5fr 3fr 4fr; gap: 4rem; } }
+footer a { text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: #fff; }
+footer li { list-style: none; padding: .3rem 0; }
+footer ul { padding: 0; }
+footer .fine { margin-top: 2.5rem; font-size: .82rem; opacity: .75; max-width: 60rem; }
+.linkbtn {
+  background: none; border: 0; color: var(--copper-l); text-decoration: underline;
+  cursor: pointer; font: inherit; padding: .3rem 0; min-height: 2.75rem;
+}
+
+/* Modal */
+#mm {
+  position: fixed; inset: 0; background: rgba(14, 27, 43, .82);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  z-index: 60; align-items: center; justify-content: center; padding: 1rem;
+}
+#mm > div { background: var(--paper); max-width: 48rem; width: 100%; max-height: 88vh; overflow: auto; padding: 2rem; border-radius: 2px; }
+#mm .it { display: grid; gap: 1rem; padding: 1rem 0; border-top: 1px solid rgba(14, 27, 43, .15); font-size: .9rem; }
+@media (min-width: 600px) { #mm .it { grid-template-columns: 160px 1fr; align-items: center; } }
+#mm img { width: 100%; height: 105px; object-fit: cover; border-radius: 2px; }
+
+/* Scroll-Triggered & Hero Animations */
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1, .hero .lead, .hero .acts, .hero .facts {
+    animation: heroRise 0.85s var(--ease) both;
+  }
+  .hero .lead { animation-delay: 0.1s; }
+  .hero .acts { animation-delay: 0.2s; }
+  .hero .facts { animation-delay: 0.3s; }
+  @keyframes heroRise {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+<a class="sr" href="#app">Skip to main content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home"><b>Vecchio Brothers</b><span>Heating &amp; Cooling</span></a>
+    <nav class="d" aria-label="Primary">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#heating" data-nav="heating">Heating</a>
+      <a href="#air-conditioning" data-nav="air-conditioning">Air conditioning</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#service-area" data-nav="service-area">Service area</a>
+      <a href="#contact" data-nav="contact">Contact</a>
+      <span id="nav-status" class="status-pill"></span>
+      <a class="btn cu" href="tel:+17166739488" style="border:0;color:#fff;min-height:2.75rem">(716) 673-9488</a>
+    </nav>
+    <button class="menu" id="mb" aria-expanded="false" aria-controls="drawer" aria-label="Open navigation menu">☰</button>
+  </div>
+  <div id="drawer" class="hidden">
+    <a href="#home" data-nav="home">Home</a>
+    <a href="#heating" data-nav="heating">Heating</a>
+    <a href="#air-conditioning" data-nav="air-conditioning">Air conditioning</a>
+    <a href="#about" data-nav="about">About</a>
+    <a href="#service-area" data-nav="service-area">Service area</a>
+    <a href="#contact" data-nav="contact">Contact</a>
+    <div style="margin-top:1.5rem;color:#c9d0d8;font-size:0.95rem">
+      <div id="drawer-status" style="margin-bottom:0.6rem"></div>
+      <p>Mon–Fri: 9:00 AM – 6:00 PM<br>Sat–Sun: Closed</p>
+    </div>
+  </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<div class="callbar">
+  <a class="btn cu" href="tel:+17166739488">Call (716) 673-9488</a>
+  <a class="btn lnd" href="#contact?service=estimate">Estimate</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <div class="serif" style="font-size:2rem;color:#fff;line-height:1.1">Vecchio Brothers<br>Heating &amp; Cooling</div>
+        <p style="margin-top:1rem;max-width:26rem">Residential heating and air conditioning for homeowners across the Dunkirk, New York area, backed by more than 30 years of experience.</p>
+        <p style="margin-top:0.8rem;font-size:0.9rem;color:#9fabb9">3475 E Main Rd, Dunkirk, NY 14048</p>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#heating">Residential heating</a></li>
+          <li><a href="#air-conditioning">Air conditioning</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#service-area">Service area</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <a href="tel:+17166739488" class="serif" style="font-size:2.2rem;color:#fff">(716) 673-9488</a>
+        <div style="margin-top:0.8rem;font-size:0.92rem">
+          <div style="color:#fff;font-weight:600;margin-bottom:0.25rem">Business Hours</div>
+          <div>Monday – Friday: 9:00 AM – 6:00 PM</div>
+          <div>Saturday – Sunday: Closed</div>
+        </div>
+      </div>
+    </div>
+    <p class="fine">Independent design concept for Vecchio Brothers Heating &amp; Cooling (Dunkirk, NY). Photographs are licensed stock images and do not show Vecchio Brothers’ employees or completed projects. <button class="linkbtn" id="om">Image &amp; license record</button></p>
+  </div>
+</footer>
+
+<div id="mm" class="hidden" role="dialog" aria-modal="true" aria-label="Image and license record">
+  <div>
+    <h2 style="font-size:2.2rem">Image &amp; license record</h2>
+    <p style="margin:.6rem 0 1rem">All photographs are from Unsplash under the Unsplash License, which allows commercial use without attribution. They are stock images, not photos of Vecchio Brothers’ team or work.</p>
+    <div id="ml"></div>
+    <button class="btn nv" id="mclose" style="margin-top:1.2rem">Close</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  const A = [
+    { id: 'interior', t: 'Sunlit residential living interior', use: 'Home hero', src: 'Unsplash photo-1600585154340-be6161a56a0c', page: 'https://unsplash.com/photos/be6161a56a0c', alt: 'Sunlit residential living room' },
+    { id: 'copper', t: 'Copper piping and mechanical craftsmanship', use: 'Home heating, Heating page, About', src: 'Unsplash photo-1581094794329-c8112a89af12', page: 'https://unsplash.com/photos/c8112a89af12', alt: 'Close-up of copper piping and residential mechanical work' },
+    { id: 'condenser', t: 'Residential exterior condenser', use: 'Home cooling, Air conditioning page', src: 'Unsplash photo-1621905251189-08b45d6a269e', page: 'https://unsplash.com/photos/08b45d6a269e', alt: 'Residential air conditioning condenser beside a home' },
+    { id: 'home', t: 'Residential home exterior in a cool climate', use: 'Home 30+ banner, Service area', src: 'Unsplash photo-1513694203232-719a890e022f', page: 'https://unsplash.com/photos/719a890e022f', alt: 'Well-maintained home exterior built for four-season weather' },
+    { id: 'thermostat', t: 'Modern smart home thermostat control', use: 'Home showcase, Heating diagnostics', src: 'Unsplash photo-1545259741-2ea3ebf61fa3', page: 'https://unsplash.com/photos/2ea3ebf61fa3', alt: 'Wall-mounted residential thermostat displaying indoor temperature' },
+    { id: 'ductwork', t: 'Clean residential mechanical and ventilation room', use: 'Home showcase, Heating & Cooling', src: 'Unsplash photo-1504328345606-18bbc8c9d7d1', page: 'https://unsplash.com/photos/18bbc8c9d7d1', alt: 'Clean residential mechanical and ductwork installation' },
+    { id: 'winterhome', t: 'Snow-covered Western New York style home at dusk', use: 'Home showcase, About story', src: 'Unsplash photo-1518780664697-55e3ad937233', page: 'https://unsplash.com/photos/55e3ad937233', alt: 'Warmly lit residential home surrounded by winter snow' },
+    { id: 'comfortroom', t: 'Bright bedroom with steady year-round airflow', use: 'Air conditioning showcase', src: 'Unsplash photo-1616594039964-ae9021a400a0', page: 'https://unsplash.com/photos/ae9021a400a0', alt: 'Comfortable residential bedroom interior' }
+  ];
+  A.forEach(a => a.url = 'https://images.unsplash.com/' + a.src.split(' ')[1] + '?auto=format&fit=crop&w=1400&q=80');
+
+  /* Live Dunkirk NY (America/New_York) Open Status */
+  function getOpenStatus() {
+    try {
+      const now = new Date();
+      const nyTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+      const day = nyTime.getDay(); // 0=Sun, 1=Mon..5=Fri, 6=Sat
+      const mins = nyTime.getHours() * 60 + nyTime.getMinutes();
+      const isWeekday = day >= 1 && day <= 5;
+      const isOpen = isWeekday && mins >= 540 && mins < 1080; // 9:00 AM (540) to 6:00 PM (1080)
+      if (isOpen) {
+        return { open: true, text: 'Open now · Closes 6:00 PM', day };
+      }
+      if (isWeekday && mins < 540) {
+        return { open: false, text: 'Closed · Opens 9:00 AM', day };
+      }
+      if (day === 5 && mins >= 1080 || day === 6 || day === 0) {
+        return { open: false, text: 'Closed · Opens Mon 9:00 AM', day };
+      }
+      return { open: false, text: 'Closed · Opens tomorrow 9:00 AM', day };
+    } catch (e) {
+      return { open: false, text: 'Mon–Fri 9:00 AM – 6:00 PM', day: -1 };
+    }
+  }
+
+  function updateStatusBadges() {
+    const st = getOpenStatus();
+    const pill = document.getElementById('nav-status');
+    const dStatus = document.getElementById('drawer-status');
+    if (pill) {
+      pill.className = 'status-pill ' + (st.open ? 'open' : 'closed');
+      pill.innerHTML = `<span class="status-dot"></span><span>${st.text}</span>`;
+    }
+    if (dStatus) {
+      dStatus.innerHTML = `<span class="status-pill ${st.open ? 'open' : 'closed'}"><span class="status-dot"></span><span>${st.text}</span></span>`;
+    }
+  }
+  updateStatusBadges();
+
+  function renderHoursTable() {
+    const st = getOpenStatus();
+    const days = [
+      ['Monday', '9:00 AM – 6:00 PM', 1],
+      ['Tuesday', '9:00 AM – 6:00 PM', 2],
+      ['Wednesday', '9:00 AM – 6:00 PM', 3],
+      ['Thursday', '9:00 AM – 6:00 PM', 4],
+      ['Friday', '9:00 AM – 6:00 PM', 5],
+      ['Saturday', 'Closed', 6],
+      ['Sunday', 'Closed', 0]
+    ];
+    return `<div class="hours-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem">
+        <span style="font-weight:600;color:#fff">Shop &amp; Dispatch Hours</span>
+        <span class="status-pill ${st.open ? 'open' : 'closed'}"><span class="status-dot"></span><span>${st.text}</span></span>
+      </div>
+      ${days.map(d => `<div class="hours-row ${st.day === d[2] ? 'today' : ''}"><span>${d[0]}</span><span>${d[1]}</span></div>`).join('')}
+    </div>`;
+  }
+
+  const M = {
+    home: ['Vecchio Brothers Heating & Cooling | Dunkirk, NY Residential HVAC', 'Dependable residential heating and air conditioning in the Dunkirk, New York area. More than 30 years of experience. Open Mon–Fri 9 AM – 6 PM. Call (716) 673-9488.'],
+    heating: ['Residential Heating Services | Vecchio Brothers Heating & Cooling — Dunkirk, NY', 'Residential heating diagnostics, repair, maintenance, and replacement in the Dunkirk, New York area. Call (716) 673-9488.'],
+    'air-conditioning': ['Residential Air Conditioning | Vecchio Brothers Heating & Cooling — Dunkirk, NY', 'Summer cooling service, maintenance, and residential air conditioning in the Dunkirk, New York area. Call (716) 673-9488.'],
+    about: ['About Vecchio Brothers Heating & Cooling | Over 30 Years in Dunkirk, NY', 'Vecchio Brothers Heating & Cooling has served homeowners in the Dunkirk, New York area for more than 30 years.'],
+    'service-area': ['Dunkirk, NY Service Area | Vecchio Brothers Heating & Cooling', 'Residential heating and air conditioning centered in the Dunkirk, New York area. Call (716) 673-9488 to confirm availability.'],
+    contact: ['Contact & Request Service | Vecchio Brothers Heating & Cooling — (716) 673-9488', 'Call (716) 673-9488 or send a residential heating or cooling inquiry to Vecchio Brothers Heating & Cooling. Open Mon–Fri 9 AM – 6 PM.']
+  };
+
+  const P = (id, cls, style) => {
+    const a = A.find(x => x.id === id);
+    return `<div class="ph ${cls || ''}" style="${style || ''}"><img src="${a.url}" alt="${a.alt}" loading="lazy" onerror="this.style.display='none'"></div>`;
+  };
+  const CALL = '<a class="btn cu" href="tel:+17166739488">Call (716) 673-9488</a>';
+  const HEAD = (crumb, h1, p, cls) => `<section class="ph-head ${cls || ''}"><div class="wrap"><div class="crumb"><a href="#home">Home</a> / ${crumb}</div><h1>${h1}</h1>${p ? `<p class="lead2">${p}</p>` : ''}`;
+
+  const V = {};
+
+  V.home = () => `
+<section class="hero">
+  ${P('interior')}
+  <div class="txt">
+    <h1>Steady warmth through Lake Erie winters. <em>Quiet relief all summer.</em></h1>
+    <p class="lead">Straightforward residential heating and air conditioning for homeowners across the Dunkirk, New York area, backed by more than three decades of hands-on local experience.</p>
+    <div class="acts">${CALL}<a class="btn ln" href="#contact?service=estimate">Request an estimate</a></div>
+    <div class="facts">
+      <span><b>Hours</b>Mon–Fri, 9:00 AM – 6:00 PM</span>
+      <span><b>Experience</b>30+ years in Dunkirk</span>
+      <span><b>Location</b>3475 E Main Rd, Dunkirk</span>
+    </div>
+  </div>
+</section>
+
+<section class="dip">
+  <div class="heat reveal">
+    <div>
+      ${P('copper', 'dip-img')}
+      <h3>Heating</h3>
+      <p style="max-width:30rem;color:#cdd4db">When temperatures drop along Lake Erie, reliable heat is not optional. We diagnose, maintain and replace residential heating equipment.</p>
+      <ul>
+        <li>Troubleshooting uneven warmth, short-cycling or startup failures</li>
+        <li>Pre-winter safety checks, airflow balancing and routine upkeep</li>
+        <li>Honest consultations on heating system replacement</li>
+      </ul>
+    </div>
+    <div>
+      <a class="lnk" href="#heating">How we approach heating</a>
+      <a class="lnk" href="#contact?service=heating">Schedule heating service</a>
+    </div>
+  </div>
+  <div class="cool reveal reveal-delay-1">
+    <div>
+      ${P('condenser', 'dip-img')}
+      <h3>Air conditioning</h3>
+      <p class="big">Humid July afternoons ask for more than a lower number on the thermostat.</p>
+      <p>We service, maintain and install residential cooling tailored to your home’s layout, so the air feels dry and comfortable and the system runs quietly.</p>
+      <p style="margin-top:1.2rem">Warm-air diagnostics, spring tune-ups, and right-sized central cooling replacements.</p>
+    </div>
+    <div style="margin-top:1.5rem">
+      <a class="lnk" href="#air-conditioning">How we approach cooling</a>
+      <a class="lnk" href="#contact?service=cooling">Schedule cooling service</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="k">Inside residential comfort</div>
+      <h2 style="max-width:16ch">Built for four distinct Western New York seasons.</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure class="gallery-card reveal">
+        ${P('winterhome')}
+        <figcaption><b>Lake-effect winter readiness</b>Dependable furnace &amp; boiler care built for freezing gusts off Lake Erie.</figcaption>
+      </figure>
+      <figure class="gallery-card reveal reveal-delay-1">
+        ${P('thermostat')}
+        <figcaption><b>Precision thermostat &amp; airflow</b>Accurate room-by-room control and balanced duct distribution.</figcaption>
+      </figure>
+      <figure class="gallery-card reveal reveal-delay-2">
+        ${P('ductwork')}
+        <figcaption><b>Clean mechanical standards</b>Orderly piping, sealed ductwork, and thorough safety inspections.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  ${P('home')}
+  <div class="wrap reveal">
+    <div class="huge" aria-hidden="true">30+</div>
+    <h2 style="font-size:clamp(2rem,5vw,3.6rem);margin-top:1rem;max-width:18ch">years of residential experience in the Dunkirk area.</h2>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap story">
+    <div class="reveal">
+      <div class="k">Local and accountable</div>
+      <p class="pull">You are inviting someone into your home to work on critical equipment. We have built our reputation through steady workmanship, not sales scripts.</p>
+    </div>
+    <div class="col reveal reveal-delay-1">
+      <p>For over three decades, Vecchio Brothers Heating &amp; Cooling has served the Dunkirk community from our shop at 3475 E Main Rd. When you call <a href="tel:+17166739488"><b>(716) 673-9488</b></a>, you reach a local residential specialist familiar with the housing stock, basements, ductwork and seasonal weather of Western New York.</p>
+      <p style="margin-top:1rem">We are open <b>Monday through Friday, 9:00 AM to 6:00 PM</b> (closed weekends).</p>
+      <p style="margin-top:1.2rem"><a class="lnk" href="#about">Read the company story</a><a class="lnk" href="#service-area">Service area</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark">
+  <div class="wrap reveal">
+    <div class="k">Need service?</div>
+    <a class="phone" href="tel:+17166739488">(716) 673-9488</a>
+    <p style="color:#c0c8d1;margin-top:0.8rem">Open Monday – Friday, 9:00 AM – 6:00 PM · 3475 E Main Rd, Dunkirk, NY</p>
+    <div class="acts" style="margin-top:2rem"><a class="btn ln" href="#contact">Send an inquiry</a></div>
+  </div>
+</section>`;
+
+  const HT = {
+    diagnostics: ['Heating diagnostics & repair', 'When a heating system stops producing steady warmth or locks out, systematic fault isolation prevents guesswork and unnecessary parts replacement.', ['Thermostat calibration and low-voltage control signal verification', 'Ignition sequence, flame sensing and safety limit switch testing', 'Blower motor operation, airflow pressure and filter inspection', 'A clear explanation of findings before any repair proceeds']],
+    maintenance: ['Seasonal tune-ups & safety inspection', 'A heating check before deep winter helps catch worn components early and keeps equipment running cleanly.', ['Inspection of heat transfer surfaces and venting', 'Cleaning ignition components and checking burner combustion', 'Inspecting blower assembly, electrical connections and condensate drains', 'Verifying proper cycling and temperature rise']],
+    replacement: ['Heating replacement & sizing', 'When an aging unit needs frequent repairs or no longer heats reliably, we help you evaluate properly sized replacements without sales pressure.', ['In-home assessment of layout, venting and ductwork', 'Capacity matched to square footage and insulation', 'Clean removal of old equipment and careful installation', 'A walkthrough of thermostat operation and filter upkeep']],
+    airflow: ['Airflow balancing & thermostat controls', 'Even the best equipment depends on unobstructed airflow and accurate thermostat sensing.', ['Checking supply registers, return grilles and accessible duct connections', 'Diagnosing blower speed settings and filter pressure drop', 'Troubleshooting or upgrading residential thermostats', 'Practical ways to improve room-to-room consistency']]
+  };
+  const HL = { diagnostics: 'Troubleshooting', maintenance: 'Tune-ups & inspection', replacement: 'Replacement', airflow: 'Airflow & controls' };
+
+  V.heating = () => `<div class="dark">${HEAD('Heating', 'Heating built for Western New York winters.', 'Lake-effect cold puts sustained demand on residential heating systems. We help Dunkirk-area homeowners keep equipment operating safely, quietly and reliably.')}<div class="acts" style="margin-top:2rem">${CALL}<a class="btn ln" href="#contact?service=heating">Request heating service</a></div></div></section></div>
+<section style="margin-top:0" class="dark">
+  <div class="wrap split" style="padding-bottom:0;align-items:stretch">
+    <div>${P('copper', '', 'height:clamp(260px,42vw,480px)')}<p class="cap" style="color:#9fabb9">Stock photograph: copper piping and mechanical work.</p></div>
+    <div>${P('thermostat', '', 'height:clamp(260px,42vw,480px)')}<p class="cap" style="color:#9fabb9">Stock photograph: precision residential thermostat control.</p></div>
+  </div>
+</section>
+<section class="sec dark"><div class="wrap reveal"><h2 style="max-width:14ch">What a heating visit covers</h2>
+<div class="cons"><div class="rail" role="tablist" aria-label="Heating service categories">${Object.keys(HT).map((k, i) => `<button role="tab" type="button" aria-selected="${i == 0}" data-h="${k}">${HL[k]}</button>`).join('')}</div>
+<div id="hp" role="tabpanel"></div></div></div></section>
+<section class="sec"><div class="wrap split r" style="align-items:start"><div class="reveal"><h2>Heating trouble, in plain language.</h2><p class="lead2">Heating systems rarely fail without warning. Changes in sound, cycling or room comfort are worth noticing.</p><p class="safe"><b>Safety:</b> if you smell natural gas or suspect carbon monoxide, leave your home immediately and contact your utility or emergency services before calling for repair.</p></div>
+<div class="reveal reveal-delay-1"><details open><summary>The system turns on and off frequently</summary><div><p><b>What it feels like:</b> the heater starts, runs a few minutes, shuts off before the house reaches the set temperature, and repeats.</p><p><b>Common causes:</b> a clogged filter restricting airflow, a misreading thermostat or flame sensor, or an overheating limit switch. Addressing short-cycling early protects major components.</p></div></details>
+<details><summary>Some rooms stay chilly while others are warm</summary><div><p><b>What it feels like:</b> upstairs bedrooms or rooms on the windward side never catch up.</p><p><b>Common causes:</b> imbalanced duct dampers, blower speed issues or return-air restrictions.</p></div></details>
+<details><summary>Rattling, booming or high-pitched sounds</summary><div><p><b>What it feels like:</b> new mechanical noises at startup or while the blower runs.</p><p><b>Common causes:</b> worn blower bearings, loose sheet-metal panels or delayed burner ignition.</p></div></details>
+<details><summary>Blower runs, but vents blow cool air</summary><div><p>First check that the thermostat fan is set to <em>Auto</em>, not <em>On</em>. If it is on Auto, an ignition control, igniter component or safety lockout may need professional diagnosis.</p></div></details></div></div></section>`;
+
+  const CS = {
+    'warm-air': ['Prompt service recommended', 'System runs, but vents blow warm air', 'Verify the thermostat is set to COOL, check that the filter is clean, and look for a tripped outdoor condenser breaker.', 'If the condenser fan or compressor is not running, or runs without cooling, turn the system off at the thermostat to avoid compressor strain and call (716) 673-9488.', 'Schedule cooling repair'],
+    humidity: ['Diagnostic evaluation', 'The house reaches temperature but feels clammy', 'Make sure the thermostat fan is on AUTO. Running it continuously can re-evaporate moisture from the indoor coil back into the ductwork.', 'If humidity stays high on AUTO, the system may be short-cycling, have restricted airflow, or be overdue for coil cleaning.', 'Request a cooling check'],
+    'ice-water': ['Turn system off and call', 'Frost on lines or water near the indoor unit', 'Switch the thermostat from COOL to OFF right away so ice can thaw without damaging the compressor or flooding floors.', 'Ice often stems from restricted airflow or low refrigerant; pooling water often means a blocked condensate drain. Call (716) 673-9488 for an inspection.', 'Schedule inspection'],
+    seasonal: ['Preventive care', 'Getting ready before peak summer heat', 'Clear leaves, clippings and winter covers from the outdoor condenser, leaving two feet of clearance on all sides.', 'Spring or early summer is the ideal window for maintenance: clean coils, clear drainage and dependable operation before July humidity.', 'Book seasonal maintenance']
+  };
+  const CL = { 'warm-air': 'Air isn’t cool', humidity: 'Sticky or humid', 'ice-water': 'Ice or water', seasonal: 'Pre-summer checkup' };
+
+  V['air-conditioning'] = () => `<div class="cl"><section class="sec" style="padding-bottom:0"><div class="wrap split r"><div>${P('condenser', 'tall')}<p class="cap">Stock photograph: outdoor residential condenser unit.</p></div><div><div class="crumb"><a href="#home">Home</a> / Air conditioning</div><h1 style="font-size:clamp(3rem,8vw,6.4rem);line-height:.96">Cooling that dries the air, not just chills it.</h1><p class="lead2">Good residential air conditioning removes summer humidity and circulates clean air without excess noise or wasted energy.</p><div class="acts" style="margin-top:1.8rem">${CALL}<a class="btn lnd" href="#contact?service=cooling">Request cooling service</a></div></div></div></section>
+<section class="sec"><div class="wrap split" style="align-items:start"><div class="reveal"><h2 style="max-width:16ch">How we look after your cooling system.</h2>
+<div class="scope"><div><h3>Diagnostics &amp; repair</h3><p>When the condenser won’t engage or vents blow lukewarm air, we test electrical controls, airflow, condensate drainage and refrigerant circuit performance to find the exact cause.</p></div>
+<div><h3>Pre-season maintenance</h3><p>Condenser coils collect cottonwood, pollen and yard debris. Cleaning coils, clearing condensate lines and verifying electrical parts restores capacity before the first heatwave.</p></div>
+<div><h3>New &amp; replacement systems</h3><p>An oversized air conditioner cools fast without removing humidity, leaving rooms clammy. We evaluate square footage, insulation and ductwork to recommend properly sized equipment.</p></div></div></div>
+<div class="reveal reveal-delay-1" style="margin-top:2rem">${P('comfortroom', 'tall')}<p class="cap">Stock photograph: quiet, dehumidified bedroom comfort.</p></div></div></section></div>
+<section class="sec sand"><div class="wrap reveal"><h2 style="max-width:16ch">When should you call?</h2><p class="lead2">Pick the symptom closest to what you notice for a first check and guidance on when to schedule a technician.</p>
+<div class="sym" role="tablist" aria-label="Cooling symptoms">${Object.keys(CS).map((k, i) => `<button role="tab" type="button" aria-selected="${i == 0}" data-c="${k}">${CL[k]}</button>`).join('')}</div><div id="cp" role="tabpanel"></div></div></section>`;
+
+  V.about = () => `<div class="sand">${HEAD('About', 'Three decades of residential climate work in Dunkirk.', 'Vecchio Brothers Heating &amp; Cooling is a local residential heating and air conditioning company. Our focus has stayed steady: practical diagnostics, clean mechanical workmanship and clear communication.')}</div></section></div>
+<section class="sec"><div class="wrap story"><div class="reveal">${P('winterhome', 'tall')}<p class="cap">Western New York four-season residential living.</p><div style="margin-top:1.5rem">${P('copper', '', 'height:260px')}</div></div>
+<div class="col reveal reveal-delay-1"><h2 style="font-size:clamp(2.4rem,5vw,4rem)">Grounded in local longevity.</h2>
+<ol class="tl"><li><small>30+ years ago</small><h3>Roots in residential heating and cooling</h3><p>The company began serving homes in the Dunkirk area, building experience across regional heating and cooling systems.</p></li>
+<li><small>Three decades of service</small><h3>Hands-on experience through every season</h3><p>Across more than thirty seasons on Lake Erie, we have worked on multiple generations of furnaces, air conditioners and home ductwork.</p></li>
+<li><small>Today</small><h3>Focused residential service</h3><p>Located at 3475 E Main Rd in Dunkirk, we serve area homeowners Monday through Friday from 9:00 AM to 6:00 PM at <a href="tel:+17166739488">(716) 673-9488</a>.</p></li></ol></div></div></section>
+<section class="sec dark"><div class="wrap reveal"><h2>How we work.</h2><div class="prin">
+<div><h3>Repair before replacement, when practical</h3><p>We evaluate your equipment’s actual condition and explain your options before recommending a new system.</p></div>
+<div><h3>Respect for your home</h3><p>We keep work areas orderly and leave utility rooms clean.</p></div>
+<div><h3>Plain-language explanations</h3><p>You should understand what went wrong and what a repair accomplishes.</p></div>
+<div><h3>Local accountability</h3><p>After 30+ years, we stand behind our work in the community where we live and work.</p></div></div></div></section>`;
+
+  V['service-area'] = () => `${HEAD('Service area', 'Serving the Dunkirk, New York area.', 'Residential heating and air conditioning service centered in the Dunkirk and Sheridan area, on the Lake Erie shore.')}</div></section>
+<section class="sec" style="padding-top:0"><div class="wrap split r"><div class="reveal">${P('home', 'tall')}<div style="margin-top:1.2rem">${P('ductwork', '', 'height:220px')}</div></div><div class="reveal reveal-delay-1"><h2 style="font-size:clamp(2.2rem,5vw,3.6rem)">Confirm service for your home.</h2><p class="lead2">Centered at 3475 E Main Rd in Dunkirk / Sheridan, NY, we serve homeowners across the Dunkirk area. A quick call confirms scheduling for your address.</p>
+<dl class="info" style="margin-top:1.5rem">
+<div style="padding:1rem 0;border-top:1px solid rgba(14,27,43,.2)"><dt style="color:var(--copper);font-size:.88rem">Shop Location</dt><dd>3475 E Main Rd, Dunkirk, NY 14048</dd></div>
+<div style="padding:1rem 0;border-top:1px solid rgba(14,27,43,.2)"><dt style="color:var(--copper);font-size:.88rem">Confirmed Area</dt><dd>Dunkirk, Sheridan &amp; surrounding Lake Erie shore communities</dd></div>
+<div style="padding:1rem 0;border-top:1px solid rgba(14,27,43,.2);border-bottom:1px solid rgba(14,27,43,.2)"><dt style="color:var(--copper);font-size:.88rem">Operating Hours</dt><dd>Monday – Friday: 9:00 AM – 6:00 PM (Closed Sat–Sun)</dd></div>
+</dl>
+<div class="acts" style="margin-top:1.8rem">${CALL}<a class="btn lnd" href="#contact">Inquire by address</a></div></div></div></section>`;
+
+  V.contact = sv => {
+    const s = sv || 'general', o = (v, t) => `<option value="${v}"${s === v ? ' selected' : ''}>${t}</option>`;
+    const f = (id, l, ty, ph, ac, req) => `<div><label for="${id}">${l} ${req ? '<span aria-hidden="true">*</span>' : '(optional)'}</label><input id="${id}" type="${ty}" placeholder="${ph}" autocomplete="${ac}"><p class="err hidden" id="e-${id}" role="alert"></p></div>`;
+    return `<div class="dark"><section class="sec" style="padding-bottom:clamp(3rem,8vw,6rem)"><div class="wrap cgrid"><div><div class="crumb"><a href="#home">Home</a> / Contact</div><h1 style="font-size:clamp(2.6rem,7vw,5rem);line-height:1">Call first. It’s the fastest way.</h1>
+<a class="phone" href="tel:+17166739488" style="margin:1.5rem 0;font-size:clamp(2.8rem,9vw,6rem)">(716) 673-9488</a>
+<p class="lead2">For heating or cooling service in the Dunkirk area, call directly during shop hours. Prefer to write? Send your request below.</p>
+${renderHoursTable()}
+<dl class="info" style="margin-top:1.5rem">
+  <div><dt>Address</dt><dd>3475 E Main Rd, Dunkirk, NY 14048</dd></div>
+  <div><dt>Experience</dt><dd>More than 30 years in residential HVAC</dd></div>
+</dl></div>
+<div class="sheet"><div id="fc"><h2>Send a service inquiry</h2><p>Fields marked * are required.</p>
+<form id="fm" novalidate><label for="st">Service type *</label><select id="st">${o('heating', 'Heating repair or maintenance')}${o('cooling', 'Air conditioning repair or maintenance')}${o('estimate', 'Replacement or new equipment estimate')}${o('general', 'General question or confirm service area')}</select>
+<div class="two2">${f('cn', 'Your name *', 'text', 'Jordan Miller', 'name', 1)}${f('cc', 'City or neighborhood *', 'text', 'Dunkirk, NY', 'address-level2', 1)}</div>
+<div class="two2">${f('cp2', 'Phone *', 'tel', '(716) 555-0199', 'tel', 1)}${f('ce', 'Email', 'email', 'you@example.com', 'email', 0)}</div>
+<label for="cm">How can we help? *</label><textarea id="cm" rows="4" placeholder="What is the system doing? Approximate age, or the estimate you need."></textarea><p class="err hidden" id="e-cm" role="alert"></p>
+<button class="btn nv" type="submit" style="width:100%;margin-top:1.5rem">Preview inquiry</button></form></div><div id="cf" role="status" aria-live="polite" class="hidden"></div></div></div></section></div>`;
+  };
+
+  /* Interactions */
+  const $ = (s, r) => (r || document).querySelector(s), $$ = (s, r) => [...(r || document).querySelectorAll(s)];
+
+  function initReveal() {
+    const els = $$('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(el => el.classList.add('in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+    els.forEach(el => io.observe(el));
+  }
+
+  function bindHeat() {
+    const p = $('#hp'); if (!p) return;
+    const show = k => {
+      const d = HT[k];
+      p.style.animation = 'none';
+      p.offsetHeight;
+      p.style.animation = '';
+      p.innerHTML = `<h3>${d[0]}</h3><p>${d[1]}</p><ul>${d[2].map(x => `<li>${x}</li>`).join('')}</ul><a class="btn cu" href="#contact?service=heating">Request heating service</a>`;
+    };
+    $$('[data-h]').forEach(b => b.onclick = () => { $$('[data-h]').forEach(x => x.setAttribute('aria-selected', x === b)); show(b.dataset.h); });
+    show('diagnostics');
+  }
+
+  function bindCool() {
+    const p = $('#cp'); if (!p) return;
+    const show = k => {
+      const d = CS[k];
+      p.style.animation = 'none';
+      p.offsetHeight;
+      p.style.animation = '';
+      p.innerHTML = `<span class="k">${d[0]}</span><h3>${d[1]}</h3><div class="two"><div><b class="s">First, check this</b><p>${d[2]}</p></div><div><b class="s">When to call</b><p>${d[3]}</p></div></div><div class="acts" style="margin-top:1.8rem">${CALL}<a class="btn lnd" href="#contact?service=cooling">${d[4]}</a></div>`;
+    };
+    $$('[data-c]').forEach(b => b.onclick = () => { $$('[data-c]').forEach(x => x.setAttribute('aria-selected', x === b)); show(b.dataset.c); });
+    show('warm-air');
+  }
+
+  function bindForm() {
+    const fm = $('#fm'); if (!fm) return;
+    const esc = s => s.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    const bad = (id, eid, msg) => {
+      const i = $('#' + id), e = $('#' + eid);
+      e.textContent = msg; e.classList.toggle('hidden', !msg);
+      msg ? i.setAttribute('aria-invalid', 'true') : i.removeAttribute('aria-invalid');
+      return !!msg;
+    };
+    fm.onsubmit = e => {
+      e.preventDefault(); const g = i => $('#' + i).value.trim(); let n = 0;
+      n += bad('cn', 'e-cn', g('cn') ? '' : 'Enter your name.');
+      n += bad('cc', 'e-cc', g('cc') ? '' : 'Enter your city or neighborhood.');
+      n += bad('cp2', 'e-cp2', g('cp2').replace(/\D/g, '').length >= 7 ? '' : 'Enter a valid 7- or 10-digit phone number.');
+      n += bad('ce', 'e-ce', !g('ce') || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(g('ce')) ? '' : 'Enter a valid email or leave it blank.');
+      n += bad('cm', 'e-cm', g('cm').length >= 10 ? '' : 'Briefly describe your heating or cooling request.');
+      if (n) { fm.querySelector('[aria-invalid]').focus(); return; }
+      const st = $('#st'); $('#fc').classList.add('hidden'); const c = $('#cf'); c.classList.remove('hidden');
+      c.innerHTML = `<h2 class="serif" style="font-size:2.4rem">Thank you, ${esc(g('cn'))}.</h2><p>To speak with our team directly during business hours (Mon–Fri, 9:00 AM – 6:00 PM), please call <a href="tel:+17166739488"><b>(716) 673-9488</b></a>.</p><div class="rec"><p><b>Service:</b> ${esc(st.options[st.selectedIndex].text)}</p><p><b>Location:</b> ${esc(g('cc'))}</p><p><b>Phone:</b> ${esc(g('cp2'))}</p>${g('ce') ? `<p><b>Email:</b> ${esc(g('ce'))}</p>` : ''}<p><b>Notes:</b> ${esc(g('cm'))}</p></div><div class="acts">${CALL}<button class="btn lnd" type="button" id="rs">Edit or reset</button></div>`;
+      $('#rs').onclick = () => { c.classList.add('hidden'); $('#fc').classList.remove('hidden'); };
+    };
+  }
+
+  /* Router */
+  const R = ['home', 'heating', 'air-conditioning', 'about', 'service-area', 'contact'];
+  function render(top) {
+    const h = location.hash.replace(/^#/, '').split('?'), r = R.includes(h[0].toLowerCase()) ? h[0].toLowerCase() : 'home', q = new URLSearchParams(h[1] || '');
+    $('#app').innerHTML = V[r](q.get('service'));
+    document.title = M[r][0];
+    $('meta[name=description]').content = M[r][1];
+    $$('[data-nav]').forEach(a => a.dataset.nav === r ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+    if (r == 'heating') bindHeat();
+    if (r == 'air-conditioning') bindCool();
+    if (r == 'contact') bindForm();
+    initReveal();
+    closeMenu();
+    if (top) window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  const mb = $('#mb'), dr = $('#drawer');
+  function closeMenu() {
+    dr.classList.add('hidden'); mb.setAttribute('aria-expanded', 'false');
+    mb.textContent = '☰'; mb.setAttribute('aria-label', 'Open navigation menu');
+  }
+  mb.onclick = () => {
+    const o = dr.classList.contains('hidden'); dr.classList.toggle('hidden', !o);
+    mb.setAttribute('aria-expanded', o); mb.textContent = o ? '✕' : '☰';
+    mb.setAttribute('aria-label', o ? 'Close navigation menu' : 'Open navigation menu');
+  };
+
+  const mm = $('#mm');
+  $('#ml').innerHTML = A.map(a => `<div class="it"><img src="${a.url}" alt="${a.alt}"><div><b>${a.t}</b><br>Used on: ${a.use}<br>Source: ${a.src}<br><a href="${a.page}" target="_blank" rel="noopener noreferrer">${a.page}</a><br>License: Unsplash License (free for commercial use)</div></div>`).join('');
+  $('#om').onclick = () => { mm.classList.remove('hidden'); mm.style.display = 'flex'; $('#mclose').focus(); };
+  const cm = () => { mm.classList.add('hidden'); mm.style.display = ''; $('#om').focus(); };
+  $('#mclose').onclick = cm;
+  mm.onclick = e => { if (e.target === mm) cm(); };
+  document.onkeydown = e => { if (e.key === 'Escape') { closeMenu(); if (!mm.classList.contains('hidden')) cm(); } };
+  addEventListener('hashchange', () => render(true));
+  render(false);
+})();
+</script>
+</body>
+</html>

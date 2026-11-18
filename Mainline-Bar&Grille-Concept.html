@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mainline Bar &amp; Grille | Food, Drinks &amp; Live Music in Fredonia, NY</title>
+<meta name="description" content="Mainline Bar &amp; Grille at 64 W. Main Street, Fredonia, NY. Food, beer, cocktails, happy hour, sports, bar games and live music. Dine in, take out, or sit outside.">
+<meta property="og:title" content="Mainline Bar &amp; Grille, Fredonia NY">
+<meta property="og:description" content="Good food, cold beer, great cocktails and live music on Main Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#121110;--coal:#1b1917;--smoke:#26231f;--amber:#d8963a;--gold:#f0c070;--cream:#f4ecdc;--mute:#b9ad98;--serif:'Fraunces',Georgia,serif;--sans:'Manrope',system-ui,sans-serif;--pad:clamp(1.25rem,5vw,5rem)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{font-family:var(--sans);color:var(--cream);background:var(--ink);line-height:1.65;overflow-x:hidden}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.2rem,5.5vw,4.6rem)}
+.wrap{padding:clamp(5rem,11vw,9rem) var(--pad)}
+.mask{display:block;overflow:hidden;padding-bottom:.08em}
+.mask>span{display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.8rem;border:1px solid var(--amber);border-radius:999px;font-weight:700;font-size:.95rem;position:relative;overflow:hidden;isolation:isolate;transition:color .4s,transform .4s}
+.btn::before{content:"";position:absolute;inset:0;background:var(--amber);transform:translateY(101%);transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:-1}
+.btn:hover{color:var(--ink)}.btn:hover::before{transform:none}
+.btn.solid{background:var(--amber);color:var(--ink)}.btn.solid::before{background:var(--cream)}
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:1.1rem var(--pad);padding-top:calc(1.1rem + env(safe-area-inset-top,0px));transition:background .5s,padding .5s,backdrop-filter .5s}
+nav.solid{background:rgba(18,17,16,.88);backdrop-filter:blur(14px);padding-block:.7rem}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.5rem;line-height:1;letter-spacing:.04em}
+.logo small{display:block;font-family:var(--sans);font-weight:500;font-size:.62rem;letter-spacing:.34em;color:var(--gold);margin-top:.3rem}
+.links{display:flex;gap:2rem;align-items:center;font-size:.95rem}
+.links a:not(.btn){position:relative;padding:.4rem 0}
+.links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.links a:not(.btn):hover::after{transform:scaleX(1)}
+.burger{display:none;background:none;border:0;width:48px;height:48px;color:var(--cream);cursor:pointer;position:relative;z-index:60}
+.burger i{position:absolute;left:12px;right:12px;height:2px;background:currentColor;transition:transform .4s,top .4s}
+.burger i:first-child{top:19px}.burger i:last-child{top:27px}
+.burger[aria-expanded=true] i:first-child{top:23px;transform:rotate(45deg)}
+.burger[aria-expanded=true] i:last-child{top:23px;transform:rotate(-45deg)}
+@media(max-width:860px){
+.burger{display:block}
+.links{position:fixed;inset:0;flex-direction:column;justify-content:center;gap:1.4rem;background:var(--ink);font-family:var(--serif);font-size:2.2rem;clip-path:circle(0 at calc(100% - 44px) 44px);transition:clip-path .7s cubic-bezier(.7,0,.2,1);visibility:hidden}
+.links.open{clip-path:circle(150% at calc(100% - 44px) 44px);visibility:visible}
+.links .btn{font-family:var(--sans);font-size:1rem;margin-top:1rem}}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:0 var(--pad) clamp(4rem,9vh,7rem);overflow:hidden;background:radial-gradient(ellipse at 70% 30%,#3b2a14,var(--ink) 70%)}
+.hero .bg{position:absolute;inset:-8% 0;will-change:transform}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,17,16,.55),rgba(18,17,16,.25) 40%,rgba(18,17,16,.95)),radial-gradient(ellipse at 20% 100%,rgba(216,150,58,.25),transparent 60%)}
+.hero .in{position:relative;z-index:2;max-width:62rem}
+.hero h1{font-size:clamp(3rem,10.5vw,9rem);font-weight:300}
+.hero h1 em{font-weight:500;color:var(--gold)}
+.hero p{max-width:34rem;margin:1.6rem 0 2.2rem;color:var(--mute);font-size:1.1rem}
+.cta{display:flex;flex-wrap:wrap;gap:1rem}
+.scroll{position:absolute;z-index:2;right:var(--pad);bottom:2.2rem;width:1px;height:70px;background:rgba(244,236,220,.25);overflow:hidden}
+.scroll::after{content:"";position:absolute;left:0;width:1px;height:30px;background:var(--gold);animation:drip 2.2s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes drip{from{top:-30px}to{top:70px}}
+/* about */
+.about{display:grid;gap:3rem;grid-template-columns:1fr;align-items:center}
+.about .ph{aspect-ratio:4/5;overflow:hidden;border-radius:2px;background:var(--smoke)}
+.about .ph img{height:115%}
+.about p{color:var(--mute);max-width:34rem;margin-top:1.6rem;font-size:1.08rem}
+.facts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+.facts span{border:1px solid rgba(244,236,220,.18);border-radius:999px;padding:.35rem 1rem;font-size:.9rem}
+@media(min-width:900px){.about{grid-template-columns:1fr 1.05fr;gap:7vw}}
+/* menu */
+.menu{background:var(--coal)}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:2.5rem 0}
+.tabs button{font:inherit;color:var(--mute);background:none;border:1px solid rgba(244,236,220,.18);border-radius:999px;min-height:44px;padding:.5rem 1.4rem;cursor:pointer;transition:.3s}
+.tabs button[aria-selected=true]{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.panel{display:none;grid-template-columns:1fr;gap:2rem;align-items:center}
+.panel.on{display:grid;animation:fade .6s ease}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
+.panel .ph{aspect-ratio:16/11;overflow:hidden;background:var(--smoke)}
+.panel h3{font-size:clamp(1.8rem,4vw,3rem);margin-bottom:1rem}
+.panel p{color:var(--mute);max-width:30rem}
+.note{margin-top:1.4rem;font-size:.85rem;color:var(--amber)}
+.panel .btn{margin-top:1.6rem}
+@media(min-width:900px){.panel.on{grid-template-columns:1.2fr 1fr;gap:5vw}}
+/* happening */
+.cards{display:grid;gap:1px;margin-top:3.5rem;background:rgba(244,236,220,.12);grid-template-columns:1fr}
+.card{background:var(--ink);padding:2.2rem 1.8rem 2.6rem;position:relative;overflow:hidden;transition:background .5s}
+.card::before{content:"";position:absolute;width:300px;height:300px;left:-100px;bottom:-200px;background:radial-gradient(circle,rgba(216,150,58,.35),transparent 65%);opacity:0;transition:opacity .6s}
+.card:hover{background:var(--smoke)}.card:hover::before{opacity:1}
+.card h3{font-size:1.9rem;margin-bottom:.7rem;position:relative}
+.card p{color:var(--mute);position:relative;max-width:22rem}
+@media(min-width:700px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.cards{grid-template-columns:repeat(6,1fr)}.card{grid-column:span 2}.card:nth-child(n+4){grid-column:span 3}}
+/* gallery */
+.gal{display:grid;gap:.8rem;margin-top:3rem;grid-template-columns:repeat(2,1fr);grid-auto-rows:42vw}
+.gal figure{overflow:hidden;background:var(--smoke);position:relative}
+.gal figure img{transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figure:nth-child(1){grid-row:span 2}.gal figure:nth-child(4){grid-column:span 2}
+@media(min-width:900px){.gal{grid-template-columns:1.2fr 1fr 1fr;grid-auto-rows:20vw}.gal figure:nth-child(4){grid-column:span 2}}
+.disc{margin-top:1.4rem;font-size:.85rem;color:var(--mute)}
+/* visit */
+.visit{position:relative;background:linear-gradient(180deg,var(--ink),#241a0e);text-align:center}
+.visit h2{max-width:14ch;margin:0 auto 1.6rem}
+.info{display:grid;gap:2rem;margin:3.5rem auto 0;max-width:60rem;text-align:left;grid-template-columns:1fr}
+.info h3{font-size:1.2rem;color:var(--gold);margin-bottom:.5rem}
+.info p,.info a{color:var(--cream)}
+.info a.l{border-bottom:1px solid var(--amber)}
+.mapbox{margin-top:3rem;border:1px solid rgba(244,236,220,.15);aspect-ratio:16/8;min-height:260px;filter:grayscale(1) invert(.92) contrast(.9) sepia(.5)}
+.mapbox iframe{width:100%;height:100%;border:0}
+@media(min-width:800px){.info{grid-template-columns:repeat(3,1fr)}}
+footer{padding:3rem var(--pad) calc(2rem + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;border-top:1px solid rgba(244,236,220,.12);color:var(--mute);font-size:.9rem}
+footer nav{position:static;padding:0;background:none;display:flex;gap:1.4rem;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav id="nav" aria-label="Main">
+  <a href="#top" class="logo" aria-label="Mainline Bar &amp; Grille, home">MAINLINE<small>BAR &amp; GRILLE</small></a>
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="links" aria-label="Open menu"><i></i><i></i></button>
+  <div class="links" id="links">
+    <a href="#top">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#happening">What's Happening</a><a href="#visit">Contact</a>
+    <a class="btn solid" href="https://www.google.com/maps/dir/?api=1&destination=64+W+Main+St,+Fredonia,+NY+14063" target="_blank" rel="noopener">Get Directions</a>
+  </div>
+</nav>
+
+<main id="top">
+<header class="hero">
+  <div class="bg"><img src="https://unsplash.com/photos/aHDZ3pzo3S0/download?force=true&w=2000" alt="Warmly lit bar with rows of bottles and stools" fetchpriority="high"></div>
+  <div class="in">
+    <h1 aria-label="Pull up a stool on Main Street."><span class="mask"><span>Pull up a stool</span></span><span class="mask"><span>on <em>Main Street.</em></span></span></h1>
+    <p class="fade">Good food, cold beer and well-made cocktails in the heart of Fredonia. Come for happy hour, stay for the game or the band.</p>
+    <div class="cta fade"><a class="btn solid" href="#menu">Explore Our Menu</a><a class="btn" href="#visit">Find Us</a></div>
+  </div>
+  <div class="scroll" aria-hidden="true"></div>
+</header>
+
+<section class="wrap about" id="about">
+  <div class="ph reveal"><img src="https://unsplash.com/photos/0DgZCy1hi5o/download?force=true&w=1400" alt="Marble bar table with a cocktail in warm light" loading="lazy"></div>
+  <div>
+    <h2><span class="mask"><span>A neighborhood</span></span><span class="mask"><span>bar and grille.</span></span></h2>
+    <p class="fade">Mainline is a place to settle in: a full kitchen, a full bar and a room made for conversation. Grab dinner, meet friends after work, watch the game, or catch live music on a good night.</p>
+    <div class="facts fade"><span>Dine in</span><span>Takeout</span><span>Outdoor seating</span><span>Bar games</span><span>Sports</span></div>
+  </div>
+</section>
+
+<section class="wrap menu" id="menu">
+  <h2><span class="mask"><span>Food &amp; drinks</span></span></h2>
+  <div class="tabs" role="tablist" aria-label="Menu categories">
+    <button role="tab" aria-selected="true" aria-controls="p0" id="t0">Food</button>
+    <button role="tab" aria-selected="false" aria-controls="p1" id="t1">Drinks</button>
+    <button role="tab" aria-selected="false" aria-controls="p2" id="t2">Cocktails</button>
+    <button role="tab" aria-selected="false" aria-controls="p3" id="t3">Specials</button>
+  </div>
+  <div class="panel on" role="tabpanel" id="p0" aria-labelledby="t0"><div class="ph"><img src="https://unsplash.com/photos/dGnX4WwRMw4/download?force=true&w=1400" alt="Table spread with plates of bar food" loading="lazy"></div><div><h3>Comfort food, done right</h3><p>Bar-and-grille favorites from the kitchen, made for sharing or for a full sit-down dinner. Dine in or take it to go.</p><p class="note">Sample copy. Full menu will be added here.</p><a class="btn" href="tel:+17164013092">Call to Order Takeout</a></div></div>
+  <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1" hidden><div class="ph"><img src="https://unsplash.com/photos/aHDZ3pzo3S0/download?force=true&w=1400" alt="Bar shelves lined with bottles" loading="lazy"></div><div><h3>Beer and a deep back bar</h3><p>Cold beer, a well-stocked bar and happy-hour pricing to start the evening right.</p><p class="note">Sample copy. Taps and happy-hour details to be confirmed.</p><a class="btn" href="tel:+17164013092">Call Us</a></div></div>
+  <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden><div class="ph"><img src="https://unsplash.com/photos/Pq6omXyUpWA/download?force=true&w=1400" alt="Cocktail on a bar counter" loading="lazy"></div><div><h3>Cocktails, mixed to order</h3><p>Classics and house favorites, shaken and stirred behind the bar.</p><p class="note">Sample copy. Cocktail list will be added here.</p><a class="btn" href="tel:+17164013092">Call Us</a></div></div>
+  <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden><div class="ph"><img src="https://unsplash.com/photos/0DgZCy1hi5o/download?force=true&w=1400" alt="Glass with a drink on a marble table" loading="lazy"></div><div><h3>Specials worth a stop</h3><p>Daily and weekly specials, happy-hour deals and game-day offers live here, easy to update.</p><p class="note">Placeholder. Real specials to be supplied by Mainline.</p><a class="btn" href="tel:+17164013092">Ask What's On</a></div></div>
+</section>
+
+<section class="wrap" id="happening">
+  <h2><span class="mask"><span>What's happening</span></span></h2>
+  <div class="cards">
+    <article class="card"><h3>Live music</h3><p>Local sound, loud enough to feel and low enough to talk over.</p></article>
+    <article class="card"><h3>Sports</h3><p>Pick a seat, grab a round, catch the game with the room.</p></article>
+    <article class="card"><h3>Bar games</h3><p>Friendly competition between drinks and appetizers.</p></article>
+    <article class="card"><h3>Happy hour</h3><p>Food and drink deals to ease into the evening.</p></article>
+    <article class="card"><h3>Live performances</h3><p>Nights built around the people on stage.</p></article>
+  </div>
+</section>
+
+<section class="wrap menu" id="gallery" style="background:var(--ink)">
+  <h2><span class="mask"><span>The mood</span></span></h2>
+  <div class="gal">
+    <figure class="reveal"><img src="https://unsplash.com/photos/0DgZCy1hi5o/download?force=true&w=1400" alt="Marble bar table with a cocktail in warm light" loading="lazy"></figure>
+    <figure class="reveal"><img src="https://unsplash.com/photos/Pq6omXyUpWA/download?force=true&w=1000" alt="Cocktail on a bar" loading="lazy"></figure>
+    <figure class="reveal"><img src="https://unsplash.com/photos/dGnX4WwRMw4/download?force=true&w=1000" alt="Shared plates on a wooden table" loading="lazy"></figure>
+    <figure class="reveal"><img src="https://unsplash.com/photos/aHDZ3pzo3S0/download?force=true&w=1600" alt="Back bar with bottles" loading="lazy"></figure>
+  </div>
+  <p class="disc">Concept imagery: royalty-free stock photography from Unsplash, not photos of Mainline. To be replaced with Mainline's own photos.</p>
+</section>
+
+<section class="wrap visit" id="visit">
+  <h2><span class="mask"><span>Stop in tonight.</span></span></h2>
+  <div class="cta fade" style="justify-content:center"><a class="btn solid" href="tel:+17164013092">Call (716) 401-3092</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=64+W+Main+St,+Fredonia,+NY+14063" target="_blank" rel="noopener">Get Directions</a></div>
+  <div class="info">
+    <div><h3>Mainline Bar &amp; Grille</h3><p>64 W. Main Street<br>Fredonia, NY 14063</p></div>
+    <div><h3>Phone</h3><p><a class="l" href="tel:+17164013092">(716) 401-3092</a></p></div>
+    <div><h3>Hours</h3><p id="hours">Hours to be confirmed.</p></div>
+  </div>
+  <div class="mapbox"><iframe title="Map of Mainline Bar &amp; Grille" loading="lazy" src="https://www.google.com/maps?q=64+W+Main+St,+Fredonia,+NY+14063&output=embed"></iframe></div>
+</section>
+</main>
+
+<footer>
+  <div class="logo">MAINLINE<small>BAR &amp; GRILLE</small></div>
+  <nav aria-label="Footer"><a href="#menu">Menu</a><a href="#about">About</a><a href="#happening">What's Happening</a><a href="#visit">Contact</a></nav>
+  <div>64 W. Main Street, Fredonia, NY 14063<br><a href="tel:+17164013092">(716) 401-3092</a><br>Website concept. Stock photos by Unsplash contributors.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+var nav=document.getElementById('nav'),burger=document.getElementById('burger'),links=document.getElementById('links');
+function onScroll(){nav.classList.toggle('solid',scrollY>40)}onScroll();addEventListener('scroll',onScroll,{passive:true});
+function setMenu(o){links.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Close menu':'Open menu');document.body.style.overflow=o?'hidden':''}
+burger.onclick=function(){setMenu(burger.getAttribute('aria-expanded')!=='true')};
+links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+tabs.forEach(function(t,i){t.onclick=function(){tabs.forEach(function(x,j){x.setAttribute('aria-selected',i===j);var p=document.getElementById('p'+j);p.classList.toggle('on',i===j);p.hidden=i!==j})}});
+if(!window.gsap||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+gsap.registerPlugin(ScrollTrigger);
+document.documentElement.classList.add('js');
+gsap.set('.hero .mask>span',{yPercent:110});gsap.set('.hero .fade',{y:20,opacity:0});
+gsap.timeline({defaults:{ease:'power4.out'}})
+ .from('.hero .bg img',{scale:1.15,duration:2.2},0)
+ .to('.hero .mask>span',{yPercent:0,duration:1.3,stagger:.14},.2)
+ .to('.hero .fade',{y:0,opacity:1,duration:1,stagger:.12},.9)
+ .from('nav',{y:-30,opacity:0,duration:1},.6);
+gsap.to('.hero .bg',{yPercent:12,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+gsap.utils.toArray('.wrap .mask>span').forEach(function(el){gsap.from(el,{yPercent:110,duration:1.1,ease:'power4.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}})});
+gsap.utils.toArray('.wrap .fade').forEach(function(el){gsap.from(el,{y:24,opacity:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}})});
+gsap.utils.toArray('.reveal').forEach(function(el){gsap.from(el,{clipPath:'inset(0 0 100% 0)',duration:1.3,ease:'power4.inOut',scrollTrigger:{trigger:el,start:'top 88%',once:true}})});
+gsap.utils.toArray('.about .ph img').forEach(function(img){gsap.fromTo(img,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:img.parentNode,start:'top bottom',end:'bottom top',scrub:true}})});
+gsap.from('.card',{y:30,opacity:0,duration:.9,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.cards',start:'top 85%',once:true}});
+})();
+</script>
+</body>
+</html>
