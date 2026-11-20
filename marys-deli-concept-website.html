@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary's Deli | Authentic Italian Pizzeria in Dunkirk, NY Since 1979</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            800: '#5C1414',
+                            900: '#420E0E',
+                            700: '#7A1C1C',
+                            600: '#992424',
+                        },
+                        cream: {
+                            50: '#FDFBF7',
+                            100: '#F7F2E6',
+                            200: '#EFE6D2'
+                        },
+                        gold: {
+                            500: '#C59B27',
+                            600: '#A9811E',
+                            400: '#E2B73C'
+                        },
+                        charcoal: '#2B2B2B'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #2B2B2B;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+    </style>
+</head>
+<body class="bg-cream-50 text-charcoal antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Elevate Web Co. Showcase Floating Banner & Drawer Trigger -->
+    <aside aria-label="Elevate Web Co Agency Showcase" class="bg-gradient-to-r from-burgundy-900 via-burgundy-800 to-charcoal text-cream-50 text-xs sm:text-sm py-2 px-4 sticky top-0 z-50 shadow-md flex items-center justify-between">
+        <div class="flex items-center space-x-2 truncate">
+            <span class="bg-gold-500 text-burgundy-900 font-bold px-2 py-0.5 rounded text-xs uppercase tracking-wider">Concept Demo</span>
+            <span class="truncate"><strong>Elevate Web Co.</strong> Professional Package Showcase — Ready-to-Launch $650 Solution for Mary's Deli</span>
+        </div>
+        <button onclick="openModal()" class="ml-2 bg-gold-500 hover:bg-gold-400 text-burgundy-900 font-semibold px-3 py-1 rounded transition text-xs flex items-center space-x-1 shrink-0">
+            <i class="fa-solid fa-circle-info"></i>
+            <span class="hidden sm:inline">View Package Details</span>
+            <span class="sm:hidden">Details</span>
+        </button>
+    </aside>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-[37px] sm:top-[41px] z-40 bg-cream-50/95 backdrop-blur-md border-b border-cream-200 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo & Brand -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <img src="https://img1.wsimg.com/isteam/ip/66de8ecc-22b9-4067-8d1a-8b973bd36eed/67573593651__67BC30C3-6AF8-418A-BFD7-4C345A198.png" alt="Mary's Deli Logo" class="h-12 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.src='https://placehold.co/120x50/7A1C1C/FDFBF7?text=Marys+Deli'">
+                <div class="hidden md:block">
+                    <span class="block font-serif font-bold text-lg text-burgundy-800 leading-tight">Mary's Deli</span>
+                    <span class="block text-xs text-stone-500 tracking-wider uppercase">Dunkirk, NY • Est. 1979</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm">
+                <a href="#home" class="text-burgundy-800 font-semibold hover:text-gold-600 transition">Home</a>
+                <a href="#menu" class="text-stone-700 hover:text-burgundy-800 transition">Menu</a>
+                <a href="#story" class="text-stone-700 hover:text-burgundy-800 transition">Our Story</a>
+                <a href="#visit" class="text-stone-700 hover:text-burgundy-800 transition">Visit Us</a>
+            </nav>
+
+            <!-- Call to Order & Mobile Toggle -->
+            <div class="flex items-center space-x-3">
+                <a href="tel:7163661445" class="bg-burgundy-800 hover:bg-burgundy-700 text-cream-50 px-4 py-2.5 rounded-full font-medium text-sm shadow-md hover:shadow-lg transition flex items-center space-x-2">
+                    <i class="fa-solid fa-phone text-gold-400"></i>
+                    <span class="hidden sm:inline">(716) 366-1445</span>
+                    <span class="sm:hidden">Call Order</span>
+                </a>
+                <button id="mobile-menu-btn" class="lg:hidden text-burgundy-800 p-2 focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cream-100 border-b border-cream-200 px-6 py-4 space-y-3">
+            <a href="#home" class="block text-burgundy-800 font-semibold py-1">Home</a>
+            <a href="#menu" class="block text-stone-700 hover:text-burgundy-800 py-1">Menu</a>
+            <a href="#story" class="block text-stone-700 hover:text-burgundy-800 py-1">Our Story</a>
+            <a href="#visit" class="block text-stone-700 hover:text-burgundy-800 py-1">Visit Us</a>
+            <div class="pt-2 border-t border-stone-200">
+                <a href="tel:7163661445" class="block text-center bg-burgundy-800 text-cream-50 py-2.5 rounded-lg font-medium">
+                    <i class="fa-solid fa-phone mr-2 text-gold-400"></i> Call (716) 366-1445
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-burgundy-900 text-cream-50 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0 opacity-30 mix-blend-overlay">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1920&q=80" alt="Fresh baked pizza" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-burgundy-900 via-burgundy-900/90 to-transparent z-1"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <!-- Badge -->
+                <div class="inline-flex items-center space-x-2 bg-gold-500/20 border border-gold-500/40 px-3 py-1 rounded-full text-gold-400 text-sm font-medium tracking-wide">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Family Owned & Operated Since 1979</span>
+                </div>
+
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-cream-50">
+                    Serving Dunkirk with <span class="text-gold-400 italic">Authentic Italian Flavors</span>
+                </h1>
+
+                <p class="text-stone-300 text-lg sm:text-xl font-light max-w-2xl leading-relaxed">
+                    Homemade dough and sauce made fresh daily. Crafted with neighborhood tradition, old-school recipes, and a genuine family welcome.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
+                    <a href="#menu" class="bg-gold-500 hover:bg-gold-400 text-burgundy-900 font-semibold px-8 py-4 rounded-full text-center shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
+                        Explore Our Menu
+                    </a>
+                    <a href="tel:7163661445" class="border-2 border-cream-50/30 hover:border-cream-50 text-cream-50 font-medium px-8 py-4 rounded-full text-center transition flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-phone text-gold-400"></i>
+                        <span>Call (716) 366-1445</span>
+                    </a>
+                </div>
+
+                <div class="pt-6 flex items-center space-x-6 text-xs text-stone-300">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-location-dot text-gold-400"></i>
+                        <span>525 Main St, Dunkirk, NY</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-clock text-gold-400"></i>
+                        <span id="header-status-text">Checking hours...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image Card Right -->
+            <div class="lg:col-span-5 hidden lg:block">
+                <div class="relative mx-auto w-full max-w-md">
+                    <div class="absolute -inset-4 bg-gold-500/20 rounded-3xl blur-xl"></div>
+                    <div class="relative bg-burgundy-800 p-3 rounded-2xl border border-burgundy-700 shadow-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Delicious artisanal pizza" class="rounded-xl w-full h-80 object-cover shadow-inner">
+                        <div class="p-4 text-center">
+                            <span class="text-gold-400 font-serif italic text-sm">Fresh from the Oven</span>
+                            <h3 class="text-cream-50 font-serif font-bold text-lg">Legendary Pizza & Specialty Pies</h3>
+                            <p class="text-stone-300 text-xs mt-1">Made with house-crafted dough & signature sauce.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Favorites Section -->
+    <section class="py-20 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-burgundy-800 font-semibold uppercase tracking-wider text-sm">Our Specialties</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-burgundy-900 mt-2">Neighborhood Favorites</h2>
+                <p class="text-stone-600 mt-3 text-lg">Prepared fresh to order using time-tested recipes rooted in Dunkirk since 1979.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Category 1: Pizza -->
+                <a href="#menu" onclick="filterMenu('Pizza')" class="group bg-cream-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-cream-200 flex flex-col">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80" alt="Pizza" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-3 text-cream-50 font-serif font-bold text-lg">Pizza</h3>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <p class="text-stone-600 text-xs">Fresh homemade dough & signature house sauce daily.</p>
+                        <span class="text-burgundy-800 font-semibold text-xs mt-3 flex items-center group-hover:text-gold-600">View options <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
+
+                <!-- Category 2: Wings -->
+                <a href="#menu" onclick="filterMenu('Wings')" class="group bg-cream-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-cream-200 flex flex-col">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=500&q=80" alt="Wings" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-3 text-cream-50 font-serif font-bold text-lg">Wings</h3>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <p class="text-stone-600 text-xs">Crispy wings tossed in your favorite authentic sauces.</p>
+                        <span class="text-burgundy-800 font-semibold text-xs mt-3 flex items-center group-hover:text-gold-600">View flavors <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
+
+                <!-- Category 3: Subs -->
+                <a href="#menu" onclick="filterMenu('Subs')" class="group bg-cream-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-cream-200 flex flex-col">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=500&q=80" alt="Subs" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-3 text-cream-50 font-serif font-bold text-lg">Subs</h3>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <p class="text-stone-600 text-xs">Warm, toasted subs packed with premium meats and cheeses.</p>
+                        <span class="text-burgundy-800 font-semibold text-xs mt-3 flex items-center group-hover:text-gold-600">View subs <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
+
+                <!-- Category 4: Calzones -->
+                <a href="#menu" onclick="filterMenu('Calzones')" class="group bg-cream-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-cream-200 flex flex-col">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=500&q=80" alt="Calzones" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-3 text-cream-50 font-serif font-bold text-lg">Calzones</h3>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <p class="text-stone-600 text-xs">Golden baked pockets stuffed with rich cheeses and toppings.</p>
+                        <span class="text-burgundy-800 font-semibold text-xs mt-3 flex items-center group-hover:text-gold-600">View calzones <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
+
+                <!-- Category 5: Tacos -->
+                <a href="#menu" onclick="filterMenu('Tacos')" class="group bg-cream-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition transform hover:-translate-y-1 border border-cream-200 flex flex-col sm:col-span-2 lg:col-span-1">
+                    <div class="h-40 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=500&q=80" alt="Tacos" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h3 class="absolute bottom-3 left-3 text-cream-50 font-serif font-bold text-lg">Tacos</h3>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <p class="text-stone-600 text-xs">Crunchy or soft shell favorites prepared fresh.</p>
+                        <span class="text-burgundy-800 font-semibold text-xs mt-3 flex items-center group-hover:text-gold-600">View tacos <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="py-24 bg-cream-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-burgundy-800 font-semibold uppercase tracking-wider text-sm">Our Heritage</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-burgundy-900 leading-tight">
+                        Four Generations of Family Tradition in Dunkirk
+                    </h2>
+                    <p class="text-stone-700 text-lg leading-relaxed">
+                        The story of Mary's Deli runs deep in the heart of Dunkirk. It all began when the building housed a grocery store operated by Rose and Samuel Lima. In 1979, Mary transformed her parents' grocery store into the warm, inviting pizzeria it is today.
+                    </p>
+                    <p class="text-stone-600 leading-relaxed">
+                        Currently operated by Kevin Russo, the restaurant proudly maintains four generations of family presence within these walls. We believe in treating every customer who walks through our doors like family—serving up hearty portions, authentic homemade sauce, and dough prepared fresh every single day.
+                    </p>
+
+                    <div class="pt-4 grid grid-cols-2 gap-6 border-t border-stone-200">
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-burgundy-800">1979</span>
+                            <span class="text-stone-500 text-sm">Established as a Pizzeria</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-3xl font-bold text-burgundy-800">4</span>
+                            <span class="text-stone-500 text-sm">Generations of Family Care</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-burgundy-800/10 rounded-3xl blur-2xl"></div>
+                        <div class="relative grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Restaurant interior atmosphere" class="rounded-2xl shadow-lg w-full h-64 object-cover transform translate-y-4">
+                            <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=600&q=80" alt="Chef preparing food" class="rounded-2xl shadow-lg w-full h-64 object-cover transform -translate-y-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section id="menu" class="py-24 bg-cream-100 border-t border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-burgundy-800 font-semibold uppercase tracking-wider text-sm">Our Offerings</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-burgundy-900 mt-2">Explore the Menu</h2>
+                <p class="text-stone-600 mt-3 text-lg">Fresh dough and signature sauce made daily. Call <a href="tel:7163661445" class="text-burgundy-800 font-semibold underline">(716) 366-1445</a> to place your order for pickup.</p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-12" id="menu-tabs">
+                <button onclick="filterMenu('All')" class="menu-tab active px-5 py-2.5 rounded-full font-medium text-sm transition bg-burgundy-800 text-cream-50 shadow">All Items</button>
+                <button onclick="filterMenu('Pizza')" class="menu-tab px-5 py-2.5 rounded-full font-medium text-sm transition bg-cream-50 text-stone-700 hover:bg-cream-200">Pizza</button>
+                <button onclick="filterMenu('Specialty Pizza')" class="menu-tab px-5 py-2.5 rounded-full font-medium text-sm transition bg-cream-50 text-stone-700 hover:bg-cream-200">Specialty Pizza</button>
+                <button onclick="filterMenu('Subs')" class="menu-tab px-5 py-2.5 rounded-full font-medium text-sm transition bg-cream-50 text-stone-700 hover:bg-cream-200">Subs</button>
+                <button onclick="filterMenu('Wings')" class="menu-tab px-5 py-2.5 rounded-full font-medium text-sm transition bg-cream-50 text-stone-700 hover:bg-cream-200">Wings</button>
+                <button onclick="filterMenu('Calzones')" class="menu-tab px-5 py-2.5 rounded-full font-medium text-sm transition bg-cream-50 text-stone-700 hover:bg-cream-200">Calzones</button>
+                <button onclick="filterMenu('Tacos')" class="menu-tab px-5 py-2.5 rounded-full font-medium text-sm transition bg-cream-50 text-stone-700 hover:bg-cream-200">Tacos</button>
+                <button onclick="filterMenu('Salads')" class="menu-tab px-5 py-2.5 rounded-full font-medium text-sm transition bg-cream-50 text-stone-700 hover:bg-cream-200">Salads</button>
+                <button onclick="filterMenu('Pasta')" class="menu-tab px-5 py-2.5 rounded-full font-medium text-sm transition bg-cream-50 text-stone-700 hover:bg-cream-200">Pasta</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Item 1 -->
+                <div class="menu-item bg-cream-50 rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-cream-200 flex flex-col justify-between" data-category="Pizza">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-burgundy-800/10 text-burgundy-800 text-xs font-semibold px-3 py-1 rounded-full">Pizza</span>
+                            <i class="fa-solid fa-utensils text-gold-500 text-sm"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-burgundy-900 mb-2">Traditional Cheese Pizza</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Our signature homemade dough prepared fresh daily, topped with Mary's rich house-made sauce and 100% real mozzarella cheese.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-200 flex items-center justify-between">
+                        <span class="text-xs text-stone-500 italic">Available in Small, Medium, Large & Sheet</span>
+                        <a href="tel:7163661445" class="text-burgundy-800 font-semibold text-sm hover:text-gold-600 flex items-center space-x-1">
+                            <i class="fa-solid fa-phone text-xs"></i> <span>Order Now</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="menu-item bg-cream-50 rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-cream-200 flex flex-col justify-between" data-category="Specialty Pizza">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-gold-500/20 text-gold-600 text-xs font-semibold px-3 py-1 rounded-full">Specialty Pizza</span>
+                            <i class="fa-solid fa-star text-gold-500 text-sm"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-burgundy-900 mb-2">Deluxe Specialty Pizza</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Loaded with pepperoni, sausage, mushrooms, onions, bell peppers, and extra mozzarella over our signature sauce.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-200 flex items-center justify-between">
+                        <span class="text-xs text-stone-500 italic">Freshly baked to perfection</span>
+                        <a href="tel:7163661445" class="text-burgundy-800 font-semibold text-sm hover:text-gold-600 flex items-center space-x-1">
+                            <i class="fa-solid fa-phone text-xs"></i> <span>Order Now</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="menu-item bg-cream-50 rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-cream-200 flex flex-col justify-between" data-category="Subs">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-burgundy-800/10 text-burgundy-800 text-xs font-semibold px-3 py-1 rounded-full">Subs</span>
+                            <i class="fa-solid fa-bread-slice text-gold-500 text-sm"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-burgundy-900 mb-2">Italian Hoagie Sub</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Layered with premium Italian meats, provolone cheese, lettuce, tomatoes, onions, and signature dressing on fresh baked sub rolls.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-200 flex items-center justify-between">
+                        <span class="text-xs text-stone-500 italic">Served hot or cold</span>
+                        <a href="tel:7163661445" class="text-burgundy-800 font-semibold text-sm hover:text-gold-600 flex items-center space-x-1">
+                            <i class="fa-solid fa-phone text-xs"></i> <span>Order Now</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="menu-item bg-cream-50 rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-cream-200 flex flex-col justify-between" data-category="Wings">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-burgundy-800/10 text-burgundy-800 text-xs font-semibold px-3 py-1 rounded-full">Wings</span>
+                            <i class="fa-solid fa-fire text-gold-500 text-sm"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-burgundy-900 mb-2">Buffalo Chicken Wings</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Crispy jumbo chicken wings tossed in your choice of Mild, Medium, Hot, BBQ, or Garlic Parmesan. Served with celery and blue cheese.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-200 flex items-center justify-between">
+                        <span class="text-xs text-stone-500 italic">Available in counts of 10, 20, 50</span>
+                        <a href="tel:7163661445" class="text-burgundy-800 font-semibold text-sm hover:text-gold-600 flex items-center space-x-1">
+                            <i class="fa-solid fa-phone text-xs"></i> <span>Order Now</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="menu-item bg-cream-50 rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-cream-200 flex flex-col justify-between" data-category="Calzones">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-burgundy-800/10 text-burgundy-800 text-xs font-semibold px-3 py-1 rounded-full">Calzones</span>
+                            <i class="fa-solid fa-pie-chart text-gold-500 text-sm"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-burgundy-900 mb-2">Classic Cheese & Ricotta Calzone</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Fresh homemade dough folded and stuffed with a rich blend of ricotta, mozzarella, and your favorite fillings. Oven baked golden brown.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-200 flex items-center justify-between">
+                        <span class="text-xs text-stone-500 italic">Served with marinara dipping sauce</span>
+                        <a href="tel:7163661445" class="text-burgundy-800 font-semibold text-sm hover:text-gold-600 flex items-center space-x-1">
+                            <i class="fa-solid fa-phone text-xs"></i> <span>Order Now</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="menu-item bg-cream-50 rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-cream-200 flex flex-col justify-between" data-category="Tacos">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-burgundy-800/10 text-burgundy-800 text-xs font-semibold px-3 py-1 rounded-full">Tacos</span>
+                            <i class="fa-solid fa-pepper-hot text-gold-500 text-sm"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-burgundy-900 mb-2">Dunkirk Style Tacos</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Seasoned beef or chicken packed into crispy or soft shells with fresh lettuce, tomatoes, cheddar cheese, and salsa.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-200 flex items-center justify-between">
+                        <span class="text-xs text-stone-500 italic">Local favorite</span>
+                        <a href="tel:7163661445" class="text-burgundy-800 font-semibold text-sm hover:text-gold-600 flex items-center space-x-1">
+                            <i class="fa-solid fa-phone text-xs"></i> <span>Order Now</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="menu-item bg-cream-50 rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-cream-200 flex flex-col justify-between" data-category="Salads">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-burgundy-800/10 text-burgundy-800 text-xs font-semibold px-3 py-1 rounded-full">Salads</span>
+                            <i class="fa-solid fa-carrot text-gold-500 text-sm"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-burgundy-900 mb-2">Antipasto Salad</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Crisp garden greens topped with Italian cold cuts, provolone cheese, olives, pepperoncini, and house dressing.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-200 flex items-center justify-between">
+                        <span class="text-xs text-stone-500 italic">Crisp & refreshing</span>
+                        <a href="tel:7163661445" class="text-burgundy-800 font-semibold text-sm hover:text-gold-600 flex items-center space-x-1">
+                            <i class="fa-solid fa-phone text-xs"></i> <span>Order Now</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="menu-item bg-cream-50 rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-cream-200 flex flex-col justify-between" data-category="Pasta">
+                    <div>
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="bg-burgundy-800/10 text-burgundy-800 text-xs font-semibold px-3 py-1 rounded-full">Pasta</span>
+                            <i class="fa-solid fa-bowl-food text-gold-500 text-sm"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-burgundy-900 mb-2">Baked Ziti with Homemade Sauce</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed">Tender ziti pasta tossed in Mary's signature homemade marinara sauce, smothered in mozzarella and baked until bubbly.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-stone-200 flex items-center justify-between">
+                        <span class="text-xs text-stone-500 italic">Served with garlic bread</span>
+                        <a href="tel:7163661445" class="text-burgundy-800 font-semibold text-sm hover:text-gold-600 flex items-center space-x-1">
+                            <i class="fa-solid fa-phone text-xs"></i> <span>Order Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us & Hours Section -->
+    <section id="visit" class="py-24 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-burgundy-800 font-semibold uppercase tracking-wider text-sm">Location & Contact</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-burgundy-900 mt-2">Visit Mary's Deli</h2>
+                <p class="text-stone-600 mt-3 text-lg">Stop by or give us a call to place your pickup order today.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Info & Hours Card -->
+                <div class="lg:col-span-6 bg-cream-100 p-8 rounded-3xl border border-cream-200 shadow-sm space-y-8">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-serif font-bold text-2xl text-burgundy-900">Hours & Info</h3>
+                            <div id="live-status-badge" class="px-3 py-1 rounded-full text-xs font-semibold bg-stone-200 text-stone-700">
+                                Checking status...
+                            </div>
+                        </div>
+                        <p class="text-stone-600 text-sm">
+                            <strong>Address:</strong> 525 Main St, Dunkirk, NY 14048<br>
+                            <strong>Phone:</strong> <a href="tel:7163661445" class="text-burgundy-800 font-semibold underline">(716) 366-1445</a>
+                        </p>
+                    </div>
+
+                    <!-- Hours Table -->
+                    <div class="space-y-2 text-sm border-t border-stone-200 pt-6">
+                        <div class="flex justify-between py-1.5 border-b border-stone-200/60">
+                            <span class="font-medium text-stone-700">Monday</span>
+                            <span class="text-stone-600">11:00 AM – 9:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-stone-200/60">
+                            <span class="font-medium text-stone-700">Tuesday</span>
+                            <span class="text-burgundy-700 font-medium">Closed</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-stone-200/60">
+                            <span class="font-medium text-stone-700">Wednesday</span>
+                            <span class="text-stone-600">11:00 AM – 9:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-stone-200/60">
+                            <span class="font-medium text-stone-700">Thursday</span>
+                            <span class="text-stone-600">11:00 AM – 9:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-stone-200/60">
+                            <span class="font-medium text-stone-700">Friday</span>
+                            <span class="text-stone-600">11:00 AM – 10:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-1.5 border-b border-stone-200/60">
+                            <span class="font-medium text-stone-700">Saturday</span>
+                            <span class="text-stone-600">11:00 AM – 9:00 PM</span>
+                        </div>
+                        <div class="flex justify-between py-1.5">
+                            <span class="font-medium text-stone-700">Sunday</span>
+                            <span class="text-stone-600">11:00 AM – 9:00 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="tel:7163661445" class="block w-full text-center bg-burgundy-800 hover:bg-burgundy-700 text-cream-50 font-semibold py-3.5 rounded-xl shadow transition">
+                            <i class="fa-solid fa-phone mr-2 text-gold-400"></i> Call to Order: (716) 366-1445
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map & Directions Embed Card -->
+                <div class="lg:col-span-6 bg-cream-100 p-3 rounded-3xl border border-cream-200 shadow-sm">
+                    <div class="w-full h-[450px] rounded-2xl overflow-hidden relative">
+                        <iframe 
+                            title="Mary's Deli Location Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.034680878502!2d-79.3308964!3d42.4812345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d28e75294b46c9%3A0xc3b51e0cf6238b93!2s525%20Main%20St%2C%20Dunkirk%2C%20NY%2014048!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="p-4 flex items-center justify-between text-xs text-stone-600">
+                        <span>525 Main St, Dunkirk, NY 14048</span>
+                        <a href="https://maps.google.com/?q=525+Main+St,+Dunkirk,+NY+14048" target="_blank" rel="noopener noreferrer" class="text-burgundy-800 font-semibold hover:underline flex items-center space-x-1">
+                            <span>Get Directions</span> <i class="fa-solid fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-burgundy-900 text-cream-50 pt-16 pb-12 border-t border-burgundy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <div class="space-y-4 md:col-span-1">
+                <img src="https://img1.wsimg.com/isteam/ip/66de8ecc-22b9-4067-8d1a-8b973bd36eed/67573593651__67BC30C3-6AF8-418A-BFD7-4C345A198.png" alt="Mary's Deli Logo" class="h-12 w-auto object-contain brightness-0 invert" onerror="this.src='https://placehold.co/120x50/5C1414/FDFBF7?text=Marys+Deli'">
+                <p class="text-stone-300 text-xs leading-relaxed">
+                    Family-owned neighborhood pizzeria in Dunkirk, NY since 1979. Homemade dough and sauce made fresh daily.
+                </p>
+                <div class="flex items-center space-x-3 pt-2">
+                    <a href="https://www.facebook.com/people/Marys-Deli/100063570523763/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-burgundy-800 hover:bg-gold-500 hover:text-burgundy-900 flex items-center justify-center transition text-cream-50" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-serif font-bold text-lg text-gold-400 mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-stone-300">
+                    <li><a href="#home" class="hover:text-gold-400 transition">Home</a></li>
+                    <li><a href="#menu" class="hover:text-gold-400 transition">Menu</a></li>
+                    <li><a href="#story" class="hover:text-gold-400 transition">Our Story</a></li>
+                    <li><a href="#visit" class="hover:text-gold-400 transition">Visit Us & Hours</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif font-bold text-lg text-gold-400 mb-4">Contact & Hours</h4>
+                <p class="text-stone-300 text-sm leading-relaxed space-y-1">
+                    <span>525 Main St, Dunkirk, NY 14048</span><br>
+                    <a href="tel:7163661445" class="text-gold-400 font-semibold hover:underline">(716) 366-1445</a><br>
+                    <span class="text-xs text-stone-400 block mt-2">Mon, Wed-Sun: 11 AM - 9 PM (Fri till 10 PM)<br>Tue: Closed</span>
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-serif font-bold text-lg text-gold-400 mb-4">Elevate Web Co. Concept</h4>
+                <p class="text-stone-300 text-xs leading-relaxed">
+                    This website concept was designed by <strong>Elevate Web Co.</strong> as a professional redesign showcase. Available as part of our $650 Professional Launch Package.
+                </p>
+                <button onclick="openModal()" class="mt-4 text-xs bg-gold-500 hover:bg-gold-400 text-burgundy-900 font-semibold px-4 py-2 rounded-lg transition">
+                    Learn About $650 Package
+                </button>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-burgundy-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400">
+            <p>&copy; 2026 Mary's Deli & Elevate Web Co. Independent Concept Showcase.</p>
+            <p class="mt-2 sm:mt-0">Crafted with high-end craftsmanship for Dunkirk local business.</p>
+        </div>
+    </footer>
+
+    <!-- Elevate Web Co. Package Modal / Drawer -->
+    <div id="agency-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-cream-50 rounded-3xl max-w-2xl w-full p-8 shadow-2xl relative border border-stone-200 transform transition-all animate-in fade-in zoom-in duration-200">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-stone-400 hover:text-stone-700 text-xl font-bold" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center space-x-3 mb-6">
+                <span class="bg-burgundy-800 text-cream-50 font-bold px-3 py-1 rounded text-xs uppercase tracking-wider">Elevate Web Co.</span>
+                <h3 class="font-serif font-bold text-2xl text-burgundy-900">Professional Package — $650 Launch Special</h3>
+            </div>
+
+            <div class="space-y-4 text-stone-700 text-sm leading-relaxed">
+                <p>
+                    Hello! This is a live preview concept created specifically for <strong>Mary's Deli</strong> by Elevate Web Co. We built this high-end, lightning-fast digital storefront to demonstrate how a modern web presence can drive more phone orders and delight your regular customers.
+                </p>
+
+                <div class="bg-cream-100 p-4 rounded-2xl border border-cream-200 space-y-2">
+                    <h4 class="font-bold text-burgundy-900 text-base">What's included in the $650 Professional Package:</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-700 pt-1">
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-burgundy-800"></i><span>Custom Mobile-First Redesign</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-burgundy-800"></i><span>Interactive Filterable Menu</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-burgundy-800"></i><span>Live Operating Hours Status</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-burgundy-800"></i><span>One-Tap Click-to-Call Orders</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-burgundy-800"></i><span>Lightning-Fast Google Optimization</span></li>
+                        <li class="flex items-center space-x-2"><i class="fa-solid fa-check text-burgundy-800"></i><span>Zero Monthly Agency Lock-in Fees</span></li>
+                    </ul>
+                </div>
+
+                <p class="text-xs text-stone-500 italic">
+                    Interested in replacing your current website with this professional design? Contact Elevate Web Co. today to get set up in less than a week.
+                </p>
+            </div>
+
+            <div class="mt-8 flex justify-end space-x-3">
+                <button onclick="closeModal()" class="bg-stone-200 hover:bg-stone-300 text-stone-700 font-medium px-5 py-2.5 rounded-xl text-sm transition">
+                    Close Preview
+                </button>
+                <a href="tel:7163661445" class="bg-burgundy-800 hover:bg-burgundy-700 text-cream-50 font-medium px-6 py-2.5 rounded-xl text-sm transition shadow">
+                    Inquire About This Design
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions & Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modal Controls
+        function openModal() {
+            document.getElementById('agency-modal').classList.remove('hidden');
+            document.getElementById('agency-modal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('agency-modal').classList.add('hidden');
+            document.getElementById('agency-modal').classList.remove('flex');
+        }
+
+        // Close modal on click outside
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('agency-modal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Menu Filtering Logic
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const tabs = document.querySelectorAll('.menu-tab');
+
+            // Update active tab styling
+            tabs.forEach(tab => {
+                if (tab.textContent.trim() === category || (category === 'All' && tab.textContent.trim() === 'All Items')) {
+                    tab.classList.remove('bg-cream-50', 'text-stone-700', 'hover:bg-cream-200');
+                    tab.classList.add('bg-burgundy-800', 'text-cream-50', 'shadow');
+                } else {
+                    tab.classList.remove('bg-burgundy-800', 'text-cream-50', 'shadow');
+                    tab.classList.add('bg-cream-50', 'text-stone-700', 'hover:bg-cream-200');
+                }
+            });
+
+            // Filter items
+            items.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (category === 'All' || itemCategory === category) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Dynamic Open / Closed Status Checker
+        function checkBusinessStatus() {
+            // Mary's Deli Schedule:
+            // Mon: 11 AM - 9 PM (11:00 - 21:00)
+            // Tue: Closed
+            // Wed: 11 AM - 9 PM (11:00 - 21:00)
+            // Thu: 11 AM - 9 PM (11:00 - 21:00)
+            // Fri: 11 AM - 10 PM (11:00 - 22:00)
+            // Sat: 11 AM - 9 PM (11:00 - 21:00)
+            // Sun: 11 AM - 9 PM (11:00 - 21:00)
+
+            const now = new Date();
+            const day = now.getDay(); // 0: Sun, 1: Mon, 2: Tue, 3: Wed, 4: Thu, 5: Fri, 6: Sat
+            const hour = now.getHours();
+            const minute = now.getMinutes();
+            const currentTime = hour + minute / 60;
+
+            let isOpen = false;
+            let closingTimeStr = "9:00 PM";
+
+            if (day === 2) {
+                // Tuesday closed
+                isOpen = false;
+            } else {
+                let openTime = 11.0;
+                let closeTime = 21.0; // 9 PM default
+                if (day === 5) {
+                    closeTime = 22.0; // 10 PM on Friday
+                    closingTimeStr = "10:00 PM";
+                }
+
+                if (currentTime >= openTime && currentTime < closeTime) {
+                    isOpen = true;
+                }
+            }
+
+            const headerStatusText = document.getElementById('header-status-text');
+            const liveStatusBadge = document.getElementById('live-status-badge');
+
+            if (isOpen) {
+                if (headerStatusText) headerStatusText.textContent = `Open Now • Closes at ${closingTimeStr}`;
+                if (liveStatusBadge) {
+                    liveStatusBadge.className = "px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 flex items-center space-x-1.5";
+                    liveStatusBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span>Open Now (Closes ${closingTimeStr})</span>`;
+                }
+            } else {
+                if (headerStatusText) headerStatusText.textContent = "Closed Right Now";
+                if (liveStatusBadge) {
+                    liveStatusBadge.className = "px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 flex items-center space-x-1.5";
+                    liveStatusBadge.innerHTML = `<span class="w-2 h-2 rounded-full bg-rose-500"></span><span>Closed Now</span>`;
+                }
+            }
+        }
+
+        // Run status check on load
+        window.addEventListener('DOMContentLoaded', checkBusinessStatus);
+    </script>
+</body>
+</html>
