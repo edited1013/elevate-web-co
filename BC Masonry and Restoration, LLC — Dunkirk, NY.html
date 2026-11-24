@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fdfbf7">
+<title>BC Masonry and Restoration, LLC — Dunkirk, NY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdfbf7; --bg2:#f3ede2; --ink:#1d1714; --mute:#6b5d52; --brick:#a8452a; --brick2:#c4623f; --mortar:#d9cdb9; --line:rgba(29,23,20,.16); --dark:#1d1714; --on-dark:#f1e8da;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --serif:'Fraunces',Georgia,serif; --sans:'Instrument Sans',-apple-system,system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{--bg:#191310;--bg2:#221a16;--ink:#f1e8da;--mute:#a89a8b;--brick:#d2704a;--brick2:#e08a63;--mortar:#3a2e27;--line:rgba(241,232,218,.16);color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom,0px);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.02;letter-spacing:-.02em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(22px,env(safe-area-inset-left,0px)) 0 max(22px,env(safe-area-inset-right,0px))}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .5s var(--ease),transform .6s var(--ease)}
+nav.solid{background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .in{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;display:flex;gap:10px;align-items:center;color:var(--ink)}
+nav.solid .logo{color:var(--ink)}
+.logo i{display:block;width:26px;height:18px;background:var(--brick);position:relative;border-radius:2px}
+.logo i:after{content:"";position:absolute;left:5px;right:-5px;top:-7px;height:5px;background:var(--brick2);border-radius:2px}
+.navlinks{display:none;gap:30px;color:var(--ink)}
+.navlinks a{position:relative;padding:6px 0}
+.navlinks a:after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.navlinks a:hover:after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--brick);color:#fff;font-weight:600;font-size:16px;border:0;cursor:pointer;transition:transform .5s var(--ease),background .4s;font-family:var(--sans)}
+.btn:hover{background:var(--brick2);transform:translateY(-2px)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;border:1px solid currentColor;color:inherit}
+.menu{width:48px;height:48px;background:none;border:0;cursor:pointer;display:grid;place-content:center;gap:6px;margin-right:-10px}
+.menu b{display:block;width:26px;height:2px;background:var(--ink);transition:transform .5s var(--ease),opacity .3s,background .3s}
+nav.solid .menu b{background:var(--ink)}
+.menu.open b:nth-child(1){transform:translateY(8px) rotate(45deg)}.menu.open b:nth-child(2){opacity:0}.menu.open b:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.sheet{position:fixed;inset:0;z-index:40;background:var(--bg);color:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:0 28px;clip-path:inset(0 0 100% 0);transition:clip-path .8s var(--ease);visibility:hidden}
+.sheet.open{clip-path:inset(0);visibility:visible}
+.sheet a{font-family:var(--serif);font-size:clamp(40px,12vw,64px);font-weight:400;line-height:1.25;opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.sheet.open a{opacity:1;transform:none}
+.sheet.open a:nth-child(2){transition-delay:.08s}.sheet.open a:nth-child(3){transition-delay:.16s}.sheet.open a:nth-child(4){transition-delay:.24s}.sheet.open a:nth-child(5){transition-delay:.32s}
+.sheet a em{font-family:var(--mono);font-size:12px;color:var(--brick2);font-style:normal;margin-right:14px;vertical-align:middle}
+@media(min-width:860px){.navlinks{display:flex}.menu{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:100svh;background:var(--bg);color:var(--ink);overflow:hidden;display:flex;align-items:flex-end}
+#wall{position:absolute;inset:0;display:flex;flex-direction:column-reverse;gap:3px;padding:0;transform:scale(1.06)}
+.row{display:flex;gap:3px;width:max-content}
+.row:nth-child(even){margin-left:-28px}
+.b{flex:none;width:56px;height:21px;border-radius:2px;opacity:0;transform:translateY(14px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.laid .b{opacity:var(--o,.5);transform:none}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(253,251,247,.82) 0%,rgba(253,251,247,.3) 32%,rgba(253,251,247,.93) 78%,#fdfbf7 100%);pointer-events:none}
+.hero .wrap{position:relative;z-index:2;padding-bottom:calc(52px + env(safe-area-inset-bottom,0px));padding-top:110px;width:100%}
+.eyebrow{display:flex;gap:12px;align-items:center;color:var(--brick2);margin-bottom:22px}
+.eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
+.hero h1{font-size:clamp(54px,15.5vw,168px);font-weight:600;font-variation-settings:"opsz" 144,"SOFT" 100}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln span{display:block;transform:translateY(105%);transition:transform 1.2s var(--ease)}
+.laid h1 .ln span{transform:none}.laid h1 .ln:nth-child(2) span{transition-delay:.14s}.laid h1 .ln:nth-child(3) span{transition-delay:.28s}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--brick2)}
+.hero p.lede{max-width:520px;margin:26px 0 32px;font-size:19px;color:var(--mute);opacity:0;transform:translateY(16px);transition:all 1s var(--ease) .7s}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;opacity:0;transform:translateY(16px);transition:all 1s var(--ease) .9s}
+.laid p.lede,.laid .cta{opacity:1;transform:none}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);color:var(--mute)}
+
+/* plumb line */
+#plumb{position:fixed;right:max(10px,env(safe-area-inset-right,0px));top:0;width:2px;height:100%;z-index:45;pointer-events:none}
+#plumb i{display:block;width:100%;height:0;background:var(--brick)}
+#plumb:after{content:"";position:absolute;left:-3px;top:var(--y,0);width:8px;height:8px;background:var(--brick);transform:rotate(45deg)}
+
+/* sections */
+section{padding:clamp(72px,12vw,150px) 0;position:relative}
+.course{display:flex;gap:14px;align-items:center;color:var(--brick);margin-bottom:26px}
+.course:after{content:"";flex:1;max-width:120px;height:1px;background:var(--line)}
+h2{font-size:clamp(38px,8vw,92px);max-width:14ch}
+h2 em{font-style:italic;font-weight:300;color:var(--brick)}
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.clip{clip-path:inset(0 100% 0 0);transition:clip-path 1.3s var(--ease)}
+.clip.in{clip-path:inset(0)}
+
+.about{display:grid;gap:40px}
+.about .txt p{font-size:clamp(19px,2.4vw,26px);line-height:1.5;max-width:30em;font-family:var(--serif);font-weight:300;margin-bottom:22px}
+.about .txt p b{font-weight:600;color:var(--brick)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:34px}
+.stats div{background:var(--bg);padding:20px}
+.stats strong{display:block;font-family:var(--serif);font-size:44px;font-weight:500;line-height:1;color:var(--brick)}
+.stats span{color:var(--mute);font-size:14px}
+.bond{aspect-ratio:4/5;border-radius:3px;overflow:hidden;background:var(--mortar);position:relative}
+.bond svg{width:100%;height:100%;display:block}
+.bond figcaption{position:absolute;left:14px;bottom:12px;color:#fff;background:rgba(29,23,20,.7);padding:5px 10px;border-radius:2px}
+@media(min-width:860px){.about{grid-template-columns:1.25fr 1fr;gap:80px;align-items:center}}
+
+/* services */
+.svc{background:var(--bg2)}
+.list{margin-top:56px;border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:44px 1fr;gap:6px 16px;padding:28px 0;border-bottom:1px solid var(--line);position:relative;cursor:default;transition:padding .6s var(--ease)}
+.item:before{content:"";position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:var(--brick);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease)}
+.item:hover:before,.item.in:before{transform:scaleX(1)}
+.item .n{color:var(--brick);padding-top:10px}
+.item h3{font-size:clamp(30px,6vw,56px)}
+.item p{grid-column:2;color:var(--mute);max-width:46ch}
+.item .pat{display:none}
+@media(min-width:860px){.item{grid-template-columns:70px 1.2fr 1fr 220px;align-items:center;padding:34px 0}.item p{grid-column:auto}.item:hover{padding-left:16px}.item .pat{display:block;height:90px;overflow:hidden;border-radius:2px;opacity:.9}.item:before{transition-delay:0s}}
+@media(max-width:859px){.item:before{display:none}}
+
+/* process */
+.proc{background:var(--bg);color:var(--ink);border-top:1px solid var(--line)}
+.proc h2 em{color:var(--brick)}.proc .course{color:var(--brick)}
+.steps{margin-top:60px;display:grid;gap:0;counter-reset:s}
+.step{padding:30px 0 30px 34px;border-left:1px solid var(--line);position:relative}
+.step:before{content:"";position:absolute;left:-6px;top:38px;width:11px;height:11px;background:var(--brick);transform:rotate(45deg)}
+.step h3{font-size:34px;margin-bottom:8px}
+.step p{color:var(--mute);max-width:42ch}
+@media(min-width:860px){.steps{grid-template-columns:repeat(4,1fr);gap:30px}.step{border-left:0;border-top:1px solid var(--line);padding:34px 0 0}.step:before{left:0;top:-6px}}
+
+/* quote marquee */
+.mq{overflow:hidden;background:var(--brick);color:#fff;padding:22px 0;white-space:nowrap}
+.mq div{display:inline-block;animation:mq 38s linear infinite;font-family:var(--serif);font-size:clamp(26px,5vw,44px);font-style:italic;font-weight:300}
+.mq span{margin:0 28px}.mq span:nth-child(even){font-style:normal;font-weight:600;font-size:.7em;font-family:var(--mono);letter-spacing:.14em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* contact */
+.contact{display:grid;gap:50px}
+form{display:grid;gap:18px}
+label{display:block}
+label .mono{color:var(--mute);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--ink);padding:12px 0;font:inherit;font-size:17px;color:var(--ink);border-radius:0;-webkit-appearance:none;appearance:none;transition:border-color .4s,padding .5s var(--ease)}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--brick);padding-left:10px}
+textarea{resize:vertical;min-height:90px}
+.info dl{display:grid;gap:22px;margin-top:30px}
+.info dt{color:var(--mute);margin-bottom:2px}
+.info dd{font-family:var(--serif);font-size:26px;line-height:1.2}
+.note{font-size:14px;color:var(--mute)}
+.ok{display:none;color:var(--brick);font-family:var(--serif);font-size:24px}
+@media(min-width:860px){.contact{grid-template-columns:1fr 1fr;gap:100px}}
+footer{padding:34px 0 calc(34px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}html{scroll-behavior:auto}.rv,.clip{opacity:1;transform:none;clip-path:none}.b{opacity:var(--o,.5);transform:none}.hero h1 .ln span{transform:none}.hero p.lede,.hero .cta{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="plumb"><i></i></div>
+
+<nav id="nav"><div class="wrap in">
+  <a href="#top" class="logo"><i></i>BC Masonry</a>
+  <div class="navlinks mono"><a href="#about">About</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
+  <a href="#contact" class="btn navlinks" style="min-height:40px;padding:0 20px;font-size:14px;color:#fff">Free estimate</a>
+  <button class="menu" id="menu" aria-label="Menu"><b></b><b></b><b></b></button>
+</div></nav>
+<div class="sheet" id="sheet">
+  <a href="#about"><em>01</em>About</a><a href="#services"><em>02</em>Services</a><a href="#process"><em>03</em>Process</a><a href="#contact"><em>04</em>Free estimate</a>
+</div>
+
+<header class="hero" id="top">
+  <div id="wall" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow mono">Dunkirk, New York · LLC</div>
+    <h1><span class="ln"><span>Built to</span></span><span class="ln"><span><em>outlast</em></span></span><span class="ln"><span>the weather.</span></span></h1>
+    <p class="lede">Brick and stone walls, driveways and flatwork, tuck-pointing and restoration. Over 10 years of masonry for homes and businesses.</p>
+    <div class="cta"><a href="#contact" class="btn">Get a free estimate →</a><a href="#services" class="btn ghost">See our work</a></div>
+    <div class="meta mono"><span>10+ years</span><span>Free estimates</span><span>Residential &amp; commercial</span></div>
+  </div>
+</header>
+
+<section id="about"><div class="wrap about">
+  <div class="txt">
+    <div class="course mono rv">Course 01 — About</div>
+    <h2 class="rv" style="--d:.08s">Honest work, <em>laid true.</em></h2>
+    <div style="height:30px"></div>
+    <p class="rv">BC Masonry and Restoration, LLC is a locally owned masonry business in <b>Dunkirk, NY</b>, run by a graduate of Dunkirk High School.</p>
+    <p class="rv">With over 10 years’ experience, we handle everything from <b>building walls to tuck-pointing</b> — for your home or your business.</p>
+    <div class="stats rv"><div><strong data-n="10">0</strong><span>+ years in masonry</span></div><div><strong>Free</strong><span>project estimates</span></div></div>
+  </div>
+  <figure class="bond clip" id="bond">
+    <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" id="bondsvg" aria-label="Brick running bond pattern"></svg>
+    <figcaption class="mono">Running bond</figcaption>
+  </figure>
+</div></section>
+
+<div class="mq" aria-hidden="true"><div id="mqin"></div></div>
+
+<section class="svc" id="services"><div class="wrap">
+  <div class="course mono rv">Course 02 — Services</div>
+  <h2 class="rv" style="--d:.08s">What we <em>build &amp; mend.</em></h2>
+  <div class="list" id="list">
+    <div class="item rv"><span class="n mono">A</span><h3>Brick &amp; stone walls</h3><p>New walls built from brick or stone, and repair of the ones already standing.</p><svg class="pat" data-p="run" viewBox="0 0 220 90"></svg></div>
+    <div class="item rv"><span class="n mono">B</span><h3>Driveways &amp; flatwork</h3><p>Brick and stone driveways, plus commercial brick and stone flatwork repair.</p><svg class="pat" data-p="herring" viewBox="0 0 220 90"></svg></div>
+    <div class="item rv"><span class="n mono">C</span><h3>Tuck-pointing</h3><p>Failing mortar joints cut out and repointed to keep water out and the wall sound.</p><svg class="pat" data-p="point" viewBox="0 0 220 90"></svg></div>
+    <div class="item rv"><span class="n mono">D</span><h3>Restoration</h3><p>Bringing tired masonry back to its original strength and character.</p><svg class="pat" data-p="stone" viewBox="0 0 220 90"></svg></div>
+  </div>
+</div></section>
+
+<section class="proc" id="process"><div class="wrap">
+  <div class="course mono rv">Course 03 — Process</div>
+  <h2 class="rv" style="--d:.08s">Plumb, level, <em>done right.</em></h2>
+  <div class="steps">
+    <div class="step rv"><h3>Look</h3><p>Tell us about the job. We assess it and give you a free estimate.</p></div>
+    <div class="step rv" style="--d:.1s"><h3>Prep</h3><p>Remove what’s failing and set up the work area.</p></div>
+    <div class="step rv" style="--d:.2s"><h3>Lay</h3><p>Build or repair course by course, then point the joints.</p></div>
+    <div class="step rv" style="--d:.3s"><h3>Finish</h3><p>Clean up and walk through the result with you.</p></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <div>
+    <div class="course mono rv">Course 04 — Contact</div>
+    <h2 class="rv" style="--d:.08s">Let’s talk <em>brick.</em></h2>
+    <div class="info rv"><dl>
+      <div><dt class="mono">Based in</dt><dd>Dunkirk, NY</dd></div>
+      <div><dt class="mono">Estimates</dt><dd>Always free</dd></div>
+      <div><dt class="mono">Work</dt><dd>Homes &amp; businesses</dd></div>
+    </dl></div>
+  </div>
+  <form id="form" class="rv">
+    <label><span class="mono">Name</span><input name="n" required autocomplete="name"></label>
+    <label><span class="mono">Phone</span><input name="p" type="tel" required autocomplete="tel" inputmode="tel"></label>
+    <label><span class="mono">Project</span><select name="t"><option>Brick or stone wall</option><option>Driveway or flatwork</option><option>Tuck-pointing</option><option>Restoration</option><option>Something else</option></select></label>
+    <label><span class="mono">Details</span><textarea name="d"></textarea></label>
+    <button class="btn" type="submit">Request free estimate →</button>
+    <p class="ok" id="ok">Thank you — we’ll be in touch.</p>
+  </form>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 BC Masonry and Restoration, LLC</span><span>Dunkirk, New York</span></div></footer>
+
+<script>
+(function(){
+var $=function(s,c){return(c||document).querySelector(s)};
+var nav=$('#nav'),menu=$('#menu'),sheet=$('#sheet');
+function setNav(){nav.classList.toggle('solid',scrollY>60||sheet.classList.contains('open')===false&&scrollY>60)}
+function toggle(f){var o=f===undefined?!sheet.classList.contains('open'):f;sheet.classList.toggle('open',o);menu.classList.toggle('open',o);document.body.style.overflow=o?'hidden':''}
+menu.onclick=function(){toggle()};
+sheet.addEventListener('click',function(e){if(e.target.closest('a'))toggle(false)});
+
+/* hero wall */
+var wall=$('#wall'),hero=$('.hero'),cols=['#a8452a','#b5502f','#93391f','#c4623f','#8a3a24','#9e4a30'];
+function build(){
+  wall.innerHTML='';
+  var W=hero.clientWidth,H=hero.clientHeight,nc=Math.ceil(W/59)+2,nr=Math.ceil(H/24)+1;
+  for(var r=0;r<nr;r++){var row=document.createElement('div');row.className='row';
+    for(var c=0;c<nc;c++){var b=document.createElement('i');b.className='b';
+      b.style.background=cols[Math.floor(Math.random()*cols.length)];
+      b.style.setProperty('--o',(.22+Math.random()*.4).toFixed(2));
+      b.style.transitionDelay=(r*0.028+Math.random()*.25).toFixed(2)+'s';row.appendChild(b)}
+    wall.appendChild(row)}
+}
+build();var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){if(innerWidth!==lw){lw=innerWidth;build();hero.classList.add('laid')}},250)});var lw=innerWidth;
+requestAnimationFrame(function(){setTimeout(function(){hero.classList.add('laid')},120)});
+
+/* SVG patterns */
+var NS='http://www.w3.org/2000/svg';
+function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e}
+function running(svg,w,h,bw,bh,gap){var r=0;for(var y=0;y<h;y+=bh+gap,r++){for(var x=(r%2?-bw/2:0);x<w;x+=bw+gap){el('rect',{x:x,y:y,width:bw,height:bh,rx:1.5,fill:cols[(Math.random()*cols.length)|0]},svg)}}}
+document.getElementById('bondsvg').innerHTML='';
+(function(){var s=$('#bondsvg');el('rect',{width:400,height:500,fill:'#d9cdb9'},s);running(s,400,500,60,20,4)})();
+document.querySelectorAll('.pat').forEach(function(s){var p=s.dataset.p;el('rect',{width:220,height:90,fill:'#d9cdb9'},s);
+  if(p==='run')running(s,220,90,34,12,3);
+  if(p==='herring'){for(var y=0;y<90;y+=14)for(var x=0;x<220;x+=28){var a=((x/28+y/14)%2)?0:1;el('rect',{x:x+(a?0:0),y:y,width:a?26:12,height:a?12:26,rx:1.5,fill:cols[(Math.random()*cols.length)|0],transform:'rotate('+(a?0:0)+')'},s)}}
+  if(p==='point'){running(s,220,90,34,12,5);el('rect',{width:220,height:90,fill:'none'},s);for(var y=12;y<90;y+=17)el('line',{x1:0,x2:220,y1:y+2,y2:y+2,stroke:'#f1e8da','stroke-width':2.2,'stroke-dasharray':'0 0'},s)}
+  if(p==='stone'){var pts=[[0,0,70,0,60,34,0,40],[70,0,150,0,140,30,60,34],[150,0,220,0,220,38,140,30],[0,40,60,34,72,90,0,90],[60,34,140,30,150,90,72,90],[140,30,220,38,220,90,150,90]];pts.forEach(function(q,i){el('polygon',{points:q.join(' '),fill:['#9a8a76','#b3a18a','#8a7b69','#a89682','#bfae98','#948470'][i],stroke:'#d9cdb9','stroke-width':3,'stroke-linejoin':'round'},s)})}
+});
+
+/* marquee */
+var words=['Brick','·','Stone','·','Tuck-pointing','·','Walls','·','Flatwork','·','Restoration','·'],h='';
+for(var i=0;i<2;i++)words.forEach(function(w){h+='<span>'+w+'</span>'});
+$('#mqin').innerHTML=h+h;
+
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv,.clip').forEach(function(e){io.observe(e)});
+var cn=$('[data-n]'),co=new IntersectionObserver(function(es){if(es[0].isIntersecting){var t=+cn.dataset.n,s=null;(function f(ts){s=s||ts;var p=Math.min((ts-s)/1400,1);cn.textContent=Math.round(t*(1-Math.pow(1-p,4)));if(p<1)requestAnimationFrame(f)})(performance.now());co.disconnect()}},{threshold:.6});co.observe(cn);
+
+/* scroll: plumb line + nav + hero parallax */
+var pl=$('#plumb i'),pe=$('#plumb'),tick=false;
+function onS(){var m=document.documentElement.scrollHeight-innerHeight,p=m>0?scrollY/m:0;pl.style.height=(p*100)+'%';pe.style.setProperty('--y','calc('+(p*100)+'% - '+(p*8)+'px)');nav.classList.toggle('solid',scrollY>60);if(scrollY<innerHeight)wall.style.transform='scale(1.06) translateY('+(scrollY*.12)+'px)';tick=false}
+addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onS)}},{passive:true});onS();
+
+/* form */
+$('#form').addEventListener('submit',function(e){e.preventDefault();this.querySelectorAll('label,button').forEach(function(x){x.style.display='none'});var o=$('#ok');o.style.display='block'});
+})();
+</script>
+</body>
+</html>
