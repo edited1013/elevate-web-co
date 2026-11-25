@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Angelis Sweets">
+<meta name="theme-color" content="#FFF8F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1D1215" media="(prefers-color-scheme: dark)">
+<title>Angelis Sweets &amp; Bakery | Custom Cakes &amp; Cookies in Dunkirk, NY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF8F3;--surf:#fff;--ink:#2B1A1F;--mute:#7A6168;--pink:#F9D3DE;--soft:#FDE9EF;--berry:#C42A5A;--berry2:#A31F48;--onberry:#fff;--line:#F0D9DF;--deep:#2B1A1F;--gold:#E0A96D;
+--serif:"Fraunces",Georgia,serif;--sans:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1D1215;--surf:#291A1E;--ink:#FBEFF2;--mute:#C4A8B0;--pink:#4A2630;--soft:#35202A;--berry:#FF7FA3;--berry2:#FF9DB9;--onberry:#2B1A1F;--line:#42272F;--deep:#140B0E}}
+:root[data-theme="dark"]{--bg:#1D1215;--surf:#291A1E;--ink:#FBEFF2;--mute:#C4A8B0;--pink:#4A2630;--soft:#35202A;--berry:#FF7FA3;--berry2:#FF9DB9;--onberry:#2B1A1F;--line:#42272F;--deep:#140B0E}
+*,*::before,*::after{box-sizing:inherit;-webkit-tap-highlight-color:transparent}
+html{height:auto;scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--sans);overflow-x:hidden;padding-bottom:84px;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:45}
+h1,h2,h3{font-family:var(--serif);line-height:1.08;margin:0;letter-spacing:-.01em}
+p{margin:0}button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;touch-action:manipulation}
+input{font:inherit;font-size:16px;color:var(--ink)}
+:focus-visible{outline:3px solid var(--berry);outline-offset:2px}
+svg{display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.demo{background:var(--deep);color:#fff;font-size:13px;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.demo button{background:rgba(255,255,255,.16);border-radius:99px;padding:6px 14px;font-weight:600;font-size:12px;min-height:32px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:saturate(1.6) blur(16px);backdrop-filter:saturate(1.6) blur(16px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--ink)}
+.logo b{font:700 22px var(--serif)}.logo small{font-size:12px;color:var(--berry);font-weight:600}
+nav.d{display:none;gap:26px;font-weight:500;font-size:15px}nav.d a{color:var(--mute);text-decoration:none;padding:8px 0}nav.d a:hover{color:var(--berry)}
+.bagbtn{position:relative;width:46px;height:46px;border-radius:50%;background:var(--soft);color:var(--berry);display:grid;place-items:center;transition:transform .2s}
+.bagbtn:active{transform:scale(.92)}
+.badge{position:absolute;top:-2px;right:-2px;min-width:21px;height:21px;border-radius:99px;background:var(--berry);color:var(--onberry);font-size:12px;font-weight:700;display:grid;place-items:center;padding:0 5px;transform:scale(0);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.badge.on{transform:scale(1)}.bump{animation:bump .45s}
+@keyframes bump{40%{transform:scale(1.35)}}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+/* hero */
+.hero{padding:28px 0 36px;overflow:hidden}
+.hero .wrap{display:grid;gap:8px;align-items:center}
+.hero h1{font-size:clamp(38px,10.5vw,68px);font-weight:700}
+.hero .lead{color:var(--mute);font-size:17px;max-width:30em;margin:16px 0 22px}
+.tag{display:inline-block;background:var(--soft);color:var(--berry);font-weight:600;font-size:13px;padding:6px 14px;border-radius:99px;margin-bottom:16px}
+.cta{display:flex;flex-direction:column;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 28px;border-radius:99px;font-weight:700;text-decoration:none;transition:transform .18s,background .2s}
+.btn:active{transform:scale(.96)}
+.btn.p{background:var(--berry);color:var(--onberry)}.btn.p:hover{background:var(--berry2)}
+.btn.s{background:var(--surf);border:1.5px solid var(--line);color:var(--ink)}
+.stage{position:relative;max-width:340px;width:100%;margin:10px auto 0;aspect-ratio:1/1}
+.stage::before{content:"";position:absolute;inset:8% 4% 4%;border-radius:50% 50% 44% 44%;background:var(--pink);animation:grow .9s .1s cubic-bezier(.2,.8,.2,1) both}
+@keyframes grow{from{transform:scale(.6);opacity:0}}
+.stage svg{position:relative;width:100%;height:100%}
+.hero-cake .l{animation:drop .75s cubic-bezier(.3,1.35,.5,1) both;animation-delay:var(--d)}
+@keyframes drop{from{transform:translateY(-70px);opacity:0}}
+.hero-cake .berry{transform-box:fill-box;transform-origin:50% 100%;animation:pop .6s 1.35s cubic-bezier(.3,1.8,.5,1) both}
+@keyframes pop{from{transform:scale(0)}}
+.hero-cake .sp{animation:fall 1.1s ease-in both;animation-delay:var(--d)}
+@keyframes fall{from{transform:translateY(-120px);opacity:0}60%{opacity:1}}
+.cake-g{animation:bob 4.5s 2.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.chip-fl{position:absolute;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:8px 12px;font-size:13px;font-weight:600;box-shadow:0 10px 24px -12px rgba(74,21,37,.35);animation:rise .7s both}
+.chip-fl.a{left:-4px;bottom:14%;animation-delay:1.7s}.chip-fl.b{right:-4px;top:18%;animation-delay:1.9s}
+@keyframes rise{from{opacity:0;transform:translateY(14px) scale(.9)}}
+.belt{overflow:hidden;background:var(--berry);color:var(--onberry);padding:13px 0;font:500 20px var(--serif)}
+.belt div{display:flex;gap:34px;width:max-content;animation:belt 38s linear infinite}
+.belt span::after{content:"\2022";margin-left:34px;opacity:.55}
+@keyframes belt{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:56px 0}
+.hd{margin-bottom:24px}.hd h2{font-size:clamp(30px,8vw,46px);font-weight:700}.hd p{color:var(--mute);margin-top:10px;max-width:34em}
+.chips{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;margin:0 -20px 18px;padding:2px 20px 6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{scroll-snap-align:start;white-space:nowrap;min-height:44px;padding:0 18px;border-radius:99px;border:1.5px solid var(--line);background:var(--surf);font-weight:600;font-size:14px;color:var(--mute);transition:all .25s}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip:active{transform:scale(.95)}
+#grid{display:grid;gap:12px}
+.card{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;background:var(--surf);border:1px solid var(--line);border-radius:24px;padding:14px}
+.card .em{width:64px;height:64px;border-radius:20px;background:var(--soft);display:grid;place-items:center;font-size:32px;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.card:active .em{transform:rotate(-8deg) scale(1.08)}
+.card h3{font-size:19px;font-weight:700}.card p{font-size:14px;color:var(--mute);margin-top:3px;line-height:1.4}
+.card .tg{font-size:12px;font-weight:700;color:var(--berry);display:block;margin-bottom:3px}
+.add{display:flex;flex-direction:column;align-items:center;gap:6px}
+.add b{font:700 17px var(--serif)}
+.addb{min-width:64px;height:44px;border-radius:99px;background:var(--soft);color:var(--berry);font-weight:700;font-size:14px;transition:all .2s}
+.addb:hover,.addb:active{background:var(--berry);color:var(--onberry);transform:scale(.94)}
+/* builder */
+#build{background:var(--soft)}
+.bgrid{display:grid;gap:16px}
+.view{background:var(--surf);border:1px solid var(--line);border-radius:28px;padding:18px 18px 22px;text-align:center}
+.view svg{width:min(100%,280px);height:auto;margin:0 auto}
+.view h3{font-size:22px;font-weight:700;margin-top:4px}.view p{color:var(--mute);font-size:14px}
+.pop{animation:bpop .55s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes bpop{from{transform:translateY(-26px) scale(.9);opacity:0}}
+.steps{background:var(--surf);border:1px solid var(--line);border-radius:28px;padding:22px 18px;display:grid;gap:26px}
+.steps h3{font-size:20px;font-weight:700;margin-bottom:12px;display:flex;justify-content:space-between;align-items:baseline}
+.steps h3 small{font:500 13px var(--sans);color:var(--mute)}
+.sizes{display:grid;gap:10px}
+.size{text-align:left;padding:16px;border-radius:20px;border:1.5px solid var(--line);background:var(--bg);transition:all .25s;display:block;width:100%}
+.size[aria-pressed="true"]{border-color:var(--berry);background:var(--soft);box-shadow:0 0 0 3px color-mix(in srgb,var(--berry) 18%,transparent)}
+.size div{display:flex;justify-content:space-between;font-weight:700}.size span{color:var(--berry)}.size p{font-size:14px;color:var(--mute);margin-top:4px}
+.fl{display:flex;flex-wrap:wrap;gap:8px}
+.fb{min-height:44px;padding:0 16px;border-radius:99px;border:1.5px solid var(--line);background:var(--bg);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+.fb i{width:14px;height:14px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.fb[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.fb:active{transform:scale(.94)}
+.tp{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tb{min-height:48px;padding:0 14px;border-radius:16px;border:1.5px solid var(--line);background:var(--bg);font-weight:600;font-size:14px;display:flex;justify-content:space-between;align-items:center;text-align:left;transition:all .2s}
+.tb[aria-pressed="true"]{border-color:var(--berry);background:var(--soft);color:var(--berry)}
+.tb:active{transform:scale(.96)}
+.note{width:100%;min-height:52px;border-radius:16px;border:1.5px solid var(--line);background:var(--bg);padding:0 16px}
+.note:focus{outline:none;border-color:var(--berry)}
+.buy{position:sticky;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:30;margin-top:16px;background:var(--ink);color:var(--bg);border-radius:99px;padding:8px 8px 8px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 18px 36px -14px rgba(43,26,31,.6)}
+.buy small{display:block;font-size:12px;opacity:.7;line-height:1.1}.buy b{font:700 24px var(--serif);line-height:1.1}
+.buy .btn{min-height:50px}
+/* story */
+#about{background:var(--deep);color:#FBEFF2}
+#about h2{font-size:clamp(30px,8vw,46px)}#about .lead{color:#E9CBD3;margin:14px 0 24px}
+.pk{display:grid;gap:12px;counter-reset:s}
+.pk div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:18px 18px 18px 64px;position:relative;font-size:15px;color:#E9CBD3}
+.pk div::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:50%;background:#FF7FA3;color:#2B1A1F;font:700 17px/34px var(--serif);text-align:center}
+.pk b{display:block;color:#fff;font-size:16px;margin-bottom:2px}
+footer{padding:32px 0 20px;text-align:center;color:var(--mute);font-size:14px}
+footer b{display:block;font:700 22px var(--serif);color:var(--ink)}
+footer button{color:var(--berry);font-weight:700;text-decoration:underline;min-height:44px}
+/* tab bar */
+.tabs{position:fixed;left:12px;right:12px;bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;background:color-mix(in srgb,var(--surf) 86%,transparent);-webkit-backdrop-filter:saturate(1.8) blur(20px);backdrop-filter:saturate(1.8) blur(20px);border:1px solid var(--line);border-radius:26px;padding:6px;box-shadow:0 14px 34px -14px rgba(43,26,31,.4)}
+.tabs a,.tabs button{flex:1;min-height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:11px;font-weight:600;color:var(--mute);text-decoration:none;border-radius:20px;position:relative;transition:color .2s,background .3s}
+.tabs .on{color:var(--berry);background:var(--soft)}
+.tabs .badge{top:4px;right:calc(50% - 22px)}
+/* sheets */
+.scrim{position:fixed;inset:0;background:rgba(20,8,12,.5);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:60;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.scrim.open{opacity:1;visibility:visible}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-height:90dvh;background:var(--bg);border-radius:30px 30px 0 0;transform:translateY(105%);visibility:hidden;transition:transform .45s cubic-bezier(.32,.72,0,1),visibility .45s;z-index:70;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom,0px)}
+.sheet.open{transform:none;visibility:visible}.sheet.drag{transition:none}
+.grab{padding:10px 0 4px;touch-action:none;cursor:grab}.grab::after{content:"";display:block;width:42px;height:5px;border-radius:9px;background:var(--line);margin:0 auto}
+.sh{display:flex;justify-content:space-between;align-items:center;padding:6px 20px 14px;border-bottom:1px solid var(--line)}
+.sh h3{font-size:26px}.sh p{font-size:13px;color:var(--mute)}
+.x{width:44px;height:44px;border-radius:50%;background:var(--soft);display:grid;place-items:center}
+.sb{padding:16px 20px 22px;overflow-y:auto;overscroll-behavior:contain}
+.line{display:flex;justify-content:space-between;gap:12px;background:var(--surf);border:1px solid var(--line);border-radius:20px;padding:14px;margin-bottom:10px;animation:rise .4s both}
+.line p{font-size:13px;color:var(--mute);line-height:1.4;margin-top:2px}.line b{font-size:15px}
+.qty{display:flex;align-items:center;gap:4px;margin-top:8px}
+.qty button{width:36px;height:36px;border-radius:50%;background:var(--soft);color:var(--berry);font-weight:700;font-size:18px}
+.qty span{min-width:22px;text-align:center;font-weight:700}
+.empty{text-align:center;padding:36px 8px}.empty .em{font-size:44px}.empty h3{font-size:22px;margin:8px 0 6px}.empty p{color:var(--mute);font-size:14px}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin:14px 0}.tot b{font:700 30px var(--serif);color:var(--berry)}
+form{display:grid;gap:10px}
+form input{min-height:52px;border-radius:16px;border:1.5px solid var(--line);background:var(--surf);padding:0 16px;width:100%}
+form input:focus{outline:none;border-color:var(--berry)}
+form label{font-size:13px;font-weight:600;color:var(--mute);margin-bottom:-4px}
+.ok{text-align:center;padding:28px 6px}.ok svg{width:70px;height:70px;margin:0 auto 10px;stroke:var(--berry);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.ok path{stroke-dasharray:60;animation:draw .7s .15s ease-out both}.ok circle{stroke-dasharray:190;animation:draw .7s ease-out both}
+@keyframes draw{from{stroke-dashoffset:190}}
+.ok h3{font-size:26px}.ok p{color:var(--mute);margin-top:6px;font-size:14px}
+.mp{background:var(--soft);border-radius:20px;padding:14px 16px;font-size:14px;display:grid;gap:8px;margin:14px 0 18px}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px) scale(.92);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:99px;font-size:14px;font-weight:600;z-index:90;opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.3,1.4,.5,1);max-width:calc(100vw - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0) scale(1)}
+.fly{position:fixed;z-index:95;width:18px;height:18px;border-radius:50%;background:var(--berry);pointer-events:none;left:0;top:0}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--i,0)*60ms)}
+.js .rv.in{opacity:1;transform:none}
+@media(min-width:768px){
+body{padding-bottom:0}.tabs{display:none}nav.d{display:flex}
+.hero{padding:56px 0 64px}.hero .wrap{grid-template-columns:1.15fr 1fr;gap:40px}.cta{flex-direction:row}
+section{padding:88px 0}.chips{margin:0 0 20px;padding:2px 0 6px}
+#grid{grid-template-columns:1fr 1fr}
+.bgrid{grid-template-columns:5fr 7fr;align-items:start}.view{position:sticky;top:90px}
+.sizes{grid-template-columns:1fr 1fr}.tp{grid-template-columns:repeat(3,1fr)}
+.buy{bottom:20px}.pk{grid-template-columns:repeat(3,1fr)}
+#about .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:center}
+.sheet{left:auto;right:16px;bottom:16px;width:420px;max-height:calc(100dvh - 32px);border-radius:30px;transform:translateX(115%)}
+.grab{display:none}.sh{padding-top:20px}.toast{bottom:28px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important}html{scroll-behavior:auto}.belt div{animation:none}}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<div class="demo"><span>Concept preview by <b>Elevate Web</b></span><button type="button" data-open="about-sheet">Claim site</button></div>
+
+<header>
+<div class="wrap">
+<a class="logo" href="#top"><b>Angelis Sweets</b><small>Dunkirk, NY</small></a>
+<nav class="d" aria-label="Main"><a href="#menu">Menu</a><a href="#build">Cake builder</a><a href="#about">Our story</a><a href="#pickup">Pickup</a></nav>
+<button class="bagbtn" type="button" data-open="bag-sheet" id="bagTop" aria-label="Open your bag">
+<svg class="ico" viewBox="0 0 24 24"><path d="M6 8h12l1 12H5zM9 8a3 3 0 016 0"/></svg><span class="badge" id="badgeTop">0</span></button>
+</div>
+</header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<span class="tag">Baked fresh from home with love</span>
+<h1>Custom cakes and cookies, baked to order in Dunkirk.</h1>
+<p class="lead">Lunchbox and grande cakes, stuffed cookies and warm funnel cake for celebrations across Dunkirk and Fredonia. Pick it, build it, pick it up.</p>
+<div class="cta"><a class="btn p" href="#build">Design your cake</a><a class="btn s" href="#menu">See the menu</a></div>
+</div>
+<div class="stage" aria-hidden="true">
+<svg viewBox="0 0 240 240"><g class="hero-cake">
+<ellipse cx="120" cy="214" rx="96" ry="12" fill="#F2A9BD" opacity=".7"/>
+<g class="cake-g">
+<g class="l" style="--d:.35s"><rect x="36" y="152" width="168" height="58" rx="16" fill="#F59DB5"/><rect x="34" y="150" width="172" height="15" rx="7.5" fill="#FFF7F2"/><rect x="52" y="160" width="10" height="20" rx="5" fill="#FFF7F2"/><rect x="104" y="160" width="10" height="26" rx="5" fill="#FFF7F2"/><rect x="170" y="160" width="10" height="18" rx="5" fill="#FFF7F2"/></g>
+<g class="l" style="--d:.65s"><rect x="56" y="108" width="128" height="46" rx="14" fill="#E5517B"/><rect x="54" y="106" width="132" height="14" rx="7" fill="#FFF7F2"/><rect x="74" y="115" width="10" height="19" rx="5" fill="#FFF7F2"/><rect x="138" y="115" width="10" height="24" rx="5" fill="#FFF7F2"/></g>
+<g class="l" style="--d:.95s"><rect x="78" y="70" width="84" height="40" rx="12" fill="#FBB6C8"/><rect x="76" y="68" width="88" height="13" rx="6.5" fill="#FFF7F2"/><rect x="92" y="76" width="9" height="17" rx="4.5" fill="#FFF7F2"/></g>
+<g class="berry"><circle cx="120" cy="56" r="15" fill="#E0264F"/><path d="M109 45c5-7 17-7 22 0-6 3-16 3-22 0z" fill="#4CAF6A"/><circle cx="114" cy="56" r="1.8" fill="#FFD9A0"/><circle cx="123" cy="53" r="1.8" fill="#FFD9A0"/><circle cx="125" cy="62" r="1.8" fill="#FFD9A0"/></g>
+</g>
+<rect class="sp" style="--d:1.5s" x="44" y="70" width="12" height="4" rx="2" fill="#E0A96D" transform="rotate(30 50 72)"/>
+<rect class="sp" style="--d:1.65s" x="184" y="60" width="12" height="4" rx="2" fill="#C42A5A" transform="rotate(-25 190 62)"/>
+<rect class="sp" style="--d:1.8s" x="60" y="40" width="12" height="4" rx="2" fill="#7CC4A0" transform="rotate(-50 66 42)"/>
+<rect class="sp" style="--d:1.95s" x="170" y="96" width="12" height="4" rx="2" fill="#E0A96D" transform="rotate(60 176 98)"/>
+</g></svg>
+<div class="chip-fl a">🍪 Cookies from $1</div><div class="chip-fl b">🎂 Cakes from $5</div>
+</div>
+</div></div>
+
+<div class="belt" aria-hidden="true"><div id="belt"></div></div>
+
+<section id="menu"><div class="wrap">
+<div class="hd rv"><h2>Fresh from the oven</h2><p>Everything is made to order, so tell us when you want it and we will bake for that day.</p></div>
+<div class="chips rv" role="group" aria-label="Menu categories" id="chips"></div>
+<div id="grid"></div>
+</div></section>
+
+<section id="build"><div class="wrap">
+<div class="hd rv"><h2>Build your cake</h2><p>Choose a size, pick one of 15 homemade flavors and add toppings. The preview updates as you go.</p></div>
+<div class="bgrid">
+<div class="view rv"><div id="cake" aria-live="polite"></div><h3 id="vName"></h3><p id="vSub"></p></div>
+<div class="steps rv">
+<div><h3>Size</h3><div class="sizes" id="sizes"></div></div>
+<div><h3>Flavor</h3><div class="fl" id="flavors"></div></div>
+<div><h3>Toppings <small>+$2.00 each</small></h3><div class="tp" id="tops"></div></div>
+<div><h3><label for="note">Theme or writing</label></h3><input class="note" id="note" type="text" maxlength="80" autocomplete="off" placeholder="Pastel pink and gold, “Happy Birthday Sofia”"></div>
+</div>
+</div>
+<div class="buy"><div><small>Estimated total</small><b id="price">$20.00</b></div><button class="btn p" type="button" id="addCake">Add to bag</button></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<div class="rv"><h2>Homegrown in Chautauqua County</h2>
+<p class="lead">Every cake, cookie and funnel cake is made in small batches right here in the Dunkirk and Fredonia community. Nothing sits on a shelf. It is baked for your pickup window.</p></div>
+<div class="pk" id="pickup">
+<div class="rv" style="--i:1"><b>Add to your bag</b>Choose treats or build a custom cake. No payment is needed to send a request.</div>
+<div class="rv" style="--i:2"><b>Pick your date</b>Tell us the day you need it and any theme, colors or flavor ideas.</div>
+<div class="rv" style="--i:3"><b>Pick up in Dunkirk or Fredonia</b>We confirm your pickup details by text once your order is accepted.</div>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><b>Angelis Sweets &amp; Bakery</b>Dunkirk and Fredonia, NY<br>Demo by <button type="button" data-open="about-sheet">Elevate Web</button></div></footer>
+
+<nav class="tabs" aria-label="Quick navigation">
+<a href="#menu" data-t="menu"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r=".6"/><circle cx="14" cy="9" r=".6"/><circle cx="13" cy="15" r=".6"/></svg>Menu</a>
+<a href="#build" data-t="build"><svg class="ico" viewBox="0 0 24 24"><path d="M4 20h16M5 20v-7h14v7M5 13c2 2 4-1 7 0s5 2 7 0M12 9V6"/></svg>Build</a>
+<button type="button" data-open="bag-sheet" id="bagTab"><svg class="ico" viewBox="0 0 24 24"><path d="M6 8h12l1 12H5zM9 8a3 3 0 016 0"/></svg>Bag<span class="badge" id="badgeTab">0</span></button>
+<a href="#about" data-t="about"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Pickup</a>
+</nav>
+
+<div class="scrim" id="scrim"></div>
+
+<div class="sheet" id="bag-sheet" role="dialog" aria-modal="true" aria-labelledby="bagH">
+<div class="grab"></div>
+<div class="sh"><div><h3 id="bagH">Your sweet bag</h3><p>Dunkirk / Fredonia pickup request</p></div><button class="x" type="button" data-close aria-label="Close bag"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div class="sb" id="bagBody"></div>
+</div>
+
+<div class="sheet" id="about-sheet" role="dialog" aria-modal="true" aria-labelledby="abH">
+<div class="grab"></div>
+<div class="sh"><div><h3 id="abH">Built for Angelis Sweets</h3><p>Concept by Elevate Web</p></div><button class="x" type="button" data-close aria-label="Close"><svg class="ico" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div class="sb"><p style="color:var(--mute);font-size:15px">A mobile-first storefront that turns social visitors into clear cake and cookie orders, with no marketplace fees.</p>
+<div class="mp"><p><b>Instagram ready.</b> Loads fast inside Instagram and TikTok browsers.</p><p><b>Cake builder.</b> Flavor, size and toppings in one place, so fewer DMs.</p><p><b>Local search.</b> Written for Dunkirk and Fredonia searches.</p></div>
+<button class="btn p" type="button" data-close style="width:100%">Back to the demo</button></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var money=function(n){return '$'+n.toFixed(2)};
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var buzz=function(){try{navigator.vibrate&&navigator.vibrate(10)}catch(e){}};
+
+var ITEMS=[
+{id:'grande',n:'Grande custom cake',c:'cakes',p:20,t:'Most popular',e:'🎂',d:'Two or three layers, baked to order in your flavor and theme.'},
+{id:'lunch',n:'Lunchbox mini cake',c:'cakes',p:5,t:'Fan favorite',e:'🧁',d:'A personal-size bento cake for gifts, treats and date night.'},
+{id:'nutella',n:'Nutella stuffed cookie',c:'cookies',p:2,t:'Best seller',e:'🍫',d:'Thick and soft, filled with Nutella and finished with a drizzle.'},
+{id:'caramel',n:'Salted caramel cheesecake cookie',c:'cookies',p:2,t:'Signature',e:'🍪',d:'Graham cracker cookie with cheesecake frosting and salted caramel.'},
+{id:'funnel',n:'Personalized funnel cake',c:'specials',p:3,t:'Fresh and warm',e:'🎡',d:'Crispy, golden and dusted with powdered sugar. Add sweet extras.'},
+{id:'bundt',n:'Seasonal mini bundt cake',c:'specials',p:4,t:'Seasonal',e:'🍩',d:'Moist mini bundt with a glaze that changes with the season.'},
+{id:'choc',n:'Browned butter chocolate chip',c:'cookies',p:1,t:'Classic',e:'🍪',d:'Browned butter dough, gourmet chocolate chips and crisp edges.'},
+{id:'snicker',n:'Soft cinnamon snickerdoodle',c:'cookies',p:1,t:'Cozy classic',e:'✨',d:'Pillowy cinnamon-sugar cookie made from scratch.'},
+{id:'pb',n:'Soft and crunchy peanut butter',c:'cookies',p:1,t:'Homemade',e:'🥜',d:'Tender center with lightly crisp edges.'}];
+var CATS=[['all','All treats'],['cakes','Custom cakes'],['cookies','Gourmet cookies'],['specials','Funnel and bundt']];
+var FLAV={'Vanilla':'#F6E3B4','Chocolate':'#6B3E2E','White Chocolate':'#F3E9DC','Swirl':'#B98F78','Strawberry':'#F59DB5','Raspberry':'#D8456F','Cinnamon':'#C98B5B','Red Velvet':'#B3203C','Cookies & Cream':'#CFC7C4','Confetti':'#FBE7A1','Rainbow':'#A8D8F0','Cookie':'#D9A768','Almond':'#E8D3AE','Coffee':'#8A5F45','Lemon':'#FBE46B'};
+var TOPS=['Seasonal Fruit','Chocolate Chips','Floral Decor','Candy','Candy Bars','Mini Cookies','Cookie Crumble','Nuts','Birthday Candles'];
+var SIZES=[{k:'grande',n:'Grande layer cake',full:'Grande custom cake',p:20,d:'Full-size, two or three layers, themed to your event.'},{k:'lunch',n:'Lunchbox mini cake',full:'Lunchbox mini cake',p:5,d:'Personal bento size for gifts and cravings.'}];
+
+var S={size:'grande',flavor:'Strawberry',tops:[]},cart=[],filter='all',shownPrice=20,lastOpener=null;
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+var sizeObj=function(){return SIZES.filter(function(z){return z.k===S.size})[0]};
+var total=function(){return sizeObj().p+S.tops.length*2};
+
+/* reveal on scroll */
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'}):null;
+function watch(){$$('.rv:not(.in)').forEach(function(el){io?io.observe(el):el.classList.add('in')})}
+
+/* flavors belt */
+var names=Object.keys(FLAV);$('#belt').innerHTML=names.concat(names).map(function(f){return '<span>'+esc(f)+'</span>'}).join('');
+
+/* menu */
+$('#chips').innerHTML=CATS.map(function(c){return '<button class="chip" type="button" data-cat="'+c[0]+'" aria-pressed="'+(c[0]==='all')+'">'+c[1]+'</button>'}).join('');
+function renderMenu(){
+ var list=filter==='all'?ITEMS:ITEMS.filter(function(i){return i.c===filter});
+ $('#grid').innerHTML=list.map(function(i,k){return '<article class="card rv" style="--i:'+k+'"><div class="em" aria-hidden="true">'+i.e+'</div><div><span class="tg">'+i.t+'</span><h3>'+i.n+'</h3><p>'+i.d+'</p></div><div class="add"><b>'+money(i.p)+'</b><button class="addb" type="button" data-add="'+i.id+'" aria-label="Add '+esc(i.n)+' to bag">Add</button></div></article>'}).join('');
+ watch();
+}
+$('#chips').addEventListener('click',function(e){
+ var b=e.target.closest('.chip');if(!b)return;
+ filter=b.dataset.cat;buzz();
+ $$('.chip').forEach(function(c){c.setAttribute('aria-pressed',String(c===b))});
+ b.scrollIntoView({inline:'center',block:'nearest',behavior:reduce?'auto':'smooth'});
+ renderMenu();
+});
+$('#grid').addEventListener('click',function(e){
+ var b=e.target.closest('[data-add]');if(!b)return;
+ var it=ITEMS.filter(function(i){return i.id===b.dataset.add})[0];
+ addToCart(it.id,it.n,it.p,'Standard fresh batch',b);
+});
+
+/* builder */
+function cakeSVG(){
+ var g=S.size==='grande',n=g?3:1,h=g?40:58,w=g?164:112,col=FLAV[S.flavor],s='',i;
+ var has=function(t){return S.tops.indexOf(t)>-1};
+ var others=S.tops.filter(function(t){return t!=='Birthday Candles'&&t!=='Seasonal Fruit'}).length;
+ for(i=0;i<n;i++){
+  var wi=w-i*(g?26:0),x=(240-wi)/2,y=190-(i+1)*h;
+  s+='<g class="pop" style="animation-delay:'+(i*70)+'ms"><rect x="'+x+'" y="'+y+'" width="'+wi+'" height="'+h+'" rx="12" fill="'+col+'"/><rect x="'+(x-2)+'" y="'+(y-2)+'" width="'+(wi+4)+'" height="14" rx="7" fill="#FFF7F2"/>';
+  for(var k=0;k<3;k++){s+='<rect x="'+(x+14+k*(wi-40)/2.2)+'" y="'+(y+8)+'" width="9" height="'+(13+(k%2)*9)+'" rx="4.5" fill="#FFF7F2"/>'}
+  s+='</g>';
+ }
+ var top=190-n*h-2,tw=w-(n-1)*(g?26:0),tx=(240-tw)/2;
+ if(has('Seasonal Fruit'))s+='<g class="pop" style="animation-delay:300ms"><circle cx="'+(120-22)+'" cy="'+(top-4)+'" r="10" fill="#E0264F"/><circle cx="'+(120+22)+'" cy="'+(top-4)+'" r="10" fill="#C42A5A"/><circle cx="120" cy="'+(top-8)+'" r="11" fill="#E0264F"/><path d="M112 '+(top-18)+'c4-5 12-5 16 0-4 2-12 2-16 0z" fill="#4CAF6A"/></g>';
+ if(has('Birthday Candles')){for(var c=0;c<3;c++){var cx=96+c*24;s+='<g class="pop" style="animation-delay:'+(350+c*60)+'ms"><rect x="'+cx+'" y="'+(top-30)+'" width="6" height="28" rx="3" fill="'+['#7CC4A0','#F9D3DE','#E0A96D'][c]+'"/><ellipse cx="'+(cx+3)+'" cy="'+(top-37)+'" rx="4" ry="6.5" fill="#FFB020"/></g>'}}
+ var pal=['#C42A5A','#E0A96D','#7CC4A0','#6B3E2E','#F2A9BD'];
+ for(var j=0;j<Math.min(others,3)*4;j++){var px=tx+12+(j*37%(tw-24));s+='<rect class="pop" style="animation-delay:'+(200+j*25)+'ms" x="'+px+'" y="'+(top+(j%3)*3+2)+'" width="9" height="3.5" rx="1.7" fill="'+pal[j%5]+'" transform="rotate('+(j*47%120-60)+' '+(px+4)+' '+(top+4)+')"/>'}
+ return '<svg viewBox="0 0 240 220" role="img" aria-label="'+esc(S.flavor)+' '+esc(sizeObj().full)+' preview"><ellipse cx="120" cy="193" rx="'+(g?100:76)+'" ry="11" fill="#F2A9BD" opacity=".6"/>'+s+'</svg>';
+}
+function countTo(el,from,to){
+ if(reduce||from===to){el.textContent=money(to);return}
+ var t0=performance.now(),d=380;
+ (function step(t){var p=Math.min(1,(t-t0)/d),v=from+(to-from)*(1-Math.pow(1-p,3));el.textContent=money(v);if(p<1)requestAnimationFrame(step);else el.textContent=money(to)})(t0);
+}
+function renderBuilder(){
+ $('#cake').innerHTML=cakeSVG();
+ $('#vName').textContent=S.flavor+' '+sizeObj().full.toLowerCase();
+ $('#vSub').textContent=S.tops.length?S.tops.join(', '):'No toppings yet';
+ var t=total();countTo($('#price'),shownPrice,t);shownPrice=t;
+}
+$('#sizes').innerHTML=SIZES.map(function(z){return '<button class="size" type="button" data-size="'+z.k+'" aria-pressed="'+(z.k===S.size)+'"><div>'+z.n+'<span>'+money(z.p)+'</span></div><p>'+z.d+'</p></button>'}).join('');
+$('#flavors').innerHTML=names.map(function(f){return '<button class="fb" type="button" data-fl="'+esc(f)+'" aria-pressed="'+(f===S.flavor)+'"><i style="background:'+FLAV[f]+'"></i>'+esc(f)+'</button>'}).join('');
+$('#tops').innerHTML=TOPS.map(function(t){return '<button class="tb" type="button" data-top="'+esc(t)+'" aria-pressed="false"><span>'+esc(t)+'</span><span aria-hidden="true">+</span></button>'}).join('');
+$('#sizes').addEventListener('click',function(e){var b=e.target.closest('[data-size]');if(!b)return;S.size=b.dataset.size;buzz();$$('.size').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});renderBuilder()});
+$('#flavors').addEventListener('click',function(e){var b=e.target.closest('[data-fl]');if(!b)return;S.flavor=b.dataset.fl;buzz();$$('.fb').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});renderBuilder()});
+$('#tops').addEventListener('click',function(e){
+ var b=e.target.closest('[data-top]');if(!b)return;var t=b.dataset.top,k=S.tops.indexOf(t);
+ if(k>-1)S.tops.splice(k,1);else S.tops.push(t);
+ buzz();var on=k===-1;b.setAttribute('aria-pressed',String(on));b.lastChild.textContent=on?'✓':'+';renderBuilder();
+});
+$('#addCake').addEventListener('click',function(e){
+ var note=$('#note').value.trim();
+ var det=['Flavor: '+S.flavor,S.tops.length?'Toppings: '+S.tops.join(', '):'',note?'Note: “'+note+'”':''].filter(Boolean).join(' · ');
+ addToCart('cake-'+Date.now(),sizeObj().full,total(),det,e.currentTarget);
+});
+
+/* cart */
+function addToCart(key,name,price,details,from){
+ var f=cart.filter(function(l){return l.key===key})[0];
+ if(f)f.q++;else cart.push({key:key,name:name,price:price,details:details,q:1});
+ buzz();renderCart();fly(from);toast('Added '+name.toLowerCase()+' to your bag');
+}
+function count(){return cart.reduce(function(a,l){return a+l.q},0)}
+function sum(){return cart.reduce(function(a,l){return a+l.q*l.price},0)}
+function badges(){
+ var n=count();
+ ['#badgeTop','#badgeTab'].forEach(function(s){var b=$(s);b.textContent=n;b.classList.toggle('on',n>0);b.classList.remove('bump');void b.offsetWidth;if(n)b.classList.add('bump')});
+}
+function renderCart(done){
+ badges();var body=$('#bagBody');
+ if(done){
+  body.innerHTML='<div class="ok"><svg viewBox="0 0 70 70"><circle cx="35" cy="35" r="30"/><path d="M22 36l9 9 17-19"/></svg><h3>Request sent</h3><p>This is a demo, so nothing was sent. In the live site, Angelis Sweets would text you to confirm pickup.</p></div><button class="btn p" type="button" data-close style="width:100%">Keep browsing</button>';return;
+ }
+ if(!cart.length){body.innerHTML='<div class="empty"><div class="em">🧁</div><h3>Your bag is empty</h3><p>Add cookies or build a custom cake to start your pickup request.</p></div><a class="btn p" href="#menu" data-close style="width:100%">Browse the menu</a>';return}
+ var min=new Date();min.setMinutes(min.getMinutes()-min.getTimezoneOffset());min=min.toISOString().slice(0,10);
+ body.innerHTML=cart.map(function(l){return '<div class="line"><div><b>'+esc(l.name)+'</b><p>'+esc(l.details)+'</p><div class="qty"><button type="button" data-q="-1" data-k="'+esc(l.key)+'" aria-label="Remove one">−</button><span>'+l.q+'</span><button type="button" data-q="1" data-k="'+esc(l.key)+'" aria-label="Add one">+</button></div></div><b>'+money(l.q*l.price)+'</b></div>'}).join('')+
+ '<div class="tot"><span style="color:var(--mute);font-weight:600">Estimated total</span><b>'+money(sum())+'</b></div>'+
+ '<form id="orderForm"><label for="fn">Your name</label><input id="fn" required autocomplete="name"><label for="fp">Phone number for pickup text</label><input id="fp" type="tel" required autocomplete="tel" inputmode="tel"><label for="fd">Pickup date</label><input id="fd" type="date" required min="'+min+'"><button class="btn p" type="submit">Send order request</button></form>';
+}
+$('#bagBody').addEventListener('click',function(e){
+ var q=e.target.closest('[data-q]');
+ if(q){var l=cart.filter(function(x){return x.key===q.dataset.k})[0];if(!l)return;l.q+=+q.dataset.q;if(l.q<1)cart=cart.filter(function(x){return x!==l});buzz();renderCart();return}
+ if(e.target.closest('[data-close]'))closeSheets();
+});
+$('#bagBody').addEventListener('submit',function(e){e.preventDefault();cart=[];buzz();renderCart(true)});
+
+/* fly-to-bag */
+function fly(from){
+ if(reduce||!from||!from.animate)return;
+ var vis=$('#bagTab').offsetParent?$('#bagTab'):$('#bagTop');
+ var a=from.getBoundingClientRect(),b=vis.getBoundingClientRect();
+ var d=document.createElement('div');d.className='fly';document.body.appendChild(d);
+ var x0=a.left+a.width/2-9,y0=a.top+a.height/2-9,x1=b.left+b.width/2-9,y1=b.top+b.height/2-9;
+ var an=d.animate([{transform:'translate('+x0+'px,'+y0+'px) scale(1)',opacity:1},{transform:'translate('+((x0+x1)/2)+'px,'+(Math.min(y0,y1)-70)+'px) scale(1.2)',opacity:1,offset:.5},{transform:'translate('+x1+'px,'+y1+'px) scale(.3)',opacity:.4}],{duration:650,easing:'cubic-bezier(.4,0,.2,1)'});
+ an.onfinish=function(){d.remove()};
+}
+
+/* toast */
+var tt;function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('on')},2400)}
+
+/* sheets */
+var openSheet=null;
+function open(id,opener){
+ closeSheets(true);
+ var s=document.getElementById(id);if(!s)return;
+ lastOpener=opener||null;openSheet=s;
+ if(id==='bag-sheet')renderCart();
+ s.classList.add('open');$('#scrim').classList.add('open');document.documentElement.style.overflow='hidden';
+ setTimeout(function(){var f=s.querySelector('.x');f&&f.focus({preventScroll:true})},60);
+}
+function closeSheets(quiet){
+ if(!openSheet)return;
+ openSheet.classList.remove('open');openSheet.style.transform='';
+ $('#scrim').classList.remove('open');document.documentElement.style.overflow='';
+ openSheet=null;
+ if(!quiet&&lastOpener&&lastOpener.focus)lastOpener.focus({preventScroll:true});
+}
+document.addEventListener('click',function(e){
+ var o=e.target.closest('[data-open]');if(o){open(o.dataset.open,o);return}
+ if(e.target.closest('[data-close]')&&!e.target.closest('#bagBody'))closeSheets();
+});
+$('#scrim').addEventListener('click',function(){closeSheets()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheets()});
+/* swipe down to dismiss */
+$$('.sheet').forEach(function(s){
+ var g=s.querySelector('.grab'),y0=0,dy=0,on=false;
+ g.addEventListener('touchstart',function(e){on=true;y0=e.touches[0].clientY;dy=0;s.classList.add('drag')},{passive:true});
+ g.addEventListener('touchmove',function(e){if(!on)return;dy=Math.max(0,e.touches[0].clientY-y0);s.style.transform='translateY('+dy+'px)'},{passive:true});
+ var end=function(){if(!on)return;on=false;s.classList.remove('drag');if(dy>90)closeSheets();else s.style.transform=''};
+ g.addEventListener('touchend',end);g.addEventListener('touchcancel',end);
+});
+
+/* active tab */
+if(io){
+ var tabs={};$$('.tabs [data-t]').forEach(function(a){tabs[a.dataset.t]=a});
+ var vis={};
+ var so=new IntersectionObserver(function(es){
+  es.forEach(function(e){vis[e.target.id]=e.isIntersecting?e.intersectionRatio:0});
+  var best=null,bv=0;Object.keys(vis).forEach(function(k){if(vis[k]>bv){bv=vis[k];best=k}});
+  Object.keys(tabs).forEach(function(k){tabs[k].classList.toggle('on',k===best)});
+ },{threshold:[0,.15,.3,.5,.75]});
+ ['menu','build','about'].forEach(function(id){so.observe(document.getElementById(id))});
+}
+
+renderMenu();renderBuilder();renderCart();watch();
+})();
+</script>
+</body>
+</html>
