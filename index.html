@@ -896,6 +896,32 @@ nav .grad-text,#about .grad-text,.site-footer .grad-text{background-image:linear
 .foot-links a:hover{color:#fff}
 .site-footer .fine{color:rgba(255,255,255,.45)}
 
+
+/* Live concept demos */
+.demo-cta{text-align:center;margin-top:32px}
+.demos-head{text-align:center;max-width:680px;margin:64px auto 32px;scroll-margin-top:76px}
+.demos-head h3{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:850;letter-spacing:-.035em;line-height:1.12;color:var(--text-main)}
+.demos-head p{color:var(--text-muted);margin-top:10px;font-size:1.05rem}
+.demo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:20px}
+.demo-card{display:flex;flex-direction:column;align-items:flex-start;gap:6px;background:var(--surface);border:1px solid var(--border-light);border-radius:24px;padding:24px;box-shadow:var(--shadow-sm);transition:transform .45s var(--ease-ios),box-shadow .45s var(--ease-ios),border-color .3s ease}
+.demo-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--border-active)}
+.demo-ico{width:46px;height:46px;border-radius:14px;background:var(--grad-main);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:900;box-shadow:0 8px 20px rgba(139,92,246,.28);margin-bottom:10px}
+.demo-card h4{font-size:1.1rem;line-height:1.25;color:var(--text-main);margin:2px 0 14px}
+.demo-card .btn{margin-top:auto;width:100%;padding:12px 20px;font-size:.92rem}
+
+/* Collapsible demos */
+.demo-panel{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .9s var(--ease-ios),visibility 0s linear .9s}
+.demo-panel.open{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .9s var(--ease-ios),visibility 0s}
+.demo-panel-in{min-height:0;overflow:hidden;padding:0 12px}
+.demo-panel:not(.open) .demo-panel-in{padding-bottom:0}
+.demo-panel .demo-card:not(.dc-in){opacity:0;transform:translateY(46px) scale(.96)}
+.demo-panel .demo-card.dc-in{opacity:1;transform:none;transition:opacity .9s var(--ease-ios) var(--d,0ms),transform 1.05s var(--ease-ios) var(--d,0ms),box-shadow .45s var(--ease-ios),border-color .3s ease}
+.demo-panel .demo-card.dc-in.dc-done{transition:transform .45s var(--ease-ios),box-shadow .45s var(--ease-ios),border-color .3s ease}
+.demo-panel .demo-card.dc-in.dc-done:hover{transform:translateY(-6px)}
+.demo-panel .demos-head{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease-ios) .15s,transform .8s var(--ease-ios) .15s}
+.demo-panel.open .demos-head{opacity:1;transform:none}
+.demo-close{text-align:center;margin:40px 0 8px}
+#demoToggle[aria-expanded="true"]{box-shadow:0 6px 24px rgba(139,92,246,.3),0 0 0 4px rgba(139,92,246,.14)}
 </style>
 </head>
 <body>
@@ -1267,7 +1293,93 @@ nav .grad-text,#about .grad-text,.site-footer .grad-text{background-image:linear
       </article>
 
     </div>
+        <div class="demo-cta"><button type="button" class="btn btn-primary" id="demoToggle" aria-expanded="false" aria-controls="demoPanel"><span id="demoToggleLabel">See Live Demos</span></button></div>
     <p class="portfolio-hint">Concept designs shown for illustration. Real client examples will appear here as projects launch.</p>
+
+    <div class="demo-panel" id="demoPanel" inert>
+      <div class="demo-panel-in">
+    <div class="demos-head" id="demos">
+      <div class="eyebrow">Live Concept Demos</div>
+      <h3>Explore full concept websites.</h3>
+      <p>Real, working concept sites built for different kinds of local businesses. Tap any card to open it in a new tab.</p>
+    </div>
+    <div class="demo-grid">
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">L</div>
+        <span class="tag">Celestial Boutique</span>
+        <h4>Luna Goddess Treasures</h4>
+        <a href="https://elevate-web-co.pages.dev/Luna_Goddess_Treasures___Celestial_Boutique" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">S</div>
+        <span class="tag">Premium Auto Detailing</span>
+        <h4>Showroom Finish X10</h4>
+        <a href="https://elevate-web-co.pages.dev/showroom_finish_x10_premium_automotive_detailing" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">O</div>
+        <span class="tag">Barbershop</span>
+        <h4>Onix Barbershop</h4>
+        <a href="https://elevate-web-co.pages.dev/onix_barbershop_website_demo" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">M</div>
+        <span class="tag">Deli &amp; Food</span>
+        <h4>Mary&rsquo;s Deli</h4>
+        <a href="https://elevate-web-co.pages.dev/marys-deli-concept-website" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">O</div>
+        <span class="tag">Bakery &amp; Desserts</span>
+        <h4>Once Upon a Cheesecake</h4>
+        <a href="https://elevate-web-co.pages.dev/once-upon-a-cheesecake" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">L</div>
+        <span class="tag">Cleaning &middot; Dunkirk, NY</span>
+        <h4>Letty&rsquo;s Cleaning Services</h4>
+        <a href="https://elevate-web-co.pages.dev/Letty%E2%80%99s%20Cleaning%20Services%20_%20Dunkirk%2C%20NY" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">G</div>
+        <span class="tag">Landscaping</span>
+        <h4>Greener Gardens</h4>
+        <a href="https://elevate-web-co.pages.dev/greener_gardens_concept" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">K</div>
+        <span class="tag">Concrete &amp; Paving</span>
+        <h4>Kuell Concrete &amp; Asphalt</h4>
+        <a href="https://elevate-web-co.pages.dev/kuell-concrete-asphalt-website-concept" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">P</div>
+        <span class="tag">Property Services</span>
+        <h4>Papierski&rsquo;s Property Services</h4>
+        <a href="https://elevate-web-co.pages.dev/Papierski_s_Property_Services___Exquisite_Concept_Concept" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">D</div>
+        <span class="tag">Auto Detailing</span>
+        <h4>Domination Detail</h4>
+        <a href="https://elevate-web-co.pages.dev/domination-detail" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">N</div>
+        <span class="tag">Mobile Detailing</span>
+        <h4>Next Level Mobile Detailing</h4>
+        <a href="https://elevate-web-co.pages.dev/next-level-mobile-detailing-concept" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+      <article class="demo-card">
+        <div class="demo-ico" aria-hidden="true">V</div>
+        <span class="tag">Local Business Concept</span>
+        <h4>Vecchio Brothers</h4>
+        <a href="https://elevate-web-co.pages.dev/vecchio-brothers" class="btn btn-primary" target="_blank" rel="noopener">View Demo &#8599;</a>
+      </article>
+    </div>
+        <div class="demo-close"><button type="button" class="btn btn-secondary" id="demoClose">Close Demos &#10005;</button></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1817,6 +1929,47 @@ heroEl.addEventListener('pointermove', function(e) {
   window.addEventListener('resize', measure);
   window.addEventListener('load', measure);
   measure();
+})();
+</script>
+<script>
+// Live demos: collapsed by default, cards glide in as you scroll, close button hides them again
+(function() {
+  var panel = document.getElementById('demoPanel'), toggle = document.getElementById('demoToggle'),
+      label = document.getElementById('demoToggleLabel'), closeBtn = document.getElementById('demoClose');
+  if (!panel || !toggle) return;
+  var cards = [].slice.call(panel.querySelectorAll('.demo-card')), io = null;
+  function watch() {
+    if (!('IntersectionObserver' in window)) { cards.forEach(function(c) { c.classList.add('dc-in', 'dc-done'); }); return; }
+    io = new IntersectionObserver(function(entries) {
+      var n = 0;
+      entries.forEach(function(en) {
+        if (!en.isIntersecting) return;
+        var c = en.target; io.unobserve(c);
+        c.style.setProperty('--d', (n++ * 120) + 'ms');
+        c.classList.add('dc-in');
+        setTimeout(function() { c.classList.add('dc-done'); c.style.removeProperty('--d'); }, 1500 + n * 120);
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -60px 0px' });
+    cards.forEach(function(c) { io.observe(c); });
+  }
+  function reset() {
+    if (io) { io.disconnect(); io = null; }
+    cards.forEach(function(c) { c.classList.remove('dc-in', 'dc-done'); c.style.removeProperty('--d'); });
+  }
+  function openDemos() {
+    panel.removeAttribute('inert'); panel.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true'); label.textContent = 'Hide Live Demos';
+    reset();
+    setTimeout(function() { watch(); document.getElementById('demos').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
+  }
+  function closeDemos() {
+    panel.classList.remove('open'); panel.setAttribute('inert', '');
+    toggle.setAttribute('aria-expanded', 'false'); label.textContent = 'See Live Demos';
+    toggle.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(reset, 950);
+  }
+  toggle.addEventListener('click', function() { panel.classList.contains('open') ? closeDemos() : openDemos(); });
+  closeBtn.addEventListener('click', function() { closeDemos(); toggle.focus({ preventScroll: true }); });
 })();
 </script>
 <!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0ef4ecf8c83044338e95e89f570177d3"}'></script><!-- Cloudflare Pages Analytics --></body>
